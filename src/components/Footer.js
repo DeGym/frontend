@@ -42,10 +42,10 @@ export default function Footer() {
                 <div>
                     <h4 className="text-primary text-lg font-bold mb-2">Follow Us</h4>
                     <div className="flex space-x-4">
-                        <a href="https://twitter.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
+                        <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
                             <FontAwesomeIcon icon={faTwitter} size="2x" />
                         </a>
-                        <a href="https://t.me/0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
+                        <a href="https://t.me/thiagofmartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
                             <FontAwesomeIcon icon={faTelegram} size="2x" />
                         </a>
                         <a href="https://medium.com/@0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">

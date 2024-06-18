@@ -1,11 +1,11 @@
 .roadmapContainer {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
-    background-color: var(--color-accent);
+    background: linear-gradient(to bottom, #ffffff40, var(--color-dark));
     border-radius: 75px;
-    box-shadow: 0 5px 10px var(--color-neon-green);
+    box-shadow: 0 5px 7.5px var(--color-neon-green);
     /* Light gray background for a subtle look */
 }
 
@@ -18,8 +18,8 @@
 
 .timeline {
     position: relative;
-    padding-left: 50px;
-    border-left: 4px solid var(--color-primary);
+    padding-left: 55px;
+    border-left: 2px solid var(--color-primary);
     /* Use a vibrant color for the timeline */
 }
 
@@ -38,8 +38,8 @@
 .phase::before {
     content: '';
     position: absolute;
-    left: -37px;
-    top: 20px;
+    left: -45px;
+    top: 17.5px;
     width: 30px;
     height: 30px;
     background: var(--color-primary);

@@ -35,7 +35,7 @@ class ParticleNetwork {
         this.ctx = ctx;
         this.particles = [];
         this.options = {
-            velocity: 0.2,
+            velocity: 0.18,
             density: 13500,
             color: 'rgba(255, 255, 255, 0.01)',
             radius: 3,

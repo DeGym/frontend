@@ -9,12 +9,15 @@
 
 
 .hero {
-    background: linear-gradient(135deg, var(--color-neon-green), var(--color-primary));
-    color: white;
-    padding: 50px 20px;
     text-align: center;
+    background: linear-gradient(to top, #ffffff10, var(--color-accent));
+    color: var(--color-neon-green);
+    padding: 50px 30px;
     border-radius: 15px;
     margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+    font-size: 30px;
+    font-weight: 1000;
 }
 
 .heroTitle {
@@ -29,15 +32,27 @@
 .section {
     margin: 40px 0;
     padding: 20px;
-    background: var(--color-accent);
+    background: linear-gradient(to bottom, #ffffff10, var(--color-accent));
     border-radius: 15px;
+    animation: fadeIn 1s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+    border: 2px solid transparent;
 }
+
+.section:hover {
+    transform: translateY(-2.5px);
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary), 0 0 20px var(--color-primary), 0 0 20px var(--color-primary);
+}
+
 
 .sectionTitle {
     color: var(--color-primary);
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
+    color: var(--color-neon-green);
 }
 
 .paragraph {

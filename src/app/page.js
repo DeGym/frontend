@@ -14,8 +14,8 @@ const HomePage = () => {
       </Head>
       <main className={styles.main}>
         <section className={styles.hero}>
-          <h1>DeGym: Revolutionizing Gym Memberships with Blockchain</h1>
-          <p className={styles.paragraph}>Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+          <h1 className={styles.heroTitle}>Decentralized Gym Access</h1>
+          <p className={styles.heroSubtitle}>Revolutionizing Gym Memberships with Blockchain. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
         </section>
 
         <section className={styles.section}>

@@ -1,0 +1,42 @@
+.bg-dark {
+    background-color: var(--color-dark);
+}
+
+.text-light {
+    color: var(--color-light);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.hover\:text-neon-green:hover {
+    color: var(--color-neon-green);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.space-x-4> :not([hidden])~ :not([hidden]) {
+    margin-left: 1rem;
+}
+
+.neon-text {
+    color: var(--color-neon-green);
+    text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var(--color-neon-green);
+}

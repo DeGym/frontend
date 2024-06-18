@@ -3,16 +3,17 @@
     margin: 50px auto;
     padding: 25px;
     text-align: center;
-    background: linear-gradient(to bottom, #ffffff40, var(--color-dark));
+    background: linear-gradient(to top, #ffffff20, var(--color-dark));
     border-radius: 75px;
     box-shadow: 0 5px 7.5px var(--color-neon-green);
     /* Light gray background for a subtle look */
 }
 
 .title {
+    margin-bottom: 0.5rem;
     font-size: 3rem;
-    margin-bottom: 40px;
     color: var(--color-light);
+    -webkit-text-stroke: 1px var(--color-dark);
     /* Use a dark color for strong contrast */
 }
 
@@ -20,7 +21,7 @@
     position: relative;
     padding-left: 55px;
     margin: 20px;
-    border-left: 1px solid var(--color-neon-green);
+    border-left: 1px solid var(--color-light);
     /* Use a vibrant color for the timeline */
 }
 

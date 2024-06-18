@@ -17,7 +17,7 @@ export default function Footer() {
                     <h4 className="text-primary text-lg font-bold mb-2">Quick Links</h4>
                     <ul>
                         <li>
-                            <Link href="/about" legacyBehavior><a className="text-secondary hover:neon-green">About</a></Link>
+                            <Link href="/" legacyBehavior><a className="text-secondary hover:neon-green">Home</a></Link>
                         </li>
                         <li>
                             <Link href="/token" legacyBehavior><a className="text-secondary hover:neon-green">Token</a></Link>
@@ -35,7 +35,7 @@ export default function Footer() {
                             <Link href="/roadmap" legacyBehavior><a className="text-secondary hover:neon-green">Roadmap</a></Link>
                         </li>
                         <li>
-                            <Link href="/blog" legacyBehavior><a className="text-secondary hover:neon-green">Blog</a></Link>
+                            <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a className="text-secondary hover:neon-green">Documentation</a></Link>
                         </li>
                     </ul>
                 </div>

@@ -21,7 +21,7 @@
 
 .hero {
     text-align: center;
-    background: linear-gradient(to top, #ffffff10, var(--color-accent));
+    background: #00000000;
     padding: 50px 30px;
     border-radius: 15px;
     color: var(--color-light);

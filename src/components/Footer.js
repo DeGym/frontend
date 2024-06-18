@@ -19,7 +19,7 @@ export default function Footer() {
                             <Link href="/about" className="text-secondary hover:text-neon-green">About</Link>
                         </li>
                         <li>
-                            <Link href="/dgym-token" className="text-secondary hover:text-neon-green">DGYM Token</Link>
+                            <Link href="/token" className="text-secondary hover:text-neon-green">DGYM Token</Link>
                         </li>
                         <li>
                             <Link href="/presale" className="text-secondary hover:text-neon-green">Presale</Link>

@@ -8,7 +8,7 @@ export default function Navbar() {
         <h1 className="text-3xl font-bold neon-text">DeGym</h1>
         <nav className="flex space-x-4">
           <Link href="/about" className="text-secondary hover:text-neon-green">About</Link>
-          <Link href="/dgym-token" className="text-secondary hover:text-neon-green">DGYM Token</Link>
+          <Link href="/token" className="text-secondary hover:text-neon-green">DGYM Token</Link>
           <Link href="/presale" className="text-secondary hover:text-neon-green">Presale</Link>
           <Link href="/membership-plans" className="text-secondary hover:text-neon-green">Membership Plans</Link>
           <Link href="/become-gym-provider" className="text-secondary hover:text-neon-green">Become Gym Provider</Link>

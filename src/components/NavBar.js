@@ -3,17 +3,17 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <header className="bg-dark text-light">
+    <header className="bg-dark text-light navbar">
       <div className="container mx-auto flex justify-between items-center py-4">
         <h1 className="text-3xl font-bold neon-text">DeGym</h1>
         <nav className="flex space-x-4">
-          <Link href="/about" className="text-secondary hover:text-neon-green">About</Link>
-          <Link href="/token" className="text-secondary hover:text-neon-green">DGYM Token</Link>
-          <Link href="/presale" className="text-secondary hover:text-neon-green">Presale</Link>
-          <Link href="/membership-plans" className="text-secondary hover:text-neon-green">Membership Plans</Link>
-          <Link href="/become-gym-provider" className="text-secondary hover:text-neon-green">Become Gym Provider</Link>
-          <Link href="/roadmap" className="text-secondary hover:text-neon-green">Roadmap</Link>
-          <Link href="/blog" className="text-secondary hover:text-neon-green">Blog</Link>
+          <Link href="/" legacyBehavior><a className="text-secondary hover:neon-green">About</a></Link>
+          <Link href="/token" legacyBehavior><a className="text-secondary hover:neon-green">DGYM Token</a></Link>
+          <Link href="/presale" legacyBehavior><a className="text-secondary hover:neon-green">Presale</a></Link>
+          <Link href="/membership-plans" legacyBehavior><a className="text-secondary hover:neon-green">Membership Plans</a></Link>
+          <Link href="/become-gym-provider" legacyBehavior><a className="text-secondary hover:neon-green">Become Gym Provider</a></Link>
+          <Link href="/roadmap" legacyBehavior><a className="text-secondary hover:neon-green">Roadmap</a></Link>
+          <Link href="/blog" legacyBehavior><a className="text-secondary hover:neon-green">Blog</a></Link>
         </nav>
       </div>
     </header>

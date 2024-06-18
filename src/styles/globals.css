@@ -11,11 +11,7 @@
   --color-neon-green: #39FF14;
 }
 
-.neon-hover:hover {
-  color: var(--color-neon-green);
-  text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var (--color-neon-green);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

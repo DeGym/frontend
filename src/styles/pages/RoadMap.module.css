@@ -1,0 +1,65 @@
+.roadmapContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color-accent);
+    border-radius: 75px;
+    box-shadow: 0 5px 10px var(--color-neon-green);
+    /* Light gray background for a subtle look */
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: var(--color-light);
+    /* Use a dark color for strong contrast */
+}
+
+.timeline {
+    position: relative;
+    padding-left: 50px;
+    border-left: 4px solid var(--color-primary);
+    /* Use a vibrant color for the timeline */
+}
+
+.phase {
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+    background: var(--color-secondary);
+    /* White background for each phase for high contrast */
+    border-radius: 15px;
+    /* Rounded borders for a modern look */
+    box-shadow: 0 5px 15px var(--color-primary);
+    /* Soft shadow for depth */
+}
+
+.phase::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: var(--color-primary);
+    /* Bright color for visual interest */
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Small shadow for the timeline markers */
+}
+
+.phase h2 {
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    /* Dark color for readability and emphasis */
+}
+
+.phase p {
+    font-size: 1rem;
+    color: var(--color-dark);
+    /* Dark color for readable body text */
+    text-align: left;
+    padding: 10px;
+    /* Padding for text inside phases */
+}

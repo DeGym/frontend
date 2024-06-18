@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from '../../styles/Token.module.css';
+import styles from '../../styles/pages/Token.module.css';
 
 const TokenPage = () => {
     return (

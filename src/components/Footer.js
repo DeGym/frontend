@@ -20,7 +20,7 @@ export default function Footer() {
                             <Link href="/about" legacyBehavior><a className="text-secondary hover:neon-green">About</a></Link>
                         </li>
                         <li>
-                            <Link href="/token" legacyBehavior><a className="text-secondary hover:neon-green">DGYM Token</a></Link>
+                            <Link href="/token" legacyBehavior><a className="text-secondary hover:neon-green">Token</a></Link>
                         </li>
                         <li>
                             <Link href="/presale" legacyBehavior><a className="text-secondary hover:neon-green">Presale</a></Link>

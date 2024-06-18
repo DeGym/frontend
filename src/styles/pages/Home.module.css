@@ -32,7 +32,7 @@
 .section {
     margin: 40px 0;
     padding: 20px;
-    background: var(--color-dark);
+    background: var(--color-accent);
     border-radius: 15px;
     animation: fadeIn 1s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -95,7 +95,7 @@
     flex: 0 0 300px;
     margin: 0 10px;
     padding: 20px;
-    background: var(--color-dark);
+    background: var(--color-accent);
     border-radius: 15px;
     scroll-snap-align: start;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

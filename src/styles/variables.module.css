@@ -1,7 +1,8 @@
 :global(.variables) {
     --color-primary: #3a8d1d;
     --color-secondary: #d3dcd1;
-    --color-dark: #1a1argb(182, 202, 178) --color-light: #f5f5f5;
-    --color-accent: #2a332c;
+    --color-dark: #2A332C;
+    --color-light: #D3DCD1;
+    --color-accent: #515953;
     --color-neon-green: #39FF14;
 }

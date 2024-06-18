@@ -1,7 +1,7 @@
 "use client"; // This directive ensures the component is treated as a client component
 
 import React, { useEffect, useRef } from 'react';
-import styles from './ParticleNetwork.module.css';
+import styles from '../styles/ParticleNetwork.module.css';
 
 class Particle {
     constructor(ctx, options) {
@@ -40,7 +40,7 @@ class ParticleNetwork {
             color: 'rgba(255, 255, 255, 0.01)',
             radius: 3,
             maxDistance: 150,
-            lineColor: 'rgba(58, 141, 29, 0.25)',
+            lineColor: 'rgba(58, 141, 29, 0.5)',
             lineWidth: 1
         };
         this.interactionParticle = null;

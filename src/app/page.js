@@ -9,18 +9,18 @@ const HomePage = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-        <title>DeGym: Revolutionizing Gym Memberships with Blockchain</title>
+        <title>DeGym: Revolutionizing Gym Memberships with distributed ledger technology</title>
         <meta name="description" content="Seamless Access, Enhanced Rewards, and Secure Workouts" />
       </Head>
       <main className={styles.main}>
         <section className={styles.hero}>
           <h1 className={styles.heroTitle}>Decentralized Gym Access</h1>
-          <p className={styles.heroSubtitle}>Revolutionizing Gym Memberships with Blockchain. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+          <p className={styles.heroSubtitle}>Revolutionizing Gym Memberships with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
         </section>
 
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Welcome to DeGym</h2>
-          <p className={styles.paragraph}>DeGym is a cutting-edge decentralized application transforming gym memberships through NFT technology and blockchain. DeGym connects GymUsers, GymProviders, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards. Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.</p>
+          <p className={styles.paragraph}>DeGym is a cutting-edge decentralized autonomous organization transforming gym memberships through NFT and DLT powered by smart contracts. DeGym connects GymUsers, GymProviders, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards. Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.</p>
         </section>
 
         <section className={styles.section}>

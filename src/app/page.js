@@ -1,113 +1,95 @@
-import Image from "next/image";
+import React from 'react';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+        <title>DeGym: Revolutionizing Gym Memberships with Blockchain</title>
+        <meta name="description" content="Seamless Access, Enhanced Rewards, and Secure Workouts" />
+      </Head>
+      <main className={styles.main}>
+        <section className={styles.hero}>
+          <h1>DeGym: Revolutionizing Gym Memberships with Blockchain</h1>
+          <p className={styles.paragraph}>Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+        </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Welcome to DeGym</h2>
+          <p className={styles.paragraph}>DeGym is a cutting-edge decentralized application transforming gym memberships through NFT technology and blockchain. DeGym connects GymUsers, GymProviders, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards. Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.</p>
+        </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Mission Statement</h2>
+          <p className={styles.paragraph}>To revolutionize fitness by providing seamless and decentralized access to gyms worldwide, empowering individuals to achieve their health and wellness goals anytime, anywhere.</p>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Vision Statement</h2>
+          <p className={styles.paragraph}>To create a world where fitness is universally accessible, eliminating barriers and fostering a global community of health-conscious individuals.</p>
+        </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Core Values</h2>
+          <ul className={styles.list}>
+            <li className={styles.listItem}><strong>Accessibility:</strong> Making fitness facilities accessible to everyone, everywhere.</li>
+            <li className={styles.listItem}><strong>Innovation:</strong> Continuously improving and innovating to provide the best user experience.</li>
+            <li className={styles.listItem}><strong>Community:</strong> Fostering a global community of fitness enthusiasts.</li>
+            <li className={styles.listItem}><strong>Flexibility:</strong> Offering flexible solutions to meet diverse fitness needs.</li>
+            <li className={styles.listItem}><strong>Empowerment:</strong> Empowering individuals to take control of their fitness journey.</li>
+            <li className={styles.listItem}><strong>Integrity:</strong> Maintaining transparency and honesty in all operations.</li>
+            <li className={styles.listItem}><strong>Excellence:</strong> Striving for excellence in every aspect of our service.</li>
+          </ul>
+        </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Taglines</h2>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>Unlock Fitness Freedom</li>
+            <li className={styles.listItem}>Gym Access, Redefined</li>
+            <li className={styles.listItem}>Fitness Without Borders</li>
+            <li className={styles.listItem}>Your Gym, Everywhere</li>
+            <li className={styles.listItem}>Seamless Gym Access</li>
+            <li className={styles.listItem}>Fitness Unleashed</li>
+            <li className={styles.listItem}>Access Anytime, Anywhere</li>
+            <li className={styles.listItem}>Empowering Your Fitness Journey</li>
+            <li className={styles.listItem}>The World is Your Gym</li>
+            <li className={styles.listItem}>Decentralize Your Workout</li>
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Brand Narrative</h2>
+          <p className={styles.paragraph}>In a world where access to fitness facilities can be limited by location and time, DeGym emerges as a revolutionary platform breaking down these barriers. By leveraging the power of decentralization, DeGym provides users with the freedom to access gyms and fitness centers worldwide, anytime they choose. Our mission is to make fitness universally accessible, empowering individuals to live healthier, happier lives. Through innovation and community-building, DeGym is redefining the fitness landscape, creating a global network of accessible, high-quality gym facilities. Join us in this movement towards fitness without borders, and unlock the potential of your fitness journey with DeGym.</p>
+        </section>
+
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Testimonials</h2>
+          <div className={styles.testimonials}>
+            <div className={styles.testimonial}>
+              <p>"DeGym has transformed the way I access fitness facilities. It's convenient and rewarding!" - User A</p>
+            </div>
+            <div className={styles.testimonial}>
+              <p>"With DeGym, I can work out at multiple gyms without hassle. It's fantastic!" - User B</p>
+            </div>
+            <div className={styles.testimonial}>
+              <p>"The best part of DeGym is the rewards. I get more out of my workouts now." - User C</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Get Started</h2>
+          <p className={styles.paragraph}>Ready to revolutionize your fitness journey? Join DeGym today and experience the future of gym memberships.</p>
+          <button className={styles.button}>Sign Up Now</button>
+        </section>
+      </main>
+    </>
   );
 }
+
+export default HomePage;

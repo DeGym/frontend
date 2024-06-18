@@ -35,12 +35,12 @@ class ParticleNetwork {
         this.ctx = ctx;
         this.particles = [];
         this.options = {
-            velocity: 0.5,
-            density: 10000,
-            color: 'rgba(255, 255, 255, 0.7)',
+            velocity: 0.2,
+            density: 13500,
+            color: 'rgba(255, 255, 255, 0.01)',
             radius: 3,
-            maxDistance: 100,
-            lineColor: 'rgba(255, 255, 255, 0.1)',
+            maxDistance: 150,
+            lineColor: 'rgba(58, 141, 29, 0.25)',
             lineWidth: 1
         };
         this.interactionParticle = null;

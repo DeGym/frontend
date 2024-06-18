@@ -1,0 +1,9 @@
+/* styles/variables.module.css */
+:global(.variables) {
+    --color-primary: #3a8d1d;
+    --color-secondary: #d3dcd1;
+    --color-dark: #1a1a1a;
+    --color-light: #f5f5f5;
+    --color-accent: #2a332c;
+    --color-neon-green: #39FF14;
+}

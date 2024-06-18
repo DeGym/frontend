@@ -1,14 +1,14 @@
+// app/layout.js
 import '../styles/globals.css';
-import Header from '../components/Header';
+import Navbar from '../components/NavBar';
 import ParticleNetworkAnimation from '../components/ParticleNetworkAnimation';
-
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <ParticleNetworkAnimation />
-        <Header />
+        <Navbar />
         {children}
       </body>
     </html>

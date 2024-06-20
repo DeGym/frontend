@@ -19,11 +19,11 @@ const MembershipPage = () => {
                 </section>
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Why DeGym Membership?</h2>
-                    <p className={styles.paragraph}>Discover the advantages of blockchain-enhanced gym access.</p>
+                    <p className={styles.paragraph}>DeGym Membership offers a revolutionary approach to fitness through its integration with DLT, providing seamless and flexible access to a network of gyms. Members benefit from enhanced security, transparent transactions, and the ability to use NFTs for membership credentials, which ensures easy access, potential rewards, and the ability to trade or transfer memberships more freely. This model empowers users with more control over their fitness journey and investment, making gym access more adaptable and personalized.</p>
                 </section>
                 <section className={styles.section}>
-                    <h2 className={styles.sectionTitle}>Membership Benefits</h2>
-                    <p className={styles.paragraph}>Detailed benefits for each tier to suit your fitness needs.</p>
+                    <h2 className={styles.sectionTitle}>Unlock Unlimited Gym Access with DeGym NFTs</h2>
+                    <p className={styles.paragraph}>Say goodbye to restrictive gym memberships and hello to freedom with DeGym. As a Gym User, you can purchase an NFT that grants you access to a diverse network of gyms. Enjoy the flexibility of working out at multiple locations, exclusive rewards, and the security of DLT. Buy your DeGym NFT today and start your journey to a fitter, more flexible lifestyle.</p>
                 </section>
                 <section className={styles.section}>
                     <MembershipTable />

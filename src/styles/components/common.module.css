@@ -1,93 +1,36 @@
 .link {
-    color: var(--color-light)
+    color: var(--color-light);
+    text-decoration: none;
+    /* Removes underline from links */
+    padding: 0.5rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .link:hover {
     color: var(--color-neon-green);
-    text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var (--color-neon-green);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var(--color-neon-green);
 }
 
-.card {
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-align: center;
-    background-color: white;
-}
 
-.chooseButton {
-    background-color: #3a8d1d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+.menuIcon {
+    display: none;
+    /* Initially hide the menu icon */
     cursor: pointer;
 }
 
-.chooseButton:hover {
-    background-color: #2A332C;
-}
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header,
-.cell {
-    border: 1px solid #e1e1e1;
-    padding: 12px 15px;
-    text-align: center;
-    color: #333;
-}
-
-.header {
-    background-color: #f9f9f9;
-    color: #3a8d1d;
-    font-weight: bold;
-}
-
-.input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: auto;
-}
-
-.cell {
-    background-color: #fafafa;
-    transition: background-color 0.3s ease;
-}
-
-.row:hover .cell {
-    background-color: #f1f1f1;
-}
-
-.footerCell {
-    background-color: #f4f4f4;
-    font-weight: bold;
-}
-
-.customInput {
-    font-size: 0.9rem;
-    color: #5a5a5a;
-}
-
-.customDays {
-    font-weight: bold;
-    color: #3a8d1d;
-}
-
-/* Responsive Table */
-@media screen and (max-width: 768px) {
-    .table {
+@media (max-width: 768px) {
+    .menuIcon {
         display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        /* Show icon only on mobile */
+    }
+
+    .menu {
+        display: none;
+        /* Hide menu items on mobile */
+    }
+
+    .icon {
+        display: block;
+        /* Ensure the icon is visible */
     }
 }

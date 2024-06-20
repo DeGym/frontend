@@ -9,6 +9,10 @@ const HomePage = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
         <title>DeGym: Revolutionizing Gym Memberships with distributed ledger technology</title>
         <meta name="description" content="Seamless Access, Enhanced Rewards, and Secure Workouts" />
       </Head>

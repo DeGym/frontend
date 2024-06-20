@@ -6,6 +6,10 @@ const TokenPage = () => {
     return (
         <>
             <Head>
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                />
                 <title>DGYM Token - DeGym</title>
                 <meta name="description" content="Learn more about the DGYM Token, its utility, and how it powers the DeGym ecosystem." />
             </Head>

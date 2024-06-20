@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import styles from '../styles/components/common.module.css';
+import styles from '../styles/components/table.module.css';
 
 const basic_price = 10;
 const min_base_price_factor = 0.7;

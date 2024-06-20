@@ -1,13 +1,25 @@
+'use client'
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/components/common.module.css';
 
-
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="bg-dark text-light navbar">
+    <header className={styles.navbar}>
       <div className="container mx-auto flex justify-between items-center py-4">
-        <h1 className="text-3xl font-bold neon-text"><Link href="/" legacyBehavior><a className={styles.link}>DeGym</a></Link></h1>
-        <nav className="flex space-x-8">
+        <h1 className="text-3xl font-bold neon-text">
+          <Link href="/" legacyBehavior><a className={styles.link}>DeGym</a></Link>
+        </h1>
+        <div className={styles.menuIcon} onClick={toggleMenu}>
+          <i className={`fas fa-bars ${styles.icon}`}></i>
+        </div>
+        <nav className={`${styles.menu} ${isOpen ? 'flex' : 'hidden'} space-x-8`}>
           <Link href="/token" legacyBehavior><a className={styles.link}>$DGYM</a></Link>
           <Link href="/presale" legacyBehavior><a className={styles.link}>Presale</a></Link>
           <Link href="/membership" legacyBehavior><a className={styles.link}>Membership NFT</a></Link>

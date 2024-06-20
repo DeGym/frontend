@@ -153,13 +153,6 @@
     box-shadow: 0 0 15px var(--color-primary), 0 0 25px var(--color-primary), 0 0 35px var(--color-primary), 0 0 45px var(--color-primary);
 }
 
-.card {
-    margin: 10px;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
 
 .standard {
     background-color: #f0f0f0;

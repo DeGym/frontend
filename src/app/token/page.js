@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../../styles/pages/common.module.css';
+import TokenInfo from '../../components/TokenInfo';
 
 const TokenPage = () => {
     return (
@@ -23,7 +24,15 @@ const TokenPage = () => {
                         <p className={styles.paragraph}>DGYM is the native utility token of the DeGym platform. It is designed to facilitate seamless access to gym memberships, provide rewards to stakers, and enable transactions within the DeGym ecosystem.</p>
                     </div>
                 </section>
-
+                <section className={`${styles.section}`}>
+                    <TokenInfo
+                        totalSupply="100,000,000 DGYM"
+                        stakingYield="12% APR"
+                        providerCommission="2% per check-in"
+                        totalStake="50,000,000 DGYM"
+                        stakingRatio="50%"
+                    />
+                </section>
                 <section className={styles.section}>
                     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>

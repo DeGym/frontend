@@ -37,3 +37,30 @@
         display: block;
     }
 }
+
+.card {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 25px;
+    background: linear-gradient(to top, #ffffff50, var(--color-light));
+    color: var(--color-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--color-dark);
+
+}
+
+.card:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(to top, var(--color-primary), var(--color-light));
+}
+
+.card h3 {
+    -webkit-text-stroke: 1px var(--color-dark);
+    font-weight: 1000;
+}
+
+.card p {
+    font-size: 15px;
+}

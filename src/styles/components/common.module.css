@@ -29,3 +29,65 @@
 .chooseButton:hover {
     background-color: #2A332C;
 }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header,
+.cell {
+    border: 1px solid #e1e1e1;
+    padding: 12px 15px;
+    text-align: center;
+    color: #333;
+}
+
+.header {
+    background-color: #f9f9f9;
+    color: #3a8d1d;
+    font-weight: bold;
+}
+
+.input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: auto;
+}
+
+.cell {
+    background-color: #fafafa;
+    transition: background-color 0.3s ease;
+}
+
+.row:hover .cell {
+    background-color: #f1f1f1;
+}
+
+.footerCell {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.customInput {
+    font-size: 0.9rem;
+    color: #5a5a5a;
+}
+
+.customDays {
+    font-weight: bold;
+    color: #3a8d1d;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

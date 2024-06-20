@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-import MembershipCarousel from '../../components/MembershipCarousel';
+import MembershipTable from '../../components/MembershipTable';
 import styles from '../../styles/pages/common.module.css';
 
 const MembershipPage = () => {
     return (
         <>
             <Head>
-                <title>DGYM Token - DeGym</title>
+                <title>Membership - DeGym</title>
                 <meta name="description" content="Explore the unique benefits of the DGYM Token and how it powers the DeGym ecosystem." />
             </Head>
             <main className={styles.main}>
@@ -26,8 +26,7 @@ const MembershipPage = () => {
                     <p className={styles.paragraph}>Detailed benefits for each tier to suit your fitness needs.</p>
                 </section>
                 <section className={styles.section}>
-                    <h2 className={styles.sectionTitle}>Explore Membership Options</h2>
-                    <MembershipCarousel />
+                    <MembershipTable />
                 </section>
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>

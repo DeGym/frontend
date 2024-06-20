@@ -34,19 +34,21 @@ export default function RoadMap() {
             <Head>
                 <title>RoadMap - DeGym</title>
             </Head>
-            <div className={styles.roadmapContainer}>
-                <h1 className={styles.title}>Project Roadmap</h1>
-                <div className={styles.timeline}>
-                    {phases.map((phase, index) => (
-                        <div key={index} className={styles.phase}>
-                            <div className={styles.phaseContent}>
-                                <h2>{phase.title}</h2>
-                                <p>{phase.description}</p>
+            <main className={styles.main}>
+                <div className={styles.roadmapContainer}>
+                    <h1 className={styles.title}>Project Roadmap</h1>
+                    <div className={styles.timeline}>
+                        {phases.map((phase, index) => (
+                            <div key={index} className={styles.phase}>
+                                <div className={styles.phaseContent}>
+                                    <h2>{phase.title}</h2>
+                                    <p>{phase.description}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </main>
         </>
     );
 }

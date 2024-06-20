@@ -1,17 +1,39 @@
-.roadmapContainer {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main {
+    padding: 20px;
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-light);
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.roadmapContainer {
+    margin: 100px auto;
     padding: 25px;
     text-align: center;
     background: linear-gradient(to top, #ffffff20, var(--color-dark));
     border-radius: 75px;
-    box-shadow: 0 5px 7.5px var(--color-neon-green);
+    box-shadow: 0 2px 7.5px var(--color-neon-green);
     /* Light gray background for a subtle look */
 }
 
 .title {
     margin-bottom: 0.5rem;
     font-size: 3rem;
+    font-weight: 1000;
     color: var(--color-light);
     -webkit-text-stroke: 1px var(--color-dark);
     /* Use a dark color for strong contrast */
@@ -44,7 +66,7 @@
     top: 17.5px;
     width: 30px;
     height: 30px;
-    background: var(--color-neon-green);
+    background: var(--color-primary);
     /* Bright color for visual interest */
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -52,7 +74,8 @@
 }
 
 .phase h2 {
-    font-size: 1.8rem;
+    font-weight: 800;
+    font-size: 1.2rem;
     color: var(--color-dark);
     /* Dark color for readability and emphasis */
 }

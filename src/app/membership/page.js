@@ -7,10 +7,6 @@ const MembershipPage = () => {
     return (
         <>
             <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-                />
                 <title>Membership - DeGym</title>
                 <meta name="description" content="Explore the unique benefits of the DGYM Token and how it powers the DeGym ecosystem." />
             </Head>

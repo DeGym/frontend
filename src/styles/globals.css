@@ -11,6 +11,11 @@
   --color-neon-green: #39FF14;
 }
 
+body {
+  color: var(--color-light);
+  background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
+}
+
 
 
 @media (prefers-color-scheme: dark) {
@@ -19,13 +24,6 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {

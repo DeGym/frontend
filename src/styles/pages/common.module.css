@@ -26,6 +26,7 @@
     padding: 50px 30px;
     border-radius: 15px;
     color: var(--color-light);
+    margin-top: 50px;
     margin-bottom: 15px;
     animation: fadeIn 1s ease-in-out;
     font-size: 30px;

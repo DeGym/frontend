@@ -4,7 +4,6 @@ import { faTwitter, faTelegram, faMedium, faDiscord } from '@fortawesome/free-br
 import Link from 'next/link';
 import styles from '../styles/components/common.module.css';
 
-
 export default function Footer() {
     return (
         <footer className="bg-dark text-light footer">
@@ -43,16 +42,16 @@ export default function Footer() {
                 <div>
                     <h4 className="text-primary text-lg font-bold mb-2">Follow Us</h4>
                     <div className="flex space-x-4">
-                        <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
+                        <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTwitter} size="2x" />
                         </a>
-                        <a href="https://t.me/thiagofmartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
+                        <a href="https://t.me/thiagofmartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTelegram} size="2x" />
                         </a>
-                        <a href="https://medium.com/@0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
+                        <a href="https://medium.com/@0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faMedium} size="2x" />
                         </a>
-                        <a href="https://discord.com/invite/0xthiagomartins" target="_blank" rel="noopener noreferrer" className="hover:neon-green">
+                        <a href="https://discord.com/invite/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faDiscord} size="2x" />
                         </a>
                     </div>

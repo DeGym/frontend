@@ -3,7 +3,9 @@ import Navbar from '../components/NavBar';
 import ParticleNetworkAnimation from '../components/ParticleNetworkAnimation';
 import Footer from '../components/Footer';
 import Head from 'next/head';
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false; // Tell FontAwesome to skip adding the CSS automatically since it's being imported above
 
 export default function RootLayout({ children }) {
   return (

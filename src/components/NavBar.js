@@ -1,4 +1,3 @@
-// components/Navbar.js
 import Link from 'next/link';
 import styles from '../styles/components/common.module.css';
 
@@ -11,7 +10,7 @@ export default function Navbar() {
         <nav className="flex space-x-8">
           <Link href="/token" legacyBehavior><a className={styles.link}>$DGYM</a></Link>
           <Link href="/presale" legacyBehavior><a className={styles.link}>Presale</a></Link>
-          <Link href="/membership-plans" legacyBehavior><a className={styles.link}>Membership Plans</a></Link>
+          <Link href="/membership" legacyBehavior><a className={styles.link}>Membership NFT</a></Link>
           <Link href="/become-gym-provider" legacyBehavior><a className={styles.link}>Become Gym Provider</a></Link>
           <Link href="/roadmap" legacyBehavior><a className={styles.link}>Roadmap</a></Link>
           <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a className={styles.link}>Docs</a></Link>

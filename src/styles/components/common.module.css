@@ -7,3 +7,25 @@
     text-shadow: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var (--color-neon-green);
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
+
+.card {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+}
+
+.chooseButton {
+    background-color: #3a8d1d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chooseButton:hover {
+    background-color: #2A332C;
+}

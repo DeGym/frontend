@@ -1,4 +1,3 @@
-// components/Footer.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faTelegram, faMedium, faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -28,7 +27,7 @@ export default function Footer() {
                             <Link href="/presale" legacyBehavior><a className={styles.link}>Presale</a></Link>
                         </li>
                         <li>
-                            <Link href="/membership-plans" legacyBehavior><a className={styles.link}>Membership Plans</a></Link>
+                            <Link href="/membership" legacyBehavior><a className={styles.link}>Membership NFT</a></Link>
                         </li>
                         <li>
                             <Link href="/become-gym-provider" legacyBehavior><a className={styles.link}>Become Gym Provider</a></Link>

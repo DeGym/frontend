@@ -1,4 +1,4 @@
-"use client"; // This directive ensures the component is treated as a client component
+"use client";
 
 import React, { useEffect, useRef } from 'react';
 import styles from '../styles/ParticleNetwork.module.css';

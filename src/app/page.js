@@ -15,29 +15,29 @@ const HomePage = () => {
           <p className={styles.heroSubtitle}>Revolutionizing Gym Memberships with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Welcome to DeGym</h2>
+        <section className={styles.sectionEven}>
+          <h2 className={styles.sectionEvenTitle}>Welcome to DeGym</h2>
           <p className={styles.paragraph}>DeGym is a cutting-edge decentralized autonomous organization transforming gym memberships through NFT and DLT powered by smart contracts. DeGym connects GymUsers, GymProviders, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards. Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.</p>
         </section>
         <section className={styles.videoSection}>
-          <h2 className={styles.sectionTitle}>Watch Our Introduction Video</h2>
+          <h2 className={styles.sectionEvenTitle}>Watch Our Introduction Video</h2>
           <div className={styles.videoContainer}>
             <div className={styles.videoOverlay}></div>
             <video className={styles.video} controls controlslist="nodownload" src="https://api.renderforest.com/api/v1/projects/86667866/download?key=66861de0e05e4d2f138a2c92ecd44650:f23f59dbbd6306eb882295638df7c34e6dccee06bf48e671627eb992259a13496b15be09dc32f4d7efc62e4948bf8831"></video>
           </div>
         </section>
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Mission Statement</h2>
+        <section className={styles.sectionEven}>
+          <h2 className={styles.sectionEvenTitle}>Mission Statement</h2>
           <p className={styles.paragraph}>To revolutionize fitness by providing seamless and decentralized access to gyms worldwide, empowering individuals to achieve their health and wellness goals anytime, anywhere.</p>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Vision Statement</h2>
+        <section className={styles.sectionOdd}>
+          <h2 className={styles.sectionOddTitle}>Vision Statement</h2>
           <p className={styles.paragraph}>To create a world where fitness is universally accessible, eliminating barriers and fostering a global community of health-conscious individuals.</p>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Core Values</h2>
+        <section className={styles.sectionEven}>
+          <h2 className={styles.sectionEvenTitle}>Core Values</h2>
           <ul className={styles.list}>
             <li className={styles.listItem}><strong>Accessibility:</strong> Making fitness facilities accessible to everyone, everywhere.</li>
             <li className={styles.listItem}><strong>Innovation:</strong> Continuously improving and innovating to provide the best user experience.</li>
@@ -49,8 +49,8 @@ const HomePage = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Taglines</h2>
+        <section className={styles.sectionOdd}>
+          <h2 className={styles.sectionOddTitle}>Taglines</h2>
           <ul className={styles.list}>
             <li className={styles.listItem}>Unlock Fitness Freedom</li>
             <li className={styles.listItem}>Gym Access, Redefined</li>
@@ -65,13 +65,13 @@ const HomePage = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Brand Narrative</h2>
+        <section className={styles.sectionEven}>
+          <h2 className={styles.sectionEvenTitle}>Brand Narrative</h2>
           <p className={styles.paragraph}>In a world where access to fitness facilities can be limited by location and time, DeGym emerges as a revolutionary platform breaking down these barriers. By leveraging the power of decentralization, DeGym provides users with the freedom to access gyms and fitness centers worldwide, anytime they choose. Our mission is to make fitness universally accessible, empowering individuals to live healthier, happier lives. Through innovation and community-building, DeGym is redefining the fitness landscape, creating a global network of accessible, high-quality gym facilities. Join us in this movement towards fitness without borders, and unlock the potential of your fitness journey with DeGym.</p>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Testimonials</h2>
+        <section className={styles.sectionOdd}>
+          <h2 className={styles.sectionOddTitle}>Testimonials</h2>
           <div className={styles.testimonials}>
             <div className={styles.testimonial}>
               <p>"DeGym has transformed the way I access fitness facilities. It's convenient and rewarding!" - User A</p>
@@ -85,8 +85,8 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>Get Started</h2>
+        <section className={styles.sectionEven}>
+          <h2 className={styles.sectionEvenTitle}>Get Started</h2>
           <p className={styles.paragraph}>Ready to revolutionize your fitness journey? Join DeGym today and experience the future of gym memberships.</p>
           <button className={styles.button}>Sign Up Now</button>
         </section>

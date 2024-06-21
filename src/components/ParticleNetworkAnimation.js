@@ -36,7 +36,7 @@ class ParticleNetwork {
         this.particles = [];
         this.options = {
             velocity: 0.18,
-            density: 13500,
+            density: 13000,
             color: 'rgba(255, 255, 255, 0.01)',
             radius: 3,
             maxDistance: 150,

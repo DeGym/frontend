@@ -18,13 +18,13 @@ const TokenPage = () => {
                     </div>
                 </section>
 
-                <section className={styles.section}>
+                <section className={styles.sectionEven}>
                     <div className="container mx-auto">
-                        <h2 className={styles.sectionTitle}>What is DGYM?</h2>
+                        <h2 className={styles.sectionEvenTitle}>What is DGYM?</h2>
                         <p className={styles.paragraph}>DGYM is the native utility token of the DeGym platform. It is designed to facilitate seamless access to gym memberships, provide rewards to stakers, and enable transactions within the DeGym ecosystem.</p>
                     </div>
                 </section>
-                <section className={`${styles.section}`}>
+                <section className={`${styles.sectionOdd}`}>
                     <TokenInfo
                         totalSupply="100,000,000 DGYM"
                         stakingYield="12% APR"
@@ -33,10 +33,10 @@ const TokenPage = () => {
                         stakingRatio="50%"
                     />
                 </section>
-                <section className={styles.section}>
+                <section className={styles.sectionEven}>
                     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <h2 className={styles.sectionTitle}>Token Distribution</h2>
+                            <h2 className={styles.sectionEvenTitle}>Token Distribution</h2>
                             <p className={styles.paragraph}>The DGYM token distribution is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem. Below is the allocation breakdown:</p>
                             <ul className={styles.list}>
                                 <li className={styles.listItem}>40% - Community Rewards</li>
@@ -47,7 +47,7 @@ const TokenPage = () => {
                             </ul>
                         </div>
                         <div>
-                            <h2 className={styles.sectionTitle}>Use Cases</h2>
+                            <h2 className={styles.sectionEvenTitle}>Use Cases</h2>
                             <p className={styles.paragraph}>The DGYM token serves multiple purposes within the DeGym ecosystem, including:</p>
                             <ul className={styles.list}>
                                 <li className={styles.listItem}>Gym Membership Access</li>

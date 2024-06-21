@@ -23,7 +23,7 @@
 .hero {
     text-align: center;
     background: #00000000;
-    padding: 50px 30px;
+    padding: 150px 30px;
     border-radius: 15px;
     color: var(--color-light);
     margin-top: 50px;
@@ -35,15 +35,26 @@
 }
 
 .heroTitle {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: 6.5rem;
+    margin-bottom: 1rem;
 }
 
 .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
-.section {
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.2rem;
+    }
+}
+
+.sectionEven {
     margin: 10px 0;
     padding: 50px;
     background: linear-gradient(to bottom, #ffffff10, var(--color-accent));
@@ -54,21 +65,47 @@
     border: 2px solid transparent;
 }
 
-.section:hover {
-    transform: translateY(-1px);
+.sectionEven:hover {
+    transform: translateY(-0.5px);
     background-color: var(--color-accent);
     border: 2px solid var(--color-primary);
     box-shadow: 0 0 5px var(--color-primary);
 }
 
-
-.sectionTitle {
-    font-size: 30px;
+.sectionEvenTitle {
+    font-size: 35px;
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
     -webkit-text-stroke: 1px var(--color-primary);
     color: var(--color-secondary);
+}
+
+.sectionOdd {
+    margin: 10px 0;
+    padding: 50px;
+    background: #00000000;
+    border-radius: 15px;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+    border: 2px solid transparent;
+}
+
+.sectionOdd:hover {
+    transform: translateY(-0.5px);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+
+.sectionOddTitle {
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-text-stroke: 1px var(--color-dark);
+    color: var(--color-white);
 }
 
 .paragraph {
@@ -129,6 +166,7 @@
 }
 
 .testimonials {
+    padding: 15px;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -150,7 +188,7 @@
     transform: scale(1.05);
     background-color: var(--color-accent);
     border: 2px solid var(--color-primary);
-    box-shadow: 0 0 15px var(--color-primary), 0 0 25px var(--color-primary), 0 0 35px var(--color-primary), 0 0 45px var(--color-primary);
+    box-shadow: 0 0 5px var(--color-dark);
 }
 
 

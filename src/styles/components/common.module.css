@@ -51,9 +51,18 @@
 
 }
 
+.cardIcon {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
 .card:hover {
-    transform: translateY(-1px);
-    background: linear-gradient(to top, var(--color-primary), var(--color-light));
+    transform: scale(1.01);
+    background: var(--color-light);
+}
+
+.card:hover .cardIcon {
+    color: var(--color-primary);
 }
 
 .card h3 {

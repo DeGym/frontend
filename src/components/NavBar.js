@@ -20,9 +20,6 @@ export default function Navbar() {
             <a className={styles.link}>DeGym</a>
           </Link>
         </h1>
-        <button className="md:hidden" onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} className="text-2xl text-light" />
-        </button>
         <nav className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0`}>
           <ul className="flex flex-col md:flex-row md:space-x-8 w-full md:w-auto">
             <li className="md:my-0 my-2">
@@ -57,6 +54,9 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
+        <button className="md:hidden" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} className="text-2xl text-light" />
+        </button>
       </div>
     </header>
   );

@@ -20,7 +20,7 @@ const HomePage = () => {
           <p className={styles.paragraph}>DeGym is a cutting-edge decentralized autonomous organization transforming gym memberships through NFT and DLT powered by smart contracts. DeGym connects GymUsers, GymProviders, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards. Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.</p>
         </section>
         <section className={styles.videoSection}>
-          <h2 className={styles.sectionEvenTitle}>Watch Our Introduction Video</h2>
+          <h2 className={styles.sectionOddTitle}>Watch Our Introduction Video</h2>
           <div className={styles.videoContainer}>
             <div className={styles.videoOverlay}></div>
             <video className={styles.video} controls controlslist="nodownload" src="https://api.renderforest.com/api/v1/projects/86667866/download?key=66861de0e05e4d2f138a2c92ecd44650:f23f59dbbd6306eb882295638df7c34e6dccee06bf48e671627eb992259a13496b15be09dc32f4d7efc62e4948bf8831"></video>

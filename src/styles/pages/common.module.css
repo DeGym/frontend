@@ -55,9 +55,9 @@
 }
 
 .sectionEven {
-    margin: 10px 0;
+    margin: 15px 0;
     padding: 50px;
-    background: linear-gradient(to bottom, #ffffff10, var(--color-accent));
+    background: linear-gradient(to bottom, #ffffff20, var(--color-accent));
     border-radius: 15px;
     animation: fadeIn 1s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -73,18 +73,19 @@
 }
 
 .sectionEvenTitle {
-    font-size: 35px;
+    text-align: center;
+    font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    -webkit-text-stroke: 1px var(--color-primary);
+    -webkit-text-stroke: 1px var(--color-dark);
     color: var(--color-secondary);
 }
 
 .sectionOdd {
-    margin: 10px 0;
+    margin: 15px 0;
     padding: 50px;
-    background: #00000000;
+    background: #00000035;
     border-radius: 15px;
     animation: fadeIn 1s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -100,12 +101,13 @@
 
 
 .sectionOddTitle {
-    font-size: 35px;
+    text-align: center;
+    font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
     -webkit-text-stroke: 1px var(--color-dark);
-    color: var(--color-white);
+    color: var(--color-neon-green);
 }
 
 .paragraph {
@@ -233,9 +235,10 @@
     background-color: #2A332C;
 }
 
+
 .videoSection {
-    margin: 40px 0;
-    padding: 20px;
+    margin: 15px 0;
+    padding: 30px 10px 10px 10px;
     background: var(--color-dark);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

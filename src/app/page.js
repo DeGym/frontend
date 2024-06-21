@@ -11,7 +11,7 @@ const HomePage = () => {
       </Head>
       <main className={styles.main}>
         <section className={styles.hero}>
-          <h1 className={styles.heroTitle}>Decentralized Gym Access</h1>
+          <h1 className={styles.heroTitle}>Decentralized Gym Network</h1>
           <p className={styles.heroSubtitle}>Revolutionizing Gym Memberships with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
         </section>
 

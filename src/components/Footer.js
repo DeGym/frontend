@@ -45,7 +45,7 @@ export default function Footer() {
                         <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTwitter} size="2x" />
                         </a>
-                        <a href="https://t.me/thiagofmartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                        <a href="https://t.me/de_gym" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTelegram} size="2x" />
                         </a>
                         <a href="https://medium.com/@0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>

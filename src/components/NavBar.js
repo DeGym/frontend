@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/components/common.module.css';
+import ConnectWalletButton from './ConnectWalletButton';
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +56,7 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
+        <ConnectWalletButton />
         <button className="md:hidden" onClick={toggleMenu}>
           <FontAwesomeIcon icon={faBars} className="text-2xl text-light" />
         </button>

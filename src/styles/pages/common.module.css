@@ -43,16 +43,7 @@
     font-size: 2rem;
 }
 
-@media (max-width: 768px) {
-    .heroTitle {
-        font-size: 2rem;
-        margin-bottom: 5rem;
-    }
 
-    .heroSubtitle {
-        font-size: 1.2rem;
-    }
-}
 
 .sectionEven {
     margin: 15px 0;
@@ -81,6 +72,8 @@
     -webkit-text-stroke: 1px var(--color-dark);
     color: var(--color-secondary);
 }
+
+
 
 .sectionOdd {
     margin: 15px 0;
@@ -114,6 +107,29 @@
     font-size: 20px;
     line-height: 1.6;
     color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.3rem;
+        margin-bottom: 3rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.5rem;
+    }
+
+    .sectionEvenTitle {
+        font-size: 1.4rem;
+    }
+
+    .sectionOddTitle {
+        font-size: 1.4rem;
+    }
+
+    .paragraph {
+        font-size: 1.25rem;
+    }
 }
 
 .list {

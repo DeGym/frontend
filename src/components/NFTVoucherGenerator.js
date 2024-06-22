@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/components/NFTVoucherGenerator.module.css';
 
-const tiers = ["Basic I", "Silver II", "Gold III", "Platinum IV", "Diamond V", "Black VI"];
-const tierValues = { "Basic I": 1, "Silver II": 2, "Gold III": 3, "Platinum IV": 4, "Diamond V": 5, "Black VI": 6 };
+const tiers = ["Basic", "Silver", "Gold", "Platinum", "Diamond", "Black"];
+const tierValues = { "Basic": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Diamond V": 5, "Black VI": 6 };
 const durations = [7, 30, 365];
 
 const NFTVoucherGenerator = () => {
@@ -13,28 +13,22 @@ const NFTVoucherGenerator = () => {
     const [customDuration, setCustomDuration] = useState(30);
     const [customMode, setCustomMode] = useState(false);
     const [price, setPrice] = useState(0);
-
     useEffect(() => {
         const selectedTier = customMode ? customTier : tierValues[tier];
         const selectedDuration = customMode ? customDuration : duration;
         setPrice(calculatePrice(selectedTier, selectedDuration));
     }, [tier, duration, customTier, customDuration, customMode]);
-
     const calculatePrice = (tier, duration) => {
         const priceFactor = tier * duration / 30;
         return priceFactor * 10;  // Simplified price calculation
     };
-
     const handleToggleCustomMode = () => {
         setCustomMode(!customMode);
     };
-
-    // Function to determine the appropriate gradient class based on tier
     const getGradientClass = (selectedTier) => {
         const index = tiers.indexOf(selectedTier);
-        return styles[`tier${index + 1}`]; // Assuming CSS classes are named tier1, tier2, etc.
+        return styles[`tier${index + 1}`];
     };
-
     return (
         <div className={customMode ? styles.container : `${styles.container} ${getGradientClass(tier)}`} >
             <button className={styles.toggle} onClick={handleToggleCustomMode}>
@@ -44,11 +38,11 @@ const NFTVoucherGenerator = () => {
             {customMode ? (
                 <div className={styles.customSelector}>
                     <label className={styles.labelGroup}>
-                        <span className={styles.labelText}>Tier:</span>
+                        <span className={styles.labelText}>Tier</span>
                         <input type="number" value={customTier} onChange={(e) => setCustomTier(parseInt(e.target.value))} min="1" max="100" className={styles.inputField} />
                     </label>
                     <label className={styles.labelGroup}>
-                        <span className={styles.labelText}>Duration (days):</span>
+                        <span className={styles.labelText}>Duration (days)</span>
                         <input type="number" value={customDuration} onChange={(e) => setCustomDuration(parseInt(e.target.value))} min="1" max="365" className={styles.inputField} />
                     </label>
                 </div>
@@ -56,13 +50,13 @@ const NFTVoucherGenerator = () => {
             ) : (
                 <div className={styles.selector}>
                     <div className={styles.labelGroup}>
-                        <span className={styles.labelText}>Tier:</span>
+                        <span className={styles.labelText}>Tier</span>
                         <select value={tier} onChange={e => setTier(e.target.value)} className={styles.selectField}>
                             {tiers.map(option => <option key={option} value={option}>{option}</option>)}
                         </select>
                     </div>
                     <div className={styles.labelGroup}>
-                        <span className={styles.labelText}>Duration (days):</span>
+                        <span className={styles.labelText}>Duration (days)</span>
                         <select value={duration} onChange={e => setDuration(e.target.value)} className={styles.selectField}>
                             {durations.map(option => <option key={option} value={option}>{option} days</option>)}
                         </select>

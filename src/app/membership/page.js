@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import MembershipTable from '../../components/MembershipTable';
+import NFTVoucherGenerator from '../../components/NFTVoucherGenerator'
 import styles from '../../styles/pages/common.module.css';
 
 const MembershipPage = () => {
@@ -28,8 +29,12 @@ const MembershipPage = () => {
                 <section className={styles.sectionEven}>
                     <MembershipTable />
                 </section>
+
                 <section className={styles.sectionOdd}>
-                    <h2 className={styles.sectionOddTitle}>Frequently Asked Questions</h2>
+                    <NFTVoucherGenerator />
+                </section>
+                <section className={styles.sectionEven}>
+                    <h2 className={styles.sectionEvenTitle}>Frequently Asked Questions</h2>
                     <p className={styles.paragraph}>Answers to all your queries about DeGym memberships.</p>
                 </section>
             </main>

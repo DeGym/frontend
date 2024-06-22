@@ -1,6 +1,6 @@
 .tableWrapper {
     overflow-x: auto;
-    margin: 0;
+    margin: -42px;
 }
 
 .table {

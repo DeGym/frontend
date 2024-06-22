@@ -28,46 +28,55 @@ const NFTVoucherGenerator = () => {
     const handleToggleCustomMode = () => {
         setCustomMode(!customMode);
     };
-    const getGradient = (selectedTier) => {
-        const tierIndex = tierValues[selectedTier];
-        return tierIndex ? `linear-gradient(to bottom, ${getBaseColor(tierIndex)}, ${getSecondaryColor(tierIndex)})` : 'none';
-    };
-    const getBaseColor = (tierIndex) => ['#f0f9ff', '#e0eafc', '#fad0c4', '#f9d29d', '#b4ec51', '#a1c4fd'][tierIndex - 1];
-    const getSecondaryColor = (tierIndex) => ['#c6e4ff', '#cfdef3', '#ffd1ff', '#ffd8a8', '#429321', '#c2e9fb'][tierIndex - 1];
 
+    // Function to determine the appropriate gradient class based on tier
+    const getGradientClass = (selectedTier) => {
+        const index = tiers.indexOf(selectedTier);
+        return styles[`tier${index + 1}`]; // Assuming CSS classes are named tier1, tier2, etc.
+    };
 
     return (
-        <div style={{ background: getGradient(tier) }} className={styles.container}>
+        <div className={customMode ? styles.container : `${styles.container} ${getGradientClass(tier)}`} >
             <button className={styles.toggle} onClick={handleToggleCustomMode}>
                 {customMode ? 'Switch to Preset Values' : 'Customize'}
             </button>
+
             {customMode ? (
                 <div className={styles.customSelector}>
-                    <label>Tier:
+                    <label className={styles.labelGroup}>
+                        <span className={styles.labelText}>Tier:</span>
                         <input type="number" value={customTier} onChange={(e) => setCustomTier(parseInt(e.target.value))} min="1" max="100" className={styles.inputField} />
                     </label>
-                    <label>Duration (days):
+                    <label className={styles.labelGroup}>
+                        <span className={styles.labelText}>Duration (days):</span>
                         <input type="number" value={customDuration} onChange={(e) => setCustomDuration(parseInt(e.target.value))} min="1" max="365" className={styles.inputField} />
                     </label>
                 </div>
+
             ) : (
                 <div className={styles.selector}>
-                    <label>Tier:
-                        <select value={tier} onChange={(e) => setTier(e.target.value)} className={styles.selectField}>
+                    <div className={styles.labelGroup}>
+                        <span className={styles.labelText}>Tier:</span>
+                        <select value={tier} onChange={e => setTier(e.target.value)} className={styles.selectField}>
                             {tiers.map(option => <option key={option} value={option}>{option}</option>)}
                         </select>
-                    </label>
-                    <label>Duration:
-                        <select value={duration} onChange={(e) => setDuration(e.target.value)} className={styles.selectField}>
+                    </div>
+                    <div className={styles.labelGroup}>
+                        <span className={styles.labelText}>Duration (days):</span>
+                        <select value={duration} onChange={e => setDuration(e.target.value)} className={styles.selectField}>
                             {durations.map(option => <option key={option} value={option}>{option} days</option>)}
                         </select>
-                    </label>
+                    </div>
                 </div>
             )}
+
             <div className={styles.info}>
-                <p>Price: ${price.toFixed(2)}</p>
+                <p className={styles.priceDisplay}>${price.toFixed(2)}</p>
+            </div>
+            <div className={styles.info}>
                 <button onClick={() => console.log('Buying NFT Voucher')} className={styles.buyButton}>Buy NFT Voucher</button>
             </div>
+
         </div>
     );
 };

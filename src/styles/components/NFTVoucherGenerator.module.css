@@ -4,46 +4,124 @@
     align-items: center;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px #4CAF50;
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
     transition: background 0.5s ease;
 }
 
+.tier1 {
+    background: linear-gradient(to top right, #f8f8f8, #dcdcdc);
+}
+
+.tier2 {
+    background: linear-gradient(90deg, #ADA996, #F2F2F2, #ADA996);
+}
+
+.tier3 {
+    background: linear-gradient(90deg, #D29D2B, #FFFFFF, #D29D2B);
+}
+
+.tier4 {
+    background: linear-gradient(90deg, #E5E4E2, #FFFFFF, #E5E4E2);
+}
+
+.tier5 {
+    background: linear-gradient(90deg, #B9F2FF, #FFFFFF, #B9F2FF);
+}
+
+.tier6 {
+    background: linear-gradient(90deg, #000000, #434343, #000000);
+}
+
+.toggle {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.toggle:hover {
+    background-color: #367C39;
+}
+
 .selector,
-.customSelector,
-.info {
-    color: black;
-    width: 100%;
+.customSelector {
+    color: white;
+    width: 60%;
     margin: 10px 0;
 }
 
+.info {
+    font-size: 1.25rem;
+    text-align: center;
+    color: black;
+    margin: 10px 0;
+    width: 80%;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.priceDisplay {
+    font-weight: 600;
+    background-color: #367C39;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    margin: 10px 0;
+    display: inline-block;
+    width: 60%;
+}
+
 .label {
-    display: block;
     font-size: 1.1rem;
     color: #333;
     margin-bottom: 5px;
     font-weight: 600;
 }
 
+.labelGroup {
+    margin: 10px;
+}
+
+.labelText {
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #4CAF50;
+    padding: 5px 10px;
+    border-radius: 10px 10px 0 0;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    max-width: 350px;
+}
+
 .inputField,
 .selectField {
-    padding: 12px 10px;
+    text-align: center;
+    padding: 8px 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0 0 10px 10px;
     width: 100%;
     box-sizing: border-box;
     font-size: 1rem;
     color: #333;
     background-color: white;
-    transition: border-color 0.3s ease;
+    border-top: none;
+    max-width: 350px;
 }
 
 .inputField:focus,
 .selectField:focus {
     border-color: #4CAF50;
-    outline: none;
 }
 
 .buyButton {
@@ -62,18 +140,4 @@
 .buyButton:hover {
     background-color: #367C39;
     transform: scale(1.05);
-}
-
-.toggle {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 20px;
-}
-
-.toggle:hover {
-    background-color: #367C39;
 }

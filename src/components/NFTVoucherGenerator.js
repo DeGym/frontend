@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/components/NFTVoucherGenerator.module.css';
+import calculate_price from '../utils/pricing'
 
 const tiers = ["Basic", "Silver", "Gold", "Platinum", "Diamond", "Black"];
 const tierValues = { "Basic": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Diamond V": 5, "Black VI": 6 };
@@ -16,12 +17,8 @@ const NFTVoucherGenerator = () => {
     useEffect(() => {
         const selectedTier = customMode ? customTier : tierValues[tier];
         const selectedDuration = customMode ? customDuration : duration;
-        setPrice(calculatePrice(selectedTier, selectedDuration));
+        setPrice(calculate_price(selectedTier, selectedDuration));
     }, [tier, duration, customTier, customDuration, customMode]);
-    const calculatePrice = (tier, duration) => {
-        const priceFactor = tier * duration / 30;
-        return priceFactor * 10;  // Simplified price calculation
-    };
     const handleToggleCustomMode = () => {
         setCustomMode(!customMode);
     };

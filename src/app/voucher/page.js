@@ -29,7 +29,6 @@ const VoucherPage = () => {
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>
-
                 <section className={styles.sectionOdd}>
                     <NFTVoucherGenerator />
                 </section>

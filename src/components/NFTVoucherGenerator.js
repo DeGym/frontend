@@ -68,7 +68,7 @@ const NFTVoucherGenerator = () => {
                 <p className={styles.priceDisplay}>${price}</p>
             </div>
             <div className={styles.info}>
-                <button onClick={() => console.log('Buying NFT Voucher')} className={styles.buyButton}>Buy NFT Voucher</button>
+                <button onClick={() => console.log('Buying NFT Voucher')} className={styles.buyButton}>Buy NFT</button>
             </div>
 
         </div >

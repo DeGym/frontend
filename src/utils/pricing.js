@@ -1,4 +1,4 @@
-const basic_price = 10;
+const basic_price = 15;
 const min_base_price_factor = 0.7;
 const decay_rate = 0.1;
 

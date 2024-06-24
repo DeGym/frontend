@@ -4,7 +4,7 @@ import styles from '../styles/components/NFTVoucherGenerator.module.css';
 import calculate_price from '../utils/pricing'
 
 const tiers = ["Basic", "Silver", "Gold", "Platinum", "Diamond", "Black"];
-const tierValues = { "Basic": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Diamond V": 5, "Black VI": 6 };
+const tierValues = { "Basic": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Diamond": 5, "Black": 6 };
 const durations = [7, 30, 365];
 
 const NFTVoucherGenerator = () => {
@@ -28,38 +28,41 @@ const NFTVoucherGenerator = () => {
     };
     return (
         <div className={customMode ? styles.container : `${styles.container} ${getGradientClass(tier)}`} >
+            <h1 className={styles.NFTTitle}>DeGym Voucher</h1>
             <button className={styles.toggle} onClick={handleToggleCustomMode}>
                 {customMode ? 'Switch to Preset Values' : 'Customize'}
             </button>
 
-            {customMode ? (
-                <div className={styles.customSelector}>
-                    <label className={styles.labelGroup}>
-                        <span className={styles.labelText}>Tier</span>
-                        <input type="number" value={customTier} onChange={(e) => setCustomTier(parseInt(e.target.value))} min="1" max="100" className={styles.inputField} />
-                    </label>
-                    <label className={styles.labelGroup}>
-                        <span className={styles.labelText}>Duration (days)</span>
-                        <input type="number" value={customDuration} onChange={(e) => setCustomDuration(parseInt(e.target.value))} min="1" max="365" className={styles.inputField} />
-                    </label>
-                </div>
+            {
+                customMode ? (
+                    <div className={styles.customSelector}>
+                        <label className={styles.labelGroup}>
+                            <span className={styles.labelText}>Tier</span>
+                            <input type="number" value={customTier} onChange={(e) => setCustomTier(parseInt(e.target.value))} min="1" max="100" className={styles.inputField} />
+                        </label>
+                        <label className={styles.labelGroup}>
+                            <span className={styles.labelText}>Duration (days)</span>
+                            <input type="number" value={customDuration} onChange={(e) => setCustomDuration(parseInt(e.target.value))} min="1" max="365" className={styles.inputField} />
+                        </label>
+                    </div>
 
-            ) : (
-                <div className={styles.selector}>
-                    <div className={styles.labelGroup}>
-                        <span className={styles.labelText}>Tier</span>
-                        <select value={tier} onChange={e => setTier(e.target.value)} className={styles.selectField}>
-                            {tiers.map(option => <option key={option} value={option}>{option}</option>)}
-                        </select>
+                ) : (
+                    <div className={styles.selector}>
+                        <div className={styles.labelGroup}>
+                            <span className={styles.labelText}>Tier</span>
+                            <select value={tier} onChange={e => setTier(e.target.value)} className={styles.selectField}>
+                                {tiers.map(option => <option key={option} value={option}>{option}</option>)}
+                            </select>
+                        </div>
+                        <div className={styles.labelGroup}>
+                            <span className={styles.labelText}>Duration (days)</span>
+                            <select value={duration} onChange={e => setDuration(e.target.value)} className={styles.selectField}>
+                                {durations.map(option => <option key={option} value={option}>{option} days</option>)}
+                            </select>
+                        </div>
                     </div>
-                    <div className={styles.labelGroup}>
-                        <span className={styles.labelText}>Duration (days)</span>
-                        <select value={duration} onChange={e => setDuration(e.target.value)} className={styles.selectField}>
-                            {durations.map(option => <option key={option} value={option}>{option} days</option>)}
-                        </select>
-                    </div>
-                </div>
-            )}
+                )
+            }
 
             <div className={styles.info}>
                 <p className={styles.priceDisplay}>${price}</p>
@@ -68,7 +71,7 @@ const NFTVoucherGenerator = () => {
                 <button onClick={() => console.log('Buying NFT Voucher')} className={styles.buyButton}>Buy NFT Voucher</button>
             </div>
 
-        </div>
+        </div >
     );
 };
 

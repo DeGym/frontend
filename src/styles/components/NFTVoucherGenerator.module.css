@@ -7,7 +7,7 @@
     box-shadow: 0 12px 24px #4CAF50;
     width: 100%;
     max-width: 600px;
-    margin: 30px auto;
+    margin: 10px auto;
     transition: background 0.5s ease;
 }
 
@@ -135,9 +135,27 @@
     width: 100%;
     font-weight: bold;
     margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .buyButton:hover {
     background-color: #367C39;
     transform: scale(1.05);
+}
+
+.NFTTitle {
+    font-size: 2rem;
+    -webkit-text-stroke: 1px var(--color-primary);
+    font-weight: 1000;
+    color: white;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 5px auto;
+    }
+
+    ;
 }

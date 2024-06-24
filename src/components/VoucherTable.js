@@ -37,15 +37,16 @@ const VoucherTable = () => {
                     {tiers.concat(["Custom"]).map((tier, index) => (
                         <tr key={index} className={styles.row}>
                             <td className={`${styles.cell} ${styles.stickyColumn}`}>{tier === "Custom" ? (
-                                <input
+                                < input
                                     type="number"
                                     value={customTier}
                                     onChange={(e) => setCustomTier(e.target.value)}
-                                    min="1"
+                                    min="7"
                                     placeholder="Tier number"
                                     className={styles.input}
                                 />
-                            ) : tier}</td>
+                            )
+                                : tier}</td>
                             {defaultDurabilities.concat(customDurability).map((durability, idx) => (
                                 <td key={idx} className={styles.cell}>
                                     ${calculate_price(tier === 'Custom' ? customTier : index + 1, durability)}

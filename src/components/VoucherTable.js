@@ -48,7 +48,7 @@ const VoucherTable = () => {
                             ) : tier}</td>
                             {defaultDurabilities.concat(customDurability).map((durability, idx) => (
                                 <td key={idx} className={styles.cell}>
-                                    `$${calculate_price(tier === 'Custom' ? customTier : index + 1, durability)}`
+                                    ${calculate_price(tier === 'Custom' ? customTier : index + 1, durability)}
                                 </td>
                             ))}
                         </tr>

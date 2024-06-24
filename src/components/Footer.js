@@ -26,7 +26,7 @@ export default function Footer() {
                             <Link href="/presale" legacyBehavior><a className={styles.link}>Presale</a></Link>
                         </li>
                         <li>
-                            <Link href="/membership" legacyBehavior><a className={styles.link}>Membership NFT</a></Link>
+                            <Link href="/voucher" legacyBehavior><a className={styles.link}>Voucher</a></Link>
                         </li>
                         <li>
                             <Link href="/become-gym-provider" legacyBehavior><a className={styles.link}>Become Gym Provider</a></Link>

@@ -19,7 +19,7 @@ function calculate_price(tier, durability) {
 const tiers = ["Basic I", "Silver II", "Gold III", "Platinum IV", "Diamond V", "Black VI"];
 const defaultDurabilities = [7, 30, 365];
 
-const MembershipTable = () => {
+const VoucherTable = () => {
     const [customDurability, setCustomDurability] = useState(0);
     const [customTier, setCustomTier] = useState(7);
 
@@ -71,4 +71,4 @@ const MembershipTable = () => {
     );
 };
 
-export default MembershipTable;
+export default VoucherTable;

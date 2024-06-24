@@ -35,8 +35,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="md:my-0 my-2">
-              <Link href="/membership" legacyBehavior>
-                <a className={styles.link}>Membership NFT</a>
+              <Link href="/voucher" legacyBehavior>
+                <a className={styles.link}>Voucher</a>
               </Link>
             </li>
             <li className="md:my-0 my-2">

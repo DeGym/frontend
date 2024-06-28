@@ -29,9 +29,7 @@ const VoucherPage = () => {
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>
-                <section className={styles.sectionOdd}>
-                    <NFTVoucherGenerator />
-                </section>
+                <NFTVoucherGenerator />
                 <section className={styles.sectionEven}>
                     <h2 className={styles.sectionEvenTitle}>Frequently Asked Questions</h2>
                     <p className={styles.paragraph}>Answers to all your queries about DeGym vouchers.</p>

@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     border-radius: 55px;
     border: 2px solid var(--color-primary);
     box-shadow: 0 12px 24px #4CAF50;
     width: 100%;
-    max-width: 600px;
-    margin: 10px auto;
+    max-width: 500px;
+    margin: 50px auto;
     transition: background 0.5s ease;
 }
 
@@ -145,6 +145,7 @@
 }
 
 .NFTTitle {
+    text-align: center;
     font-size: 2rem;
     -webkit-text-stroke: 2px var(--color-primary);
     font-weight: 1000;
@@ -153,10 +154,4 @@
     margin-top: 15px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        margin: 5px auto;
-    }
-
-    ;
-}
+@media (max-width: 768px) {}

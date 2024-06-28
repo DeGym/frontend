@@ -57,7 +57,8 @@
 .roadPhase {
     font-weight: 800;
     font-size: 20px;
-    color: var(--color-neonGreen);
+    color: var(--color-neon-green);
+    -webkit-text-stroke: 1px var(--color-primary);
 }
 
 .roadSlideTitleInner {

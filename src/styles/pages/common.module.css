@@ -12,8 +12,6 @@
 
 .main {
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     color: var(--color-light);
     animation: fadeIn 1s ease-in-out;
@@ -46,7 +44,9 @@
 
 
 .sectionEven {
-    margin: 15px 0;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 15px auto;
     padding: 50px;
     background: linear-gradient(to bottom, #ffffff20, var(--color-accent));
     border-radius: 15px;
@@ -76,7 +76,8 @@
 
 
 .sectionOdd {
-    margin: 15px 0;
+    max-width: 1200px;
+    margin: 15px auto;
     padding: 50px;
     background: #00000035;
     border-radius: 15px;
@@ -266,7 +267,8 @@
 
 
 .videoSection {
-    margin: 15px 0;
+    max-width: 1200px;
+    margin: 15px auto;
     padding: 30px 10px 10px 10px;
     background: var(--color-dark);
     border-radius: 15px;

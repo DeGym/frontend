@@ -32,9 +32,6 @@ export default function Footer() {
                             <Link href="/become-gym-provider" legacyBehavior><a className={styles.link}>Become Gym Provider</a></Link>
                         </li>
                         <li>
-                            <Link href="/roadmap" legacyBehavior><a className={styles.link}>Roadmap</a></Link>
-                        </li>
-                        <li>
                             <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a className={styles.link}>Documentation</a></Link>
                         </li>
                     </ul>

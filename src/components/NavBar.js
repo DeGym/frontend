@@ -58,11 +58,6 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="md:my-0 my-2">
-                <Link href="/roadmap" legacyBehavior>
-                  <a className={styles.link} onClick={closeMenu}>Roadmap</a>
-                </Link>
-              </li>
-              <li className="md:my-0 my-2">
                 <Link href="https://degym-1.gitbook.io/docs" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Docs</a>
                 </Link>

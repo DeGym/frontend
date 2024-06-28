@@ -1,0 +1,106 @@
+.road {
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+    background: #00000000;
+    color: var(--color-light);
+    margin-top: 35px;
+    margin-bottom: 35px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.roadInner {
+    justify-content: center;
+    text-align: center;
+}
+
+.roadTitle {
+    font-weight: 1000;
+    margin: auto;
+    max-width: 1200px;
+    color: var(--color-light);
+    font-size: 2.8rem;
+    -webkit-text-stroke: 1px var(--color-dark);
+}
+
+.roadText {
+    padding: 40px 0px;
+    margin: auto;
+    max-width: 1200px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.roadSlider {
+    position: relative;
+    margin: 30px auto;
+}
+
+.roadSlide {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    margin: auto 300px;
+    transition: all 0.3s ease;
+    background: radial-gradient(ellipse at top right, var(#00000000), var(--color-accent));
+    border: 1px solid var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .roadSlide {
+        margin: auto 10px;
+    }
+
+    .roadTitle {
+        font-size: 2rem;
+    }
+
+    .roadText {
+        padding: 20px 0px;
+        font-size: 1rem;
+    }
+
+}
+
+.roadPhaseInner {
+    margin-bottom: 10px;
+}
+
+.roadPhase {
+    font-size: 20px;
+    color: var(--color-neonGreen);
+}
+
+.roadSlideTitleInner {
+    margin-bottom: 12px;
+}
+
+.roadSlideTitle {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.roadSlideName {
+    font-size: 1rem;
+    color: var(--color-secondary);
+}
+
+.roadSlidePoints {
+    margin-top: 20px;
+}
+
+.roadSlidePoint {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.roadSlidePointCircle {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-neonGreen);
+    border-radius: 50%;
+    margin-right: 10px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../styles/pages/common.module.css';
+import RoadmapCarousel from '../components/RoadmapCarousel';
 
 const HomePage = () => {
   return (
@@ -84,7 +85,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-
+        <RoadmapCarousel />
         <section className={styles.sectionEven}>
           <h2 className={styles.sectionEvenTitle}>Get Started</h2>
           <p className={styles.paragraph}>Ready to revolutionize your fitness journey? Join DeGym today and experience the future of gym memberships.</p>

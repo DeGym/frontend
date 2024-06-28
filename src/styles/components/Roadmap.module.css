@@ -1,6 +1,7 @@
 .road {
     font-family: 'Roboto', sans-serif;
-    padding: 0px;
+    padding: 10px 0px;
+    margin: 0px -20px;
     background: #00000000;
     color: var(--color-light);
     margin-top: 35px;
@@ -23,11 +24,12 @@
 }
 
 .roadText {
+    font-weight: 500;
     padding: 40px 0px;
     margin: auto;
     max-width: 1200px;
     font-size: 1.2rem;
-    color: linear-gradient(90deg, rgba(81, 89, 83, 1) 0%, rgba(211, 220, 209, 1) 50%, rgba(81, 89, 83, 1) 100%);
+    color: linear-gradient(90deg, rgba(211, 220, 209, 0.1) 0%, rgba(211, 220, 209, 1) 50%, rgba(211, 220, 209, 0.1) 100%);
 }
 
 .roadSlider {
@@ -38,29 +40,14 @@
 .roadSlide {
     padding: 20px;
     border-radius: 15px;
+    max-width: 700px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    color: linear-gradient(90deg, rgba(81, 89, 83, 1) 0%, rgba(211, 220, 209, 1) 50%, rgba(81, 89, 83, 1) 100%);
+    color: linear-gradient(90deg, rgba(81, 89, 83, 0.1) 0%, rgba(211, 220, 209, 1) 50%, rgba(81, 89, 83, 0.1) 100%);
     text-align: center;
-    margin: auto 30%;
+    margin: auto auto;
     transition: all 0.3s ease;
     border: 1px solid var(--color-primary);
-}
-
-
-@media (max-width: 1000px) {
-    .roadSlide {
-        margin: auto 10px;
-    }
-
-    .roadTitle {
-        font-size: 2rem;
-    }
-
-    .roadText {
-        padding: 20px 0px;
-        font-size: 1rem;
-    }
-
+    background: linear-gradient(90deg, rgba(211, 220, 209, 0.1) 0%, #3a8d1d15 50%, rgba(211, 220, 209, 0.1) 100%);
 }
 
 .roadPhaseInner {
@@ -68,6 +55,7 @@
 }
 
 .roadPhase {
+    font-weight: 800;
     font-size: 20px;
     color: var(--color-neonGreen);
 }
@@ -77,6 +65,7 @@
 }
 
 .roadSlideTitle {
+    font-weight: 600;
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -103,4 +92,20 @@
     background-color: var(--color-neonGreen);
     border-radius: 50%;
     margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+    .roadSlide {
+        margin: auto 10px;
+    }
+
+    .roadTitle {
+        font-size: 2rem;
+    }
+
+    .roadText {
+        padding: 20px 0px;
+        font-size: 1rem;
+    }
+
 }

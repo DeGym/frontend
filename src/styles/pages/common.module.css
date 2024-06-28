@@ -13,7 +13,7 @@
 .main {
     padding: 20px;
     font-family: 'Roboto', sans-serif;
-    color: var(--color-light);
+    color: linear-gradient(90deg, rgba(81, 89, 83, 1) 0%, rgba(211, 220, 209, 1) 50%, rgba(211, 220, 209, 0.5) 100%);
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -23,7 +23,7 @@
     background: #00000000;
     padding: 150px 30px;
     border-radius: 15px;
-    color: var(--color-light);
+    color: linear-gradient(90deg, rgba(81, 89, 83, 1) 0%, rgba(211, 220, 209, 0) 50%, rgba(211, 220, 209, 1) 100%);
     margin-top: 50px;
     margin-bottom: 15px;
     animation: fadeIn 1s ease-in-out;

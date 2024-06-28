@@ -13,7 +13,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: linear-gradient(to left, #00000000, var(--color-accent));
+    background: linear-gradient(to left, var(--color-dark), #ffffff10);
     ;
     /* Example background */
     z-index: -1;

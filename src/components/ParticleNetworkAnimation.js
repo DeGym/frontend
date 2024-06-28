@@ -37,7 +37,7 @@ class ParticleNetwork {
         this.options = {
             velocity: 0.18,
             density: 13000,
-            color: 'rgba(255, 255, 255, 0.01)',
+            color: 'rgba(255, 255, 255, 0.05)',
             radius: 3,
             maxDistance: 150,
             lineColor: 'rgba(58, 141, 29, 0.5)',

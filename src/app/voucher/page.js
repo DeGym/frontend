@@ -18,6 +18,7 @@ const VoucherPage = () => {
                         <p className={styles.heroSubtitle}>Enjoy the DeGym DAO</p>
                     </div>
                 </section>
+                <NFTVoucherGenerator />
                 <section className={styles.sectionEven}>
                     <h2 className={styles.sectionEvenTitle}>Why DeGym Voucher?</h2>
                     <p className={styles.paragraph}>DeGym Voucher offers a revolutionary approach to fitness through its integration with DLT, providing seamless and flexible access to a network of gyms. Members benefit from enhanced security, transparent transactions, and the ability to use NFTs for voucher credentials, which ensures easy access, potential rewards, and the ability to trade or transfer vouchers more freely. This model empowers users with more control over their fitness journey and investment, making gym access more adaptable and personalized.</p>
@@ -29,7 +30,6 @@ const VoucherPage = () => {
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>
-                <NFTVoucherGenerator />
                 <section className={styles.sectionEven}>
                     <h2 className={styles.sectionEvenTitle}>Frequently Asked Questions</h2>
                     <p className={styles.paragraph}>Answers to all your queries about DeGym vouchers.</p>

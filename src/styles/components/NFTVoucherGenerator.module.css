@@ -8,7 +8,7 @@
     box-shadow: 0 12px 24px #4CAF50;
     width: 100%;
     max-width: 500px;
-    margin: 50px auto;
+    margin: -100px auto 100px auto;
     transition: background 0.5s ease;
 }
 

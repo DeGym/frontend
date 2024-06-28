@@ -28,7 +28,7 @@ const NFTVoucherGenerator = () => {
     };
     return (
         <div className={customMode ? styles.container : `${styles.container} ${getGradientClass(tier)}`} >
-            <h1 className={styles.NFTTitle}>DeGym Voucher</h1>
+            <h1 className={styles.NFTTitle}>DeGym</h1>
             <button className={styles.toggle} onClick={handleToggleCustomMode}>
                 {customMode ? 'Switch to Preset Values' : 'Customize'}
             </button>

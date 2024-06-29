@@ -23,13 +23,12 @@
     background: #00000000;
     padding: 150px 30px;
     border-radius: 15px;
-    color: linear-gradient(90deg, rgba(81, 89, 83, 1) 0%, rgba(211, 220, 209, 0) 50%, rgba(211, 220, 209, 1) 100%);
+    color: linear-gradient(90deg, #ADA996, #FFFFFF, #ADA996);
     margin-top: 50px;
     margin-bottom: 15px;
     animation: fadeIn 1s ease-in-out;
     font-size: 30px;
     font-weight: 1000;
-    -webkit-text-stroke: 1px var(--color-dark);
 }
 
 .heroTitle {
@@ -69,8 +68,7 @@
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    -webkit-text-stroke: 1px var(--color-dark);
-    color: var(--color-secondary);
+    color: linear-gradient(90deg, #ADA996, #FFFFFF, #ADA996);
 }
 
 
@@ -100,14 +98,13 @@
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    -webkit-text-stroke: 1px var(--color-dark);
-    color: var(--color-neon-green);
+    color: linear-gradient(0deg, #39FF14, #39FF14, #39FF14);
 }
 
 .paragraph {
     font-size: 20px;
     line-height: 1.6;
-    color: var(--color-secondary);
+    color: var(--color-light);
 }
 
 @media (max-width: 768px) {

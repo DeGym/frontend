@@ -1,7 +1,7 @@
 .variables {
     --color-primary: #3a8d1d;
     --color-secondary: #d3dcd1;
-    --color-dark: #2A332C;
+    --color-dark: #000000;
     --color-light: #D3DCD1;
     --color-accent: #515953;
     --color-neon-green: #39FF14;
@@ -13,7 +13,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: linear-gradient(0deg, #2A332Cff 100%, #ffffff10 50%, #2A332Cff 100%);
+    background: linear-gradient(0deg, #000000ff 100%, #00000010 50%, #000000ff 0%);
     ;
     /* Example background */
     z-index: -1;

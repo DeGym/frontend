@@ -6,7 +6,7 @@ const members = [
     {
         name: 'Thiago Martins',
         role: 'Lead Developer',
-        image: 'https://avatars.githubusercontent.com/u/71234183?v=4',
+        image: 'TaraPunk1631.png',
         description: 'Thiago is the mastermind behind DeGym\'s architecture and code. He specializes in blockchain development and smart contract security.',
         social: {
             linkedin: 'https://www.linkedin.com/in/0xthiagomartins/',
@@ -16,10 +16,10 @@ const members = [
         }
     },
     {
-        name: 'Maria Souza',
+        name: 'Thiago Martins',
         role: 'Frontend Developer',
-        image: 'TaraPunk1631.png',
-        description: 'Maria is responsible for the beautiful and intuitive interfaces of DeGym. She is an expert in React and UX/UI design.',
+        image: 'https://avatars.githubusercontent.com/u/71234183?v=4',
+        description: 'Thiago is responsible for the beautiful and intuitive interfaces of DeGym. He is an expert in React and UX/UI design.',
         social: {
             linkedin: 'https://www.linkedin.com/in/0xthiagomartins/',
             discord: 'https://discord.com/users/0xthiagomartins',
@@ -28,10 +28,10 @@ const members = [
         }
     },
     {
-        name: 'Lucas Silva',
+        name: 'Thiago Martins',
         role: 'Backend Developer',
         image: 'TaraPunk1631.png',
-        description: 'Lucas handles the server-side logic and integration of DeGym. He ensures the application runs smoothly and efficiently.',
+        description: 'Thiago handles the server-side logic and integration of DeGym. He ensures the application runs smoothly and efficiently.',
         social: {
             linkedin: 'https://www.linkedin.com/in/0xthiagomartins/',
             discord: 'https://discord.com/users/0xthiagomartins',
@@ -40,10 +40,10 @@ const members = [
         }
     },
     {
-        name: 'Ana Pereira',
+        name: 'Thiago Martins',
         role: 'Blockchain Specialist',
         image: 'TaraPunk1631.png',
-        description: 'Ana focuses on smart contract development and blockchain technology, making sure DeGym leverages the full potential of decentralized technology.',
+        description: 'Thiago focuses on smart contract development and blockchain technology, making sure DeGym leverages the full potential of decentralized technology.',
         social: {
             linkedin: 'https://www.linkedin.com/in/0xthiagomartins/',
             discord: 'https://discord.com/users/0xthiagomartins',
@@ -52,10 +52,10 @@ const members = [
         }
     },
     {
-        name: 'Rafael Costa',
+        name: 'Thiago Martins',
         role: 'Project Manager',
         image: 'TaraPunk1631.png',
-        description: 'Rafael oversees the project\'s progress and ensures that all team members are aligned with DeGym\'s goals and timelines.',
+        description: 'Thiago oversees the project\'s progress and ensures that all team members are aligned with DeGym\'s goals and timelines.',
         social: {
             linkedin: 'https://www.linkedin.com/in/0xthiagomartins/',
             discord: 'https://discord.com/users/0xthiagomartins',

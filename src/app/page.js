@@ -89,10 +89,10 @@ const HomePage = () => {
         <Roadmap />
         <section className={styles.sectionEven}>
           <h2 className={styles.sectionEvenTitle}>Enjoy the DeGym DAO</h2>
-          <p className={styles.paragraph}>Be part of DeGym's transformative journey in the fitness world. Connect, contribute and grow with us.</p>
           <a className={styles.button} href="./voucher">Buy your Voucher</a>
           <a className={styles.button} href="./provider">Become Provider</a>
           <a className={styles.button} href="./stake">Become Stakeholder</a>
+          <p className={styles.paragraph}>Be part of DeGym's transformative journey in the fitness world. Connect, contribute and grow with us.</p>
         </section>
       </main>
     </>

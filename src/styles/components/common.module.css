@@ -67,7 +67,7 @@
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     padding: 25px;
-    background: linear-gradient(to top, #ffffff50, var(--color-light));
+    background: linear-gradient(to top, #ffffff90, var(--color-light));
     color: var(--color-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     justify-content: center;
@@ -76,7 +76,7 @@
 }
 
 .cardIcon {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     margin-bottom: 1rem;
 }
 
@@ -90,7 +90,6 @@
 }
 
 .card h3 {
-    -webkit-text-stroke: 1px var(--color-dark);
     font-weight: 1000;
 }
 

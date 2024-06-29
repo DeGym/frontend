@@ -25,6 +25,7 @@ const TokenPage = () => {
                     </div>
                 </section>
                 <section className={`${styles.sectionOdd}`}>
+                    <h2 className={styles.sectionOddTitle}>Token Info</h2>
                     <TokenInfo
                         totalSupply="100,000,000 DGYM"
                         stakingYield="12% APR"

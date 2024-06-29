@@ -39,7 +39,9 @@
 }
 
 .heroSubtitle {
+    margin: auto;
     font-size: 2rem;
+    max-width: 1200px;
 }
 
 

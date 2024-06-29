@@ -180,6 +180,8 @@
 }
 
 .button {
+    position: block;
+    margin: 20px 20px;
     display: inline-block;
     padding: 12px 24px;
     margin-top: 20px;

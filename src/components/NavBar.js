@@ -53,7 +53,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="md:my-0 my-2">
-                <Link href="/become-gym-provider" legacyBehavior>
+                <Link href="/provider" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Become Gym Provider</a>
                 </Link>
               </li>

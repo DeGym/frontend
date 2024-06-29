@@ -47,7 +47,11 @@
     margin: auto auto;
     transition: all 0.3s ease;
     border: 1px solid var(--color-primary);
-    background: linear-gradient(0deg, #2A332Cff 10%, #3a8d1d10 50%, #2A332Cff 90%);
+    background: linear-gradient(0deg, #0A130C6f 0%, #1a5d0d10 50%, #0A130C6f 100%);
+}
+
+.roadSlide:hover {
+    border: 1px solid var(--color-light);
 }
 
 .roadPhaseInner {

@@ -15,7 +15,7 @@ const VoucherPage = () => {
                 <section className={styles.hero}>
                     <div className="container mx-auto">
                         <h1 className={styles.heroTitle}>Voucher</h1>
-                        <p className={styles.heroSubtitle}>Enjoy the DeGym DAO</p>
+                        <p className={styles.heroSubtitle}>Get access to the gym network</p>
                     </div>
                 </section>
                 <NFTVoucherGenerator />
@@ -25,7 +25,7 @@ const VoucherPage = () => {
                 </section>
                 <section className={styles.sectionOdd}>
                     <h2 className={styles.sectionOddTitle}>Unlock Unlimited Gym Access with DeGym NFTs</h2>
-                    <p className={styles.paragraph}>Say goodbye to restrictive gym vouchers and hello to freedom with DeGym. As a Gym User, you can purchase an NFT that grants you access to a diverse network of gyms. Enjoy the flexibility of working out at multiple locations, exclusive rewards, and the security of DLT. Buy your DeGym NFT today and start your journey to a fitter, more flexible lifestyle.</p>
+                    <p className={styles.paragraph}>Say goodbye to restrictive gym plans and hello to freedom with DeGym. As a DeGym User, you can purchase an NFT that grants you access to a diverse network of gyms. Enjoy the flexibility of working out at multiple locations, exclusive rewards, and the security of distributed ledger technology. Buy your DeGym Voucher today and start your journey to a fitter, more flexible lifestyle.</p>
                 </section>
                 <section className={styles.sectionEven}>
                     <VoucherTable />

@@ -59,7 +59,7 @@
 }
 
 .roadPhase {
-    font-weight: 800;
+    font-weight: 1000;
     font-size: 20px;
     color: var(--color-neon-green);
     -webkit-text-stroke: 1px var(--color-primary);
@@ -77,7 +77,7 @@
 
 .roadSlideName {
     font-size: 1rem;
-    color: var(--color-secondary);
+    color: var(--color-neon-green);
 }
 
 .roadSlidePoints {

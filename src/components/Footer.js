@@ -10,8 +10,8 @@ export default function Footer() {
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
                 <div>
                     <h4 className="text-primary text-lg font-bold mb-2">Contact Us</h4>
-                    <p className="text-secondary">info@degym.io</p>
-                    <p className="text-secondary">+1 (123) 456-7890</p>
+                    <p className="text-light">info@degym.io</p>
+                    <p className="text-light">+1 (123) 456-7890</p>
                 </div>
                 <div>
                     <h4 className="text-primary text-lg font-bold mb-2">Quick Links</h4>

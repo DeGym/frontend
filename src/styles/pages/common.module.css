@@ -23,7 +23,6 @@
     background: #00000000;
     padding: 150px 30px;
     border-radius: 15px;
-    color: linear-gradient(90deg, #ADA996, #FFFFFF, #ADA996);
     margin-top: 50px;
     margin-bottom: 15px;
     animation: fadeIn 1s ease-in-out;
@@ -32,6 +31,9 @@
 }
 
 .heroTitle {
+    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 10%, var(--color-light) 50%, var(--color-primary) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 6.5rem;
     margin-bottom: 1rem;
 }
@@ -68,7 +70,7 @@
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    color: linear-gradient(90deg, #ADA996, #FFFFFF, #ADA996);
+    color: linear-gradient(90deg, var(--color-accent), var(--color-light), var(--color-accent));
 }
 
 
@@ -98,7 +100,9 @@
     font-weight: 800;
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
-    color: linear-gradient(0deg, #39FF14, #39FF14, #39FF14);
+    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 30%, var(--color-primary) 50%, var(--color-neon-green) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .paragraph {
@@ -131,7 +135,7 @@
 }
 
 .details {
-    background-color: #f5f5f5;
+    background-color: var(--color-light);
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -183,7 +187,7 @@
     padding: 12px 24px;
     margin-top: 20px;
     background-color: var(--color-primary);
-    color: white;
+    color: var(--color-light);
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -230,7 +234,7 @@
 
 .premium {
     background-color: #fff;
-    border: 2px solid #3a8d1d;
+    border: 2px solid var(--color-primary);
     /* Highlight with a green border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: scale(1.05);
@@ -251,8 +255,8 @@
 }
 
 .chooseButton {
-    background-color: #3a8d1d;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-light);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

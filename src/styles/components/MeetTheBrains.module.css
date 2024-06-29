@@ -25,7 +25,7 @@
     margin: 20px;
     text-align: center;
     max-width: 300px;
-    background: linear-gradient(0deg, #3a8d1ddf 0%, var(--color-primary) 70%, #00000000 71%, #0000 100%);
+    background: linear-gradient(0deg, var(--color-secondary) 0%, var(--color-secondary) 74%, #00000000 75%, #0000 100%);
     padding: 0px;
     border-radius: 15px;
 }
@@ -33,7 +33,7 @@
 .memberImage {
     width: 100%;
     height: auto;
-    border-color: var(--color-secondary);
+    border-color: var(--color-primary);
     border-width: 3px;
     border-radius: 50%;
     margin-bottom: 15px;
@@ -42,21 +42,22 @@
 .memberName {
     font-size: 1.25rem;
     font-weight: 1000;
-    color: var(--color-dark);
-    -webkit-text-stroke: 0.1px var(--color-dark);
+    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 30%, var(--color-primary) 50%, var(--color-neon-green) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .memberRole {
     font-size: 1rem;
     font-weight: 1000;
-    color: white;
+    color: var(--color-light);
     margin-bottom: 10px;
 }
 
 .memberDescription {
     height: 135px;
     font-size: 0.875rem;
-    color: white;
+    color: var(--color-light);
     padding: 10px;
     margin: 10px;
 }
@@ -68,12 +69,12 @@
 
 .socialLink {
     margin: 20px auto;
-    color: white;
+    color: var(--color-light);
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .socialLink:hover {
-    color: #4CAF50;
+    color: var(--color-primary);
     /* Adjust color as needed */
 }

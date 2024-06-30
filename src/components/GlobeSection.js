@@ -73,8 +73,9 @@ const GlobeSection = () => {
                     atmosphereColor='#2dff73'
                     onGlobeReady={handleGlobeReady}
                 />
+                <div className={styles.interactionBlocker}></div>
             </div>
-        </div >
+        </div>
     );
 };
 

@@ -2,13 +2,18 @@
 
 import React from 'react';
 import styles from '../styles/components/MissionVisionCards.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faRocket } from '@fortawesome/free-solid-svg-icons';
+
 
 const MissionVisionCards = () => {
     return (
         <div className={styles.cardsContainer}>
             <div className={styles.card}>
+
                 <div className={styles.content}>
-                    <h2 className={styles.heading}><b>Vision</b> Statement</h2>
+                    <h2 className={styles.heading}>
+                        <b><FontAwesomeIcon icon={faEye} size="1x" /> Vision</b> Statement</h2>
                     <p className={styles.paragraph}>
                         At DeGym DAO, we envision a world where fitness enthusiasts have the freedom to access any gym, anytime, anywhere.
                     </p><p className={styles.paragraph}>
@@ -19,10 +24,10 @@ const MissionVisionCards = () => {
                         By leveraging cutting-edge technology, we are committed to creating an interconnected network that supports and enhances the fitness journeys of individuals worldwide.
                     </p>
                 </div>
-            </div>
+            </div >
             <div className={styles.card}>
                 <div className={styles.content}>
-                    <h2 className={styles.heading}><b>Mission</b> Statement</h2>
+                    <h2 className={styles.heading}><b><FontAwesomeIcon icon={faRocket} size="1x" /> Mission</b> Statement</h2>
                     <p className={styles.paragraph}>
                         Our mission at DeGym DAO is to revolutionize the fitness industry by leveraging Distributed Ledger Technology (DLT) to create a decentralized, transparent, and user-centric gym access ecosystem.
                     </p>
@@ -39,7 +44,7 @@ const MissionVisionCards = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 };
 

@@ -44,8 +44,6 @@
     max-width: 1200px;
 }
 
-
-
 .sectionEven {
     justify-content: center;
     max-width: 1200px;
@@ -273,7 +271,7 @@
 
 
 .videoSection {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 15px auto;
     padding: 30px 10px 10px 10px;
     background: var(--color-dark);

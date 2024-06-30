@@ -65,15 +65,14 @@ const GlobeSection = () => {
                         <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                         Population: <i>${d.POP_EST}</i>
                     `}
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
                     backgroundColor="#00000000"
                     bumpImageUrl='//unpkg.com/three-globe/example/img/earth-topology.png'
                     showAtmosphere={true}
                     atmosphereColor='#2dff73'
                     onGlobeReady={handleGlobeReady}
                 />
-                <div className={styles.interactionBlocker}></div>
             </div>
         </div >
     );

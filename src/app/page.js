@@ -12,13 +12,13 @@ const HomePage = () => {
   return (
     <>
       <Head>
-        <title>DeGym: Revolutionizing the Fitness industry with distributed ledger technology</title>
+        <title>DeGym: The first Decentralized Gym Network Revolutionizing the Fitness industry with distributed ledger technology</title>
         <meta name="description" content="Seamless Access, Enhanced Rewards, and Secure Workouts" />
       </Head>
       <main className={styles.main}>
         <section className={styles.hero}>
-          <h1 className={styles.heroTitle}>Decentralized Gym Network</h1>
-          <p className={styles.heroSubtitle}>Revolutionizing Fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+          <h1 className={styles.heroTitle}>DeGym</h1>
+          <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
         </section>
         <GlobeSection />
         <section className={styles.videoSection}>

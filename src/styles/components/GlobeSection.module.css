@@ -1,9 +1,7 @@
 .sectionWrapper {
-    margin-top: -100px;
-    margin-bottom: -150px;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     background: linear-gradient(0deg, #00000000 0%, var(--color-dark) 50%, #00000000 100%);
     display: flex;
@@ -43,7 +41,7 @@
     z-index: 1;
     color: var(--color-light);
     text-align: center;
-    max-width: 600px;
+    max-width: 650px;
 }
 
 .heading {
@@ -60,7 +58,7 @@
 
 @media (max-width: 768px) {
     .sectionWrapper {
-        margin-top: 100px;
+        margin-top: 0px;
         margin-bottom: 75px;
     }
 
@@ -85,8 +83,4 @@
     .paragraph {
         font-size: 0.9rem;
     }
-}
-
-.b {
-    color: var(--color-primary);
 }

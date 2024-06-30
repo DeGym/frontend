@@ -47,9 +47,6 @@
     line-height: 1.5;
 }
 
-.b {
-    color: var(--color-primary);
-}
 
 @media (max-width: 768px) {
     .card {

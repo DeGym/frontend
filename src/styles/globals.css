@@ -11,6 +11,10 @@
   --color-neon-green: #39FF14;
 }
 
+b {
+  color: var(--color-primary)
+}
+
 body {
   color: var(--color-light);
   background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);

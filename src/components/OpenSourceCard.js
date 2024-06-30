@@ -49,7 +49,7 @@ const OpenSourceCard = () => {
                 <canvas ref={canvasRef} className={styles.canvas}></canvas>
             </div>
             <div className={styles.content}>
-                <h2 className={styles.heading}>Built on <b className={styles.b}>Open Source</b></h2>
+                <h2 className={styles.heading}>Built on <b>Open Source</b></h2>
                 <p className={styles.paragraph}>
                     DeGym's stack—media server, client SDKs, auxiliary services -
                     remains perpetually free and open source. Develop genuinely

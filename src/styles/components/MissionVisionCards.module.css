@@ -50,9 +50,6 @@
         width: 100%;
     }
 
-    .content {
-        text-align: center;
-    }
 }
 
 @media (max-width: 480px) {

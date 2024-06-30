@@ -43,9 +43,9 @@ const GlobeSection = () => {
                     <h2 className={styles.heading}>Built on <b className={styles.b}>Open Source</b></h2>
                     <p className={styles.paragraph}>
                         DeGym is a cutting-edge decentralized autonomous organization transforming gym voucher through NFT and DLT powered by smart contracts.
-                        <br />
-                        DeGym connects Gym Consumers, Gym Providers, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards.
-                        Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.
+                    </p>
+                    <p className={styles.paragraph}>DeGym connects Gym Consumers, Gym Providers, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards.</p>
+                    <p className={styles.paragraph}>Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.
                     </p>
                 </div>
                 <Globe
@@ -58,9 +58,9 @@ const GlobeSection = () => {
                     arcDashAnimateTime={3500}
                     hexPolygonsData={hexPolygonsData.features}
                     hexPolygonResolution={3}
-                    hexPolygonMargin={0.3}
+                    hexPolygonMargin={0.5}
                     hexPolygonUseDots={true}
-                    hexPolygonColor={() => `#49494990`}
+                    hexPolygonColor={() => `#494949`}
                     hexPolygonLabel={({ properties: d }) => `
                         <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                         Population: <i>${d.POP_EST}</i>
@@ -70,11 +70,11 @@ const GlobeSection = () => {
                     backgroundColor="#00000000"
                     bumpImageUrl='//unpkg.com/three-globe/example/img/earth-topology.png'
                     showAtmosphere={true}
-                    atmosphereColor='#49494990'
+                    atmosphereColor='#2dff73'
                     onGlobeReady={handleGlobeReady}
                 />
             </div>
-        </div>
+        </div >
     );
 };
 

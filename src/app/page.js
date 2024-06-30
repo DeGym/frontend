@@ -4,7 +4,7 @@ import styles from '../styles/pages/common.module.css';
 import Roadmap from '../components/RoadmapCarousel';
 import MeetTheBrains from '../components/MeetTheBrains';
 import GlobeSection from '../components/GlobeSection';
-
+import OpenSourceCard from '../components/OpenSourceCard';
 const HomePage = () => {
   return (
     <>
@@ -47,6 +47,8 @@ const HomePage = () => {
             <li className={styles.listItem}><strong>Excellence:</strong> Striving for excellence in every aspect of our service.</li>
           </ul>
         </section>
+
+        <OpenSourceCard />
 
         <section className={styles.sectionOdd}>
           <h2 className={styles.sectionOddTitle}>Taglines</h2>

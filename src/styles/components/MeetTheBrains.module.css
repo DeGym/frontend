@@ -26,7 +26,7 @@
     margin: 20px;
     text-align: center;
     max-width: 300px;
-    background: linear-gradient(0deg, #1f1f1f 35%, var(--color-primary) 74%, #00000000 75%, #0000 100%);
+    background: linear-gradient(0deg, #1f1f1ff0 35%, var(--color-secondary) 74%, #00000000 75%, #0000 100%);
     padding: 0px;
     border-radius: 15px;
 }
@@ -34,7 +34,7 @@
 .memberImage {
     width: 100%;
     height: auto;
-    border-color: var(--color-dark);
+    border-color: var(--color-neon-green);
     border-width: 5px;
     border-radius: 50%;
     margin-bottom: 15px;

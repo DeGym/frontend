@@ -40,7 +40,7 @@ const GlobeSection = () => {
         <div className={styles.sectionWrapper}>
             <div className={styles.contentWrapper}>
                 <div className={styles.content}>
-                    <h2 className={styles.heading}>Built on <b>Open Source</b></h2>
+                    <h2 className={styles.heading}>Powered <b>by Community</b></h2>
                     <p className={styles.paragraph}>
                         DeGym is a cutting-edge decentralized autonomous organization transforming gym voucher through NFT and DLT powered by smart contracts.
                     </p>

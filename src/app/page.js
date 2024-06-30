@@ -5,6 +5,9 @@ import Roadmap from '../components/RoadmapCarousel';
 import MeetTheBrains from '../components/MeetTheBrains';
 import GlobeSection from '../components/GlobeSection';
 import OpenSourceCard from '../components/OpenSourceCard';
+import MissionVisionCards from '../components/MissionVisionCards'
+
+
 const HomePage = () => {
   return (
     <>
@@ -25,15 +28,8 @@ const HomePage = () => {
             <video className={styles.video} controls controlsList="nodownload" src="https://api.renderforest.com/api/v1/projects/86667866/download?key=66861de0e05e4d2f138a2c92ecd44650:f23f59dbbd6306eb882295638df7c34e6dccee06bf48e671627eb992259a13496b15be09dc32f4d7efc62e4948bf8831"></video>
           </div>
         </section>
-        <section className={styles.sectionEven}>
-          <h2 className={styles.sectionEvenTitle}>Mission Statement</h2>
-          <p className={styles.paragraph}>Our mission at DeGym DAO is to revolutionize the fitness industry by leveraging Distributed Ledger Technology (DLT) to create a decentralized, transparent, and user-centric gym access ecosystem. We aim to empower gym users with seamless access to a worldwide network of gyms, ensuring flexibility and convenience. DeGym DAO provides gym partners with a platform that enhances engagement and optimizes facility utilization, while offering stakers fair and incentivized economic opportunities. By fostering a system of shared economic benefits, we strive to enhance the gym experience for everyone, making fitness more accessible, rewarding, and aligned with modern digital lifestyles. Our commitment is to build a global community where fitness is free from traditional constraints, promoting health, well-being, and an active lifestyle for all.</p>
-        </section>
-
-        <section className={styles.sectionOdd}>
-          <h2 className={styles.sectionOddTitle}>Vision Statement</h2>
-          <p className={styles.paragraph}>At DeGym DAO, we envision a world where fitness enthusiasts have the freedom to access any gym, anytime, anywhere. By breaking down traditional membership barriers, we aim to create a global community that enjoys seamless gym access, fostering a healthier, more active lifestyle. Our vision is to eliminate physical and financial constraints, making health and wellness universally accessible and perfectly aligned with the digital age. By leveraging cutting-edge technology, we are committed to creating an interconnected network that supports and enhances the fitness journeys of individuals worldwide.</p>
-        </section>
+        <MissionVisionCards />
+        <OpenSourceCard />
 
         <section className={styles.sectionEven}>
           <h2 className={styles.sectionEvenTitle}>Core Values</h2>
@@ -48,7 +44,6 @@ const HomePage = () => {
           </ul>
         </section>
 
-        <OpenSourceCard />
 
         <section className={styles.sectionOdd}>
           <h2 className={styles.sectionOddTitle}>Taglines</h2>

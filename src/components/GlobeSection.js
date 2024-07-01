@@ -45,8 +45,6 @@ const GlobeSection = () => {
                         DeGym is a cutting-edge decentralized autonomous organization transforming gym voucher through NFT and DLT powered by smart contracts.
                     </p>
                     <p className={styles.paragraph}>DeGym connects Gym Consumers, Gym Providers, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards.</p>
-                    <p className={styles.paragraph}>Join us in revolutionizing the fitness industry with secure, flexible, and rewarding gym access.
-                    </p>
                 </div>
                 <Globe
                     ref={globeEl}

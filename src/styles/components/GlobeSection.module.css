@@ -9,16 +9,6 @@
     align-items: center;
 }
 
-.interactionBlocker {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    z-index: 1;
-}
-
 .contentWrapper {
     display: flex;
     flex-direction: row;
@@ -59,7 +49,6 @@
 @media (max-width: 768px) {
     .sectionWrapper {
         margin-top: 0px;
-        margin-bottom: 75px;
     }
 
     .contentWrapper {

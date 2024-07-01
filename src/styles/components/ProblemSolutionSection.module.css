@@ -1,9 +1,16 @@
 .section {
-    padding: 120px 0 96px;
+    padding: 0px 0 0px;
     overflow: hidden;
     background: #1f1f1f00;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0px auto;
+}
+
+.heading {
+    padding: 50px 0;
+    font-weight: 1000;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .solutionsWrap {
@@ -11,7 +18,7 @@
 }
 
 .solutionsRow {
-    margin: 100px auto;
+    margin: 0px auto 100px;
     display: flex;
     justify-content: space-between;
 }
@@ -27,7 +34,7 @@
     border-radius: 10px;
     padding: 20px;
     width: 50%;
-    min-height: 300px;
+    min-height: 335px;
     position: relative;
     text-align: left;
     background-color: #030203;
@@ -166,6 +173,11 @@
 }
 
 @media (max-width: 768px) {
+    .heading {
+        font-size: 1.8rem;
+        margin: auto auto;
+    }
+
     .solutionsRow {
         flex-direction: column;
         align-items: center;

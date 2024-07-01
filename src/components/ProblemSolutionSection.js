@@ -104,6 +104,7 @@ const ProblemSolutionSection = () => {
 
     return (
         <section className={styles.section}>
+            <h2 className={styles.heading}>Problems & <b>Solutions</b></h2>
             <div className={styles.solutionsWrap}>
                 {isMobile ? (
                     <Swiper

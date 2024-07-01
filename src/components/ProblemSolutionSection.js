@@ -16,7 +16,7 @@ const ProblemSolutionSection = () => {
             },
             solution: {
                 title: "Decentralization of data and governance (DAO)",
-                description: "The community provides autonomous and fault-tolerant operation of the telecom ecosystem.",
+                description: "The community provides autonomous and fault-tolerant operation of the gym ecosystem.",
                 icon: "img/solutions/1-2.svg",
                 background: 'img/s-dots_2.svg'
             }
@@ -42,7 +42,7 @@ const ProblemSolutionSection = () => {
             },
             solution: {
                 title: "Web3 auth and registration",
-                description: "Connect to the next generation of the telecom ecosystem using the trusted Web 3.0 standard.",
+                description: "Connect to the next generation of the gym ecosystem using the trusted Web 3.0 standard.",
                 icon: "img/solutions/4-2.svg",
                 background: 'img/s-dots_2.svg'
             }
@@ -68,7 +68,7 @@ const ProblemSolutionSection = () => {
             },
             solution: {
                 title: "Open-source",
-                description: "Transparency is a key ingredient in a trusted digital telecoms environment.",
+                description: "Transparency is a key ingredient in a trusted digital network environment.",
                 icon: "img/solutions/3-2.svg",
                 background: 'img/s-dots_2.svg'
             }

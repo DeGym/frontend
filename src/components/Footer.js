@@ -7,13 +7,13 @@ import styles from '../styles/components/common.module.css';
 export default function Footer() {
     return (
         <footer className="bg-dark text-light footer">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
-                <div>
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-8 max-w-7xl">
+                <div className="mx-2">
                     <h4 className="text-primary text-lg font-bold mb-2">Contact Us</h4>
-                    <p className="text-light">info@degym.io</p>
-                    <p className="text-light">+1 (123) 456-7890</p>
+                    <p className="text-light mx-2">info@degym.io</p>
+                    <p className="text-light mx-2">+1 (123) 456-7890</p>
                 </div>
-                <div>
+                <div className="mx-2">
                     <h4 className="text-primary text-lg font-bold mb-2">Quick Links</h4>
                     <ul>
                         <li>
@@ -36,7 +36,7 @@ export default function Footer() {
                         </li>
                     </ul>
                 </div>
-                <div>
+                <div className="mx-2">
                     <h4 className="text-primary text-lg font-bold mb-2">Follow Us</h4>
                     <div className="flex space-x-4">
                         <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
@@ -53,10 +53,22 @@ export default function Footer() {
                         </a>
                     </div>
                 </div>
+                <div className="mx-2">
+                    <h4 className="text-light text-lg font-bold mb-2" >
+                        Built on <a href="https://www.taraxa.io/" >
+                            <img src="img/taraxa_logo_transparent_dark_bg.png" alt="Taraxa" style={{
+                                maxWidth: "100px;",
+                                display: "inline",
+                                marginLeft: "2px",
+                                marginTop: "-3px",
+                            }} />
+                        </a>
+                    </h4>
+                </div>
             </div>
             <div className="mt-8 text-center text-secondary">
                 &copy; {new Date().getFullYear()} DeGym. All Rights Reserved.
             </div>
-        </footer>
+        </footer >
     );
 }

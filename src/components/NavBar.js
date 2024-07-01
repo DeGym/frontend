@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       <header className="bg-dark text-light py-4 fixed w-full z-10">
-        <div className="container mx-auto flex justify-between items-center px-4">
+        <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
           <h1 className="text-3xl font-bold neon-text">
             <Link href="/" legacyBehavior>
               <a className={styles.link}>DeGym</a>

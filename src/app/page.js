@@ -22,6 +22,14 @@ const HomePage = () => {
         </section>
         <GlobeSection />
         <section className={styles.videoSection}>
+          <p>
+            In a world where access to fitness facilities can be limited by location and time, DeGym emerges as a revolutionary platform breaking down these barriers.
+            By leveraging the power of decentralization, DeGym provides users with the freedom to access gyms and fitness centers worldwide, anytime they choose.
+          </p>
+          <p>
+            Our mission is to make fitness universally accessible, empowering individuals to live healthier, happier lives.
+            Through innovation and community-building, DeGym is redefining the fitness landscape, creating a global network of accessible, high-quality gym facilities.
+            Join us in this movement towards fitness without borders, and unlock the potential of your fitness journey with DeGym.</p>
           <h2 className={styles.sectionOddTitle}>Watch Our Introduction Video</h2>
           <div className={styles.videoContainer}>
             <div className={styles.videoOverlay}></div>
@@ -61,9 +69,6 @@ const HomePage = () => {
         </section>
         <section>
           <MeetTheBrains />
-        </section>
-        <section className={styles.sectionEven}>
-          <p className={styles.paragraph}>In a world where access to fitness facilities can be limited by location and time, DeGym emerges as a revolutionary platform breaking down these barriers. By leveraging the power of decentralization, DeGym provides users with the freedom to access gyms and fitness centers worldwide, anytime they choose. Our mission is to make fitness universally accessible, empowering individuals to live healthier, happier lives. Through innovation and community-building, DeGym is redefining the fitness landscape, creating a global network of accessible, high-quality gym facilities. Join us in this movement towards fitness without borders, and unlock the potential of your fitness journey with DeGym.</p>
         </section>
 
         <section className={styles.sectionOdd}>

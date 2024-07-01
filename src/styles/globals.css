@@ -26,10 +26,26 @@ b {
   color: var(--color-primary)
 }
 
+
 body {
   color: var(--color-light);
   background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
 }
+
+p {
+  text-align: justify;
+  color: var(--color-light);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 15px;
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 0.9rem;
+  }
+}
+
 
 @layer utilities {
   .text-balance {

@@ -99,6 +99,7 @@
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
+    margin-top: 20px;
     font-family: 'Montserrat', sans-serif;
     background: -webkit-linear-gradient(0deg, var(--color-neon-green) 30%, var(--color-primary) 50%, var(--color-neon-green) 70%);
     -webkit-background-clip: text;
@@ -106,9 +107,11 @@
 }
 
 .paragraph {
-    font-size: 20px;
-    line-height: 1.6;
+    text-align: justify;
     color: var(--color-light);
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 15px;
 }
 
 @media (max-width: 768px) {
@@ -271,13 +274,14 @@
 
 
 .videoSection {
-    max-width: 1000px;
-    margin: 15px auto;
-    padding: 30px 10px 10px 10px;
-    background: var(--color-dark);
+    max-width: 1200px;
+    background: linear-gradient(to top, #1f1f1f, #1f1f1f10);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .videoContainer {

@@ -2,54 +2,77 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/components/ProblemSolutionSection.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLightbulb, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
-import 'swiper/swiper-bundle.css';  // Correct Swiper styles import
-
+import 'swiper/swiper-bundle.css';
 
 const ProblemSolutionSection = () => {
     const problemSolutions = [
         {
             problem: {
-                title: "DeFi + DAO Governance",
-                description: "Say goodbye to rigid rules and restrictions. Say hello to DeFi and DAO-governed gym memberships.",
-                icon: faLightbulb
+                title: "Risks related to centralized organisations",
+                description: "Centralized servers and unanimous management of the company create high risks for users.",
+                icon: "img/solutions/5-1.svg",
             },
             solution: {
-                title: "Dynamic Pricing",
-                description: "Our DAO votes on pricing and adjustments, ensuring fair, community-driven decisions.",
-                icon: faCheckCircle,
-                background: 'img/s-dots_2.svg' // replace with actual path
+                title: "Decentralization of data and governance (DAO)",
+                description: "The community provides autonomous and fault-tolerant operation of the telecom ecosystem.",
+                icon: "img/solutions/1-2.svg",
+                background: 'img/s-dots_2.svg'
             }
         },
         {
             problem: {
-                title: "Global Access",
-                description: "Access your favorite gyms globally with a single membership.",
-                icon: faLightbulb
+                title: "Monitored and censorship",
+                description: "The data is analyzed and access to the service can be limited at any time.",
+                icon: "img/solutions/2-1.svg",
             },
             solution: {
-                title: "Seamless Entry",
-                description: "Use our app for seamless entry, and enjoy a unified membership experience worldwide.",
-                icon: faCheckCircle,
-                background: 'img/s-dots_2.svg' // replace with actual path
+                title: "Freedom of access",
+                description: "There is no central control, there is no possibility to block the account.",
+                icon: "img/solutions/5-2.svg",
+                background: 'img/s-dots_2.svg'
             }
         },
         {
             problem: {
-                title: "Reward System",
-                description: "Earn rewards for your workouts and participation in our community.",
-                icon: faLightbulb
+                title: "Complex KYC and KYB",
+                description: "Registration of new accounts requires a comprehensive verification of documents.",
+                icon: "img/solutions/4-1.svg",
             },
             solution: {
-                title: "Incentivized Fitness",
-                description: "Earn tokens and perks for maintaining an active lifestyle.",
-                icon: faCheckCircle,
-                background: 'img/s-dots_2.svg' // replace with actual path
+                title: "Web3 auth and registration",
+                description: "Connect to the next generation of the telecom ecosystem using the trusted Web 3.0 standard.",
+                icon: "img/solutions/4-2.svg",
+                background: 'img/s-dots_2.svg'
             }
-        }
+        },
+        {
+            problem: {
+                title: "Provider owns user data",
+                description: "The data is stored on the provider's servers and does not belong to the user.",
+                icon: "img/solutions/6-1.svg",
+            },
+            solution: {
+                title: "Data is anonymous and owned by user",
+                description: "Personal data is encrypted with the user's public key and belongs to the owner of the wallet.",
+                icon: "img/solutions/6-2.svg",
+                background: 'img/s-dots_2.svg'
+            }
+        },
+        {
+            problem: {
+                title: "Closed code",
+                description: "Users can only trust what they read, without the right to check the source code.",
+                icon: "img/solutions/3-1.svg",
+            },
+            solution: {
+                title: "Open-source",
+                description: "Transparency is a key ingredient in a trusted digital telecoms environment.",
+                icon: "img/solutions/3-2.svg",
+                background: 'img/s-dots_2.svg'
+            }
+        },
     ];
 
     const [progress, setProgress] = useState(0);
@@ -95,7 +118,7 @@ const ProblemSolutionSection = () => {
                                 <div className={`${styles.problemCard} ${styles.card}`}>
                                     <div className={styles.problemCardMdtop}>
                                         <div className={styles.problemCardIcon}>
-                                            <FontAwesomeIcon icon={item.problem.icon} />
+                                            <img src={item.problem.icon} alt="icon" className="img-fluid d-block" />
                                         </div>
                                         <h3 className={styles.problemCardTitle}>{item.problem.title}</h3>
                                     </div>
@@ -109,7 +132,7 @@ const ProblemSolutionSection = () => {
                                 <div className={`${styles.solutionCard} ${styles.card}`} style={{ backgroundImage: `url(${item.solution.background})` }}>
                                     <div className={styles.solutionCardMdtop}>
                                         <div className={styles.solutionCardIcon}>
-                                            <FontAwesomeIcon icon={item.solution.icon} />
+                                            <img src={item.solution.icon} alt="icon" className="img-fluid d-block" />
                                         </div>
                                         <h3 className={styles.solutionCardTitle}>{item.solution.title}</h3>
                                     </div>
@@ -125,7 +148,7 @@ const ProblemSolutionSection = () => {
                                 <div className={`${styles.problemCard} ${styles.card}`}>
                                     <div className={styles.problemCardMdtop}>
                                         <div className={styles.problemCardIcon}>
-                                            <FontAwesomeIcon icon={item.problem.icon} />
+                                            <img src={item.problem.icon} alt="icon" className="img-fluid d-block" />
                                         </div>
                                         <h3 className={styles.problemCardTitle}>{item.problem.title}</h3>
                                     </div>
@@ -139,7 +162,7 @@ const ProblemSolutionSection = () => {
                                 <div className={`${styles.solutionCard} ${styles.card}`} style={{ backgroundImage: `url(${item.solution.background})` }}>
                                     <div className={styles.solutionCardMdtop}>
                                         <div className={styles.solutionCardIcon}>
-                                            <FontAwesomeIcon icon={item.solution.icon} />
+                                            <img src={item.solution.icon} alt="icon" className="img-fluid d-block" />
                                         </div>
                                         <h3 className={styles.solutionCardTitle}>{item.solution.title}</h3>
                                     </div>

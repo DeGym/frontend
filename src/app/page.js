@@ -6,7 +6,7 @@ import MeetTheBrains from '../components/MeetTheBrains';
 import GlobeSection from '../components/GlobeSection';
 import OpenSourceCard from '../components/OpenSourceCard';
 import MissionVisionCards from '../components/MissionVisionCards'
-
+import ProblemSolutionSection from '../components/ProblemSolutionSection'
 
 const HomePage = () => {
   return (
@@ -30,7 +30,7 @@ const HomePage = () => {
         </section>
         <MissionVisionCards />
         <OpenSourceCard />
-
+        <ProblemSolutionSection />
         <section className={styles.sectionEven}>
           <h2 className={styles.sectionEvenTitle}>Core Values</h2>
           <ul className={styles.list}>
@@ -43,7 +43,6 @@ const HomePage = () => {
             <li className={styles.listItem}><strong>Excellence:</strong> Striving for excellence in every aspect of our service.</li>
           </ul>
         </section>
-
 
         <section className={styles.sectionOdd}>
           <h2 className={styles.sectionOddTitle}>Taglines</h2>

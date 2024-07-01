@@ -1,0 +1,193 @@
+.sectionTwo {
+    padding: 120px 0 96px;
+    overflow: hidden;
+    background: #1f1f1f00;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.solutionsWrap {
+    position: relative;
+}
+
+.solutionsRow {
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 200px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    min-height: 200px;
+    position: relative;
+    text-align: left;
+    background-color: #030203;
+}
+
+.problemCard {
+    border: 1px dashed #444;
+}
+
+.problemCardMdtop {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.problemCardIcon {
+    margin-right: 16px;
+    font-size: 2rem;
+    color: #868686;
+}
+
+.problemCardTitle {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-top: 8px;
+    color: #fff;
+}
+
+.problemCardText {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: .9375rem;
+    line-height: 1.375rem;
+    color: #868686;
+}
+
+.solutionCard {
+    border: 2px solid #2dff73;
+    background-image: url('../../public/img/s-dots_2.svg');
+    /* Replace with actual image path */
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.solutionCardMdtop {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.solutionCardIcon {
+    margin-right: 16px;
+    font-size: 2rem;
+    color: #2dff73;
+}
+
+.solutionCardTitle {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: #2dff73;
+    margin-top: 8px;
+}
+
+.solutionCardText {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: .9375rem;
+    line-height: 1.375rem;
+    color: #fff;
+}
+
+.progressTwo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12px;
+}
+
+.progressTwoLine {
+    position: relative;
+    height: 100%;
+    width: 2px;
+    background-color: #444;
+    overflow: hidden;
+}
+
+.lineInner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #2dff73;
+    transition: all .1s ease;
+}
+
+.progressTwoMobile {
+    text-align: center;
+    padding: 20px;
+}
+
+.sliderArrow {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.downArrow {
+    display: block;
+    width: 6px;
+    height: 6px;
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    animation: mouse-scroll 1s infinite;
+}
+
+.downArrow-2 {
+    animation-delay: .2s;
+    animation-direction: alternate;
+}
+
+.downArrow-3 {
+    animation-delay: .3s;
+}
+
+@media (max-width: 768px) {
+    .solutionsRow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardContainer {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .solutionsRow {
+        margin: 0 -20px 24px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .problemCardTitle,
+    .solutionCardTitle {
+        font-size: 1.5rem;
+    }
+
+    .problemCardText,
+    .solutionCardText {
+        font-size: .875rem;
+    }
+}

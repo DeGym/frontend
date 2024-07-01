@@ -1,0 +1,27 @@
+<svg width="300" height="169" viewBox="0 0 300 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_505_2289)">
+<rect width="4" height="4" transform="matrix(-1 0 0 1 285 21)" fill="#2DFF73"/>
+<rect opacity="0.4" width="4" height="4" transform="matrix(-1 0 0 1 285 57)" fill="#2DFF73"/>
+<rect opacity="0.2" x="33" y="25" width="4" height="4" transform="rotate(-180 33 25)" fill="#2DFF73"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 141 21)" fill="#2DFF73"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 141 57)" fill="#2DFF73"/>
+<rect opacity="0.4" width="4" height="4" transform="matrix(-1 0 0 1 141 93)" fill="#2DFF73"/>
+<rect opacity="0.6" width="4" height="4" transform="matrix(-1 0 0 1 249 21)" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 249 57)" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 249 93)" fill="white"/>
+<rect opacity="0.4" width="4" height="4" transform="matrix(-1 0 0 1 249 129)" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 177 21)" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 177 57)" fill="white"/>
+<rect opacity="0.4" width="4" height="4" transform="matrix(-1 0 0 1 177 93)" fill="white"/>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 105 21)" fill="white"/>
+<rect opacity="0.4" width="4" height="4" transform="matrix(-1 0 0 1 105 57)" fill="white"/>
+<rect opacity="0.4" width="4" height="4" transform="matrix(-1 0 0 1 69 23)" fill="white"/>
+<rect opacity="0.2" x="213" y="61" width="4" height="4" transform="rotate(-180 213 61)" fill="white"/>
+<rect opacity="0.4" x="213" y="25" width="4" height="4" transform="rotate(-180 213 25)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_505_2289">
+<rect width="300" height="169" fill="white"/>
+</clipPath>
+</defs>
+</svg>

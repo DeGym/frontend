@@ -5,9 +5,9 @@ import styles from '../styles/components/ProblemSolutionSection.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Pagination, Navigation } from 'swiper';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import 'swiper/swiper-bundle.css';  // Correct Swiper styles import
 
-SwiperCore.use([Pagination, Navigation]);
 
 const ProblemSolutionSection = () => {
     const problemSolutions = [
@@ -21,7 +21,7 @@ const ProblemSolutionSection = () => {
                 title: "Dynamic Pricing",
                 description: "Our DAO votes on pricing and adjustments, ensuring fair, community-driven decisions.",
                 icon: faCheckCircle,
-                background: '/path/to/solution-background.jpg' // replace with actual path
+                background: 'img/s-dots_2.svg' // replace with actual path
             }
         },
         {
@@ -34,7 +34,7 @@ const ProblemSolutionSection = () => {
                 title: "Seamless Entry",
                 description: "Use our app for seamless entry, and enjoy a unified membership experience worldwide.",
                 icon: faCheckCircle,
-                background: '/path/to/solution-background.jpg' // replace with actual path
+                background: 'img/s-dots_2.svg' // replace with actual path
             }
         },
         {
@@ -47,7 +47,7 @@ const ProblemSolutionSection = () => {
                 title: "Incentivized Fitness",
                 description: "Earn tokens and perks for maintaining an active lifestyle.",
                 icon: faCheckCircle,
-                background: '/path/to/solution-background.jpg' // replace with actual path
+                background: 'img/s-dots_2.svg' // replace with actual path
             }
         }
     ];
@@ -80,16 +80,18 @@ const ProblemSolutionSection = () => {
     }, []);
 
     return (
-        <section className={styles.sectionTwo}>
+        <section className={styles.section}>
             <div className={styles.solutionsWrap}>
                 {isMobile ? (
                     <Swiper
+                        modules={[Navigation, Pagination, Scrollbar]}
                         slidesPerView={1}
                         pagination={{ clickable: true }}
                         navigation
+                        className={styles.swiperContainer}
                     >
                         {problemSolutions.map((item, index) => (
-                            <SwiperSlide key={index}>
+                            <SwiperSlide key={index} className={styles.swiperSlide}>
                                 <div className={`${styles.problemCard} ${styles.card}`}>
                                     <div className={styles.problemCardMdtop}>
                                         <div className={styles.problemCardIcon}>
@@ -148,7 +150,7 @@ const ProblemSolutionSection = () => {
                     ))
                 )}
             </div>
-        </section>
+        </section >
     );
 };
 

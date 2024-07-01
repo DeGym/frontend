@@ -9,7 +9,18 @@
   --color-light: #ffffff;
   --color-accent: #515953;
   --color-neon-green: #39FF14;
+  --swiper-navigation-color: #2dff73;
 }
+
+
+.swiper-pagination-bullet {
+  background: #2dff73 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2dff73 !important;
+}
+
 
 b {
   color: var(--color-primary)

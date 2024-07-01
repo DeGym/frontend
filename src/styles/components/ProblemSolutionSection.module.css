@@ -1,9 +1,9 @@
-.sectionTwo {
+.section {
     padding: 120px 0 96px;
     overflow: hidden;
     background: #1f1f1f00;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
 .solutionsWrap {
@@ -168,16 +168,7 @@
     }
 
     .card {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .solutionsRow {
-        margin: 0 -20px 24px;
-    }
-
-    .card {
+        width: 100%;
         padding: 10px;
     }
 
@@ -190,4 +181,15 @@
     .solutionCardText {
         font-size: .875rem;
     }
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

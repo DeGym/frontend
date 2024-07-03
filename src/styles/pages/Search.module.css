@@ -1,0 +1,148 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ddd;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.filters h2 {
+    margin-bottom: 20px;
+}
+
+.filters label {
+    margin-bottom: 10px;
+}
+
+.filters input[type="text"],
+.filters select,
+.filters input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.gymsList {
+    margin-top: 20px;
+}
+
+.gymCard {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.gymImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.gymDetails h3 {
+    margin: 0;
+}
+
+.gymDetails p {
+    margin: 5px 0;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        margin-bottom: 20px;
+    }
+
+    .mapContainer {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        margin-bottom: 20px;
+    }
+
+    .mapContainer {
+        width: 100%;
+        height: 400px;
+    }
+
+    .gymCard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gymImage {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .filters label {
+        font-size: 0.9rem;
+    }
+
+    .filters input[type="text"],
+    .filters select,
+    .filters input[type="range"] {
+        padding: 8px;
+        margin-top: 3px;
+    }
+
+    .gymCard {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .gymDetails h3 {
+        font-size: 1rem;
+    }
+
+    .gymDetails p {
+        font-size: 0.875rem;
+        margin: 3px 0;
+    }
+}

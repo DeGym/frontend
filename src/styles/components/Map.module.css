@@ -1,17 +1,13 @@
 .mapContainer {
-    width: 75%;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
     .mapContainer {
         width: 100%;
         height: 400px;
-        margin-top: 20px;
     }
 }
 
@@ -19,7 +15,6 @@
     .mapContainer {
         width: 100%;
         height: 400px;
-        margin-top: 20px;
     }
 }
 
@@ -27,4 +22,5 @@
     .mapContainer {
         height: 300px;
     }
+
 }

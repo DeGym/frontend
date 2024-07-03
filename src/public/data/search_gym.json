@@ -1,0 +1,45 @@
+[
+    {
+        "name": "Gym One",
+        "address": "123 Main St, New York, NY",
+        "description": "A great place to workout",
+        "tier": "1",
+        "distance": 3,
+        "activities": [
+            "yoga",
+            "workout"
+        ],
+        "latitude": 40.73061,
+        "longitude": -73.935242,
+        "image": "/path/to/image1.jpg"
+    },
+    {
+        "name": "Gym Two",
+        "address": "456 Central Ave, Brooklyn, NY",
+        "description": "Crossfit and more",
+        "tier": "2",
+        "distance": 8,
+        "activities": [
+            "crossfit",
+            "swimming"
+        ],
+        "latitude": 40.73041,
+        "longitude": -73.935212,
+        "image": "/path/to/image2.jpg"
+    },
+    {
+        "name": "Gym Three",
+        "address": "789 Broadway, New York, NY",
+        "description": "All in one fitness center",
+        "tier": "3",
+        "distance": 12,
+        "activities": [
+            "yoga",
+            "swimming",
+            "workout"
+        ],
+        "latitude": 40.73061,
+        "longitude": -73.935242,
+        "image": "/path/to/image3.jpg"
+    }
+]

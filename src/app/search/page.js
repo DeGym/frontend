@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../../styles/pages/Search.module.css';
-
 // Import the dynamic map component without SSR
 const Map = dynamic(() => import('../../components/Map'), { ssr: false });
 
@@ -17,43 +16,11 @@ const Search = () => {
     });
 
     useEffect(() => {
-        // Mocked gym locations
-        const mockedGyms = [
-            {
-                name: 'Gym One',
-                address: '123 Main St, New York, NY',
-                description: 'A great place to workout',
-                tier: '1',
-                distance: 3,
-                activities: ['yoga', 'workout'],
-                latitude: 40.73061,
-                longitude: -73.935242,
-                image: '/path/to/image1.jpg' // replace with actual path
-            },
-            {
-                name: 'Gym Two',
-                address: '456 Central Ave, Brooklyn, NY',
-                description: 'Crossfit and more',
-                tier: '2',
-                distance: 8,
-                activities: ['crossfit', 'swimming'],
-                latitude: 40.650002,
-                longitude: -73.949997,
-                image: '/path/to/image2.jpg' // replace with actual path
-            },
-            {
-                name: 'Gym Three',
-                address: '789 Broadway, New York, NY',
-                description: 'All in one fitness center',
-                tier: '3',
-                distance: 12,
-                activities: ['yoga', 'swimming', 'workout'],
-                latitude: 40.73061,
-                longitude: -73.935242,
-                image: '/path/to/image3.jpg' // replace with actual path
-            }
-        ];
-        setGyms(mockedGyms);
+        fetch('/data/search_gym.json')
+            .then(response => response.json())
+            .then(data => setGyms(data))
+            .catch(error => console.error('Error fetching gym data:', error));
+
     }, []);
 
     const handleFilterChange = (e) => {
@@ -129,7 +96,13 @@ const Search = () => {
                     ))}
                 </div>
             </div>
-            <Map gyms={filteredGyms} center={[40.73061, -73.935242]} radius={filters.distance} />
+            <div className={styles.map}>
+                <Map
+                    gyms={filteredGyms}
+                    center={[40.73061, -73.935242]}
+                    radius={filters.distance}
+                />
+            </div>
         </div>
     );
 };

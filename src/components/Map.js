@@ -5,7 +5,6 @@ import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import styles from '../styles/components/Map.module.css';
 import L from 'leaflet';
-
 const icon = new L.Icon({
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/images/marker-icon.png',
     iconSize: [25, 41],

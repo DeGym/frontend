@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faTelegram, faMedium, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
-import styles from '../styles/components/common.module.css';
+import styles from '../styles/components/Footer.module.css';
 
 export default function Footer() {
     return (
@@ -17,22 +17,22 @@ export default function Footer() {
                     <h4 className="text-primary text-lg font-bold mb-2">Quick Links</h4>
                     <ul>
                         <li>
-                            <Link href="/" legacyBehavior><a className={styles.link}>Home</a></Link>
+                            <Link href="/" legacyBehavior><a>Home</a></Link>
                         </li>
                         <li>
-                            <Link href="/token" legacyBehavior><a className={styles.link}>Token</a></Link>
+                            <Link href="/token" legacyBehavior><a>Token</a></Link>
                         </li>
                         <li>
-                            <Link href="/presale" legacyBehavior><a className={styles.link}>Presale</a></Link>
+                            <Link href="/presale" legacyBehavior><a>Presale</a></Link>
                         </li>
                         <li>
-                            <Link href="/voucher" legacyBehavior><a className={styles.link}>Voucher</a></Link>
+                            <Link href="/voucher" legacyBehavior><a>Voucher</a></Link>
                         </li>
                         <li>
-                            <Link href="/provider" legacyBehavior><a className={styles.link}>Become Gym Provider</a></Link>
+                            <Link href="/provider" legacyBehavior><a>Become Gym Provider</a></Link>
                         </li>
                         <li>
-                            <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a className={styles.link}>Documentation</a></Link>
+                            <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a>Documentation</a></Link>
                         </li>
                     </ul>
                 </div>

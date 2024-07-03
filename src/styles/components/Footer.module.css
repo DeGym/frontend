@@ -1,0 +1,8 @@
+.icon {
+    color: var(--color-light);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--color-neon-green);
+}

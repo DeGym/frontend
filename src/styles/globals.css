@@ -22,9 +22,7 @@
 }
 
 
-b {
-  color: var(--color-primary)
-}
+
 
 
 body {
@@ -38,6 +36,22 @@ p {
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 15px;
+}
+
+b {
+  color: var(--color-primary)
+}
+
+a {
+  color: var(--color-light);
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-neon-green);
+  text-shadow: 0 0 5px var(--color-neon-green);
 }
 
 @media (max-width: 480px) {

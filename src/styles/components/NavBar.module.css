@@ -1,0 +1,43 @@
+.menuIcon {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menuIcon {
+        display: block;
+    }
+
+    .menu {
+        font-size: 1.6rem;
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: var(--color-dark);
+        padding: 2rem;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 20;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        text-align: right;
+        /* Align text to the right */
+    }
+
+    .menuOpen {
+        display: block;
+        transform: translateX(0);
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+}

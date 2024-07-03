@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/components/common.module.css';
+import styles from '../styles/components/NavBar.module.css';
 import ConnectWalletButton from './ConnectWalletButton';
 
 export default function Navbar() {
@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
           <h1 className="text-3xl font-bold neon-text">
             <Link href="/" legacyBehavior>
-              <a className={styles.link}>DeGym</a>
+              <a>DeGym</a>
             </Link>
           </h1>
 
@@ -39,27 +39,27 @@ export default function Navbar() {
             <ul className="flex flex-col md:flex-row md:space-x-8 w-full md:w-auto">
               <li className="md:my-0 my-2">
                 <Link href="/token" legacyBehavior>
-                  <a className={styles.link} onClick={closeMenu}>$DGYM</a>
+                  <a onClick={closeMenu}>$DGYM</a>
                 </Link>
               </li>
               <li className="md:my-0 my-2">
                 <Link href="/presale" legacyBehavior>
-                  <a className={styles.link} onClick={closeMenu}>Presale</a>
+                  <a onClick={closeMenu}>Presale</a>
                 </Link>
               </li>
               <li className="md:my-0 my-2">
                 <Link href="/voucher" legacyBehavior>
-                  <a className={styles.link} onClick={closeMenu}>Voucher</a>
+                  <a onClick={closeMenu}>Voucher</a>
                 </Link>
               </li>
               <li className="md:my-0 my-2">
                 <Link href="/provider" legacyBehavior>
-                  <a className={styles.link} onClick={closeMenu}>Become Gym Provider</a>
+                  <a onClick={closeMenu}>Become Gym Provider</a>
                 </Link>
               </li>
               <li className="md:my-0 my-2">
                 <Link href="https://degym-1.gitbook.io/docs" legacyBehavior>
-                  <a className={styles.link} onClick={closeMenu}>Docs</a>
+                  <a onClick={closeMenu}>Docs</a>
                 </Link>
               </li>
             </ul>

@@ -3,6 +3,11 @@
     cursor: pointer;
 }
 
+.link {
+    margin: auto;
+    vertical-align: middle;
+}
+
 @media (max-width: 768px) {
     .menuIcon {
         display: block;
@@ -39,5 +44,9 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 10;
+    }
+
+    .link {
+        margin-left: 65%;
     }
 }

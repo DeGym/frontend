@@ -27,9 +27,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="bg-dark text-light py-4 fixed w-full z-10">
+      <header className="bg-dark text-light py-4 fixed w-full z-10 align-middle">
         <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
-          <h1 className="text-3xl font-bold neon-text">
+          <h1 className="text-3xl font-bold neon-text text">
             <Link href="/" legacyBehavior>
               <a>DeGym</a>
             </Link>
@@ -37,29 +37,29 @@ export default function Navbar() {
 
           <nav className={`${isOpen ? styles.menuOpen : ''} ${styles.menu} md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0`}>
             <ul className="flex flex-col md:flex-row md:space-x-8 w-full md:w-auto">
-              <li className="md:my-0 my-2">
+              <li className="md:my-0 my-2 flex">
                 <Link href="/token" legacyBehavior>
-                  <a onClick={closeMenu}>$DGYM</a>
+                  <a className={`${styles.link}`} onClick={closeMenu}>$DGYM</a>
                 </Link>
               </li>
-              <li className="md:my-0 my-2">
-                <Link href="/presale" legacyBehavior>
-                  <a onClick={closeMenu}>Presale</a>
+              <li className="md:my-0 my-2 flex">
+                <Link href="/search" legacyBehavior>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Search</a>
                 </Link>
               </li>
-              <li className="md:my-0 my-2">
+              <li className="md:my-0 my-2 flex">
                 <Link href="/voucher" legacyBehavior>
-                  <a onClick={closeMenu}>Voucher</a>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Voucher</a>
                 </Link>
               </li>
-              <li className="md:my-0 my-2">
+              <li className="md:my-0 my-2 flex">
                 <Link href="/provider" legacyBehavior>
-                  <a onClick={closeMenu}>Become Gym Provider</a>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Provider</a>
                 </Link>
               </li>
-              <li className="md:my-0 my-2">
+              <li className="md:my-0 my-2 flex">
                 <Link href="https://degym-1.gitbook.io/docs" legacyBehavior>
-                  <a onClick={closeMenu}>Docs</a>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Docs</a>
                 </Link>
               </li>
             </ul>

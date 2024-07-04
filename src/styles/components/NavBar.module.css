@@ -8,14 +8,6 @@
     vertical-align: middle;
 }
 
-.logo {
-    filter: invert(88%) sepia(10%) saturate(4294%) hue-rotate(71deg) brightness(109%) contrast(100%);
-    transition: filter 0.3s ease;
-}
-
-.logo-container:hover .logo {
-    filter: invert(59%) sepia(86%) saturate(505%) hue-rotate(63deg) brightness(110%) contrast(106%);
-}
 
 @media (max-width: 768px) {
     .menuIcon {

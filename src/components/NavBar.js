@@ -30,13 +30,12 @@ export default function Navbar() {
     <>
       <header className="bg-dark text-light py-4 fixed w-full z-10 align-middle">
         <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
-          <div className="flex items-center logo-container">
+          <div className="flex items-center">
             <Image
-              src="/logo.svg"
+              src="/DeGym_green_white_logo_without_bg.png"
               alt="DeGym Logo"
-              width={40}
-              height={40}
-              className={styles.logo}
+              width={35}
+              height={35}
             />
             <h1 className="text-3xl font-bold neon-text text ml-2">
               <Link href="/" legacyBehavior>

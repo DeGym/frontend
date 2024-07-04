@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/components/NavBar.module.css';
 import ConnectWalletButton from './ConnectWalletButton';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,11 +30,20 @@ export default function Navbar() {
     <>
       <header className="bg-dark text-light py-4 fixed w-full z-10 align-middle">
         <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
-          <h1 className="text-3xl font-bold neon-text text">
-            <Link href="/" legacyBehavior>
-              <a>DeGym</a>
-            </Link>
-          </h1>
+          <div className="flex items-center logo-container">
+            <Image
+              src="/logo.svg"
+              alt="DeGym Logo"
+              width={40}
+              height={40}
+              className={styles.logo}
+            />
+            <h1 className="text-3xl font-bold neon-text text ml-2">
+              <Link href="/" legacyBehavior>
+                <a>DeGym</a>
+              </Link>
+            </h1>
+          </div>
 
           <nav className={`${isOpen ? styles.menuOpen : ''} ${styles.menu} md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0`}>
             <ul className="flex flex-col md:flex-row md:space-x-8 w-full md:w-auto">

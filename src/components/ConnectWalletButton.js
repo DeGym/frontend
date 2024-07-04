@@ -40,11 +40,19 @@ const ConnectWalletButton = () => {
     return (
         <div>
             {walletAddress ? (
-                <div style={{ color: 'green', marginTop: '10px' }}>
+                <div style={{ color: '#2dff73', marginTop: '10px' }}>
                     <strong>Wallet Connected:</strong> {walletAddress.substring(0, 6)}...{walletAddress.substring(walletAddress.length - 4)}
                 </div>
             ) : (
-                <button onClick={connectWallet} style={{ padding: '10px 20px', fontSize: '16px', borderRadius: '5px', backgroundColor: '#4CAF50', color: 'white', border: 'none', cursor: 'pointer' }}>
+                <button onClick={connectWallet} style={{
+                    padding: '10px 20px',
+                    fontSize: '16px',
+                    borderRadius: '5px',
+                    backgroundColor: '#2dff73',
+                    color: 'black',
+                    border: 'none',
+                    cursor: 'pointer'
+                }}>
                     Connect Wallet
                 </button>
             )}

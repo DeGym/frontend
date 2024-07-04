@@ -62,8 +62,8 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="md:my-0 my-2 flex">
-                <Link href="/provider" legacyBehavior>
-                  <a className={`${styles.link}`} onClick={closeMenu}>Provider</a>
+                <Link href="/partners" legacyBehavior>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Partner</a>
                 </Link>
               </li>
               <li className="md:my-0 my-2 flex">

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import styles from '../styles/components/table.module.css';
-import calculate_price from '../utils/pricing'
+import styles from '../../styles/components/table.module.css';
+import calculate_price from '../../utils/pricing'
 
 
 const tiers = ["Basic I", "Silver II", "Gold III", "Platinum IV", "Diamond V", "Black VI"];

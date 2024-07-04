@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/components/NFTVoucherGenerator.module.css';
-import calculate_price from '../utils/pricing'
+import styles from '../../styles/components/NFTVoucherGenerator.module.css';
+import calculate_price from '../../utils/pricing'
 
 const tiers = ["Basic", "Silver", "Gold", "Platinum", "Diamond", "Black"];
 const tierValues = { "Basic": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Diamond": 5, "Black": 6 };

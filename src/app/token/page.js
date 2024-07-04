@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../../styles/pages/common.module.css';
-import TokenInfo from '../../components/TokenInfo';
+import TokenInfo from './TokenInfo';
 
 const TokenPage = () => {
     return (

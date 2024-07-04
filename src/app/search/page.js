@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../../styles/pages/Search.module.css';
 // Import the dynamic map component without SSR
-const Map = dynamic(() => import('../../components/Map'), { ssr: false });
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const Search = () => {
     const [gyms, setGyms] = useState([]);

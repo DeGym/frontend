@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import VoucherTable from '../../components/VoucherTable';
-import NFTVoucherGenerator from '../../components/NFTVoucherGenerator'
+import VoucherTable from './VoucherTable';
+import NFTVoucherGenerator from './NFTVoucherGenerator'
 import styles from '../../styles/pages/common.module.css';
 
 const VoucherPage = () => {

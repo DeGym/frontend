@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins, faChartLine, faPercentage, faPiggyBank, faBalanceScale } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/components/common.module.css';
+import styles from '../../styles/components/common.module.css';
 
 const TokenInfo = ({ totalSupply, stakingYield, providerCommission, totalStake, stakingRatio }) => {
     return (

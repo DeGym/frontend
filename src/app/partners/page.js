@@ -1,15 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '../../styles/pages/Partners.module.css';
 import PartnerBenefits from './whySection';
-import BecomePartnerSection from './BecomePartnerSection'
-import VisitorSection from './VisitorSection'
-// WHY WELLHUB
-// Getting Started
-// PARTNER SUPPORT
-// BOOKING INTEGRATION
-// TESTIMONIALS
-// FAQ
+import BecomePartnerSection from './BecomePartnerSection';
+import VisitorSection from './VisitorSection';
 
 const PartnersPage = () => {
     return (
@@ -20,9 +15,18 @@ const PartnersPage = () => {
             </Head>
             <main className={styles.main}>
                 <section className={styles.hero}>
-                    <div className="container mx-auto">
-                        <h1 className={styles.heroTitle}>Become Partner</h1>
-                        <p className={styles.heroSubtitle}>Join DeGym network and grow your business.</p>
+                    <div className={styles.heroImage}>
+                        <Image
+                            src="/img/branding_image.jpeg"
+                            alt="People exercising in a gym"
+                            width={400}
+                            height={400}
+                            layout="responsive"
+                        />
+                    </div>
+                    <div className={styles.heroText}>
+                        <h1 className={styles.heroTitle}>Become a Partner</h1>
+                        <p className={styles.heroSubtitle}>Join the DeGym network and grow your business.</p>
                     </div>
                 </section>
 

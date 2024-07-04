@@ -6,9 +6,9 @@ function VisitorSection() {
         <section className="px-8 py-10 lg:flex lg:pb-8 lg:pt-11">
             <div className="container mx-auto flex flex-col space-y-5 xl:px-24 2xl:px-56">
                 <div className="space-y-3 text-center text-light">
-                    <h2 className="text-xl font-semibold md:text-3xl xl:font-bold">Who will visit your space?</h2>
+                    <h2 className="text-xl font-semibold md:text-3xl xl:font-bold"><b>Who will visit your space?</b></h2>
                     <p className="font-sm text-xs md:text-base">
-                        TotalPass users will subscribe to a plan and check in at your gym. Here are the numbers:
+                        DeGym users will subscribe to a plan and check in at your gym. Here are the numbers:
                     </p>
                 </div>
                 <div className="flex w-full flex-col items-center gap-8 lg:flex-row">
@@ -22,7 +22,7 @@ function VisitorSection() {
                         />
                     </div>
                     <Image
-                        src="/_next/static/media/Imagem-Parceiro.254b40b6.webp"
+                        src="/img/branding_image.jpeg"
                         alt="A man in gym attire holding a backpack and a water bottle smiling at the camera."
                         width={462}
                         height={350}
@@ -51,7 +51,7 @@ function VisitorSection() {
                     <a
                         className="rounded-[42px] inline-flex items-center justify-center py-4 px-8 hover:text-neutral-90 text-base transition bg-primary-40 text-neutral-90 hover:bg-[#3FF49B] w-full"
                         target="_blank"
-                        href="https://cloud.info.totalpass.com.br/indicacao-academia-dono/"
+                        href="/partners"
                     >
                         I Want to Be a Partner
                     </a>

@@ -38,7 +38,7 @@ const Search = () => {
     });
 
     return (
-        <div className={styles.container}>
+        <main className={styles.main}>
             <div className={styles.sidebar}>
                 <div className={styles.filters}>
                     <h2>Search Gyms</h2>
@@ -103,7 +103,7 @@ const Search = () => {
                     radius={filters.distance}
                 />
             </div>
-        </div>
+        </main>
     );
 };
 

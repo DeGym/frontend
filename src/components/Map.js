@@ -29,7 +29,11 @@ const Map = ({ gyms, center, radius }) => {
                 fillOpacity={0.1}
             />
             {gyms.map((gym, index) => (
-                <Marker key={index} position={[gym.latitude, gym.longitude]} icon={icon}>
+                <Marker
+                    key={index}
+                    position={[gym.latitude, gym.longitude]}
+                    icon={icon}
+                >
                     <Popup>
                         <b>{gym.name}</b><br />{gym.description}
                     </Popup>

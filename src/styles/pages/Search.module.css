@@ -1,4 +1,4 @@
-.container {
+.main {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -7,7 +7,7 @@
 
 .sidebar {
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: var(--color-light);
     border-right: 1px solid #ddd;
     height: 100vh;
     overflow-y: auto;
@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    color: var(--color-dark)
 }
 
 .filters h2 {
@@ -56,7 +57,7 @@
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--color-light);
 }
 
 .gymImage {

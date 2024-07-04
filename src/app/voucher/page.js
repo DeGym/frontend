@@ -3,8 +3,10 @@ import Head from 'next/head';
 import VoucherTable from './VoucherTable';
 import NFTVoucherGenerator from './NFTVoucherGenerator'
 import styles from '../../styles/pages/common.module.css';
+import FAQ from '../../components/FAQ'
 
 const VoucherPage = () => {
+    const faqs = []
     return (
         <>
             <Head>
@@ -30,10 +32,7 @@ const VoucherPage = () => {
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>
-                <section className={styles.sectionEven}>
-                    <h2 className={styles.sectionEvenTitle}>Frequently Asked Questions</h2>
-                    <p className={styles.paragraph}>Answers to all your queries about DeGym vouchers.</p>
-                </section>
+                <FAQ faqs={faqs} />
             </main>
         </>
     );

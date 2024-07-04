@@ -13,7 +13,7 @@ function BecomePartnerSection() {
         {
             number: "03",
             description: "Partnership active? Now just advertise!",
-            link: "https://cloud.info.totalpass.com.br/indicacao-academia-dono/",
+            link: "/partners",
             linkText: "Become a Partner"
         }
     ];

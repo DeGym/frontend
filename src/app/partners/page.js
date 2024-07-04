@@ -5,8 +5,14 @@ import styles from '../../styles/pages/Partners.module.css';
 import PartnerBenefits from './whySection';
 import BecomePartnerSection from './BecomePartnerSection';
 import VisitorSection from './VisitorSection';
+import FAQ from '../../components/FAQ'
 
 const PartnersPage = () => {
+    const faqs = [
+        { question: "What is DeGym?", answer: "DeGym is a decentralized platform that enables users to participate in gym activities using blockchain technology." },
+        { question: "How do I join DeGym?", answer: "You can join DeGym by signing up on our website and purchasing a membership NFT." },
+    ];
+
     return (
         <>
             <Head>
@@ -33,7 +39,7 @@ const PartnersPage = () => {
                 <PartnerBenefits />
                 <BecomePartnerSection />
                 <VisitorSection />
-
+                <FAQ faqs={faqs} />
             </main>
         </>
     );

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import Image from 'next/image';
-import styles from './Modality.module.css';
+import styles from '../../styles/components/Modality.module.css';
 
 const Modality = () => {
     const modalities = [

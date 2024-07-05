@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../styles/components/NFTVoucherGenerator.module.css';
 import calculate_price from '../../utils/pricing'
+import Image from 'next/image';
 
 const tiers = ["Basic", "Silver", "Gold", "Platinum", "Diamond", "Black"];
 const tierValues = { "Basic": 1, "Silver": 2, "Gold": 3, "Platinum": 4, "Diamond": 5, "Black": 6 };
@@ -28,8 +29,15 @@ const NFTVoucherGenerator = () => {
     };
     return (
         <div className={customMode ? styles.container : `${styles.container} ${getGradientClass(tier)}`} >
-            <h1 className={styles.NFTTitle}>DeGym</h1>
-            <button className={styles.toggle} onClick={handleToggleCustomMode}>
+            <div className="flex items-center justify-center">
+                <Image
+                    src="/DeGym_green_logo_without_bg.png"
+                    alt="DeGym Logo"
+                    width={35}
+                    height={35}
+                />
+                <h1 className={styles.NFTTitle}>DeGym</h1>
+            </div><button className={styles.toggle} onClick={handleToggleCustomMode}>
                 {customMode ? 'Switch to Preset Values' : 'Customize'}
             </button>
 

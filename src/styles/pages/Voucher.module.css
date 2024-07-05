@@ -1,0 +1,104 @@
+.main {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.heroSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    background: #00000000;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease-in-out;
+    max-width: 1200px;
+    margin: 150px auto;
+}
+
+@media (min-width: 1024px) {
+    .heroSection {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.nftVoucher {
+    align-self: center;
+    padding: 20px;
+}
+
+.hero {
+    margin: auto;
+    font-size: 25px;
+    font-weight: 1000;
+}
+
+.heroTitle {
+    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 10%, var(--color-light) 50%, var(--color-primary) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 6.5rem;
+    margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+    margin: auto;
+    font-size: 2rem;
+    max-width: 1200px;
+}
+
+.sectionEven {
+    justify-content: center;
+    max-width: 1200px;
+    margin: 15px auto;
+    padding: 50px;
+    background: linear-gradient(to bottom, #ffffff20, var(--color-accent));
+    border-radius: 15px;
+    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+    border: 2px solid transparent;
+}
+
+.sectionEven:hover {
+    transform: translateY(-0.5px);
+    background-color: var(--color-accent);
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+
+@media (max-width: 1024px) {
+    .heroTitle {
+        font-size: 6.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.5rem;
+    }
+
+    .sectionOddTitle {
+        font-size: 1.4rem;
+    }
+
+    .paragraph {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 724px) {
+    .heroTitle {
+        margin-top: 50px;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

@@ -202,32 +202,6 @@
     transform: scale(1.05);
 }
 
-.testimonials {
-    padding: 15px;
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.testimonial {
-    flex: 0 0 330px;
-    margin: 0 10px;
-    padding: 30px;
-    background: var(--color-accent);
-    border-radius: 15px;
-    scroll-snap-align: start;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, background-color 0.3s, border 0.3s;
-    border: 2px solid transparent;
-}
-
-.testimonial:hover {
-    transform: scale(1.05);
-    background-color: var(--color-accent);
-    border: 2px solid var(--color-primary);
-    box-shadow: 0 0 5px var(--color-dark);
-}
-
 
 .standard {
     background-color: #f0f0f0;

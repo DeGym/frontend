@@ -10,11 +10,13 @@
 }
 
 .roadInner {
+    text-align: center;
     justify-content: center;
     text-align: center;
 }
 
 .roadTitle {
+    text-align: center;
     font-weight: 1000;
     margin: auto;
     max-width: 1200px;
@@ -34,7 +36,7 @@
 
 .roadSlider {
     position: relative;
-    margin: 30px auto;
+    margin: 35px auto;
 }
 
 .roadSlide {
@@ -63,6 +65,7 @@
     font-size: 20px;
     color: var(--color-neon-green);
     -webkit-text-stroke: 1px var(--color-primary);
+    text-align: center;
 }
 
 .roadSlideTitleInner {
@@ -73,11 +76,13 @@
     font-weight: 600;
     font-size: 24px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .roadSlideName {
     font-size: 1rem;
     color: var(--color-neon-green);
+    text-align: center;
 }
 
 .roadSlidePoints {

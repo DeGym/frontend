@@ -51,7 +51,7 @@ const Roadmap = () => {
             <div className={styles.roadInner}>
                 <h2 className={styles.roadTitle}>Project Development Roadmap</h2>
                 <p className={styles.roadText}>
-                    Discover our strategic milestones and how we're propelling towards a transformative future in blockchain technology.
+                    Discover our strategic milestones and how we're propelling towards a transformative future in web3 technology.
                 </p>
             </div>
             <div className={styles.roadSlider}>

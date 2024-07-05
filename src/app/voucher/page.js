@@ -3,7 +3,8 @@ import Head from 'next/head';
 import VoucherTable from './VoucherTable';
 import NFTVoucherGenerator from './NFTVoucherGenerator'
 import styles from '../../styles/pages/common.module.css';
-import FAQ from '../../components/FAQ'
+import FAQ from '../../components/FAQ';
+import Modality from './Modality';
 
 const VoucherPage = () => {
     const faqs = []
@@ -32,6 +33,7 @@ const VoucherPage = () => {
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>
+                <Modality />
                 <FAQ faqs={faqs} />
             </main>
         </>

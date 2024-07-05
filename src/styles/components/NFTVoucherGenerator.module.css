@@ -10,6 +10,7 @@
     max-width: 500px;
     margin: auto;
     transition: background 0.5s ease;
+
 }
 
 .tier1 {
@@ -88,9 +89,6 @@
     font-weight: 600;
 }
 
-.labelGroup {
-    margin: 10px;
-}
 
 .labelText {
     display: block;
@@ -120,6 +118,8 @@
     background-color: var(--color-light);
     border-top: none;
     max-width: 350px;
+    max-height: 36px;
+    margin-bottom: 10px;
 }
 
 

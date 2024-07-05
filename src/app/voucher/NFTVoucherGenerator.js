@@ -44,11 +44,11 @@ const NFTVoucherGenerator = () => {
             {
                 customMode ? (
                     <div className={styles.customSelector}>
-                        <label className={styles.labelGroup}>
+                        <label>
                             <span className={styles.labelText}>Tier</span>
                             <input type="number" value={customTier} onChange={(e) => setCustomTier(parseInt(e.target.value))} min="1" max="100" className={styles.inputField} />
                         </label>
-                        <label className={styles.labelGroup}>
+                        <label>
                             <span className={styles.labelText}>Duration</span>
                             <input type="number" value={customDuration} onChange={(e) => setCustomDuration(parseInt(e.target.value))} min="1" max="365" className={styles.inputField} />
                         </label>
@@ -56,13 +56,13 @@ const NFTVoucherGenerator = () => {
 
                 ) : (
                     <div className={styles.selector}>
-                        <div className={styles.labelGroup}>
+                        <div>
                             <span className={styles.labelText}>Tier</span>
                             <select value={tier} onChange={e => setTier(e.target.value)} className={styles.selectField}>
                                 {tiers.map(option => <option key={option} value={option}>{option}</option>)}
                             </select>
                         </div>
-                        <div className={styles.labelGroup}>
+                        <div>
                             <span className={styles.labelText}>Duration</span>
                             <select value={duration} onChange={e => setDuration(e.target.value)} className={styles.selectField}>
                                 {durations.map(option => <option key={option} value={option}>{option} days</option>)}

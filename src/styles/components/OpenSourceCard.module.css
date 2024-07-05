@@ -7,7 +7,7 @@
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
-    background: #1f1f1f;
+    background: var(--color-accent);
     color: var(--color-light);
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);

@@ -7,7 +7,7 @@
     width: 100%;
     min-width: 600px;
     border-collapse: collapse;
-    background-color: #fff;
+    background-color: var(--color-light);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -29,7 +29,7 @@
 
 .header {
     background-color: #4CAF50;
-    color: #ffffff;
+    color: var(--color-light);
     font-weight: bold;
 }
 
@@ -54,7 +54,7 @@
 
 @media screen and (max-width: 768px) {
     .stickyColumn {
-        background-color: #fff;
+        background-color: var(--color-light);
         box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
     }
 

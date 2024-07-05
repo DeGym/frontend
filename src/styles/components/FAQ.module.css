@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 1000px;
     margin: 30px auto;
-    background: #1c1c1c;
+    background: var(--color-accent);
     /* Dark background */
     border-radius: 8px;
     padding: 20px;

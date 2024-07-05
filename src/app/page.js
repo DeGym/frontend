@@ -84,21 +84,6 @@ const HomePage = () => {
         <section>
           <MeetTheBrains />
         </section>
-
-        <section className={styles.sectionOdd}>
-          <h2 className={styles.sectionOddTitle}>Testimonials</h2>
-          <div className={styles.testimonials}>
-            <div className={styles.testimonial}>
-              <p>"DeGym has transformed the way I access fitness facilities. It's convenient and rewarding!" - User A</p>
-            </div>
-            <div className={styles.testimonial}>
-              <p>"With DeGym, I can work out at multiple gyms without hassle. It's fantastic!" - User B</p>
-            </div>
-            <div className={styles.testimonial}>
-              <p>"The best part of DeGym is the rewards. I get more out of my workouts now." - User C</p>
-            </div>
-          </div>
-        </section>
         <Roadmap />
         <FAQ faqs={faqs} />
         <section className={styles.sectionEven}>

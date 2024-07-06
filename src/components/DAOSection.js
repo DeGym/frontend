@@ -14,11 +14,11 @@ const DAOSection = () => {
                     </div>
                     <div className={`${styles.sectionElevenCol2} ${styles.sectionCol2}`}>
                         <div className={styles.textBlockV1}>
-                            The DeGym will be controlled<br /> by a <span className={styles.color1}>DAO with decentralized governance,</span> which allows all<br /> token holders to participate<br />
+                            The DeGym will be controlledby a <span className={styles.color1}>DAO with decentralized governance,</span> which allows all token holders to participate
                             <div className="d-block d-lg-none"></div> in the future growth,
                         </div>
                         <div className={styles.sectionDesc}>
-                            and have a word in future decisions regarding Web3 CPaaS development parameters<br /> and treasury management.
+                            and have a word in future decisions regarding Web3 CPaaS development parameters and treasury management.
                         </div>
                     </div>
                 </div>

@@ -5,9 +5,10 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
     background-image: url(/img/b11_bg.jpg);
     background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 1920px 750px;
-    padding: 50px 0 100px;
+    background-position: center;
+    background-size: 1820px 750px;
+    padding: 100px 0 0px;
+    margin: -20px;
 }
 
 .container {
@@ -37,6 +38,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 20px;
+    max-width: 600px;
 }
 
 .color1 {
@@ -46,7 +48,7 @@
 .sectionDesc {
     font-size: 0.8rem;
     margin-top: 10px;
-    margin-bottom: 50px;
+    max-width: 600px;
 }
 
 .sectionElevenJoin {
@@ -57,7 +59,7 @@
 .joinLine {
     border-top: 1px solid var(--color-primary);
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 250px;
 }
 
 .joinLinks {
@@ -100,6 +102,7 @@
     .sectionRow {
         flex-direction: row;
         text-align: left;
+        margin-bottom: -100px;
     }
 
     .sectionCol1 {

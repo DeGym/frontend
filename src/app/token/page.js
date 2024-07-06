@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styles from '../../styles/pages/common.module.css';
 import TokenInfo from './TokenInfo';
+import TokenSection from './TokenSection';
 
 const TokenPage = () => {
     return (
@@ -34,6 +35,7 @@ const TokenPage = () => {
                         stakingRatio="50%"
                     />
                 </section>
+                <TokenSection />
                 <section className={styles.sectionEven}>
                     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>

@@ -1,0 +1,141 @@
+.section {
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 1300px;
+    margin: auto;
+}
+
+@media (min-width: 1024px) {
+    .section {
+        flex-direction: row;
+    }
+}
+
+.col1 {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+@media (min-width: 1024px) {
+    .col1 {
+        text-align: left;
+    }
+}
+
+.col2 {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .col2 {
+        width: auto;
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+.sectionTitle {
+    margin-bottom: 32px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tokenDescription {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.textPrimary {
+    color: var(--color-primary);
+}
+
+.sectionCoin {
+    display: none;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: 45px;
+}
+
+@media (min-width: 1024px) {
+    .sectionCoin {
+        display: block;
+    }
+}
+
+.sectionCoinMobile {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .sectionCoinMobile {
+        display: none;
+    }
+}
+
+.sectionCoin::before {
+    content: " ";
+    position: absolute;
+    left: 32px;
+    top: -150px;
+    width: 180px;
+    height: 199px;
+    background-image: url('/img/b10_decor_a.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.coinImage {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.coinImageMd {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.tokenSupply {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.sectionTitleWhite {
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.numInner {
+    white-space: nowrap;
+    font-weight: 800;
+    font-size: 6.875rem;
+    line-height: 8.6875rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .numInner {
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
+    }
+}

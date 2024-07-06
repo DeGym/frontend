@@ -70,34 +70,12 @@ const HomePage = () => {
         <OpenSourceCard />
         <ProblemSolutionSection />
         <TokenSection />
-        <section className={styles.sectionOdd}>
-          <h2 className={styles.sectionOddTitle}>Taglines</h2>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>Unlock Fitness Freedom</li>
-            <li className={styles.listItem}>Gym Access, Redefined</li>
-            <li className={styles.listItem}>Fitness Without Borders</li>
-            <li className={styles.listItem}>Your Gym, Everywhere</li>
-            <li className={styles.listItem}>Seamless Gym Access</li>
-            <li className={styles.listItem}>Fitness Unleashed</li>
-            <li className={styles.listItem}>Access Anytime, Anywhere</li>
-            <li className={styles.listItem}>Empowering Your Fitness Journey</li>
-            <li className={styles.listItem}>The World is Your Gym</li>
-            <li className={styles.listItem}>Decentralize Your Workout</li>
-          </ul>
-        </section>
         <section>
           <MeetTheBrains />
         </section>
         <Roadmap />
         <DAOSection />
         <FAQ faqs={faqs} />
-        <section className={styles.sectionEven}>
-          <h2 className={styles.sectionEvenTitle}>Enjoy the DeGym DAO</h2>
-          <a className={styles.button} href="./voucher">Buy your Voucher</a>
-          <a className={styles.button} href="./provider">Become Provider</a>
-          <a className={styles.button} href="./stake">Become Stakeholder</a>
-          <p className={styles.paragraph}>Be part of DeGym's transformative journey in the fitness world. Connect, contribute and grow with us.</p>
-        </section>
       </main>
     </>
   );

@@ -9,7 +9,7 @@ import MissionVisionCards from '../components/MissionVisionCards'
 import ProblemSolutionSection from '../components/ProblemSolutionSection'
 import IntroductionVideo from '../components/IntroductionVideo'
 import FAQ from '../components/FAQ'
-
+import TokenSection from './token/TokenSection'
 const HomePage = () => {
   const faqs = [
     {
@@ -65,7 +65,7 @@ const HomePage = () => {
         <MissionVisionCards />
         <OpenSourceCard />
         <ProblemSolutionSection />
-
+        <TokenSection />
         <section className={styles.sectionOdd}>
           <h2 className={styles.sectionOddTitle}>Taglines</h2>
           <ul className={styles.list}>

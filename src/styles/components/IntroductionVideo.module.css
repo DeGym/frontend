@@ -1,6 +1,6 @@
 .section {
     max-width: 1200px;
-    background: linear-gradient(to top, var(--color-accent), var(--color-accent)00);
+    background: linear-gradient(to top, var(--color-accent), #00000000);
     border-radius: 15px;
     text-align: center;
     padding: 20px;

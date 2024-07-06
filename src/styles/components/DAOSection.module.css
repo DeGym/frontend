@@ -1,0 +1,119 @@
+.sectionEleven {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-image: url(/img/b11_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 1920px 750px;
+    padding: 50px 0 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sectionRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionCol1,
+.sectionCol2 {
+    margin: 20px 0;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.textBlockV1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.color1 {
+    color: var(--color-primary);
+}
+
+.sectionDesc {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.sectionElevenJoin {
+    margin-top: 200px;
+    padding-top: 20px;
+}
+
+.joinLine {
+    border-top: 1px solid var(--color-primary);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.joinLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.joinItem {
+    margin: 10px auto;
+}
+
+.socLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease-in-out;
+}
+
+.socLink:hover {
+    transform: translateY(-5px);
+}
+
+.socLinkIcon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    font-size: 2rem;
+    /* Adjust the font size for icons */
+}
+
+.socLinkText span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .sectionRow {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .sectionCol1 {
+        flex: 1;
+        margin: 0;
+    }
+
+    .sectionCol2 {
+        flex: 2;
+        margin: 0;
+    }
+
+    .joinLinks {
+        justify-content: flex-start;
+
+    }
+}

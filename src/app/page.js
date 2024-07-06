@@ -10,6 +10,10 @@ import ProblemSolutionSection from '../components/ProblemSolutionSection'
 import IntroductionVideo from '../components/IntroductionVideo'
 import FAQ from '../components/FAQ'
 import TokenSection from './token/TokenSection'
+import DAOSection from '../components/DAOSection'
+
+
+
 const HomePage = () => {
   const faqs = [
     {
@@ -85,6 +89,7 @@ const HomePage = () => {
           <MeetTheBrains />
         </section>
         <Roadmap />
+        <DAOSection />
         <FAQ faqs={faqs} />
         <section className={styles.sectionEven}>
           <h2 className={styles.sectionEvenTitle}>Enjoy the DeGym DAO</h2>

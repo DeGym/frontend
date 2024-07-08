@@ -56,7 +56,6 @@
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
     color: linear-gradient(90deg, var(--color-accent), var(--color-light), var(--color-accent));
 }
 
@@ -85,7 +84,6 @@
     font-weight: 800;
     margin-bottom: 20px;
     margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
     background: -webkit-linear-gradient(0deg, var(--color-neon-green) 30%, var(--color-primary) 50%, var(--color-neon-green) 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

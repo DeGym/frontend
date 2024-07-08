@@ -1,0 +1,112 @@
+.stepByStepContainer {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-light);
+    margin-bottom: 40px;
+}
+
+.swiperWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+    align-items: center;
+}
+
+.swiperSlide {
+    flex: 0 0 auto;
+    margin-right: 32px;
+}
+
+.swiperSlideLast {
+    flex: 0 0 auto;
+}
+
+.stepCard,
+.stepCardLast {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.stepCard {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stepCardLast {
+    background-color: var(--color-accent);
+    box-shadow: none;
+}
+
+.icon {
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.stepInner {
+    display: flex;
+    align-items: center;
+}
+
+.stepNum {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-right: 10px;
+}
+
+.stepText {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.stepTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin: 0 16px;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .swiperWrapper {
+        flex-direction: row;
+    }
+
+    .swiperSlide {
+        margin-right: 16px;
+    }
+
+    .arrow {
+        display: block;
+    }
+}

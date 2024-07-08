@@ -11,6 +11,7 @@ import IntroductionVideo from '@/components/IntroductionVideo'
 import FAQ from '@/components/FAQ'
 import TokenSection from './token/TokenSection'
 import DAOSection from '@/components/DAOSection'
+import StepByStep from '@/components/StepByStep'
 
 
 
@@ -53,6 +54,13 @@ const HomePage = () => {
       answer: "At DeGym, striving for excellence means continuously improving our services and facilities, ensuring top-notch customer support, and always seeking feedback to better meet the needs of our community."
     }
   ];
+  const howItWorks = [
+    { icon: '/img/hw/node_connected.svg', title: 'Gyms provides services', description: 'Gyms enjoys the DeGym Network and provides their spaces and services to DeGym users' },
+    { icon: '/img/hw/token.svg', title: 'User buys the access voucher', description: 'The user buys the NFT-based voucher that grants access to a catalog of gyms' },
+    { icon: '/img/hw/sdk.svg', title: 'User check-in', description: 'The user goes to the selected gym and realize a checkin at the gym gateway' },
+    { icon: '/img/hw/web3.svg', title: 'DeGym Validation', description: 'DeGym Dapp will then validate both validate the user voucher and the gym veracity' },
+    { icon: '/img/hw/wallet.svg', title: 'Gym payment', description: 'Once the checkin is approved the DAO will then trigger a payment for the gym provider' },
+  ];
   return (
     <>
       <Head>
@@ -69,6 +77,7 @@ const HomePage = () => {
         <MissionVisionCards />
         <OpenSourceCard />
         <ProblemSolutionSection />
+        <StepByStep steps={howItWorks} title="How does it <b>works</b>?" />
         <TokenSection />
         <MeetTheBrains />
         <Roadmap />

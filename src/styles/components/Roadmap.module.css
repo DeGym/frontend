@@ -2,7 +2,9 @@
     font-family: 'Roboto', sans-serif;
     padding: 10px 0px;
     margin: 0px -20px;
-    background: #00000000;
+    background: url('/img/decor_item.svg') no-repeat center center;
+    background-position: center;
+    background-size: 1820px 750px;
     color: var(--color-light);
     margin-top: 35px;
     margin-bottom: 35px;

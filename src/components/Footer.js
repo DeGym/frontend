@@ -29,7 +29,7 @@ export default function Footer() {
                             <Link href="/voucher" legacyBehavior><a>Voucher</a></Link>
                         </li>
                         <li>
-                            <Link href="/provider" legacyBehavior><a>Become Gym Provider</a></Link>
+                            <Link href="/partners" legacyBehavior><a>Become a Partner</a></Link>
                         </li>
                         <li>
                             <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a>Documentation</a></Link>

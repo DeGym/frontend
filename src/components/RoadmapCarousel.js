@@ -49,7 +49,7 @@ const Roadmap = () => {
     return (
         <section className={styles.road} data-aos="fade-down" data-aos-duration="700">
             <div className={styles.roadInner}>
-                <h2 className={styles.roadTitle}>Project Development Roadmap</h2>
+                <h2 className={styles.roadTitle}>Project Development <b>Roadmap</b></h2>
                 <p className={styles.roadText}>
                     Discover our strategic milestones and how we're propelling towards a transformative future in web3 technology.
                 </p>

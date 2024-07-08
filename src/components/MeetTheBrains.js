@@ -68,7 +68,7 @@ const members = [
 const MeetTheBrains = () => {
     return (
         <section className={styles.container}>
-            <h2 className={styles.title}>Meet the Brains behind DeGym</h2>
+            <h2 className={styles.title}>Meet the <b>Brains</b> behind DeGym</h2>
             <div className={styles.members}>
                 {members.map((member, index) => (
                     <div key={index} className={styles.member}>

@@ -3,12 +3,13 @@
     pointer-events: all;
     transform: translateY(0);
     transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: var(--color-dark);
     background-image: url(/img/b11_bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1820px 750px;
+    background-size: 2550px 750px;
     padding: 100px 0 0px;
-    margin: -20px;
+    margin: 20px -20px;
 }
 
 .container {
@@ -67,6 +68,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding-bottom: 20px;
 }
 
 .joinItem {

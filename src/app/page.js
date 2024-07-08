@@ -55,12 +55,13 @@ const HomePage = () => {
     }
   ];
   const howItWorks = [
-    { icon: '/img/hw/node_connected.svg', title: 'Gyms provides services', description: 'Gyms enjoys the DeGym Network and provides their spaces and services to DeGym users' },
-    { icon: '/img/hw/token.svg', title: 'User buys the access voucher', description: 'The user buys the NFT-based voucher that grants access to a catalog of gyms' },
-    { icon: '/img/hw/sdk.svg', title: 'User check-in', description: 'The user goes to the selected gym and realize a checkin at the gym gateway' },
-    { icon: '/img/hw/web3.svg', title: 'DeGym Validation', description: 'DeGym Dapp will then validate both validate the user voucher and the gym veracity' },
-    { icon: '/img/hw/wallet.svg', title: 'Gym payment', description: 'Once the checkin is approved the DAO will then trigger a payment for the gym provider' },
+    { icon: '/img/hw/node_connected.svg', title: 'Gyms Provide Services', description: 'Gyms join the DeGym Network and offer their spaces and services to DeGym users.' },
+    { icon: '/img/hw/token.svg', title: 'User Buys the Access Voucher', description: 'The user buys an NFT-based voucher that grants access to a catalog of gyms.' },
+    { icon: '/img/hw/sdk.svg', title: 'User Check-in', description: 'The user goes to the selected gym and checks in at the gym gateway.' },
+    { icon: '/img/hw/web3.svg', title: 'DeGym Validation', description: 'The DeGym Dapp validates both the user’s voucher and the gym’s authenticity.' },
+    { icon: '/img/hw/wallet.svg', title: 'Gym Payment', description: 'Once the check-in is approved, the DAO triggers a payment to the gym provider.' },
   ];
+
   return (
     <>
       <Head>

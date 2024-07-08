@@ -6,7 +6,7 @@ import TokenSection from './TokenSection';
 import FAQ from '@/components/FAQ';
 import DAOSection from '@/components/DAOSection'
 import TokenStats from './stats'
-
+import TokenDistribution from './distribution'
 
 const TokenPage = () => {
     const faq = []
@@ -25,6 +25,7 @@ const TokenPage = () => {
                 </section>
                 <TokenSection />
                 <TokenStats />
+                <TokenDistribution />
                 <section className={`${styles.sectionOdd}`}>
                     <h2 className={styles.sectionOddTitle}>Token Info</h2>
                     <TokenInfo
@@ -37,17 +38,6 @@ const TokenPage = () => {
                 </section>
                 <section className={styles.sectionEven}>
                     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h2 className={styles.sectionEvenTitle}>Token Distribution</h2>
-                            <p>The DGYM token distribution is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem. Below is the allocation breakdown:</p>
-                            <ul className={styles.list}>
-                                <li className={styles.listItem}>40% - Community Rewards</li>
-                                <li className={styles.listItem}>25% - Development Fund</li>
-                                <li className={styles.listItem}>20% - Founding Team</li>
-                                <li className={styles.listItem}>10% - Advisors and Partners</li>
-                                <li className={styles.listItem}>5% - Marketing and Growth</li>
-                            </ul>
-                        </div>
                         <div>
                             <h2 className={styles.sectionEvenTitle}>Use Cases</h2>
                             <p>The DGYM token serves multiple purposes within the DeGym ecosystem, including:</p>

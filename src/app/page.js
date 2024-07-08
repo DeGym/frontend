@@ -70,9 +70,7 @@ const HomePage = () => {
         <OpenSourceCard />
         <ProblemSolutionSection />
         <TokenSection />
-        <section>
-          <MeetTheBrains />
-        </section>
+        <MeetTheBrains />
         <Roadmap />
         <DAOSection />
         <FAQ faqs={faqs} />

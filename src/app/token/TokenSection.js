@@ -34,8 +34,7 @@ const TokenSection = () => {
             </div>
             <div className={styles.col2}>
                 <div className={styles.tokenDescription}>
-                    A deflationary utility token ($DGYM)<br />
-                    that participates in <span className={styles.textPrimary}>building<br /> a democratic DAO infrastructure</span>
+                    A deflationary utility token ($DGYM) that participates in <span className={styles.textPrimary}>building a democratic DAO infrastructure</span>
                 </div>
                 <div className={styles.sectionCoinMobile}>
                     <img src="/img/token/logo_token.png" alt="Token image" className={`${styles.coinImageMd} ${styles.shader}`} />

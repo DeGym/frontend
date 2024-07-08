@@ -6,6 +6,7 @@ import FAQ from '@/components/FAQ';
 import DAOSection from '@/components/DAOSection'
 import TokenStats from './stats'
 import TokenDistribution from './distribution'
+import TokenUseCase from './useCase'
 
 const TokenPage = () => {
     const faq = []
@@ -25,20 +26,7 @@ const TokenPage = () => {
                 <TokenSection />
                 <TokenStats />
                 <TokenDistribution />
-                <section className={styles.sectionEven}>
-                    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h2 className={styles.sectionEvenTitle}>Use Cases</h2>
-                            <p>The DGYM token serves multiple purposes within the DeGym ecosystem, including:</p>
-                            <ul className={styles.list}>
-                                <li className={styles.listItem}>Gym Membership Access</li>
-                                <li className={styles.listItem}>Staking Rewards</li>
-                                <li className={styles.listItem}>Transaction Fees</li>
-                                <li className={styles.listItem}>Voting and Governance</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                <TokenUseCase />
                 <DAOSection />
                 <FAQ faqs={faq} />
             </main>

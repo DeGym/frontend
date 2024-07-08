@@ -1,16 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../styles/pages/common.module.css';
-import Roadmap from '../components/RoadmapCarousel';
-import MeetTheBrains from '../components/MeetTheBrains';
-import GlobeSection from '../components/GlobeSection';
-import OpenSourceCard from '../components/OpenSourceCard';
-import MissionVisionCards from '../components/MissionVisionCards'
-import ProblemSolutionSection from '../components/ProblemSolutionSection'
-import IntroductionVideo from '../components/IntroductionVideo'
-import FAQ from '../components/FAQ'
+import Roadmap from '@/components/RoadmapCarousel';
+import MeetTheBrains from '@/components/MeetTheBrains';
+import GlobeSection from '@/components/GlobeSection';
+import OpenSourceCard from '@/components/OpenSourceCard';
+import MissionVisionCards from '@/components/MissionVisionCards'
+import ProblemSolutionSection from '@/components/ProblemSolutionSection'
+import IntroductionVideo from '@/components/IntroductionVideo'
+import FAQ from '@/components/FAQ'
 import TokenSection from './token/TokenSection'
-import DAOSection from '../components/DAOSection'
+import DAOSection from '@/components/DAOSection'
 
 
 

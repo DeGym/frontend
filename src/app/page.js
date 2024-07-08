@@ -56,7 +56,7 @@ const HomePage = () => {
   ];
   const howItWorks = [
     { icon: '/img/hw/node_connected.svg', title: 'Gyms Provide Services', description: 'Gyms join the DeGym Network and offer their spaces and services to DeGym users.' },
-    { icon: '/img/hw/token.svg', title: 'User Buys the Access Voucher', description: 'The user buys an NFT-based voucher that grants access to a catalog of gyms.' },
+    { icon: '/img/hw/token.svg', title: 'User Purchases the Access Voucher', description: 'The user buys an NFT-based voucher that grants access to a catalog of gyms.' },
     { icon: '/img/hw/sdk.svg', title: 'User Check-in', description: 'The user goes to the selected gym and checks in at the gym gateway.' },
     { icon: '/img/hw/web3.svg', title: 'DeGym Validation', description: 'The DeGym Dapp validates both the user’s voucher and the gym’s authenticity.' },
     { icon: '/img/hw/wallet.svg', title: 'Gym Payment', description: 'Once the check-in is approved, the DAO triggers a payment to the gym provider.' },

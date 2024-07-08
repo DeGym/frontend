@@ -62,8 +62,9 @@ const TokenDistribution = () => {
         <section className={styles.section}>
             <div className={styles.container}>
                 <h2 className={styles.title}>Token <b>Distribution</b></h2>
-                <p className={styles.description}>
-                    The DGYM token distribution is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem. Below is the allocation breakdown:
+                <p>
+                    The DGYM token distribution is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem.
+                    Below is the allocation breakdown:
                 </p>
                 <div className={styles.chartContainer}>
                     <Pie data={data} options={options} />

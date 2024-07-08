@@ -1,13 +1,17 @@
 import React from 'react';
-import styles from '../../styles/components/tokenStats.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDollarSign, faChartLine, faPiggyBank, faCoins, faRecycle, faPercentage, faBalanceScale } from '@fortawesome/free-solid-svg-icons';
+import styles from '../../styles/components/TokenStats.module.css';
 
 const TokenStats = () => {
     const stats = [
-        { title: 'Price', value: '$0.005145' },
-        { title: 'Market Cap', value: '$21,344,707' },
-        { title: 'Circulation', value: '4,148,929,542' },
-        { title: 'Staked', value: '2,127,582,473' },
-        { title: 'Supply', value: '10,527,868,709' },
+        { title: 'Price', value: '$0.005145', icon: faDollarSign },
+        { title: 'Market Cap', value: '$21,344,707', icon: faChartLine },
+        { title: 'Staked', value: '400,000,000 DGYM', icon: faPiggyBank },
+        { title: 'Supply', value: '1,000,000,000 DGYM', icon: faCoins },
+        { title: 'Circulation', value: '600,000,000 DGYM', icon: faRecycle },
+        { title: 'Staking Yield', value: '12% APR', icon: faPercentage },
+        { title: 'Staking Ratio', value: '40%', icon: faBalanceScale }
     ];
 
     return (
@@ -18,15 +22,14 @@ const TokenStats = () => {
                     <p className={`lead ${styles.subTitle}`}>DGYM is the native utility token of the DeGym platform. It is designed to facilitate seamless access to gym memberships, provide rewards to stakers, and enable transactions within the DeGym ecosystem.</p>
                 </div>
             </div>
-            <div className="row align-items-center">
+            <div className={`row ${styles.statsRow}`}>
                 {stats.map((stat, index) => (
-                    <div key={index} className="col-12 col-sm-12 col-md-6 col-lg-6 offset-lg-3 offset-md-3">
-                        <div className={`${styles.Card} p-2`}>
-                            <div className="card-body text-start">
-                                <div className="row row-cols-2 mb-4">
-                                    <div className="col-9 text-start">
-                                        <span className={styles.cardLabel}>{stat.title}</span>
-                                    </div>
+                    <div key={index} className={`col-12 col-sm-6 ${styles.cardContainer}`}>
+                        <div className={`${styles.card}`}>
+                            <div className={styles.cardBody}>
+                                <div className={styles.cardContent}>
+                                    <FontAwesomeIcon icon={stat.icon} className={styles.icon} />
+                                    <span className={styles.cardLabel}>{stat.title}</span>
                                 </div>
                                 <h1 className={`${styles.cardValue}`}>
                                     {stat.value}

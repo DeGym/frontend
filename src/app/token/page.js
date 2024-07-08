@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '../../styles/pages/Token.module.css';
-import TokenInfo from './TokenInfo';
 import TokenSection from './TokenSection';
 import FAQ from '@/components/FAQ';
 import DAOSection from '@/components/DAOSection'
@@ -26,16 +25,6 @@ const TokenPage = () => {
                 <TokenSection />
                 <TokenStats />
                 <TokenDistribution />
-                <section className={`${styles.sectionOdd}`}>
-                    <h2 className={styles.sectionOddTitle}>Token Info</h2>
-                    <TokenInfo
-                        totalSupply="100,000,000 DGYM"
-                        stakingYield="12% APR"
-                        providerCommission="2% per check-in"
-                        totalStake="50,000,000 DGYM"
-                        stakingRatio="50%"
-                    />
-                </section>
                 <section className={styles.sectionEven}>
                     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>

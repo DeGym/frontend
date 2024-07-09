@@ -2,7 +2,6 @@
     text-align: center;
     padding: 30px;
     background: linear-gradient(0deg, #00000000 10%, var(--color-dark) 35%, #2dff7311 50%, var(--color-dark) 65%, #00000000 90%);
-
     margin: 20px -20px;
 }
 
@@ -22,25 +21,24 @@
     align-items: center;
 }
 
-.swiperSlide {
+.flexWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.stepCardWrapper {
     flex: 0 0 auto;
     margin-right: 32px;
 }
 
-.swiperSlideLast {
-    flex: 0 0 auto;
-}
-
-.stepCard,
-.stepCardLast {
+.stepCard {
     background-color: var(--color-accent);
     color: var(--color-light);
     border-radius: 8px;
     padding: 30px;
     text-align: center;
-}
-
-.stepCard {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -48,7 +46,13 @@
 
 .stepCardLast {
     background-color: var(--color-accent);
+    color: var(--color-light);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
     box-shadow: none;
+    max-width: 300px;
+    margin: auto;
 }
 
 .icon {
@@ -121,7 +125,12 @@
         align-items: stretch;
     }
 
-    .swiperSlide {
+    .flexWrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .stepCardWrapper {
         margin-bottom: 16px;
         margin-right: 0;
         width: 100%;

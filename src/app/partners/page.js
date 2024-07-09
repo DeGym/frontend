@@ -23,7 +23,7 @@ const PartnersPage = () => {
                 <section className={styles.hero}>
                     <div className={styles.heroImage}>
                         <Image
-                            src="/img/branding_image.jpeg"
+                            src="/img/partners_hero_img.jpg"
                             alt="People exercising in a gym"
                             width={400}
                             height={400}

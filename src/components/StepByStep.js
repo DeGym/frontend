@@ -2,13 +2,15 @@ import React from 'react';
 import styles from '../styles/components/StepByStep.module.css';
 
 const StepByStep = ({ steps, title }) => {
+    const isSwiper = steps.length > 3;
+
     return (
         <div className={styles.stepByStepContainer}>
             {title && <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: title }} />}
-            <div className={styles.swiperWrapper}>
+            <div className={isSwiper ? styles.swiperWrapper : styles.flexWrapper}>
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>
-                        <div className={`${styles.swiperSlide} ${index === 0 ? styles.active : ''}`}>
+                        <div className={`${styles.stepCardWrapper} ${index === 0 ? styles.active : ''}`}>
                             <div className={styles.stepCard}>
                                 {step.icon && (
                                     <div className={styles.icon}>
@@ -37,11 +39,6 @@ const StepByStep = ({ steps, title }) => {
                         )}
                     </React.Fragment>
                 ))}
-                <div className={styles.swiperSlideLast}>
-                    <div className={styles.stepCardLast}>
-                        <div className={styles.text}>Smart Contract</div>
-                    </div>
-                </div>
             </div>
         </div>
     );

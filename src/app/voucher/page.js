@@ -6,6 +6,8 @@ import styles from '../../styles/pages/Voucher.module.css';
 import FAQ from '../../components/FAQ';
 import Modality from './Modality';
 import Differentials from './Differentials';
+import BenefitsSection from './BenefitsSection'
+
 
 const VoucherPage = () => {
     const faqs = [];
@@ -29,6 +31,7 @@ const VoucherPage = () => {
                     <NFTVoucherGenerator className={styles.nftVoucher} />
 
                 </section>
+                <BenefitsSection />
                 <Differentials />
                 <section className={styles.sectionEven}>
                     <p>DeGym Voucher offers a revolutionary approach to fitness through its integration with DLT, providing seamless and flexible access to a network of gyms. Members benefit from enhanced security, transparent transactions, and the ability to use NFTs for voucher credentials, which ensures easy access, potential rewards, and the ability to trade or transfer vouchers more freely. This model empowers users with more control over their fitness journey and investment, making gym access more adaptable and personalized.</p>

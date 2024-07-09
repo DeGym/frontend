@@ -1,6 +1,9 @@
 .stepByStepContainer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    background: linear-gradient(0deg, #00000000 10%, var(--color-dark) 35%, #2dff7311 50%, var(--color-dark) 65%, #00000000 90%);
+
+    margin: 20px -20px;
 }
 
 .title {
@@ -30,16 +33,17 @@
 
 .stepCard,
 .stepCardLast {
-    background-color: var(--color-dark);
+    background-color: var(--color-accent);
     color: var(--color-light);
     border-radius: 8px;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
 }
 
 .stepCard {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    margin: auto;
 }
 
 .stepCardLast {
@@ -97,6 +101,14 @@
     color: var(--color-primary);
     margin: 0 16px;
     flex: 0 0 auto;
+    display: block;
+}
+
+.arrowDown {
+    display: none;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin: 16px 0;
 }
 
 @media (max-width: 768px) {
@@ -105,14 +117,21 @@
     }
 
     .swiperWrapper {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .swiperSlide {
-        margin-right: 16px;
+        margin-bottom: 16px;
+        margin-right: 0;
+        width: 100%;
     }
 
     .arrow {
+        display: none;
+    }
+
+    .arrowDown {
         display: block;
     }
 }

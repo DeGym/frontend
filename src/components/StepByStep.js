@@ -26,9 +26,14 @@ const StepByStep = ({ steps, title }) => {
                             </div>
                         </div>
                         {index < steps.length - 1 && (
-                            <div className={styles.arrow}>
-                                <span>&rarr;</span>
-                            </div>
+                            <>
+                                <div className={styles.arrow}>
+                                    <span>&rarr;</span>
+                                </div>
+                                <div className={styles.arrowDown}>
+                                    <span>&darr;</span>
+                                </div>
+                            </>
                         )}
                     </React.Fragment>
                 ))}

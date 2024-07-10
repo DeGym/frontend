@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faTelegram, faMedium, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faTelegram, faMedium, faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import styles from '../styles/components/Footer.module.css';
 
@@ -29,10 +29,10 @@ export default function Footer() {
                             <Link href="/voucher" legacyBehavior><a>Voucher</a></Link>
                         </li>
                         <li>
-                            <Link href="/partners" legacyBehavior><a>Become a Partner</a></Link>
+                            <Link href="/partners" legacyBehavior><a>Partnership</a></Link>
                         </li>
                         <li>
-                            <Link href="https://degym-1.gitbook.io/docs" legacyBehavior><a>Documentation</a></Link>
+                            <Link href="https://degym-network.gitbook.io/docs" legacyBehavior><a>Documentation</a></Link>
                         </li>
                     </ul>
                 </div>
@@ -42,14 +42,17 @@ export default function Footer() {
                         <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTwitter} size="2x" />
                         </a>
-                        <a href="https://t.me/de_gym" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                        <a href="https://t.me/degym_dao" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTelegram} size="2x" />
                         </a>
                         <a href="https://medium.com/@0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faMedium} size="2x" />
                         </a>
-                        <a href="https://discord.com/invite/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                        <a href="https://discord.gg/4keCvDRNuY" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faDiscord} size="2x" />
+                        </a>
+                        <a href="https://github.com/DeGym" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <FontAwesomeIcon icon={faGithub} size="2x" />
                         </a>
                     </div>
                 </div>

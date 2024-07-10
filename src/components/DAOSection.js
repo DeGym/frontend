@@ -28,7 +28,7 @@ const DAOSection = () => {
                     <div className={styles.joinLinks}>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://github.com/degym" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/DeGym" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faGithub} />
                                     </div>
@@ -68,7 +68,7 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://discord.gg/VSSG2zQsar" target="_blank" rel="noopener noreferrer">
+                                <a href="https://discord.gg/4keCvDRNuY" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faDiscord} />
                                     </div>

@@ -67,7 +67,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="md:my-0 my-2 flex">
-                <Link href="https://degym-1.gitbook.io/docs" legacyBehavior>
+                <Link href="https://degym-network.gitbook.io/docs" legacyBehavior>
                   <a className={`${styles.link}`} onClick={closeMenu}>Docs</a>
                 </Link>
               </li>

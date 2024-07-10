@@ -24,7 +24,7 @@
 body {
   color: var(--color-light);
   background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
-  font-family: "Plus Jakarta Sans", "Roboto", "Open Sans", sans-serif;
+  font-family: "Inconsolata", "Plus Jakarta Sans", "Roboto", "Open Sans", sans-serif;
 }
 
 p {

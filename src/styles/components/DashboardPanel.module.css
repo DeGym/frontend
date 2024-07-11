@@ -1,0 +1,48 @@
+.dashboardPanel {
+    padding: 20px;
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--color-light);
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.privateSection {
+    margin-top: 20px;
+}
+
+.privateSection h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.privateCardsContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.privateCard {
+    background-color: var(--color-accent);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.privateCard h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.privateCard p {
+    font-size: 1.25rem;
+    font-weight: bold;
+}

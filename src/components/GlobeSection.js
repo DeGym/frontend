@@ -40,11 +40,11 @@ const GlobeSection = () => {
         <div className={styles.sectionWrapper}>
             <div className={styles.contentWrapper}>
                 <div className={styles.content}>
-                    <h2 className={styles.heading}>Powered <b>by Community</b></h2>
-                    <p className={styles.paragraph}>
+                    <h2>Powered <b>by Community</b></h2>
+                    <p>
                         DeGym is a cutting-edge decentralized autonomous organization transforming gym voucher through NFT and DLT powered by smart contracts.
                     </p>
-                    <p className={styles.paragraph}>DeGym connects Gym Consumers, Gym Providers, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards.</p>
+                    <p>DeGym connects Gym Consumers, Gym Providers, and Stakers in a seamless ecosystem where users can access multiple gyms, providers can offer their facilities, and stakers can earn rewards.</p>
                 </div>
                 <Globe
                     ref={globeEl}

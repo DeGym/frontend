@@ -6,7 +6,7 @@ const StepByStep = ({ steps, title }) => {
 
     return (
         <div className={styles.stepByStepContainer}>
-            {title && <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: title }} />}
+            {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
             <div className={isSwiper ? styles.swiperWrapper : styles.flexWrapper}>
                 {steps.map((step, index) => (
                     <React.Fragment key={index}>

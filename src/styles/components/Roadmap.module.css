@@ -16,15 +16,6 @@
     text-align: center;
 }
 
-.roadTitle {
-    text-align: center;
-    font-weight: 1000;
-    margin: auto;
-    max-width: 1200px;
-    color: var(--color-light);
-    font-size: 2.8rem;
-    -webkit-text-stroke: 1px var(--color-dark);
-}
 
 .roadText {
     font-weight: 500;
@@ -108,10 +99,6 @@
 @media (max-width: 1000px) {
     .roadSlide {
         margin: auto 10px;
-    }
-
-    .roadTitle {
-        font-size: 2rem;
     }
 
     .roadText {

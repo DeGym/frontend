@@ -8,17 +8,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.title {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 30%, var(--color-primary) 50%, var(--color-neon-green) 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 .container {
     position: relative;
     padding-bottom: 56.25%;

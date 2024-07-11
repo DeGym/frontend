@@ -21,6 +21,12 @@
   background: #2dff73 !important;
 }
 
+h2 {
+  padding: 5px;
+  margin: 20px auto;
+  font-size: 2.45rem;
+}
+
 body {
   color: var(--color-light);
   background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
@@ -51,9 +57,24 @@ a:hover {
   text-shadow: 0 0 5px var(--color-neon-green);
 }
 
+@media (max-width: 768px) {
+  p {
+    font-size: 1.05rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+}
+
 @media (max-width: 480px) {
   p {
     font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }
 

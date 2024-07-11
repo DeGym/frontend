@@ -21,7 +21,7 @@ const VoucherPage = () => {
                 <section className={styles.heroSection}>
                     <div className={styles.hero}>
                         <div className="container mx-auto">
-                            <h1 className={styles.heroTitle}>Voucher</h1>
+                            <h1>Voucher</h1>
                             <p className={styles.heroSubtitle}>
                                 Say goodbye to restrictive gym plans and hello to freedom with DeGym.
                                 As a DeGym User, you can purchase an <b>NFT that grants you access</b> to a diverse network of gyms.

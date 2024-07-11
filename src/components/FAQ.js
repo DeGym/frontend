@@ -12,8 +12,8 @@ const FAQ = ({ faqs }) => {
 
     return (
         <>
-            <h2 className={styles.title}><b>FAQ</b></h2>
-            <h3 className={styles.subTitle}>Frequently asked questions</h3>
+            <h2 className="text-center"><b>FAQ</b></h2>
+            <p className="text-center">Frequently asked questions</p>
             <div className={styles.faqContainer}>
                 {faqs.map((faq, index) => (
                     <div key={index} className={styles.faqItem}>

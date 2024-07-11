@@ -75,7 +75,7 @@ const Modality = () => {
                         <a
                             className={styles.link}
                             target="_blank"
-                            href="/providers"
+                            href="/search"
                         >
                             <p>Find gyms</p>
                             <Image

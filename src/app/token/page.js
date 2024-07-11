@@ -19,7 +19,7 @@ const TokenPage = () => {
             <main className={styles.main}>
                 <section className={styles.hero}>
                     <div className="container mx-auto">
-                        <h1 className={styles.heroTitle}>DGYM</h1>
+                        <h1>DGYM</h1>
                         <p className={styles.heroSubtitle}>Empowering the DeGym Ecosystem</p>
                     </div>
                 </section>

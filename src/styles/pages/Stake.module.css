@@ -1,0 +1,16 @@
+.main {
+    padding: 20px;
+    background: url('/img/decor_item.svg') no-repeat center center;
+    background-position: center;
+    background-size: 1820px 750px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardSection,
+.stakingActionsSection {
+    margin-bottom: 20px;
+}

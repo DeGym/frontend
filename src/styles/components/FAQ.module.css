@@ -9,30 +9,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.title {
-    font-weight: 1000;
-    text-align: center;
-    font-size: 2rem;
-    margin: 70px auto 0px;
-}
-
-.subTitle {
-    font-weight: 800;
-    text-align: center;
-    font-size: 1.8rem;
-    margin: auto
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 1.8rem;
-    }
-
-    .subTitle {
-        font-size: 1.6rem;
-    }
-}
-
 .faqItem {
     margin-bottom: 10px;
     width: auto;

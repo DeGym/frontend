@@ -1,7 +1,5 @@
 .main {
     padding: 20px;
-    color: linear-gradient(90deg, rgba(81, 89, 83, 1) 0%, rgba(211, 220, 209, 1) 50%, rgba(211, 220, 209, 0.5) 100%);
-    animation: fadeIn 1s ease-in-out;
 }
 
 .hero {
@@ -16,14 +14,6 @@
     font-weight: 1000;
 }
 
-.heroTitle {
-    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 10%, var(--color-light) 50%, var(--color-primary) 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 6.5rem;
-    margin-bottom: 1rem;
-}
-
 .heroSubtitle {
     margin: auto;
     font-size: 2rem;
@@ -31,85 +21,12 @@
     text-align: center;
 }
 
-.sectionEven {
-    justify-content: center;
-    max-width: 1200px;
-    margin: 15px auto;
-    padding: 50px;
-    background: linear-gradient(to bottom, #ffffff20, var(--color-accent));
-    border-radius: 15px;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, background-color 0.3s, border 0.3s;
-    border: 2px solid transparent;
-}
-
-.sectionEven:hover {
-    transform: translateY(-0.5px);
-    background-color: var(--color-accent);
-    border: 2px solid var(--color-primary);
-    box-shadow: 0 0 5px var(--color-primary);
-}
-
-.sectionEvenTitle {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: linear-gradient(90deg, var(--color-accent), var(--color-light), var(--color-accent));
-}
-
-.sectionOdd {
-    max-width: 1200px;
-    margin: 15px auto;
-    padding: 50px;
-    background: #00000035;
-    border-radius: 15px;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, background-color 0.3s, border 0.3s;
-    border: 2px solid transparent;
-}
-
-.sectionOdd:hover {
-    transform: translateY(-0.5px);
-    border: 2px solid var(--color-primary);
-    box-shadow: 0 0 5px var(--color-primary);
-}
-
-
-.sectionOddTitle {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background: -webkit-linear-gradient(0deg, var(--color-neon-green) 30%, var(--color-primary) 50%, var(--color-neon-green) 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 @media (max-width: 768px) {
-    .heroTitle {
-        font-size: 4rem;
-        margin-bottom: 3rem;
-    }
-
     .heroSubtitle {
         font-size: 1.5rem;
     }
 
-    .sectionEvenTitle {
-        font-size: 1.4rem;
-    }
-
-    .sectionOddTitle {
-        font-size: 1.4rem;
-    }
-
 }
-
-
 
 .list {
     list-style-type: disc;

@@ -21,6 +21,14 @@
   background: #2dff73 !important;
 }
 
+h1 {
+  background: -webkit-linear-gradient(0deg, var(--color-neon-green) 10%, var(--color-light) 50%, var(--color-primary) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 6.5rem;
+  margin-bottom: 1rem;
+}
+
 h2 {
   padding: 5px;
   margin: 20px auto;
@@ -83,13 +91,25 @@ button:hover a {
   color: var(--color-light);
 }
 
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 6.8rem;
+    margin-bottom: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
-  p {
-    font-size: 1.05rem;
+  h1 {
+    font-size: 2.3rem;
+    margin-bottom: 3rem;
   }
 
   h2 {
     font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.05rem;
   }
 
 }

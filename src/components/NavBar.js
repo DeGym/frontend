@@ -37,11 +37,11 @@ export default function Navbar() {
               width={35}
               height={35}
             />
-            <h1 className="text-3xl font-bold neon-text text ml-2">
+            <h2 className="text-3xl font-bold neon-text text ml-2 m-auto">
               <Link href="/" legacyBehavior>
                 <a>DeGym</a>
               </Link>
-            </h1>
+            </h2>
           </div>
 
           <nav className={`${isOpen ? styles.menuOpen : ''} ${styles.menu} md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0`}>

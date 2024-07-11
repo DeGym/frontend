@@ -18,8 +18,8 @@ const TokenStats = () => {
         <div className={`${styles.container} ${styles.heroStandard}`}>
             <div className="row align-items-center row-cols-1 mb-5">
                 <div className="col">
-                    <h1 className={`${styles.title}`}>$DGYM <b>Stats</b></h1>
-                    <p className={`lead ${styles.subTitle}`}>DGYM is the native utility token of the DeGym platform. It is designed to facilitate seamless access to gym memberships, provide rewards to stakers, and enable transactions within the DeGym ecosystem.</p>
+                    <h2 className="text-center">$DGYM <b>Stats</b></h2>
+                    <p >DGYM is the native utility token of the DeGym platform. It is designed to facilitate seamless access to gym memberships, provide rewards to stakers, and enable transactions within the DeGym ecosystem.</p>
                 </div>
             </div>
             <div className={`row ${styles.statsRow}`}>
@@ -31,9 +31,9 @@ const TokenStats = () => {
                                     <FontAwesomeIcon icon={stat.icon} className={styles.icon} />
                                     <span className={styles.cardLabel}>{stat.title}</span>
                                 </div>
-                                <h1 className={`${styles.cardValue}`}>
+                                <h2 className={`${styles.cardValue}`}>
                                     {stat.value}
-                                </h1>
+                                </h2>
                             </div>
                         </div>
                     </div>

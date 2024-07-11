@@ -31,7 +31,7 @@ const PartnersPage = () => {
                         />
                     </div>
                     <div className={styles.heroText}>
-                        <h1 className={styles.heroTitle}>Become a Partner</h1>
+                        <h1>Become a Partner</h1>
                         <p className={styles.heroSubtitle}>Join the DeGym network and grow your business.</p>
                     </div>
                 </section>

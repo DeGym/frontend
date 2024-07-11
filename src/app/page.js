@@ -80,10 +80,10 @@ const HomePage = () => {
         <ProblemSolutionSection />
         <StepByStep steps={howItWorks} title="How does it <b>works</b>?" />
         <TokenSection />
-        <QuickLinks />
-        <MeetTheBrains />
-        <Roadmap />
         <DAOSection />
+        <QuickLinks />
+        <Roadmap />
+        <MeetTheBrains />
         <FAQ faqs={faqs} />
       </main>
     </>

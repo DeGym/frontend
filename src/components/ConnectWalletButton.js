@@ -47,10 +47,6 @@ const ConnectWalletButton = () => {
                 <button onClick={connectWallet} style={{
                     padding: '10px 20px',
                     fontSize: '16px',
-                    borderRadius: '5px',
-                    backgroundColor: '#2dff73',
-                    color: 'black',
-                    border: 'none',
                     cursor: 'pointer'
                 }}>
                     Connect Wallet

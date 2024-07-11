@@ -48,13 +48,39 @@ b {
 a {
   color: var(--color-light);
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 0.2rem;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
   color: var(--color-neon-green);
   text-shadow: 0 0 5px var(--color-neon-green);
+}
+
+button {
+  width: 100%;
+  background-color: #2dff73;
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button a {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #2dff7360;
+  color: var(--color-light);
+  border: 1px solid var(--color-primary);
+}
+
+button:hover a {
+  color: var(--color-light);
 }
 
 @media (max-width: 768px) {

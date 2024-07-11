@@ -48,13 +48,15 @@ function VisitorSection() {
                     </div>
                 </div>
                 <div className="mx-auto w-full lg:w-60 lg:py-5">
-                    <a
-                        className="rounded-[42px] inline-flex items-center justify-center py-4 px-8 hover:text-neutral-90 text-base transition bg-primary-40 text-neutral-90 hover:bg-[#3FF49B] w-full"
-                        target="_blank"
-                        href="/partners"
-                    >
-                        I Want to Be a Partner
-                    </a>
+                    <button>
+                        <a
+                            className="rounded-[42px] inline-flex items-center justify-center py-4 px-8 hover:text-neutral-90 text-base transition bg-primary-40 text-neutral-90 w-full"
+                            target="_blank"
+                            href="/partners"
+                        >
+                            I Want to Be a Partner
+                        </a>
+                    </button>
                 </div>
             </div>
         </section>

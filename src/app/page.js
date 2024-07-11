@@ -12,7 +12,7 @@ import FAQ from '@/components/FAQ'
 import TokenSection from './token/TokenSection'
 import DAOSection from '@/components/DAOSection'
 import StepByStep from '@/components/StepByStep'
-
+import QuickLinks from '@/components/QuickLinks';
 
 
 const HomePage = () => {
@@ -80,6 +80,7 @@ const HomePage = () => {
         <ProblemSolutionSection />
         <StepByStep steps={howItWorks} title="How does it <b>works</b>?" />
         <TokenSection />
+        <QuickLinks />
         <MeetTheBrains />
         <Roadmap />
         <DAOSection />

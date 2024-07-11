@@ -36,9 +36,9 @@ const BenefitsSection = () => {
                         </div>
                     ))}
                 </div>
-                <div className={styles.ctaContainer}>
-                    <a href="/voucher" target="_self" className={styles.ctaButton}>See plans & pricing</a>
-                </div>
+                <button className="justify-center flex max-w-80 align-middle m-auto">
+                    <a href="/voucher" target="_self">See plans & pricing</a>
+                </button>
             </div>
         </section>
     );

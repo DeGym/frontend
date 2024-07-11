@@ -26,7 +26,7 @@
     margin: 20px;
     text-align: center;
     max-width: 300px;
-    background: linear-gradient(0deg, #1f1f1ff0 35%, var(--color-secondary) 74%, #00000000 75%, #0000 100%);
+    background: linear-gradient(0deg, var(--color-accent) 35%, var(--color-accent) 74%, #00000000 75%, #0000 100%);
     padding: 0px;
     border-radius: 15px;
 }

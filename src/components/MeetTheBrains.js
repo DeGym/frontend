@@ -52,6 +52,18 @@ const members = [
         }
     },
     {
+        name: 'God',
+        role: 'Success Manager',
+        image: 'god_repr.png',
+        description: 'God ensures that all strategic objectives are met and grants the life of all team members.',
+        social: {
+            linkedin: 'https://www.linkedin.com/in/0xthiagomartins/',
+            discord: 'https://discord.com/users/0xthiagomartins',
+            github: 'https://github.com/0xthiagomartins',
+            telegram: 'https://t.me/thiagofmartins'
+        }
+    },
+    {
         name: 'Thiago Martins',
         role: 'Project Manager',
         image: 'TaraPunk1631.png',

@@ -18,23 +18,43 @@
 
 
 .hero {
-    text-align: center;
-    background: #00000000;
-    padding: 170px 30px;
-    border-radius: 15px;
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.heroInner {
+    width: 100%;
+    flex:1;
+}
+.heroImage {
+    width: 100%;
+    flex: 1;
+}
+
+.joinSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 50px;
-    margin-bottom: 15px;
-    animation: fadeIn 1s ease-in-out;
-    font-size: 30px;
-    font-weight: 1000;
+}
+
+.joinButton {
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-dark);
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 
 .heroSubtitle {
     text-align: left;
     margin: auto;
-    font-size: 2rem;
-    max-width: 1200px;
+    font-size: 1.5rem;
 }
 
 

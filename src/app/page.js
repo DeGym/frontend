@@ -11,6 +11,7 @@ import IntroductionVideo from '@/components/IntroductionVideo'
 import FAQ from '@/components/FAQ'
 import TokenSection from './token/TokenSection'
 import DAOSection from '@/components/DAOSection'
+import Image from 'next/image'
 import StepByStep from '@/components/StepByStep'
 import QuickLinks from '@/components/QuickLinks';
 
@@ -70,8 +71,21 @@ const HomePage = () => {
       </Head>
       <main className={styles.main}>
         <section className={styles.hero}>
-          <h1 className={styles.heroTitle}>DeGym</h1>
-          <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+          <div className={styles.heroInner}>
+            <h1 className={styles.heroTitle}>DeGym</h1>
+            <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+            <div className={styles.joinSection}>
+          <button className={styles.joinButton}><a href='https://discord.gg/4keCvDRNuY'>Join the Community</a></button>
+          </div>
+          </div>
+          <div style={{ width: '100%', height: '600px', position: 'relative' }} className={styles.heroImage}>
+          <Image
+            src="/svg/hero_image.svg"
+            alt="Description of the image"
+            fill
+            style={{ objectFit: 'cover' }}
+          />
+          </div>
         </section>
         <GlobeSection />
         <IntroductionVideo />

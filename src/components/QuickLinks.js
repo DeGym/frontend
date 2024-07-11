@@ -6,39 +6,40 @@ const QuickLinks = () => {
         {
             icon: '/img/ql/staking.svg',
             title: 'Staking',
-            description: 'Earn rewards and help grant the health of the DeGym ecosystem.',
+            description: 'Earn rewards and support the health of the DeGym ecosystem.',
             buttonText: 'Get Started',
             href: '/staking',
         },
         {
             icon: '/img/ql/bounties.svg',
             title: 'Bounties',
-            description: 'Earn rewards while learning about DeGym and growing its ecosystem.',
+            description: 'Earn rewards while learning about DeGym and expanding its ecosystem.',
             buttonText: 'Get Started',
             href: '/bounties',
         },
         {
             icon: '/img/ql/node.svg',
-            title: 'Register a gym',
-            description: 'Register your gym while helping to grow DeGym’s network.',
+            title: 'Register a Gym',
+            description: 'Register your gym and help grow DeGym’s network.',
             buttonText: 'Get Started',
             href: '/partner',
         },
         {
             icon: '/img/ql/voucher.svg',
             title: 'NFT Voucher',
-            description: "Buy the Degym's voucher and gain access to the DeGym's network.",
+            description: "Purchase DeGym's voucher and gain access to the DeGym network.",
             buttonText: 'Get Started',
             href: '/voucher',
         },
         {
             icon: '/img/ql/explorer.svg',
-            title: 'DeGym explorer',
-            description: 'Explore gyms and find the best one near to you.',
+            title: 'DeGym Explorer',
+            description: 'Explore gyms and find the best one near you.',
             buttonText: 'Get Started',
             href: '/search',
         },
     ];
+
 
     return (
         <section className={styles.section}>

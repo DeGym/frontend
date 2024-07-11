@@ -35,12 +35,13 @@
 
 .faqItem {
     margin-bottom: 10px;
+    width: auto;
 }
 
 .faqQuestion {
     width: 100%;
     background: none;
-    border: none;
+    border: 1px solid #0000;
     color: var(--color-light);
     text-align: left;
     font-size: 1.2rem;
@@ -53,8 +54,6 @@
 .icon {
     position: absolute;
     right: 10px;
-    top: 10px;
-    font-size: 1.5rem;
 }
 
 .faqAnswer {

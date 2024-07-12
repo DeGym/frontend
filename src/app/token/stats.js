@@ -4,15 +4,25 @@ import { faDollarSign, faChartLine, faPiggyBank, faCoins, faRecycle, faPercentag
 import styles from '../../styles/components/TokenStats.module.css';
 
 const TokenStats = () => {
+    const formatNumber = (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+    const staked = 400000000;
+    const supply = 1000000000;
+    const circulation = supply - staked;
+    const stakingRatio = (staked / supply) * 100;
+
     const stats = [
         { title: 'Price', value: '$0.005145', icon: faDollarSign },
         { title: 'Market Cap', value: '$21,344,707', icon: faChartLine },
-        { title: 'Staked', value: '400,000,000 DGYM', icon: faPiggyBank },
-        { title: 'Supply', value: '1,000,000,000 DGYM', icon: faCoins },
-        { title: 'Circulation', value: '600,000,000 DGYM', icon: faRecycle },
+        { title: 'Staked', value: `${formatNumber(staked)} DGYM`, icon: faPiggyBank },
+        { title: 'Supply', value: `${formatNumber(supply)} DGYM`, icon: faCoins },
+        { title: 'Circulation', value: `${formatNumber(circulation)} DGYM`, icon: faRecycle },
         { title: 'Staking Yield', value: '12% APR', icon: faPercentage },
-        { title: 'Staking Ratio', value: '40%', icon: faBalanceScale }
+        { title: 'Staking Ratio', value: `${stakingRatio.toFixed(2)}%`, icon: faBalanceScale }
     ];
+
 
     return (
         <div className={`${styles.container} ${styles.heroStandard}`}>
@@ -41,9 +51,13 @@ const TokenStats = () => {
             </div>
             <div className="row align-items-center row-cols-1 mb-5 mt-3">
                 <div className="col">
-                    <div className="d-grid gap-3 col-8 mx-auto d-md-block">
-                        <a href="/wallet" className={`btn ${styles.btnPrimary} mx-2`} target="_blank">Wallet Guide</a>
-                        <a href="/dgym_markets" className={`btn ${styles.btnSecondary} px-4 py-2 me-md-2`} target="_blank">DGYM Markets</a>
+                    <div className="d-grid gap-3 col-8 mx-auto d-md-block text-center">
+                        <button className="m-auto w-auto p-2 mx-2">
+                            <a href="/wallet" target="_blank">Wallet Guide</a>
+                        </button>
+                        <button className="m-auto w-auto p-2 mx-2">
+                            <a href="/dgym_markets" target="_blank">DGYM Markets</a>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/components/ProblemSolutionSection.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { useRef } from 'react';
 import 'swiper/swiper-bundle.css';
 
 const ProblemSolutionSection = () => {
@@ -75,24 +76,32 @@ const ProblemSolutionSection = () => {
         },
     ];
 
+
     const [progress, setProgress] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+    const sectionRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
         };
 
-        handleResize(); // Check initial screen size
+        handleResize();
         window.addEventListener('resize', handleResize);
 
         const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.body.offsetHeight;
-            const winHeight = window.innerHeight;
-            const scrollPercent = scrollTop / (docHeight - winHeight);
-            const scrollPercentRounded = Math.round(scrollPercent * 100);
-            setProgress(scrollPercentRounded);
+            if (sectionRef.current) {
+                const sectionTop = sectionRef.current.offsetTop;
+                const sectionHeight = sectionRef.current.offsetHeight;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                
+                if (scrollPosition > sectionTop) {
+                    const sectionProgress = Math.min(100, Math.max(0, ((scrollPosition - sectionTop) / sectionHeight) * 100));
+                    setProgress(sectionProgress);
+                } else {
+                    setProgress(0);
+                }
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -103,7 +112,7 @@ const ProblemSolutionSection = () => {
     }, []);
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={sectionRef}>
             <h2 className="text-center">Problems & <b>Solutions</b></h2>
             <div className={styles.solutionsWrap}>
                 {isMobile ? (
@@ -157,7 +166,13 @@ const ProblemSolutionSection = () => {
                                 </div>
                                 <div className={styles.progressTwo}>
                                     <div className={styles.progressTwoLine}>
-                                        <div className={styles.lineInner} style={{ height: `${progress}%` }}></div>
+                                        <div 
+                                            className={styles.lineInner} 
+                                            style={{ 
+                                                height: `${progress}%`,
+                                                transition: 'height 0.3s ease-out'
+                                            }}
+                                        ></div>
                                     </div>
                                 </div>
                                 <div className={`${styles.solutionCard} ${styles.card}`} style={{ backgroundImage: `url(${item.solution.background})` }}>
@@ -174,8 +189,9 @@ const ProblemSolutionSection = () => {
                     ))
                 )}
             </div>
-        </section >
+        </section>
     );
 };
+
 
 export default ProblemSolutionSection;

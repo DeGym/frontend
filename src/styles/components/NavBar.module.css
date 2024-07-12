@@ -1,3 +1,17 @@
+.logo {
+    display: flex;
+    align-items: center;
+    width: auto;
+    min-width: 170px;
+}
+
+.logo h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin: auto;
+}
+
 .menuIcon {
     display: none;
     cursor: pointer;
@@ -12,6 +26,10 @@
 @media (max-width: 768px) {
     .menuIcon {
         display: block;
+    }
+
+    .logo h2 {
+        font-size: 1.65rem;
     }
 
     .menu {

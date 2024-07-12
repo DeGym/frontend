@@ -11,8 +11,6 @@ const DashboardPanel = () => {
 
     // Private user data (mock)
     const myStakedDGYM = 5000;
-    const claimableDGYM = 100;
-    const unstakedDGYM = 200;
 
     return (
         <div className={styles.dashboardPanel}>

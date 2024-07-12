@@ -136,7 +136,6 @@ input:checked+.slider:before {
     padding: 10px 20px;
 }
 
-
 .claimSection {
     text-align: center;
     margin-top: 20px;
@@ -170,10 +169,10 @@ input:checked+.slider:before {
 }
 
 .modal {
-    background: var(--color-dark);
+    background: var(--color-accent);
     padding: 20px;
     border-radius: 8px;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     margin: auto;
 }
@@ -222,5 +221,10 @@ input:checked+.slider:before {
 
     .card {
         margin-bottom: 10px;
+    }
+
+    .modal {
+        width: 95%;
+        padding: 10px;
     }
 }

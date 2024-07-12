@@ -7,7 +7,8 @@ import DashboardPanel from './DashboardPanel';
 import StakingActions from './StakingActions';
 
 const StakePage = () => {
-    const [availableDGYM, setAvailableDGYM] = useState(1000);
+    const [availableToStakeDGYM, setAvailableToStakeDGYM] = useState(1000);
+    const [availableToUnstakeDGYM, setAvailableToUnstakeDGYM] = useState(42);
     const [isAutoCompound, setIsAutoCompound] = useState(false);
 
     const handleStake = (amount) => {
@@ -35,7 +36,8 @@ const StakePage = () => {
         <main className={styles.main}>
             <DashboardPanel />
             <StakingActions
-                availableDGYM={availableDGYM}
+                availableToStakeDGYM={availableToStakeDGYM}
+                availableToUnstakeDGYM={availableToUnstakeDGYM}
                 onStake={handleStake}
                 onUnstake={handleUnstake}
                 onClaim={handleClaim}

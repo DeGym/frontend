@@ -3,7 +3,8 @@ import Modal from 'react-modal';
 import styles from '../../styles/components/StakingActions.module.css';
 
 const StakingActions = ({
-    availableDGYM,
+    availableToStakeDGYM,
+    availableToUnstakeDGYM,
     onStake,
     onUnstake,
     onClaimUSDT,
@@ -19,7 +20,7 @@ const StakingActions = ({
     const [isUnstakeModalOpen, setIsUnstakeModalOpen] = useState(false);
 
     const handleStake = () => {
-        if (stakeAmount <= 0 || stakeAmount > availableDGYM) {
+        if (stakeAmount <= 0 || stakeAmount > availableToStakeDGYM) {
             alert('Invalid stake amount');
             return;
         }
@@ -30,18 +31,20 @@ const StakingActions = ({
     };
 
     const handleUnstake = () => {
-        if (unstakeAmount <= 0) {
+        if (unstakeAmount <= 0 || unstakeAmount > availableToUnstakeDGYM) {
             alert('Invalid unstake amount');
             return;
         }
         onUnstake(unstakeAmount);
         setUnstakeAmount('');
+        setRangeValue(0);
         setIsUnstakeModalOpen(false);
     };
 
-    const handleRangeChange = (value) => {
+    const handleRangeChange = (value, limit) => {
         setRangeValue(value);
-        setStakeAmount((availableDGYM * (value / 100)).toFixed(2));
+        setStakeAmount((limit * (value / 100)).toFixed(2));
+        setUnstakeAmount((limit * (value / 100)).toFixed(2));
     };
 
     return (
@@ -62,12 +65,12 @@ const StakingActions = ({
             <div className={styles.cardContainer}>
                 <div className={styles.card}>
                     <h3>Available DGYM Amount</h3>
-                    <p className={styles.cardValue}>{availableDGYM} DGYM</p>
+                    <p className={styles.cardValue}>{availableToStakeDGYM} DGYM</p>
                     <button className={styles.cardButton} onClick={() => setIsStakeModalOpen(true)}>Stake</button>
                 </div>
                 <div className={styles.card}>
                     <h3>Available DGYM Amount</h3>
-                    <p className={styles.cardValue}>{availableDGYM} DGYM</p>
+                    <p className={styles.cardValue}>{availableToUnstakeDGYM} DGYM</p>
                     <button className={styles.cardButton} onClick={() => setIsUnstakeModalOpen(true)}>Unstake</button>
                 </div>
             </div>
@@ -79,30 +82,30 @@ const StakingActions = ({
                 overlayClassName={styles.overlay}
             >
                 <h2>Stake DGYM</h2>
-                <p>Available DGYM for stake: <b>{availableDGYM}</b></p>
+                <p>Available DGYM for stake: <b>{availableToStakeDGYM}</b></p>
                 <div className={styles.inputGroup}>
                     <input
                         type="number"
                         value={stakeAmount}
                         min={0}
-                        max={availableDGYM}
+                        max={availableToStakeDGYM}
                         onChange={(e) => setStakeAmount(e.target.value)}
                         placeholder="Enter amount..."
                         className={styles.input}
                     />
                 </div>
                 <div className={styles.percentageButtons}>
-                    <button onClick={() => handleRangeChange(25)}>25%</button>
-                    <button onClick={() => handleRangeChange(50)}>50%</button>
-                    <button onClick={() => handleRangeChange(75)}>75%</button>
-                    <button onClick={() => handleRangeChange(100)}>100%</button>
+                    <button onClick={() => handleRangeChange(25, availableToStakeDGYM)}>25%</button>
+                    <button onClick={() => handleRangeChange(50, availableToStakeDGYM)}>50%</button>
+                    <button onClick={() => handleRangeChange(75, availableToStakeDGYM)}>75%</button>
+                    <button onClick={() => handleRangeChange(100, availableToStakeDGYM)}>100%</button>
                 </div>
                 <input
                     type="range"
                     min="0"
                     max="100"
                     value={rangeValue}
-                    onChange={(e) => handleRangeChange(e.target.value)}
+                    onChange={(e) => handleRangeChange(e.target.value, availableToStakeDGYM)}
                     className={styles.rangeSlider}
                 />
                 <button className={styles.actionButton} onClick={handleStake}>Stake</button>
@@ -116,28 +119,30 @@ const StakingActions = ({
                 overlayClassName={styles.overlay}
             >
                 <h2>Unstake DGYM</h2>
-                <p>Available DGYM for unstake: <b>{availableDGYM}</b></p>
+                <p>Available DGYM for unstake: <b>{availableToUnstakeDGYM}</b></p>
                 <div className={styles.inputGroup}>
                     <input
                         type="number"
                         value={unstakeAmount}
+                        min={0}
+                        max={availableToUnstakeDGYM}
                         onChange={(e) => setUnstakeAmount(e.target.value)}
                         placeholder="Enter amount..."
                         className={styles.input}
                     />
                 </div>
                 <div className={styles.percentageButtons}>
-                    <button onClick={() => handleRangeChange(25)}>25%</button>
-                    <button onClick={() => handleRangeChange(50)}>50%</button>
-                    <button onClick={() => handleRangeChange(75)}>75%</button>
-                    <button onClick={() => handleRangeChange(100)}>100%</button>
+                    <button onClick={() => handleRangeChange(25, availableToUnstakeDGYM)}>25%</button>
+                    <button onClick={() => handleRangeChange(50, availableToUnstakeDGYM)}>50%</button>
+                    <button onClick={() => handleRangeChange(75, availableToUnstakeDGYM)}>75%</button>
+                    <button onClick={() => handleRangeChange(100, availableToUnstakeDGYM)}>100%</button>
                 </div>
                 <input
                     type="range"
                     min="0"
                     max="100"
                     value={rangeValue}
-                    onChange={(e) => handleRangeChange(e.target.value)}
+                    onChange={(e) => handleRangeChange(e.target.value, availableToUnstakeDGYM)}
                     className={styles.rangeSlider}
                 />
                 <button className={styles.actionButton} onClick={handleUnstake}>Unstake</button>

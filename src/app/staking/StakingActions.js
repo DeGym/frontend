@@ -6,11 +6,19 @@ const StakingActions = ({ availableDGYM, onStake, onUnstake, onClaim, onToggleAu
     const [unstakeAmount, setUnstakeAmount] = useState('');
 
     const handleStake = () => {
+        if (stakeAmount <= 0 || stakeAmount > availableDGYM) {
+            alert('Invalid stake amount');
+            return;
+        }
         onStake(stakeAmount);
         setStakeAmount('');
     };
 
     const handleUnstake = () => {
+        if (unstakeAmount <= 0) {
+            alert('Invalid unstake amount');
+            return;
+        }
         onUnstake(unstakeAmount);
         setUnstakeAmount('');
     };
@@ -35,7 +43,7 @@ const StakingActions = ({ availableDGYM, onStake, onUnstake, onClaim, onToggleAu
                         <button onClick={() => setStakeAmount(availableDGYM)}>100%</button>
                     </div>
                 </div>
-                <button onClick={handleStake}>Stake</button>
+                <button className={styles.actionButton} onClick={handleStake}>Stake</button>
             </div>
 
             <div className={styles.unstakeSection}>
@@ -49,12 +57,12 @@ const StakingActions = ({ availableDGYM, onStake, onUnstake, onClaim, onToggleAu
                         className={styles.input}
                     />
                 </div>
-                <button onClick={handleUnstake}>Unstake</button>
+                <button className={styles.actionButton} onClick={handleUnstake}>Unstake</button>
             </div>
 
             <div className={styles.claimSection}>
                 <h3>Claim Rewards</h3>
-                <button onClick={onClaim}>Claim</button>
+                <button className={styles.actionButton} onClick={onClaim}>Claim</button>
             </div>
 
             <div className={styles.autoCompoundSection}>

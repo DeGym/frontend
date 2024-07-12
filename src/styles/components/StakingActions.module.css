@@ -7,14 +7,12 @@
     margin: 20px 0;
 }
 
-
 .stakeSection,
 .unstakeSection,
 .claimSection,
 .autoCompoundSection {
     margin-bottom: 20px;
 }
-
 
 .inputGroup {
     display: flex;
@@ -28,18 +26,32 @@
     border-radius: 4px;
     border: 1px solid var(--color-light);
     margin-right: 10px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.percentageButtons {
+    display: flex;
+    gap: 5px;
 }
 
 .percentageButtons button {
-    margin-right: 5px;
     padding: 5px 10px;
     border: none;
     border-radius: 4px;
     background-color: var(--color-primary);
     color: var(--color-dark);
-    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.percentageButtons button:hover {
+    background-color: var(--color-neon-green);
+}
+
+.actionButton {
+    padding: 10px 20px;
+    border-radius: 4px;
+}
 
 .toggleSwitch {
     position: relative;
@@ -84,4 +96,18 @@ input:checked+.slider {
 
 input:checked+.slider:before {
     transform: translateX(26px);
+}
+
+@media (max-width: 768px) {
+    .stakingActions {
+        padding: 10px;
+    }
+
+    .input {
+        padding: 8px;
+    }
+
+    .actionButton {
+        padding: 8px 16px;
+    }
 }

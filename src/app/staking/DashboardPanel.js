@@ -26,8 +26,6 @@ const DashboardPanel = () => {
             <div className={styles.privateSection}>
                 <div className={styles.privateCardsContainer}>
                     <Card title="My Staked DGYM" value={myStakedDGYM} />
-                    <Card title="Claimable DGYM/USDT" value={claimableDGYM} />
-                    <Card title="Unstaked DGYM" value={unstakedDGYM} />
                 </div>
             </div>
         </div>

@@ -32,6 +32,9 @@ export default function Footer() {
                             <Link href="/partners" legacyBehavior><a>Partnership</a></Link>
                         </li>
                         <li>
+                            <Link href="/staking" legacyBehavior><a>Stake</a></Link>
+                        </li>
+                        <li>
                             <Link href="https://degym-network.gitbook.io/docs" legacyBehavior><a>Documentation</a></Link>
                         </li>
                     </ul>

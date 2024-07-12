@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles/components/ConnectWalletButton.module.css';
 
 const ConnectWalletButton = () => {
     const [walletAddress, setWalletAddress] = useState(null);
     const [error, setError] = useState('');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const connectWallet = async () => {
         const provider = await detectEthereumProvider();
@@ -38,17 +42,36 @@ const ConnectWalletButton = () => {
     };
 
     return (
-        <div>
+        <div className={styles.walletContainer}>
             {walletAddress ? (
-                <div style={{ color: '#2dff73', marginTop: '10px' }}>
-                    <strong>Wallet Connected:</strong> {walletAddress.substring(0, 6)}...{walletAddress.substring(walletAddress.length - 4)}
+                <div
+                    className={styles.walletInfo}
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                    <div className={styles.icon}>
+                        <img src="/img/hw/wallet.svg" alt="Wallet Icon" className="img-fluid d-block" />
+                    </div>
+                    <div className={styles.walletAddress}>
+                        {walletAddress.substring(0, 6)}...{walletAddress.substring(walletAddress.length - 4)}
+                    </div>
+                    <FontAwesomeIcon icon={faChevronDown} className={styles.chevronIcon} />
+                    {isDropdownOpen && (
+                        <div className={styles.dropdownMenu}>
+                            <p><strong>Connected Address:</strong></p>
+                            <p>{walletAddress}</p>
+                            <button className={styles.disconnectButton} onClick={() => {
+                                setWalletAddress(null);
+                                setIsDropdownOpen(false);
+                            }}>
+                                Disconnect
+                            </button>
+                        </div>
+                    )}
                 </div>
             ) : (
-                <button onClick={connectWallet} style={{
-                    padding: '10px 20px',
-                    fontSize: '16px',
-                    cursor: 'pointer'
-                }}>
+                <button onClick={connectWallet} className={styles.connectButton}>
                     Connect Wallet
                 </button>
             )}

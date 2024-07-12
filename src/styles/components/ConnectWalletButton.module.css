@@ -4,7 +4,6 @@
     transition: background-color 0.3s ease;
 }
 
-
 .walletContainer {
     position: relative;
 }
@@ -13,11 +12,13 @@
     display: flex;
     align-items: center;
     background-color: var(--color-dark);
-    padding: 10px;
-    border-radius: 4px;
+    border: 1px solid var(--color-primary);
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
+    padding-right: 10px;
+    border-radius: 50px;
+    /* Adjust the border radius to make it look good */
 }
 
 .walletInfo:hover {
@@ -28,8 +29,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border: 1px solid var(--color-primary);
     border-radius: 50%;
     padding: 7.5px;
@@ -50,6 +51,8 @@
 
 .chevronIcon {
     color: var(--color-light);
+    margin-left: 10px;
+    /* Adjust the spacing as needed */
 }
 
 .dropdownMenu {
@@ -75,7 +78,8 @@
 }
 
 .disconnectButton:hover {
-    background-color: transparent;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
 }
 
 @media (max-width: 768px) {

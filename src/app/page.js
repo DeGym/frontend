@@ -72,7 +72,7 @@ const HomePage = () => {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroInner}>
-            <h1 className={styles.heroTitle}>DeGym</h1>
+            <h1>DeGym</h1>
             <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
             <div className={styles.joinSection}>
               <button className={styles.joinButton}><a href='https://discord.gg/4keCvDRNuY'>Join the Community</a></button>

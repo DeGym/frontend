@@ -5,6 +5,8 @@ import dynamic from 'next/dynamic';
 import styles from '../../styles/pages/Stake.module.css';
 import DashboardPanel from './DashboardPanel';
 import StakingActions from './StakingActions';
+import StakePools from './StakePools';
+
 
 const StakePage = () => {
     const [availableToStakeDGYM, setAvailableToStakeDGYM] = useState(1000);
@@ -32,6 +34,25 @@ const StakePage = () => {
         // Logic to toggle auto-compound
     };
 
+    const stakePools = [
+        {
+            amountStaked: 100,
+            rewardUSDT: 10,
+            rewardDGYM: 15,
+            createdDate: '2023-01-01',
+            endDate: '2024-01-01',
+            status: 'live',
+        },
+        {
+            amountStaked: 200,
+            rewardUSDT: 20,
+            rewardDGYM: 30,
+            createdDate: '2023-02-01',
+            endDate: '2024-02-01',
+            status: 'finished',
+        },
+    ];
+
     return (
         <main className={styles.main}>
             <DashboardPanel />
@@ -44,6 +65,7 @@ const StakePage = () => {
                 onToggleAutoCompound={handleToggleAutoCompound}
                 isAutoCompound={isAutoCompound}
             />
+            <StakePools pools={stakePools} />
         </main>
     );
 };

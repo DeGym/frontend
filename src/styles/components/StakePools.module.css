@@ -94,8 +94,16 @@
     color: var(--color-light);
 }
 
+.tableRow:nth-child(even) td {
+    background-color: var(--color-accent);
+}
+
+.tableRow:nth-child(odd) td {
+    background-color: var(--color-dark);
+}
+
 .tableRow:hover td {
-    background-color: var(--color-dark-hover);
+    background-color: #2dff7310;
 }
 
 .tableFooter td {

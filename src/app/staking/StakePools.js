@@ -64,6 +64,7 @@ const StakePools = ({ pools }) => {
                             <th>Amount Staked</th>
                             <th>Reward (USDT)</th>
                             <th>Reward (DGYM)</th>
+                            <th>Compound</th>
                             <th>Created Date</th>
                             <th>End Date</th>
                             <th>Status</th>
@@ -75,6 +76,7 @@ const StakePools = ({ pools }) => {
                                 <td>{pool.amountStaked} DGYM</td>
                                 <td>{pool.rewardUSDT}</td>
                                 <td>{pool.rewardDGYM}</td>
+                                <td>{pool.compound}</td>
                                 <td>{new Date(pool.createdDate).toLocaleDateString()}</td>
                                 <td>{new Date(pool.endDate).toLocaleDateString()}</td>
                                 <td className={pool.status === 'live' ? styles.statusLive : styles.statusFinished}>
@@ -85,7 +87,7 @@ const StakePools = ({ pools }) => {
                     </tbody>
                     <tfoot>
                         <tr className={styles.tableFooter}>
-                            <td colSpan="6">
+                            <td colSpan="7">
                                 <button className={styles.toTopButton} onClick={scrollToTop}>
                                     To Top ^
                                 </button>

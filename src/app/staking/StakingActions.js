@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import styles from '../../styles/components/StakingActions.module.css';
+import InfoTooltip from '@/components/InfoToolTip';
+
 
 const StakingActions = ({
     availableToStakeDGYM,
@@ -9,16 +11,16 @@ const StakingActions = ({
     onUnstake,
     onClaimUSDT,
     onClaimDGYM,
-    onToggleAutoCompound,
-    isAutoCompound,
+    isAutoInterest,
     rewards = { DGYM: 0, USDT: 0 }
 }) => {
-    const [stakeAmount, setStakeAmount] = useState('');
+    const [stakeAmount, setStakeAmount] = useState(0);
     const [unstakeAmount, setUnstakeAmount] = useState('');
     const [rangeValue, setRangeValue] = useState(0);
     const [duration, setDuration] = useState(0);
     const [isStakeModalOpen, setIsStakeModalOpen] = useState(false);
     const [isUnstakeModalOpen, setIsUnstakeModalOpen] = useState(false);
+    const [interestMode, setInterestMode] = useState(isAutoInterest ? 'compound' : 'simple');
 
     const handleStake = () => {
         if (stakeAmount <= 0 || stakeAmount > availableToStakeDGYM) {
@@ -29,7 +31,7 @@ const StakingActions = ({
             alert('Invalid duration');
             return;
         }
-        onStake(stakeAmount, duration);
+        onStake(stakeAmount, duration, interestMode === 'auto');
         setStakeAmount('');
         setDuration(0);
         setRangeValue(0);
@@ -59,26 +61,22 @@ const StakingActions = ({
         return unlockDate.toLocaleDateString();
     };
 
-    const calculateExpectedROI = (amount, weeks) => {
+    const calculateExpectedROI = (amount, weeks, autoInterest) => {
         const apy = 0.12; // Example APY
-        return (amount * apy * (weeks / 52)).toFixed(2);
+        if (autoInterest) {
+            const periods = weeks / 52;
+            return (amount * Math.pow(1 + apy / 52, periods * 52) - amount).toFixed(2);
+        } else {
+            return (amount * apy * (weeks / 52)).toFixed(2);
+        }
+    };
+
+    const toggleInterestMode = (mode) => {
+        setInterestMode(mode);
     };
 
     return (
         <div className={styles.stakingActions}>
-            <div className={styles.autoCompoundSection}>
-                <h3>Auto-Compound</h3>
-                <label className={styles.toggleSwitch}>
-                    <input
-                        type="checkbox"
-                        checked={isAutoCompound}
-                        onChange={onToggleAutoCompound}
-                    />
-                    <span className={styles.slider}></span>
-                </label>
-                <p>{isAutoCompound ? 'Auto-compound is enabled' : 'Auto-compound is disabled'}</p>
-            </div>
-
             <div className={styles.cardContainer}>
                 <div className={styles.card}>
                     <h3>Available DGYM Amount</h3>
@@ -99,7 +97,11 @@ const StakingActions = ({
                 overlayClassName={styles.overlay}
             >
                 <h2>Stake DGYM</h2>
-                <p>Available DGYM for stake: <b>{availableToStakeDGYM}</b></p>
+                <div className="align-middle">
+                    <h3>Available DGYM for stake: <b>{availableToStakeDGYM}</b>
+                        <InfoTooltip text="Enter the amount of DGYM you want to stake." />
+                    </h3>
+                </div>
                 <div className={styles.inputGroup}>
                     <input
                         type="number"
@@ -126,14 +128,10 @@ const StakingActions = ({
                     className={styles.rangeSlider}
                 />
                 <div className={styles.durationSection}>
-                    <h3>Duration (in weeks)</h3>
-                    <div className={styles.durationButtons}>
-                        <button onClick={() => setDuration(1)}>1W</button>
-                        <button onClick={() => setDuration(5)}>5W</button>
-                        <button onClick={() => setDuration(10)}>10W</button>
-                        <button onClick={() => setDuration(25)}>25W</button>
-                        <button onClick={() => setDuration(52)}>52W</button>
-                    </div>
+                    <h3>Duration (in weeks)
+                        <InfoTooltip text="Enter the duration for which you want to stake your DGYM." />
+
+                    </h3>
                     <div className={styles.inputGroup}>
                         <input
                             type="number"
@@ -144,6 +142,30 @@ const StakingActions = ({
                             className={styles.input}
                         />
                     </div>
+                    <div className={styles.durationButtons}>
+                        <button onClick={() => setDuration(1)}>1W</button>
+                        <button onClick={() => setDuration(5)}>5W</button>
+                        <button onClick={() => setDuration(10)}>10W</button>
+                        <button onClick={() => setDuration(25)}>25W</button>
+                        <button onClick={() => setDuration(52)}>52W</button>
+                    </div>
+                </div>
+                <div className={styles.interestToggle}>
+                    <h3>Interest</h3>
+                    <div className={styles.interestToggleButtons}>
+                        <button
+                            className={`${styles.toggleButton} ${interestMode === 'simple' ? styles.active : ''}`}
+                            onClick={() => toggleInterestMode('simple')}
+                        >
+                            Simple
+                        </button>
+                        <button
+                            className={`${styles.toggleButton} ${interestMode === 'compound' ? styles.active : ''}`}
+                            onClick={() => toggleInterestMode('compound')}
+                        >
+                            Compound
+                        </button>
+                    </div>
                 </div>
                 <div className={styles.lockOverviewCard}>
                     <h3>LOCK <b>OVERVIEW</b></h3>
@@ -151,7 +173,7 @@ const StakingActions = ({
                     <p><b>APY:</b> 12%</p>
                     <p><b>DURATION:</b> {duration * 7} days</p>
                     <p><b>UNLOCK ON:</b> {calculateUnlockDate(duration)}</p>
-                    <p><b>EXPECTED ROI:</b> {calculateExpectedROI(stakeAmount, duration)} DGYM</p>
+                    <p><b>EXPECTED ROI:</b> {calculateExpectedROI(stakeAmount, duration, interestMode === 'compound')} DGYM</p>
                 </div>
                 <button className={styles.actionButton} onClick={handleStake}>Stake</button>
                 <button className={styles.modalCloseButton} onClick={() => setIsStakeModalOpen(false)}>Close</button>

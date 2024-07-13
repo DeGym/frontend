@@ -11,7 +11,6 @@ import StakePools from './StakePools';
 const StakePage = () => {
     const [availableToStakeDGYM, setAvailableToStakeDGYM] = useState(1000);
     const [availableToUnstakeDGYM, setAvailableToUnstakeDGYM] = useState(42);
-    const [isAutoCompound, setIsAutoCompound] = useState(false);
 
     const handleStake = (amount) => {
         console.log(`Staking ${amount} DGYM`);
@@ -28,18 +27,13 @@ const StakePage = () => {
         // Logic to claim rewards
     };
 
-    const handleToggleAutoCompound = () => {
-        setIsAutoCompound(!isAutoCompound);
-        console.log(`Auto-compound ${!isAutoCompound ? 'enabled' : 'disabled'}`);
-        // Logic to toggle auto-compound
-    };
 
     const stakePools = [
         {
             amountStaked: 100,
             rewardUSDT: 10,
             rewardDGYM: 15,
-            compound: 'Manual',
+            interest: 'Simple',
             createdDate: '2023-01-01',
             endDate: '2024-01-01',
             status: 'live',
@@ -48,7 +42,7 @@ const StakePage = () => {
             amountStaked: 200,
             rewardUSDT: 20,
             rewardDGYM: 30,
-            compound: 'Auto',
+            interest: 'Compound',
             createdDate: '2023-02-01',
             endDate: '2024-02-01',
             status: 'finished',
@@ -64,8 +58,6 @@ const StakePage = () => {
                 onStake={handleStake}
                 onUnstake={handleUnstake}
                 onClaim={handleClaim}
-                onToggleAutoCompound={handleToggleAutoCompound}
-                isAutoCompound={isAutoCompound}
             />
             <StakePools pools={stakePools} />
         </main>

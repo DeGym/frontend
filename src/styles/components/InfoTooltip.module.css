@@ -1,0 +1,38 @@
+.infoContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.infoIcon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin: 2.5px;
+    margin-top: -1px;
+    fill: var(--color-light);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    white-space: nowrap;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-dark) transparent transparent transparent;
+}

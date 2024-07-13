@@ -30,14 +30,14 @@ export default function Navbar() {
     <>
       <header className="bg-dark text-light py-4 fixed w-full z-10 align-middle">
         <div className="container mx-auto flex justify-between items-center px-4 max-w-7xl">
-          <div className="flex items-center">
+          <div className={styles.logo}>
             <Image
               src="/DeGym_green_white_logo_without_bg.png"
               alt="DeGym Logo"
               width={35}
               height={35}
             />
-            <h2 className="text-3xl font-bold neon-text text ml-2 m-auto">
+            <h2>
               <Link href="/" legacyBehavior>
                 <a>DeGym</a>
               </Link>
@@ -67,6 +67,11 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="md:my-0 my-2 flex">
+                <Link href="/staking" legacyBehavior>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Stake</a>
+                </Link>
+              </li>
+              <li className="md:my-0 my-2 flex">
                 <Link href="https://degym-network.gitbook.io/docs" legacyBehavior>
                   <a className={`${styles.link}`} onClick={closeMenu}>Docs</a>
                 </Link>
@@ -74,7 +79,7 @@ export default function Navbar() {
             </ul>
           </nav>
           <ConnectWalletButton />
-          <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
+          <button className="md:hidden bg-transparent" onClick={toggleMenu} aria-label="Toggle menu">
             <FontAwesomeIcon icon={faBars} className="text-2xl text-light" />
           </button>
         </div>

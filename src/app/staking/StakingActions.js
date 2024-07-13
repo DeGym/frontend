@@ -16,6 +16,7 @@ const StakingActions = ({
     const [stakeAmount, setStakeAmount] = useState('');
     const [unstakeAmount, setUnstakeAmount] = useState('');
     const [rangeValue, setRangeValue] = useState(0);
+    const [duration, setDuration] = useState(0);
     const [isStakeModalOpen, setIsStakeModalOpen] = useState(false);
     const [isUnstakeModalOpen, setIsUnstakeModalOpen] = useState(false);
 
@@ -24,8 +25,13 @@ const StakingActions = ({
             alert('Invalid stake amount');
             return;
         }
-        onStake(stakeAmount);
+        if (duration <= 0) {
+            alert('Invalid duration');
+            return;
+        }
+        onStake(stakeAmount, duration);
         setStakeAmount('');
+        setDuration(0);
         setRangeValue(0);
         setIsStakeModalOpen(false);
     };
@@ -45,6 +51,17 @@ const StakingActions = ({
         setRangeValue(value);
         setStakeAmount((limit * (value / 100)).toFixed(2));
         setUnstakeAmount((limit * (value / 100)).toFixed(2));
+    };
+
+    const calculateUnlockDate = (weeks) => {
+        const unlockDate = new Date();
+        unlockDate.setDate(unlockDate.getDate() + weeks * 7);
+        return unlockDate.toLocaleDateString();
+    };
+
+    const calculateExpectedROI = (amount, weeks) => {
+        const apy = 0.12; // Example APY
+        return (amount * apy * (weeks / 52)).toFixed(2);
     };
 
     return (
@@ -108,6 +125,34 @@ const StakingActions = ({
                     onChange={(e) => handleRangeChange(e.target.value, availableToStakeDGYM)}
                     className={styles.rangeSlider}
                 />
+                <div className={styles.durationSection}>
+                    <h3>Duration (in weeks)</h3>
+                    <div className={styles.durationButtons}>
+                        <button onClick={() => setDuration(1)}>1W</button>
+                        <button onClick={() => setDuration(5)}>5W</button>
+                        <button onClick={() => setDuration(10)}>10W</button>
+                        <button onClick={() => setDuration(25)}>25W</button>
+                        <button onClick={() => setDuration(52)}>52W</button>
+                    </div>
+                    <div className={styles.inputGroup}>
+                        <input
+                            type="number"
+                            value={duration}
+                            min={0}
+                            onChange={(e) => setDuration(e.target.value)}
+                            placeholder="Enter weeks..."
+                            className={styles.input}
+                        />
+                    </div>
+                </div>
+                <div className={styles.lockOverviewCard}>
+                    <h3>LOCK <b>OVERVIEW</b></h3>
+                    <p><b>DGYM TO BE LOCKED:</b> {stakeAmount} DGYM</p>
+                    <p><b>APY:</b> 12%</p>
+                    <p><b>DURATION:</b> {duration * 7} days</p>
+                    <p><b>UNLOCK ON:</b> {calculateUnlockDate(duration)}</p>
+                    <p><b>EXPECTED ROI:</b> {calculateExpectedROI(stakeAmount, duration)} DGYM</p>
+                </div>
                 <button className={styles.actionButton} onClick={handleStake}>Stake</button>
                 <button className={styles.modalCloseButton} onClick={() => setIsStakeModalOpen(false)}>Close</button>
             </Modal>

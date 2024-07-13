@@ -1,23 +1,63 @@
 .stakingActions {
-    padding: 20px 50px;
+    padding: 20px;
     color: var(--color-light);
+    max-width: 1200px;
+    margin: auto;
 }
 
-.stakeUnstakeContainer {
+.autoCompoundSection,
+.claimSection,
+.lockOverviewCard {
+    margin-bottom: 20px;
+}
+
+.cardContainer {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-.section {
-    padding: 20px 50px;
+.card {
     flex: 1;
     min-width: 280px;
-    margin-bottom: 20px;
+    max-width: 380px;
+    padding: 20px;
     background-color: var(--color-accent);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cardValue {
+    font-size: 1.5rem;
+}
+
+.cardButton {
+    padding: 10px 20px;
+}
+
+.modal {
+    background-color: var(--color-accent);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    min-width: 350px;
+    margin: 0px 0px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
 }
 
 .inputGroup {
@@ -35,25 +75,23 @@
     color: var(--color-light);
 }
 
-.percentageButtons {
+.percentageButtons,
+.durationButtons {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.percentageButtons button {
+.percentageButtons button,
+.durationButtons button {
     flex: 1;
     margin: 0 5px;
     padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-primary);
-    color: var(--color-dark);
-    transition: background-color 0.3s ease;
 }
 
-.percentageButtons button:hover {
-    background-color: var(--color-neon-green);
+.percentageButtons button:hover,
+.durationButtons button:hover {
+    background-color: var(--color-primary-dark);
 }
 
 .rangeSlider {
@@ -67,131 +105,37 @@
     margin: 0 auto;
 }
 
-.toggleSwitch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+
+.modalCloseButton {
+    padding: 10px 20px;
+    background-color: var(--color-danger);
+    color: var(--color-light);
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
-.toggleSwitch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.modalCloseButton:hover {
+    background-color: #7002;
+    border: 1px solid #f00;
+    color: red;
 }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-accent);
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--color-light);
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked+.slider {
-    background-color: var(--color-primary);
-}
-
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
-
-.cardContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.card {
-    flex: 1;
+.lockOverviewCard {
     padding: 20px;
-    background-color: var(--color-accent);
+    background-color: var(--color-dark);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.cardValue {
-    font-size: 1.5rem;
+.lockOverviewCard h3 {
+    font-size: 1.3rem;
+    padding: 15px;
 }
 
-.cardButton {
-    padding: 10px 20px;
-}
-
-.claimSection {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.claimTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.claimContainer {
-    display: flex;
-    justify-content: space-around;
-    max-width: 450px;
-    margin: auto;
-}
-
-.claimColumn {
-    padding: 20px;
-    background: var(--color-accent);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    border-radius: 8px;
-    min-width: 120px;
-}
-
-.claimValue {
-    font-size: 1.2rem;
-}
-
-.modal {
-    background: var(--color-accent);
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    margin: auto;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.modalCloseButton {
-    margin-top: 20px;
-    padding: 10px 20px;
+.lockOverviewCard p {
+    padding: 5px;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -199,28 +143,9 @@ input:checked+.slider:before {
         padding: 10px;
     }
 
-    .stakeUnstakeContainer {
-        flex-direction: column;
-    }
-
-    .title {
-        font-size: 1.5rem;
-    }
-
-    .input {
-        padding: 8px;
-    }
-
-    .actionButton {
-        padding: 8px 16px;
-    }
-
     .cardContainer {
         flex-direction: column;
-    }
-
-    .card {
-        margin-bottom: 10px;
+        gap: 10px;
     }
 
     .modal {

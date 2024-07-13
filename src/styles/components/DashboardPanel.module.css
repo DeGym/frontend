@@ -1,15 +1,21 @@
 .dashboardPanel {
-    padding: 20px;
-    background-color: var(--color-dark);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: var(--color-light);
+    max-width: 1200px;
+    margin: 0px auto;
 }
 
 .cardsContainer {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 20px;
+}
+
+.cardsContainer>div {
+    flex: 1 1 200px;
+    max-width: 350px;
+    margin: 0px auto;
 }
 
 .privateSection {
@@ -24,25 +30,96 @@
 
 .privateCardsContainer {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.privateCard {
-    background-color: var(--color-accent);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    flex: 1;
-    margin: 0 10px;
+.privateCardsContainer>div {
+    flex: 1 1 350px;
+    max-width: 350px;
 }
 
-.privateCard h4 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+@media (max-width: 1200px) {
+
+    .cardsContainer>div,
+    .privateCardsContainer>div {
+        flex: 1 1 200px;
+        max-width: 300px;
+    }
+
+    .privateSection h3 {
+        font-size: 1.4rem;
+    }
 }
 
-.privateCard p {
-    font-size: 1.25rem;
-    font-weight: bold;
+@media (max-width: 1024px) {
+
+    .cardsContainer>div,
+    .privateCardsContainer>div {
+        flex: 1 1 180px;
+        max-width: 280px;
+    }
+
+    .privateSection h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .cardsContainer>div,
+    .privateCardsContainer>div {
+        flex: 1 1 160px;
+        max-width: 240px;
+    }
+
+    .privateSection h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cardsContainer>div,
+    .privateCardsContainer>div {
+        flex: 1 1 140px;
+        max-width: 220px;
+    }
+
+    .privateSection h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .privateSection h3 {
+        font-size: 1.15rem;
+    }
+
+    .cardsContainer,
+    .privateCardsContainer {
+        justify-content: space-between;
+    }
+
+    .cardsContainer>div,
+    .privateCardsContainer>div {
+        padding: 10px;
+        flex: 1 1 120px;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .cardsContainer>div,
+    .privateCardsContainer>div {
+        padding: 5px;
+        flex: 1 1 100px;
+        max-width: 160px;
+    }
+
+    .privateSection h3 {
+        font-size: 1rem;
+    }
 }

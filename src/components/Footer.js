@@ -8,10 +8,10 @@ export default function Footer() {
     return (
         <footer className="bg-dark text-light footer">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-8 max-w-7xl">
-                <div className="mx-2">
-                    <h4 className="text-primary text-lg font-bold mb-2">Contact Us</h4>
-                    <p className="text-light mx-2">info@degym.io</p>
-                    <p className="text-light mx-2">+1 (123) 456-7890</p>
+                <div className="">
+                <h4 className="text-primary text-lg font-bold mb-2">Contact Us</h4>
+                    <div className="text-light">info@degym.io</div>
+                    <div className="text-light">+1 (123) 456-7890</div>
                 </div>
                 <div className="mx-2">
                     <h4 className="text-primary text-lg font-bold mb-2">Quick Links</h4>
@@ -38,7 +38,7 @@ export default function Footer() {
                 </div>
                 <div className="mx-2">
                     <h4 className="text-primary text-lg font-bold mb-2">Follow Us</h4>
-                    <div className="flex space-x-4">
+                    <div className="flex place-content-between space-x-4">
                         <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTwitter} size="2x" />
                         </a>

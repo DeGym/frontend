@@ -62,8 +62,8 @@ const StakePools = ({ pools }) => {
                     <thead>
                         <tr>
                             <th>Amount Staked</th>
-                            <th>Reward (USDT)</th>
-                            <th>Reward (DGYM)</th>
+                            <th>Earned (USDT)</th>
+                            <th>Earned (DGYM)</th>
                             <th>Interest</th>
                             <th>Created Date</th>
                             <th>End Date</th>
@@ -74,8 +74,8 @@ const StakePools = ({ pools }) => {
                         {filteredPools.map((pool, index) => (
                             <tr key={index} className={styles.tableRow}>
                                 <td>{pool.amountStaked} DGYM</td>
-                                <td>{pool.rewardUSDT}</td>
-                                <td>{pool.rewardDGYM}</td>
+                                <td>{pool.earnedUSDT}</td>
+                                <td>{pool.earnedDGYM}</td>
                                 <td>{pool.interest}</td>
                                 <td>{new Date(pool.createdDate).toLocaleDateString()}</td>
                                 <td>{new Date(pool.endDate).toLocaleDateString()}</td>

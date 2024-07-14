@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import styles from '../../styles/components/StakingActions.module.css';
-import InfoTooltip from '@/components/InfoToolTip';
-
+import InfoTooltip from '@/components/InfoTooltip';
 
 const StakingActions = ({
     availableToStakeDGYM,
@@ -12,15 +11,19 @@ const StakingActions = ({
     onClaimUSDT,
     onClaimDGYM,
     isAutoInterest,
+    staking_yield = 0.17, // 17% annual yield
     rewards = { DGYM: 0, USDT: 0 }
 }) => {
     const [stakeAmount, setStakeAmount] = useState(0);
     const [unstakeAmount, setUnstakeAmount] = useState('');
     const [rangeValue, setRangeValue] = useState(0);
-    const [duration, setDuration] = useState(0);
+    const [duration, setDuration] = useState(1);
     const [isStakeModalOpen, setIsStakeModalOpen] = useState(false);
     const [isUnstakeModalOpen, setIsUnstakeModalOpen] = useState(false);
     const [interestMode, setInterestMode] = useState(isAutoInterest ? 'compound' : 'simple');
+
+    const apr = staking_yield;
+    const apy = Math.pow(1 + staking_yield / 365, 365) - 1; // Compounded daily
 
     const handleStake = () => {
         if (stakeAmount <= 0 || stakeAmount > availableToStakeDGYM) {
@@ -31,9 +34,9 @@ const StakingActions = ({
             alert('Invalid duration');
             return;
         }
-        onStake(stakeAmount, duration, interestMode === 'auto');
+        onStake(stakeAmount, duration, interestMode === 'compound');
         setStakeAmount('');
-        setDuration(0);
+        setDuration(1);
         setRangeValue(0);
         setIsStakeModalOpen(false);
     };
@@ -62,12 +65,13 @@ const StakingActions = ({
     };
 
     const calculateExpectedROI = (amount, weeks, autoInterest) => {
-        const apy = 0.12; // Example APY
+        const days = weeks * 7;
+
         if (autoInterest) {
-            const periods = weeks / 52;
-            return (amount * Math.pow(1 + apy / 52, periods * 52) - amount).toFixed(2);
+            const dailyRate = Math.pow(1 + apy, 1 / 365) - 1;
+            return (amount * Math.pow(1 + dailyRate, days) - amount).toFixed(2);
         } else {
-            return (amount * apy * (weeks / 52)).toFixed(2);
+            return (amount * apr * (days / 365)).toFixed(2);
         }
     };
 
@@ -130,13 +134,12 @@ const StakingActions = ({
                 <div className={styles.durationSection}>
                     <h3>Duration (in weeks)
                         <InfoTooltip text="Enter the duration for which you want to stake your DGYM." />
-
                     </h3>
                     <div className={styles.inputGroup}>
                         <input
                             type="number"
                             value={duration}
-                            min={0}
+                            min={1}
                             onChange={(e) => setDuration(e.target.value)}
                             placeholder="Enter weeks..."
                             className={styles.input}
@@ -151,26 +154,26 @@ const StakingActions = ({
                     </div>
                 </div>
                 <div className={styles.interestToggle}>
-                    <h3>Interest</h3>
+                    <h3>Compound Mode</h3>
                     <div className={styles.interestToggleButtons}>
                         <button
                             className={`${styles.toggleButton} ${interestMode === 'simple' ? styles.active : ''}`}
                             onClick={() => toggleInterestMode('simple')}
                         >
-                            Simple
+                            Manual
                         </button>
                         <button
                             className={`${styles.toggleButton} ${interestMode === 'compound' ? styles.active : ''}`}
                             onClick={() => toggleInterestMode('compound')}
                         >
-                            Compound
+                            Auto
                         </button>
                     </div>
                 </div>
                 <div className={styles.lockOverviewCard}>
                     <h3>LOCK <b>OVERVIEW</b></h3>
                     <p><b>DGYM TO BE LOCKED:</b> {stakeAmount} DGYM</p>
-                    <p><b>APY:</b> 12%</p>
+                    <p><b>INTEREST RATE:</b> {interestMode === 'compound' ? '17% APY' : '17% APR'}</p>
                     <p><b>DURATION:</b> {duration * 7} days</p>
                     <p><b>UNLOCK ON:</b> {calculateUnlockDate(duration)}</p>
                     <p><b>EXPECTED ROI:</b> {calculateExpectedROI(stakeAmount, duration, interestMode === 'compound')} DGYM</p>

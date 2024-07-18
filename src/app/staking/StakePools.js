@@ -62,8 +62,7 @@ const StakePools = ({ pools }) => {
                     <thead>
                         <tr>
                             <th>Amount Staked</th>
-                            <th>Earned (USDT)</th>
-                            <th>Earned (DGYM)</th>
+                            <th>Rewards</th>
                             <th>Interest</th>
                             <th>Created Date</th>
                             <th>End Date</th>
@@ -74,8 +73,7 @@ const StakePools = ({ pools }) => {
                         {filteredPools.map((pool, index) => (
                             <tr key={index} className={styles.tableRow}>
                                 <td>{pool.amountStaked} DGYM</td>
-                                <td>{pool.earnedUSDT}</td>
-                                <td>{pool.earnedDGYM}</td>
+                                <td>{pool.rewards}</td>
                                 <td>{pool.interest}</td>
                                 <td>{new Date(pool.createdDate).toLocaleDateString()}</td>
                                 <td>{new Date(pool.endDate).toLocaleDateString()}</td>
@@ -87,7 +85,7 @@ const StakePools = ({ pools }) => {
                     </tbody>
                     <tfoot>
                         <tr className={styles.tableFooter}>
-                            <td colSpan="7">
+                            <td colSpan="6">
                                 <button className={styles.toTopButton} onClick={scrollToTop}>
                                     To Top ^
                                 </button>

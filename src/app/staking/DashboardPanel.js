@@ -16,7 +16,8 @@ const DashboardPanel = () => {
     return (
         <div className={styles.dashboardPanel}>
             <h1 className="text-center my-24">Staking</h1>
-            <p className="text-dark">Earn rewards and help grant the health of DeGym network.</p>
+            <h2 className={styles.heroSubtitle}>Enjoy the benefits of a secure investment and be part of the innovative future of fitness. <b>Maximize your earnings</b> by staking DGYM tokens with DeGym. </h2>
+            <p>As a Staker, you play a crucial role in supporting our decentralized gym ecosystem. Stake your tokens to earn rewards based on vouchers purchased by costumers.</p>
             <div className={styles.cardsContainer}>
                 <Card title="Total DGYM Staked" value={totalDGYMStaked} />
                 <Card title="Total DGYM Locked" value={totalDGYMLocked} />

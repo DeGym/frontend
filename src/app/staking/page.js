@@ -31,8 +31,7 @@ const StakePage = () => {
     const stakePools = [
         {
             amountStaked: 100,
-            earnedUSDT: 10,
-            earnedDGYM: 15,
+            rewards: 10,
             interest: 'Simple',
             createdDate: '2023-01-01',
             endDate: '2024-01-01',
@@ -40,8 +39,7 @@ const StakePage = () => {
         },
         {
             amountStaked: 200,
-            earnedUSDT: 20,
-            earnedDGYM: 30,
+            rewards: 20,
             interest: 'Compound',
             createdDate: '2023-02-01',
             endDate: '2024-02-01',

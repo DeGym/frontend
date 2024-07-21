@@ -6,6 +6,7 @@ import FAQ from '@/components/FAQ';
 import DAOSection from '@/components/DAOSection'
 import TokenDistribution from '../token/distribution'
 import TokenUseCase from '../token/useCase'
+import Roadmap from '@/components/RoadmapCarousel';
 
 const TokenPage = () => {
     const faqs = [
@@ -62,6 +63,7 @@ const TokenPage = () => {
                 <TokenDistribution />
                 <TokenUseCase />
                 <DAOSection />
+                <Roadmap />
                 <FAQ faqs={faqs} />
             </main>
         </>

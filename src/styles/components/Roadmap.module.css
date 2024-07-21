@@ -34,7 +34,7 @@
 .roadSlide {
     padding: 20px;
     border-radius: 15px;
-    max-width: 700px;
+    max-width: 600px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     color: linear-gradient(90deg, rgba(81, 89, 83, 0.1) 0%, rgba(211, 220, 209, 1) 50%, rgba(81, 89, 83, 0.1) 100%);
     text-align: center;
@@ -102,7 +102,7 @@
     }
 
     .roadText {
-        padding: 20px 0px;
+        padding: 20px;
         font-size: 1rem;
     }
 

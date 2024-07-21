@@ -9,8 +9,26 @@ import FAQ from '../../components/FAQ'
 
 const PartnersPage = () => {
     const faqs = [
-        { question: "What is DeGym?", answer: "DeGym is a decentralized platform that enables users to participate in gym activities using blockchain technology." },
-        { question: "How do I join DeGym?", answer: "You can join DeGym by signing up on our website and purchasing a membership NFT." },
+        {
+            question: "Who are DeGym's partners?",
+            answer: "DeGym partners with leading gym facilities, fitness trainers, and blockchain technology providers to offer the best experience to our users."
+        },
+        {
+            question: "How can my company partner with DeGym?",
+            answer: "If you're interested in partnering with DeGym, please reach out to us via the contact form on our Partners page."
+        },
+        {
+            question: "What benefits do partners get from DeGym?",
+            answer: "Partners benefit from increased visibility, access to a growing community of fitness enthusiasts, and the opportunity to integrate blockchain technology into their services."
+        },
+        {
+            question: "How can I become a DeGym partner?",
+            answer: "If you are interested in partnering with DeGym, please visit our Partners page and fill out the partnership inquiry form. Our team will get back to you shortly."
+        },
+        {
+            question: "Can international gyms partner with DeGym?",
+            answer: "Yes, DeGym welcomes partnerships with gyms from all around the world. We aim to create a global network of fitness facilities for our users."
+        }
     ];
 
     return (

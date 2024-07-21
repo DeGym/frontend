@@ -24,36 +24,24 @@ const HomePage = () => {
     },
     {
       question: "How do I join DeGym?",
-      answer: "You can join DeGym by signing up on our website and purchasing a membership NFT."
+      answer: "You can join DeGym by signing up on our website and purchasing a voucher NFT."
     },
     {
-      question: "How does DeGym ensure accessibility in fitness?",
-      answer: "DeGym makes fitness facilities accessible to everyone by providing decentralized gym locations and virtual fitness options, ensuring that no matter where you are, you can access quality fitness training."
+      question: "What are the benefits of joining DeGym?",
+      answer: "As a DeGym member, you gain access to exclusive gym activities, earn rewards through staking, and benefit from the security and transparency of blockchain technology."
     },
     {
-      question: "What innovations does DeGym bring to the fitness industry?",
-      answer: "DeGym continuously innovates by integrating cutting-edge technologies like blockchain for secure memberships and AI-driven fitness plans, tailored to enhance user experiences and outcomes."
+      question: "What are the benefits of using DeGym?",
+      answer: "DeGym offers a seamless and secure way to access gym facilities, track workouts, and earn rewards, all powered by blockchain technology."
     },
     {
-      question: "How does DeGym foster its community?",
-      answer: "DeGym fosters a global community by connecting fitness enthusiasts through social features on our platform, organizing community events, and encouraging interaction and engagement among members."
+      question: "Is DeGym available globally?",
+      answer: "Yes, DeGym is available to users worldwide. As long as you have access to the internet and a compatible device, you can join and participate in DeGym."
     },
     {
-      question: "What kind of flexibility does DeGym offer to its users?",
-      answer: "DeGym offers flexible solutions by providing various membership plans, personalized training programs, and the ability to access any gym within our network, catering to diverse fitness needs and lifestyles."
+      question: "How can I get in touch with DeGym support?",
+      answer: "You can contact DeGym support through our website's contact form or by emailing us at support@degym.io."
     },
-    {
-      question: "How does DeGym empower its users?",
-      answer: "DeGym empowers individuals by providing tools and resources that help them take control of their fitness journey, such as detailed tracking of progress, fitness education, and motivational support."
-    },
-    {
-      question: "Can you elaborate on DeGym's commitment to integrity?",
-      answer: "DeGym maintains transparency and honesty by ensuring all transactions and memberships are securely managed through blockchain, providing clear communication and upholding ethical standards in all operations."
-    },
-    {
-      question: "What does striving for excellence mean to DeGym?",
-      answer: "At DeGym, striving for excellence means continuously improving our services and facilities, ensuring top-notch customer support, and always seeking feedback to better meet the needs of our community."
-    }
   ];
   const howItWorks = [
     { icon: '/img/hw/node_connected.svg', title: 'Gyms Provide Services', description: 'Gyms join the DeGym Network and offer their spaces and services to DeGym users.' },

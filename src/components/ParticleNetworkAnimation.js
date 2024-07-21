@@ -25,6 +25,14 @@ class Particle {
     }
 
     update() {
+        // Reverse direction if it hits the edge of the canvas
+        if (this.x + this.radius >= this.ctx.canvas.width || this.x - this.radius <= 0) {
+            this.velocity.x = -this.velocity.x;
+        }
+        if (this.y + this.radius >= this.ctx.canvas.height || this.y - this.radius <= 0) {
+            this.velocity.y = -this.velocity.y;
+        }
+
         this.x += this.velocity.x;
         this.y += this.velocity.y;
     }
@@ -35,7 +43,7 @@ class ParticleNetwork {
         this.ctx = ctx;
         this.particles = [];
         this.options = {
-            velocity: 0.10,
+            velocity: 0.20,
             density: 13000,
             color: 'rgba(255, 255, 255, 0.05)',
             radius: 3,

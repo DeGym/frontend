@@ -52,6 +52,11 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="md:my-0 my-2 flex">
+                <Link href="/pre-seed" legacyBehavior>
+                  <a className={`${styles.link}`} onClick={closeMenu}>Pre-Seed</a>
+                </Link>
+              </li>
+              <li className="md:my-0 my-2 flex">
                 <Link href="/search" legacyBehavior>
                   <a className={`${styles.link}`} onClick={closeMenu}>Search</a>
                 </Link>

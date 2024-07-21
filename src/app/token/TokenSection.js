@@ -9,7 +9,7 @@ const TokenSection = () => {
     useEffect(() => {
         const countTo = parseInt(counterRef.current.getAttribute('data-count'), 10);
         let count = 0;
-        const increment = countTo / 200; // Duration of the animation
+        const increment = countTo / 50; // Duration of the animation
 
         const updateCounter = () => {
             count += increment;
@@ -41,7 +41,7 @@ const TokenSection = () => {
                 </div>
                 <div className={styles.tokenSupply}>
                     <div className={styles.sectionTitleWhite}>Max supply</div>
-                    <div className={styles.numInner} ref={counterRef} data-count="1000000000">0</div>
+                    <div className={styles.numInner} ref={counterRef} data-count="10000000000">0</div>
                     <div className={styles.sectionTitleWhite}>$DGYM</div>
                 </div>
             </div>

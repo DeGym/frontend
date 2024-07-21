@@ -43,14 +43,6 @@
     margin-top: 50px;
 }
 
-.joinButton {
-    background-color: var(--color-primary);
-    border: none;
-    color: var(--color-dark);
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
 
 .heroSubtitle {
     text-align: left;

@@ -16,48 +16,117 @@
     animation: fadeIn 1s ease-in-out;
 }
 
-
 .hero {
     display: flex;
-    max-width: 1200px;
-    margin: 60px auto;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    margin: 60px auto;
+    text-align: center;
+    max-width: 1200px;
 }
 
 .heroInner {
     width: 100%;
-    flex: 1;
+    padding: 20px;
 }
 
 .heroImage {
     width: 100%;
-    flex: 1;
+    height: 300px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    margin: 20px 0;
 }
 
 .joinSection {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
+@media (min-width: 769px) {
+    .hero {
+        flex-direction: row;
+    }
 
-.heroSubtitle {
-    text-align: left;
-    margin: auto;
-    font-size: 1.5rem;
+    .heroInner {
+        flex: 1;
+    }
+
+    .heroImage {
+        flex: 1;
+        height: 600px;
+    }
+
+    .heroSubtitle {
+        text-align: left;
+        margin: auto;
+    }
 }
 
+@media (max-width: 1200px) {
+    .heroSubtitle {
+        font-size: 1.85rem;
+    }
+
+    .heroImage {
+        height: 500px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heroSubtitle {
+        font-size: 1.75rem;
+    }
+
+    .heroImage {
+        height: 425px;
+    }
+}
 
 @media (max-width: 768px) {
     .heroSubtitle {
         font-size: 1.5rem;
+        margin: auto;
     }
 
+    .heroImage {
+        height: 400px;
+    }
 }
 
-.title {
-    margin: 10px 0;
+@media (max-width: 600px) {
+    .heroSubtitle {
+        font-size: 1.3rem;
+    }
+
+    .heroImage {
+        height: 350px;
+    }
+}
+
+@media (max-width: 450px) {
+    .heroSubtitle {
+        font-size: 1.2rem;
+    }
+
+    .heroImage {
+        height: 250px;
+    }
+}
+
+@media (max-width: 380px) {
+    .heroSubtitle {
+        font-size: 1.15rem;
+    }
+
+    .heroImage {
+        height: 200px;
+    }
 }

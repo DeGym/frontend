@@ -15,7 +15,6 @@ import Image from 'next/image'
 import StepByStep from '@/components/StepByStep'
 import QuickLinks from '@/components/QuickLinks';
 
-
 const HomePage = () => {
   const faqs = [
     {
@@ -66,7 +65,7 @@ const HomePage = () => {
               <button className="p-4 w-auto"><a href='https://discord.gg/4keCvDRNuY'>Join the Community</a></button>
             </div>
           </div>
-          <div style={{ width: '100%', height: '600px', position: 'relative' }} className={styles.heroImage}>
+          <div className={styles.heroImage}>
             <Image
               src="/hero.png"
               alt="Description of the image"

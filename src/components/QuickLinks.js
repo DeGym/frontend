@@ -44,8 +44,8 @@ const QuickLinks = () => {
     return (
         <section className={styles.section}>
             <div className={styles.homeContent}>
-                <div className={styles.pageTitle}>
-                    <div className={styles.pageTitleContainer}>
+                <div className={styles.title}>
+                    <div className={styles.titleContainer}>
                         <h2>Join to DeGym's <b>community</b>!</h2>
                     </div>
                 </div>

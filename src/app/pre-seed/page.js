@@ -10,7 +10,7 @@ import Roadmap from '@/components/RoadmapCarousel';
 import { faUserCheck, faFileContract, faCoins, faWallet, faFire } from '@fortawesome/free-solid-svg-icons';
 import StepByStep from '@/components/StepByStep';
 
-const TokenPage = () => {
+const PreSeedPage = () => {
     const faqs = [
         {
             question: "What is the pre-seed phase?",
@@ -34,7 +34,7 @@ const TokenPage = () => {
         },
         {
             question: "What is the next step after the pre-seed phase?",
-            answer: "Following the pre-seed phase, we will conduct a pre-sale phase where we will offer 10% of the total token supply. The price per token during the pre-sale will be 10% higher than the price during the pre-seed phase."
+            answer: "Following the pre-seed phase, we will conduct a pre-seed phase where we will offer 10% of the total token supply. The price per token during the pre-seed will be 10% higher than the price during the pre-seed phase."
         },
         {
             question: "How will the token price be adjusted after the pre-seed phase?",
@@ -45,11 +45,20 @@ const TokenPage = () => {
             answer: "To participate in the pre-seed phase, you can visit our website and follow the instructions to invest. Make sure to join early to take advantage of this exclusive opportunity."
         },
     ];
-    const howItWorksPresale = [
-        { icon: faUserCheck, title: 'Register for Pre-sale', description: 'Sign up on our website to participate in the DeGym pre-sale.' },
-        { icon: faFileContract, title: 'Complete KYC', description: 'Complete the Know Your Customer (KYC) process to ensure compliance and security.' },
-        { icon: faCoins, title: 'Purchase Tokens', description: 'Buy DGYM tokens during the pre-sale period with a specified minimum and maximum purchase limit.' },
-        { icon: faWallet, title: 'Receive Tokens', description: 'Once the pre-sale concludes, the purchased DGYM tokens will be transferred to your wallet.' },
+    const howItWorksPreSeed = [
+        {
+            icon: faUserCheck, title: 'Purchase our Allium NFT',
+            description: 'To be eligible for the pre-seed ',
+            link: 'https://allium-founders-pass.nfts2.me/',
+            linkText: 'Mint Now'
+        },
+        {
+            icon: faFileContract,
+            title: 'Fill Form', description: 'Fill the form to participate in the DeGym pre-seed.'
+
+        },
+        { icon: faCoins, title: 'Purchase Tokens', description: 'Buy DGYM tokens during the pre-seed period with a specified minimum and maximum purchase limit.' },
+        { icon: faWallet, title: 'Receive Tokens', description: 'Once the pre-seed concludes, the purchased DGYM tokens will be transferred to your wallet.' },
         { icon: faFire, title: 'Burn Unsold Tokens', description: 'Any unsold tokens will be permanently burned, reducing the total supply and benefiting early investors.' },
     ];
     return (
@@ -68,7 +77,7 @@ const TokenPage = () => {
                     </div>
                 </section>
                 <TokenSection />
-                <StepByStep steps={howItWorksPresale} title="How does it <b>work</b>?" />
+                <StepByStep steps={howItWorksPreSeed} title="How does it <b>work</b>?" />
                 <TokenDistribution />
                 <TokenUseCase />
                 <DAOSection />
@@ -79,4 +88,4 @@ const TokenPage = () => {
     );
 };
 
-export default TokenPage;
+export default PreSeedPage;

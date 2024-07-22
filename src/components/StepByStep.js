@@ -35,22 +35,31 @@ const StepByStep = ({ steps, title }) => {
                                 </div>
                                 <div className={styles.stepTitle}>{step.title}</div>
                                 <div className={styles.text}>{step.description}</div>
+                                {step.link && (
+                                    <button className="m-3 p-2 w-3/4">
+                                        <a href={step.link} target="_blank" rel="noopener noreferrer">
+                                            {step.linkText || 'Learn More'}
+                                        </a>
+                                    </button>
+                                )}
                             </div>
                         </div>
-                        {index < steps.length - 1 && (
-                            <>
-                                <div className={styles.arrow}>
-                                    <span>&rarr;</span>
-                                </div>
-                                <div className={styles.arrowDown}>
-                                    <span>&darr;</span>
-                                </div>
-                            </>
-                        )}
+                        {
+                            index < steps.length - 1 && (
+                                <>
+                                    <div className={styles.arrow}>
+                                        <span>&rarr;</span>
+                                    </div>
+                                    <div className={styles.arrowDown}>
+                                        <span>&darr;</span>
+                                    </div>
+                                </>
+                            )
+                        }
                     </React.Fragment>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
 

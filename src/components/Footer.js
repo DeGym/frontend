@@ -9,7 +9,7 @@ export default function Footer() {
         <footer className="bg-dark text-light footer">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-8 max-w-7xl">
                 <div className="">
-                <h4 className="text-primary text-lg font-bold mb-2">Contact Us</h4>
+                    <h4 className="text-primary text-lg font-bold mb-2">Contact Us</h4>
                     <div className="text-light">info@degym.io</div>
                     <div className="text-light">+1 (123) 456-7890</div>
                 </div>
@@ -42,7 +42,7 @@ export default function Footer() {
                 <div className="mx-2">
                     <h4 className="text-primary text-lg font-bold mb-2">Follow Us</h4>
                     <div className="flex place-content-between space-x-4">
-                        <a href="https://x.com/0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                        <a href="https://x.com/degym_network" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                             <FontAwesomeIcon icon={faTwitter} size="2x" />
                         </a>
                         <a href="https://t.me/degym_dao" target="_blank" rel="noopener noreferrer" className={styles.icon}>

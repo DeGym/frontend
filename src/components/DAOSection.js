@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTwitter, faLinkedin, faReddit, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTelegram, faTwitter, faLinkedin, faReddit, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/components/DAOSection.module.css';
 
@@ -38,7 +38,17 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://twitter.com/DGYM_org" target="_blank" rel="noopener noreferrer">
+                                <a href="https://t.me/degym_dao" target="_blank" rel="noopener noreferrer">
+                                    <div className={styles.socLinkIcon}>
+                                        <FontAwesomeIcon icon={faTelegram} />
+                                    </div>
+                                    <div className={styles.socLinkText}><span>Telegram</span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div className={styles.joinItem}>
+                            <div className={styles.socLink}>
+                                <a href="https://x.com/degym_network" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faTwitter} />
                                     </div>

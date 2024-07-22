@@ -7,6 +7,8 @@ import DAOSection from '@/components/DAOSection'
 import TokenDistribution from '../token/distribution'
 import TokenUseCase from '../token/useCase'
 import Roadmap from '@/components/RoadmapCarousel';
+import { faUserCheck, faFileContract, faCoins, faWallet, faFire } from '@fortawesome/free-solid-svg-icons';
+import StepByStep from '@/components/StepByStep';
 
 const TokenPage = () => {
     const faqs = [
@@ -43,7 +45,13 @@ const TokenPage = () => {
             answer: "To participate in the pre-seed phase, you can visit our website and follow the instructions to invest. Make sure to join early to take advantage of this exclusive opportunity."
         },
     ];
-
+    const howItWorksPresale = [
+        { icon: faUserCheck, title: 'Register for Pre-sale', description: 'Sign up on our website to participate in the DeGym pre-sale.' },
+        { icon: faFileContract, title: 'Complete KYC', description: 'Complete the Know Your Customer (KYC) process to ensure compliance and security.' },
+        { icon: faCoins, title: 'Purchase Tokens', description: 'Buy DGYM tokens during the pre-sale period with a specified minimum and maximum purchase limit.' },
+        { icon: faWallet, title: 'Receive Tokens', description: 'Once the pre-sale concludes, the purchased DGYM tokens will be transferred to your wallet.' },
+        { icon: faFire, title: 'Burn Unsold Tokens', description: 'Any unsold tokens will be permanently burned, reducing the total supply and benefiting early investors.' },
+    ];
     return (
         <>
             <Head>
@@ -60,6 +68,7 @@ const TokenPage = () => {
                     </div>
                 </section>
                 <TokenSection />
+                <StepByStep steps={howItWorksPresale} title="How does it <b>work</b>?" />
                 <TokenDistribution />
                 <TokenUseCase />
                 <DAOSection />

@@ -1,8 +1,18 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/components/StepByStep.module.css';
 
 const StepByStep = ({ steps, title }) => {
     const isSwiper = steps.length > 3;
+
+    const renderIcon = (icon) => {
+        if (typeof icon === 'string') {
+            return <img src={icon} alt="step-icon" className="img-fluid d-block" />;
+        } else if (React.isValidElement(icon) || typeof icon === 'object') {
+            return <FontAwesomeIcon icon={icon} size="2x" />;
+        }
+        return null;
+    };
 
     return (
         <div className={styles.stepByStepContainer}>
@@ -14,7 +24,7 @@ const StepByStep = ({ steps, title }) => {
                             <div className={styles.stepCard}>
                                 {step.icon && (
                                     <div className={styles.icon}>
-                                        <img src={step.icon} alt={`icon-${index + 1}`} className="img-fluid d-block" />
+                                        {renderIcon(step.icon)}
                                     </div>
                                 )}
                                 <div className={styles.step}>

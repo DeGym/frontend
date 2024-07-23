@@ -57,9 +57,9 @@ const PreSeedPage = () => {
         },
         {
             icon: faFileContract,
-            title: 'Get Whitelisted',
+            title: 'Optional KYC',
             description: 'Fill out the form to participate in the DeGym pre-seed by providing your wallet address and NFT ID.',
-            link: 'https://example.com/pre-seed-form', // Update with the actual link to the form
+            link: 'https://yk3osli6.forms.app/pre-seed-degym-project',
             linkText: 'Fill Form'
         },
         {

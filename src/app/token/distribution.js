@@ -16,23 +16,26 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const TokenDistribution = () => {
     const data = {
         labels: [
-            'Community Rewards',
-            'Development Fund',
-            'Founding Team',
-            'Advisors and Partners',
-            'Marketing and Growth',
+            'Seed Sale',
+            'Private Sale',
+            'Public Sale',
+            'Team & Advisors',
+            'Community & Ecosystem',
+            'Incentive Programs',
         ],
         datasets: [
             {
-                data: [40, 25, 20, 10, 5],
+                data: [3, 7, 30, 20, 25, 15],
                 backgroundColor: [
-                    'rgba(45, 255, 115, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(58, 141, 29, 1)',
-                    'rgba(81, 89, 83, 1)',
-                    'rgba(57, 255, 20, 1)',
+                    'rgba(150, 255, 150, 1)',
+                    'rgba(0, 30, 0, 1)',
+                    'rgba(50, 205, 150, 1)',
+                    'rgba(50, 150, 50, 1)',
+                    'rgba(150, 205, 150, 1)',
+                    'rgba(10, 205, 100, 1)',
                 ],
                 borderColor: [
+                    'rgba(255, 255, 255, 1)',
                     'rgba(255, 255, 255, 1)',
                     'rgba(255, 255, 255, 1)',
                     'rgba(255, 255, 255, 1)',

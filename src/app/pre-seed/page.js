@@ -7,7 +7,9 @@ import DAOSection from '@/components/DAOSection'
 import TokenDistribution from '../token/distribution'
 import TokenUseCase from '../token/useCase'
 import Roadmap from '@/components/RoadmapCarousel';
-import { faUserCheck, faFileContract, faCoins, faWallet, faFire } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faTelegram } from '@fortawesome/free-brands-svg-icons';
+
 import StepByStep from '@/components/StepByStep';
 
 const PreSeedPage = () => {
@@ -47,20 +49,48 @@ const PreSeedPage = () => {
     ];
     const howItWorksPreSeed = [
         {
-            icon: faUserCheck, title: 'Purchase our Allium NFT',
-            description: 'To be eligible for the pre-seed ',
+            icon: faUserCheck,
+            title: 'Purchase our Allium NFT',
+            description: 'To be eligible for the pre-seed, purchase our Allium NFT.',
             link: 'https://allium-founders-pass.nfts2.me/',
             linkText: 'Mint Now'
         },
         {
             icon: faFileContract,
-            title: 'Fill Form', description: 'Fill the form to participate in the DeGym pre-seed.'
-
+            title: 'Get Whitelisted',
+            description: 'Fill out the form to participate in the DeGym pre-seed by providing your wallet address and NFT ID.',
+            link: 'https://example.com/pre-seed-form', // Update with the actual link to the form
+            linkText: 'Fill Form'
         },
-        { icon: faCoins, title: 'Purchase Tokens', description: 'Buy DGYM tokens during the pre-seed period with a specified minimum and maximum purchase limit.' },
-        { icon: faWallet, title: 'Receive Tokens', description: 'Once the pre-seed concludes, the purchased DGYM tokens will be transferred to your wallet.' },
-        { icon: faFire, title: 'Burn Unsold Tokens', description: 'Any unsold tokens will be permanently burned, reducing the total supply and benefiting early investors.' },
+        {
+            icon: faTelegram,
+            title: 'Join Our Telegram Group',
+            description: 'Join our Telegram group to stay updated on the pre-seed and get community support.',
+            link: 'https://t.me/degym_dao',
+            linkText: 'Join Now'
+        },
+        {
+            icon: faClock,
+            title: 'Wait for Pre-Seed Start',
+            description: 'The pre-seed start date is yet to be confirmed. Stay tuned for announcements in our Telegram group.'
+        },
+        {
+            icon: faCoins,
+            title: 'Purchase Tokens',
+            description: 'During the pre-seed period, transact your TARA to the smart contract address (0x...) to purchase DGYM tokens.'
+        },
+        {
+            icon: faWallet,
+            title: 'Receive Tokens',
+            description: 'After the pre-seed period ends, you will receive your DGYM tokens according to the vesting schedule.'
+        },
+        {
+            icon: faFire,
+            title: 'Burn Unsold Tokens',
+            description: 'Any unsold tokens will be permanently burned, reducing the total supply and benefiting early investors.'
+        }
     ];
+
     return (
         <>
             <Head>
@@ -72,12 +102,12 @@ const PreSeedPage = () => {
                     <div className="container mx-auto">
                         <h1>Invest In DeGym</h1>
                         <p className={styles.heroSubtitle}>Pre-Seed Opportunity: <b>Invest in Our Future, Share Our Success</b></p>
-                        <button className="p-4 w-auto my-5"><a href='https://t.me/degym_dao'>Get whitelisted</a></button>
+                        <button className="p-4 w-auto my-5"><a href='https://allium-founders-pass.nfts2.me/'>Get whitelisted</a></button>
                         <p className="max-w-3xl m-auto text-2xl">The DeGym project is embarking on a phased approach to raise funds and distribute tokens, ensuring <b>fair market valuation</b> and rewarding early investors.</p>
                     </div>
                 </section>
                 <TokenSection />
-                <StepByStep steps={howItWorksPreSeed} title="How does it <b>work</b>?" />
+                <StepByStep steps={howItWorksPreSeed} title="How to <b>invest</b>?" />
                 <TokenDistribution />
                 <TokenUseCase />
                 <DAOSection />

@@ -22,16 +22,18 @@ const StepByStep = ({ steps, title }) => {
                     <React.Fragment key={index}>
                         <div className={`${styles.stepCardWrapper} ${index === 0 ? styles.active : ''}`}>
                             <div className={styles.stepCard}>
-                                {step.icon && (
-                                    <div className={styles.icon}>
-                                        {renderIcon(step.icon)}
-                                    </div>
-                                )}
+
                                 <div className={styles.step}>
                                     <div className={styles.stepInner}>
+
                                         <div className={styles.stepNum}>{index + 1}</div>
                                         <div className={styles.stepText}>Step</div>
                                     </div>
+                                    {step.icon && (
+                                        <div className={styles.icon}>
+                                            {renderIcon(step.icon)}
+                                        </div>
+                                    )}
                                 </div>
                                 <div className={styles.stepTitle}>{step.title}</div>
                                 <div className={styles.text}>{step.description}</div>

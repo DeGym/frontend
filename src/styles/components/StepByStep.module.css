@@ -38,7 +38,6 @@
 
 .icon {
     margin: 0 auto;
-    margin-bottom: 20px;
 }
 
 .icon img {
@@ -53,8 +52,9 @@
 }
 
 .stepInner {
-    display: flex;
+    display: right;
     align-items: center;
+    margin: auto;
 }
 
 .stepNum {

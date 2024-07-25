@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import styles from '../../styles/pages/Token.module.css';
 import TokenSection from '../token/TokenSection';
@@ -9,10 +11,20 @@ import TokenUseCase from '../token/useCase'
 import Roadmap from '@/components/RoadmapCarousel';
 import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-
 import StepByStep from '@/components/StepByStep';
+import CrowdfundingSection from './CrowdfundingSection';
+import { WalletContext } from '../../utils/WalletContext'
 
 const PreSeedPage = () => {
+    const { walletAddress } = useContext(WalletContext);
+    const crowdfundData = {
+        type: "Pre-Seed",
+        startDate: new Date(Date.now() + 100000000), // Example future date (10 million milliseconds from now)
+        exchangeRate: 0.01, // Example exchange rate (1 TARA = 0.01 ETH)
+        tvlDiscount: 5 // Example TVL discount percentage
+    };
+
+
     const faqs = [
         {
             question: "What is the pre-seed phase?",
@@ -105,6 +117,9 @@ const PreSeedPage = () => {
                         <button className="p-4 w-auto my-5"><a href='https://allium-founders-pass.nfts2.me/'>Get whitelisted</a></button>
                         <p className="max-w-3xl m-auto text-2xl">The DeGym project is embarking on a phased approach to raise funds and distribute tokens, ensuring <b>fair market valuation</b> and rewarding early investors.</p>
                     </div>
+                </section>
+                <section className="m-auto max-w-xl">
+                    <CrowdfundingSection crowdfund={crowdfundData} walletAddress={walletAddress} />
                 </section>
                 <TokenSection />
                 <StepByStep steps={howItWorksPreSeed} title="How to <b>invest</b>?" />

@@ -126,13 +126,13 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     {walletAddress ? (
                         <>
                             <p>Wallet Address: {walletAddress}</p>
-                            <p>Current Balance: {currentBalance} ETH</p>
+                            <p>Current Balance: {currentBalance} TARA</p>
                         </>
                     ) : (
                         <p>Please connect your wallet to participate.</p>
                     )}
                     <p>You will receive: {youWillReceive} tokens</p>
-                    <p>Exchange rate: {crowdfund.exchangeRate} TARA/ETH</p>
+                    <p>Exchange rate: {crowdfund.exchangeRate} TARA/DGYM</p>
                     <p>TVL discount: {crowdfund.tvlDiscount}%</p>
                 </div>
             </div>

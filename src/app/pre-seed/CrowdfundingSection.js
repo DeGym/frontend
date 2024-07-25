@@ -1,29 +1,56 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Countdown from 'react-countdown';
 import Web3 from 'web3';
 import styles from '../../styles/components/CrowdfundingSection.module.css';
 
-// Custom Countdown renderer
-const renderer = ({ days, hours, minutes, seconds }) => {
+// Custom Countdown Component
+const Countdown = ({ targetDate, onCountdownEnd }) => {
+    const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining(targetDate));
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const newTimeRemaining = calculateTimeRemaining(targetDate);
+            setTimeRemaining(newTimeRemaining);
+
+            if (newTimeRemaining.total <= 0) {
+                clearInterval(intervalId);
+                onCountdownEnd();
+            }
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, [targetDate, onCountdownEnd]);
+
+    function calculateTimeRemaining(targetDate) {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        return {
+            total: distance,
+            days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+            minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+            seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        };
+    }
+
     return (
         <div className={styles.countdownContainer}>
             <div className={styles.countdownGrid}>
                 <div className={styles.countdownBox}>
-                    <span className={`${styles.countdownValue} ${styles.countdownFont}`}><span style={{ "--value": days }}></span></span>
+                    <span className={styles.countdownValue}>{timeRemaining.days}</span>
                     days
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={`${styles.countdownValue} ${styles.countdownFont}`}><span style={{ "--value": hours }}></span></span>
+                    <span className={styles.countdownValue}>{timeRemaining.hours}</span>
                     hours
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={`${styles.countdownValue} ${styles.countdownFont}`}><span style={{ "--value": minutes }}></span></span>
+                    <span className={styles.countdownValue}>{timeRemaining.minutes}</span>
                     min
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={`${styles.countdownValue} ${styles.countdownFont}`}><span style={{ "--value": seconds }}></span></span>
+                    <span className={styles.countdownValue}>{timeRemaining.seconds}</span>
                     sec
                 </div>
             </div>
@@ -36,6 +63,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [youWillReceive, setYouWillReceive] = useState(0);
     const [currentBalance, setCurrentBalance] = useState(0);
     const [web3, setWeb3] = useState(null);
+    const [isCountdownActive, setIsCountdownActive] = useState(true);
 
     useEffect(() => {
         if (walletAddress && window.ethereum) {
@@ -74,10 +102,14 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
         console.log('Governance clicked');
     };
 
+    const handleCountdownEnd = () => {
+        setIsCountdownActive(false);
+    };
+
     return (
         <div className={styles.crowdfundingSection}>
             <h1 className={styles.countdownTitle}>{crowdfund.type} starts in:</h1>
-            <Countdown date={crowdfund.startDate} renderer={renderer} />
+            <Countdown targetDate={crowdfund.startDate} onCountdownEnd={handleCountdownEnd} />
             <div className={styles.card}>
                 <div className={styles.cardContent}>
                     <label>
@@ -90,6 +122,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                             placeholder="Must be a minimum 1000 TARA"
                         />
                     </label>
+                    <button onClick={handleSwap} className={styles.swapButton} disabled={isCountdownActive}>Swap</button>
                     {walletAddress ? (
                         <>
                             <p>Wallet Address: {walletAddress}</p>
@@ -101,7 +134,6 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     <p>You will receive: {youWillReceive} tokens</p>
                     <p>Exchange rate: {crowdfund.exchangeRate} TARA/ETH</p>
                     <p>TVL discount: {crowdfund.tvlDiscount}%</p>
-                    <button onClick={handleSwap} className="p-3">Swap</button>
                 </div>
             </div>
             <div className={styles.buttonsContainer}>

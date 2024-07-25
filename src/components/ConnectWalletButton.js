@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import detectEthereumProvider from '@metamask/detect-provider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/components/ConnectWalletButton.module.css';
+import { WalletContext } from '../utils/WalletContext';
 
 const ConnectWalletButton = () => {
-    const [walletAddress, setWalletAddress] = useState(null);
+    const { walletAddress, setWalletAddress } = useContext(WalletContext);
     const [error, setError] = useState('');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isCorrectNetwork, setIsCorrectNetwork] = useState(true);

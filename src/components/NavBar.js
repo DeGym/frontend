@@ -9,6 +9,7 @@ import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [walletAddress, setWalletAddress] = useState(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -83,7 +84,7 @@ export default function Navbar() {
               </li>
             </ul>
           </nav>
-          <ConnectWalletButton />
+          <ConnectWalletButton onWalletConnected={setWalletAddress} />
           <button className="md:hidden bg-transparent" onClick={toggleMenu} aria-label="Toggle menu">
             <FontAwesomeIcon icon={faBars} className="text-2xl text-light" />
           </button>

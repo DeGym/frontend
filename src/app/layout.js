@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Head from 'next/head';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { WalletProvider } from '../utils/WalletContext';
 config.autoAddCss = false; // Tell FontAwesome to skip adding the CSS automatically since it's being imported above
 
 export default function RootLayout({ children }) {
@@ -16,10 +17,12 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
       </Head>
       <body className="bg-dark text-light">
-        <ParticleNetworkAnimation />
-        <Navbar />
-        {children}
-        <Footer />
+        <WalletProvider>
+          <ParticleNetworkAnimation />
+          <Navbar />
+          {children}
+          <Footer />
+        </WalletProvider>
       </body>
     </html>
   );

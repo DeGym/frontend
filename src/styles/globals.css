@@ -91,7 +91,8 @@ button:hover a {
   color: var(--color-light);
 }
 
-input {
+input,
+select {
   flex: 1;
   padding: 5px 10px;
   border-radius: 4px;

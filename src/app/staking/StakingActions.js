@@ -114,7 +114,6 @@ const StakingActions = ({
                         max={availableToStakeDGYM}
                         onChange={(e) => setStakeAmount(e.target.value)}
                         placeholder="Enter amount..."
-                        className={styles.input}
                     />
                 </div>
                 <div className={styles.percentageButtons}>
@@ -142,7 +141,6 @@ const StakingActions = ({
                             min={1}
                             onChange={(e) => setDuration(e.target.value)}
                             placeholder="Enter weeks..."
-                            className={styles.input}
                         />
                     </div>
                     <div className={styles.durationButtons}>
@@ -198,7 +196,6 @@ const StakingActions = ({
                         max={availableToUnstakeDGYM}
                         onChange={(e) => setUnstakeAmount(e.target.value)}
                         placeholder="Enter amount..."
-                        className={styles.input}
                     />
                 </div>
                 <div className={styles.percentageButtons}>

@@ -22,6 +22,36 @@
     flex-direction: column;
 }
 
+.cardData {
+    margin: 10px 0px;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    color: white;
+}
+
+.cardData .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.key {
+    padding: 5px;
+    margin: 2px;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.value {
+    padding: 2.5px 7.5px 15px;
+    text-align: right;
+    font-size: 1rem;
+    flex: 1;
+}
+
 .inputAmount {
     margin-bottom: 20px;
     padding: 10px;
@@ -29,6 +59,11 @@
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
+}
+
+.inputAmount.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .buttonsContainer {
@@ -59,7 +94,6 @@
 .swapButton:hover:enabled {
     background-color: var(--color-neon-green);
 }
-
 
 .p3 {
     padding: 10px;
@@ -110,6 +144,15 @@
     }
 }
 
+.alertBox {
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #2dff7301;
+    color: yellow;
+    border-radius: 5px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .card {
         max-width: 100%;
@@ -119,5 +162,4 @@
         flex-direction: column;
         align-items: stretch;
     }
-
 }

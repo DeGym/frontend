@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import styles from '../../styles/components/CrowdfundingSection.module.css';
+import styles from '@/styles/components/CrowdfundingSection.module.css';
+import shortenWalletAddress from '@/utils/generic';
 
 // Custom Countdown Component
 const Countdown = ({ targetDate, onCountdownEnd }) => {
@@ -24,7 +25,7 @@ const Countdown = ({ targetDate, onCountdownEnd }) => {
 
     function calculateTimeRemaining(targetDate) {
         const now = new Date().getTime();
-        const distance = targetDate - now;
+        const distance = Math.max(targetDate - now, 0); // Ensure distance is non-negative
         return {
             total: distance,
             days: Math.floor(distance / (1000 * 60 * 60 * 24)),
@@ -34,23 +35,27 @@ const Countdown = ({ targetDate, onCountdownEnd }) => {
         };
     }
 
+    const formatTime = (time) => {
+        return time.toString().padStart(2, '0');
+    };
+
     return (
         <div className={styles.countdownContainer}>
             <div className={styles.countdownGrid}>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{timeRemaining.days}</span>
+                    <span className={styles.countdownValue}>{formatTime(timeRemaining.days)}</span>
                     days
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{timeRemaining.hours}</span>
+                    <span className={styles.countdownValue}>{formatTime(timeRemaining.hours)}</span>
                     hours
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{timeRemaining.minutes}</span>
+                    <span className={styles.countdownValue}>{formatTime(timeRemaining.minutes)}</span>
                     min
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{timeRemaining.seconds}</span>
+                    <span className={styles.countdownValue}>{formatTime(timeRemaining.seconds)}</span>
                     sec
                 </div>
             </div>
@@ -76,7 +81,8 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const updateBalance = async (address, web3Instance) => {
         try {
             const balance = await web3Instance.eth.getBalance(address);
-            setCurrentBalance(web3Instance.utils.fromWei(balance, 'ether'));
+            const roundedBalance = parseFloat(web3Instance.utils.fromWei(balance, 'ether')).toFixed(4);
+            setCurrentBalance(roundedBalance);
         } catch (error) {
             console.error('Error fetching balance:', error);
         }
@@ -89,9 +95,13 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     };
 
     const handleSwap = () => {
-        const tempAmount = amount;
-        setAmount(youWillReceive);
-        setYouWillReceive(tempAmount);
+        if (parseFloat(amount) <= parseFloat(currentBalance)) {
+            const tempAmount = amount;
+            setAmount(youWillReceive);
+            setYouWillReceive(tempAmount);
+        } else {
+            alert("The amount submitted must be less than or equal to your current balance.");
+        }
     };
 
     const handleSnapshot = () => {
@@ -106,6 +116,8 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
         setIsCountdownActive(false);
     };
 
+    const isDisabled = isCountdownActive || !walletAddress;
+
     return (
         <div className={styles.crowdfundingSection}>
             <h1 className={styles.countdownTitle}>{crowdfund.type} starts in:</h1>
@@ -118,22 +130,44 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                             type="number"
                             value={amount}
                             onChange={handleAmountChange}
-                            className={styles.inputAmount}
+                            min={0}
+                            step={0.0001}
+                            className={`${styles.inputAmount} ${isDisabled ? styles.disabled : ''}`}
                             placeholder="Must be a minimum 1000 TARA"
+                            disabled={isDisabled}
                         />
                     </label>
-                    <button onClick={handleSwap} className={styles.swapButton} disabled={isCountdownActive}>Swap</button>
-                    {walletAddress ? (
-                        <>
-                            <p>Wallet Address: {walletAddress}</p>
-                            <p>Current Balance: {currentBalance} TARA</p>
-                        </>
-                    ) : (
-                        <p>Please connect your wallet to participate.</p>
-                    )}
-                    <p>You will receive: {youWillReceive} tokens</p>
-                    <p>Exchange rate: {crowdfund.exchangeRate} TARA/DGYM</p>
-                    <p>TVL discount: {crowdfund.tvlDiscount}%</p>
+                    <button onClick={handleSwap} className={styles.swapButton} disabled={isDisabled}>Swap</button>
+                    <div className={styles.cardData}>
+                        {walletAddress ? (
+                            <>
+                                <div className={styles.row}>
+                                    <b className={styles.key}>Wallet Address:</b>
+                                    <p className={styles.value}>{shortenWalletAddress(walletAddress)}</p>
+                                </div>
+                                <div className={styles.row}>
+                                    <b className={styles.key}>Current Balance:</b>
+                                    <p className={styles.value}>{currentBalance} TARA</p>
+                                </div>
+                            </>
+                        ) : (
+                            <p className={styles.alertBox}>
+                                Please connect your wallet.
+                            </p>
+                        )}
+                        <div className={styles.row}>
+                            <b className={styles.key}>You will receive:</b>
+                            <p className={styles.value}>{youWillReceive} DGYM</p>
+                        </div>
+                        <div className={styles.row}>
+                            <b className={styles.key}>Exchange rate:</b>
+                            <p className={styles.value}>{crowdfund.exchangeRate} TARA/DGYM</p>
+                        </div>
+                        <div className={styles.row}>
+                            <b className={styles.key}>TVL discount:</b>
+                            <p className={styles.value}>{crowdfund.tvlDiscount}%</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={styles.buttonsContainer}>
@@ -144,7 +178,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     Governance
                 </button>
             </div>
-        </div>
+        </div >
     );
 };
 

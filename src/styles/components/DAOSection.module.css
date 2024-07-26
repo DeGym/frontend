@@ -4,12 +4,11 @@
     transform: translateY(0);
     transition: transform 0.3s ease, opacity 0.3s ease;
     background-color: var(--color-dark);
-    background-image: url(/img/b11_bg.jpg);
+    background-image: url(/img/b12_bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 2550px 750px;
-    padding: 100px 0 0px;
-    margin: 20px -20px;
+    background-size: 1200px 400px;
+    padding: 10px 0 0px;
 }
 
 .container {

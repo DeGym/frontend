@@ -73,9 +73,7 @@
 }
 
 .swapButton {
-    margin-top: 20px;
-    background-color: var(--color-primary);
-    color: var(--color-dark);
+    margin: 15px 0px;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -89,10 +87,6 @@
 .swapButton:hover:disabled {
     background-color: var(--color-primary);
     color: var(--color-dark);
-}
-
-.swapButton:hover:enabled {
-    background-color: var(--color-neon-green);
 }
 
 .p3 {

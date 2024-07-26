@@ -1,10 +1,6 @@
 .crowdfundingSection {
     padding: 30px;
-    background: linear-gradient(0deg,
-            var(--color-dark) 10%,
-            #2dff7311 50%,
-            var(--color-dark) 90%);
-    margin: 20px -20px;
+    margin: 20px 0px;
 }
 
 .card {
@@ -101,8 +97,8 @@
 }
 
 .countdownTitle {
-    font-size: 1.5rem;
-    margin: auto;
+    font-size: 2.5rem;
+    margin: 20px auto;
     text-align: center;
 }
 
@@ -116,10 +112,10 @@
 .countdownBox {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    background-color: var(--color-neutral);
+    padding: 15px 25px;
+    background-color: var(--color-accent);
     border-radius: 5px;
-    color: var(--color-neutral-content);
+    color: var(--color-light);
 }
 
 .countdownValue {
@@ -136,6 +132,53 @@
     100% {
         transform: rotateX(360deg);
     }
+}
+
+@keyframes slideOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(22.5%);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0.2;
+        transform: translateY(-10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-out-down {
+    animation: slideOutDown 0.5s forwards;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s forwards;
+}
+
+.countdownValueWrapper {
+    position: relative;
+    height: 3.5rem;
+    /* Adjust based on the size of your font */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdownValue {
+    font-family: monospace;
+    font-size: 2.5rem;
+    position: absolute;
 }
 
 .alertBox {

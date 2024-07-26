@@ -5,6 +5,30 @@ import Web3 from 'web3';
 import styles from '@/styles/components/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
 
+// TransitionNumber Component
+const TransitionNumber = ({ value }) => {
+    const [displayValue, setDisplayValue] = useState(value);
+    const [animationClass, setAnimationClass] = useState('');
+
+    useEffect(() => {
+        if (displayValue !== value) {
+            setAnimationClass(styles['slide-out-down']);
+            setTimeout(() => {
+                setDisplayValue(value);
+                setAnimationClass(styles['slide-in-up']);
+            }, 500);
+        }
+    }, [value, displayValue]);
+
+    return (
+        <div className={styles.countdownValueWrapper}>
+            <span className={`${styles.countdownValue} ${animationClass}`}>
+                {displayValue.toString().padStart(2, '0')}
+            </span>
+        </div>
+    );
+};
+
 // Custom Countdown Component
 const Countdown = ({ targetDate, onCountdownEnd }) => {
     const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining(targetDate));
@@ -35,27 +59,23 @@ const Countdown = ({ targetDate, onCountdownEnd }) => {
         };
     }
 
-    const formatTime = (time) => {
-        return time.toString().padStart(2, '0');
-    };
-
     return (
         <div className={styles.countdownContainer}>
             <div className={styles.countdownGrid}>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{formatTime(timeRemaining.days)}</span>
+                    <TransitionNumber value={timeRemaining.days} />
                     days
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{formatTime(timeRemaining.hours)}</span>
+                    <TransitionNumber value={timeRemaining.hours} />
                     hours
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{formatTime(timeRemaining.minutes)}</span>
+                    <TransitionNumber value={timeRemaining.minutes} />
                     min
                 </div>
                 <div className={styles.countdownBox}>
-                    <span className={styles.countdownValue}>{formatTime(timeRemaining.seconds)}</span>
+                    <TransitionNumber value={timeRemaining.seconds} />
                     sec
                 </div>
             </div>
@@ -120,7 +140,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
 
     return (
         <div className={styles.crowdfundingSection}>
-            <h1 className={styles.countdownTitle}>{crowdfund.type} starts in:</h1>
+            <h2 className={styles.countdownTitle}>{crowdfund.type} <b>starts in:</b></h2>
             <Countdown targetDate={crowdfund.startDate} onCountdownEnd={handleCountdownEnd} />
             <div className={styles.card}>
                 <div className={styles.cardContent}>

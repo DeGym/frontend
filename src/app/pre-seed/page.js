@@ -5,15 +5,16 @@ import Head from 'next/head';
 import styles from '../../styles/pages/Token.module.css';
 import TokenSection from '../token/TokenSection';
 import FAQ from '@/components/FAQ';
-import DAOSection from '@/components/DAOSection'
-import TokenDistribution from '../token/distribution'
-import TokenUseCase from '../token/useCase'
+import DAOSection from '@/components/DAOSection';
+import TokenDistribution from '../token/distribution';
+import TokenUseCase from '../token/useCase';
 import Roadmap from '@/components/RoadmapCarousel';
 import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import StepByStep from '@/components/StepByStep';
 import CrowdfundingSection from './CrowdfundingSection';
-import { WalletContext } from '../../utils/WalletContext'
+import { WalletContext } from '../../utils/WalletContext';
+import VestingSection from './VestingSection';
 
 const PreSeedPage = () => {
     const { walletAddress } = useContext(WalletContext);
@@ -45,6 +46,18 @@ const PreSeedPage = () => {
         {
             question: "Is there a vesting period for the pre-seed tokens?",
             answer: "Yes, there is a vesting period for the pre-seed tokens. This ensures that the tokens are gradually released to investors over time, helping to maintain the stability and growth of the DeGym ecosystem."
+        },
+        {
+            question: "What happens if a team member leaves before the tokens are fully vested?",
+            answer: "Tokens that are not yet vested will remain locked and may be reallocated or burned according to the project's governance rules."
+        },
+        {
+            question: "Can I withdraw my tokens before they are vested?",
+            answer: "No, tokens are locked until they are vested according to the schedule."
+        },
+        {
+            question: "How can I track my vesting schedule?",
+            answer: "You can track your vesting schedule through your vesting wallet, which will provide detailed information on the release of your tokens."
         },
         {
             question: "What is the next step after the pre-seed phase?",
@@ -121,6 +134,7 @@ const PreSeedPage = () => {
                 <section className="m-auto max-w-xl">
                     <CrowdfundingSection crowdfund={crowdfundData} walletAddress={walletAddress} />
                 </section>
+                <VestingSection />
                 <TokenSection />
                 <StepByStep steps={howItWorksPreSeed} title="How to <b>invest</b>?" />
                 <TokenDistribution />

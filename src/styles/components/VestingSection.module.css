@@ -1,0 +1,85 @@
+.vestingSection {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.intro {
+    margin-bottom: 30px;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.card,
+.benefitCard {
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%;
+    min-width: 350px;
+    text-align: left;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.cardHeader h2 {
+    margin-left: 10px;
+    font-size: 1.5rem;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card ul li b {
+    padding: 5px;
+}
+
+.cardIcon {
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+.listIcon {
+    margin-right: 10px;
+    color: var(--color-primary);
+}
+
+.howItWorks {
+    text-align: left;
+}
+
+.howItWorks li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.howItWorks li b {
+    padding: 5px;
+}
+
+.howItWorks .listIcon {
+    margin-right: 10px;
+    color: var(--color-primary);
+}

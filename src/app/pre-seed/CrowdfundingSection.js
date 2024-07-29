@@ -30,22 +30,28 @@ const TransitionNumber = ({ value }) => {
 };
 
 // Custom Countdown Component
-const Countdown = ({ targetDate, onCountdownEnd }) => {
+const Countdown = ({ targetDate, endDate, onCountdownEnd, onStart }) => {
     const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining(targetDate));
+    const [prevTimeRemaining, setPrevTimeRemaining] = useState({});
 
     useEffect(() => {
         const intervalId = setInterval(() => {
             const newTimeRemaining = calculateTimeRemaining(targetDate);
+            setPrevTimeRemaining(timeRemaining);
             setTimeRemaining(newTimeRemaining);
 
             if (newTimeRemaining.total <= 0) {
                 clearInterval(intervalId);
                 onCountdownEnd();
+                if (onStart) onStart();
+                // Start the end countdown
+                setTimeRemaining(calculateTimeRemaining(endDate));
+                setPrevTimeRemaining({});
             }
         }, 1000);
 
         return () => clearInterval(intervalId);
-    }, [targetDate, onCountdownEnd]);
+    }, [targetDate, endDate, onCountdownEnd, onStart, timeRemaining]);
 
     function calculateTimeRemaining(targetDate) {
         const now = new Date().getTime();
@@ -58,6 +64,14 @@ const Countdown = ({ targetDate, onCountdownEnd }) => {
             seconds: Math.floor((distance % (1000 * 60)) / 1000),
         };
     }
+
+    const formatTime = (time) => {
+        return time.toString().padStart(2, '0');
+    };
+
+    const shouldAnimate = (prevValue, newValue) => {
+        return prevValue !== newValue;
+    };
 
     return (
         <div className={styles.countdownContainer}>
@@ -89,6 +103,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [currentBalance, setCurrentBalance] = useState(0);
     const [web3, setWeb3] = useState(null);
     const [isCountdownActive, setIsCountdownActive] = useState(true);
+    const [countdownTitle, setCountdownTitle] = useState(`${crowdfund.type} starts in:`);
 
     useEffect(() => {
         if (walletAddress && window.ethereum) {
@@ -134,14 +149,19 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
 
     const handleCountdownEnd = () => {
         setIsCountdownActive(false);
+        setCountdownTitle(`${crowdfund.type} ends in:`);
     };
 
     const isDisabled = isCountdownActive || !walletAddress;
 
     return (
         <div className={styles.crowdfundingSection}>
-            <h2 className={styles.countdownTitle}>{crowdfund.type} <b>starts in:</b></h2>
-            <Countdown targetDate={crowdfund.startDate} onCountdownEnd={handleCountdownEnd} />
+            <h2 className={styles.countdownTitle}>{countdownTitle}</h2>
+            <Countdown
+                targetDate={crowdfund.startDate}
+                endDate={crowdfund.endDate}
+                onCountdownEnd={handleCountdownEnd}
+            />
             <div className={styles.card}>
                 <div className={styles.cardContent}>
                     <label>
@@ -198,7 +218,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     Governance
                 </button>
             </div>
-        </div >
+        </div>
     );
 };
 

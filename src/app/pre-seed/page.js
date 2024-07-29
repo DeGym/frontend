@@ -20,9 +20,10 @@ const PreSeedPage = () => {
     const { walletAddress } = useContext(WalletContext);
     const crowdfundData = {
         type: "Pre-Seed",
-        startDate: new Date(Date.now() + 100000000), // Example future date (10 million milliseconds from now)
+        startDate: new Date(Date.now() + 10000), // Example future date (10 million milliseconds from now)
         exchangeRate: 0.01, // Example exchange rate (1 TARA = 0.01 ETH)
-        tvlDiscount: 5 // Example TVL discount percentage
+        tvlDiscount: 5, // Example TVL discount percentage
+        endDate: new Date(Date.now() + 1000000)
     };
 
 

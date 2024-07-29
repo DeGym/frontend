@@ -169,7 +169,6 @@
 .countdownValueWrapper {
     position: relative;
     height: 3.5rem;
-    /* Adjust based on the size of your font */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,21 +198,100 @@
 .horizontalCard {
     background-color: var(--color-accent);
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     flex: 1;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .horizontalCard h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .horizontalCard p {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     text-align: center;
+    padding: 5px;
+}
+
+.scrollableSection {
+    margin-top: 30px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggleLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle {
+    margin-left: 10px;
+}
+
+.eventsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.eventCard {
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: left;
+}
+
+.eventCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.eventActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eventLink {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.eventLink:hover {
+    text-decoration: underline;
+}
+
+.eventDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.eventTitle {
+    font-size: 1rem;
+}
+
+.eventAmount {
+    font-size: 1.2rem;
+    text-align: right;
 }
 
 @media (max-width: 768px) {

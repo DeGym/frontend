@@ -23,7 +23,9 @@ const PreSeedPage = () => {
         startDate: new Date(Date.now() + 10000), // Example future date (10 million milliseconds from now)
         exchangeRate: 0.01, // Example exchange rate (1 TARA = 0.01 ETH)
         tvlDiscount: 5, // Example TVL discount percentage
-        endDate: new Date(Date.now() + 1000000)
+        endDate: new Date(Date.now() + 1000000),
+        totalSupply: 300_000_000,
+        sold: 50_000
     };
 
 

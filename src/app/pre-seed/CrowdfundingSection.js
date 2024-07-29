@@ -101,6 +101,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [amount, setAmount] = useState('');
     const [youWillReceive, setYouWillReceive] = useState(0);
     const [currentBalance, setCurrentBalance] = useState(0);
+    const [remainingDGYM, setRemainingDGYM] = useState(crowdfund.totalSupply - crowdfund.sold);
     const [web3, setWeb3] = useState(null);
     const [isCountdownActive, setIsCountdownActive] = useState(true);
     const [countdownTitle, setCountdownTitle] = useState(`${crowdfund.type} starts in:`);
@@ -162,6 +163,21 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                 endDate={crowdfund.endDate}
                 onCountdownEnd={handleCountdownEnd}
             />
+            <div className={styles.horizontalCards}>
+                <div className={styles.horizontalCard}>
+                    <h3>Remaining $DGYM</h3>
+                    <p><b>{remainingDGYM}</b></p>
+                </div>
+                <div className={styles.horizontalCard}>
+                    <h3>Your $DGYM Balance</h3>
+                    <p><b>{currentBalance}</b></p>
+                </div>
+            </div>
+            {remainingDGYM === 0 && (
+                <div className={styles.alertBox}>
+                    All $DGYM tokens have been sold. Presale is closed.
+                </div>
+            )}
             <div className={styles.card}>
                 <div className={styles.cardContent}>
                     <label>
@@ -210,6 +226,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     </div>
                 </div>
             </div>
+
             <div className={styles.buttonsContainer}>
                 <button onClick={handleSnapshot} className="p-3">
                     Snapshot

@@ -1,6 +1,6 @@
 .crowdfundingSection {
     padding: 30px;
-    margin: 20px 0px;
+    margin: 0px 0px;
 }
 
 .card {
@@ -190,13 +190,60 @@
     text-align: center;
 }
 
+.horizontalCards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.horizontalCard {
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.horizontalCard h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.horizontalCard p {
+    font-size: 1.65rem;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
+    .cardData {
+        margin: 0px;
+    }
+
+    .countdownGrid {
+        gap: 7.5px;
+    }
+
+    .countdownBox {
+        padding: 12.5px 20px;
+    }
+
     .card {
+        padding: 15px;
         max-width: 100%;
     }
 
     .buttonsContainer {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .horizontalCards {
+        flex-direction: column;
+    }
+
+    .horizontalCard {
+        margin: 10px 0;
     }
 }

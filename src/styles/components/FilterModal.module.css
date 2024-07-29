@@ -1,0 +1,149 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 90%;
+    z-index: 1001;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modalHeader h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.optionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.optionButton {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: #000000;
+    transition: background-color 0.2s;
+}
+
+.optionButton.selected {
+    background-color: #00c853;
+    color: #ffffff;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.clearButton, .applyButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.clearButton {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ccc;
+}
+
+.applyButton {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Estilos para o filtro de distância */
+.rangeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rangeInput {
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: #ccc;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-radius: 2px;
+}
+
+.rangeInput::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #00c853;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.rangeInput::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #00c853;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.rangeValue {
+    font-size: 0.9rem;
+    color: #000000;
+}

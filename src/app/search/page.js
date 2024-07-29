@@ -3,37 +3,46 @@
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../../styles/pages/Search.module.css';
+import FilterModal from './FilterModal';
 // Import the dynamic map component without SSR
 const Map = dynamic(() => import('./Map'), { ssr: false });
 
 const Search = () => {
-    const [gyms, setGyms] = useState([]);
+    const [academies, setAcademies] = useState([]);
     const [filters, setFilters] = useState({
         text: '',
-        tier: '',
+        plan: [],
         distance: 5,
-        activity: ''
+        activities: [],
+        amenities: []
     });
+    const [activeModal, setActiveModal] = useState(null);
 
     useEffect(() => {
-        fetch('/data/search_gym.json')
+        fetch('/search_academies.json')
             .then(response => response.json())
-            .then(data => setGyms(data))
-            .catch(error => console.error('Error fetching gym data:', error));
-
+            .then(data => {
+                console.log('Loaded academies:', data);
+                setAcademies(data);
+            })
+            .catch(error => console.error('Error fetching academy data:', error));
     }, []);
 
-    const handleFilterChange = (e) => {
-        const { name, value } = e.target;
-        setFilters(prevFilters => ({ ...prevFilters, [name]: value }));
+    const handleFilterChange = (filterName, value) => {
+        setFilters(prevFilters => ({ ...prevFilters, [filterName]: value }));
     };
 
-    const filteredGyms = gyms.filter(gym => {
+    const toggleModal = (modalName) => {
+        setActiveModal(activeModal === modalName ? null : modalName);
+    };
+
+    const filteredAcademies = academies.filter(academy => {
         return (
-            (filters.text ? gym.name.toLowerCase().includes(filters.text.toLowerCase()) || gym.address.toLowerCase().includes(filters.text.toLowerCase()) : true) &&
-            (filters.tier ? gym.tier === filters.tier : true) &&
-            (filters.distance ? gym.distance <= filters.distance : true) &&
-            (filters.activity ? gym.activities.includes(filters.activity) : true)
+            (filters.text ? academy.name.toLowerCase().includes(filters.text.toLowerCase()) || academy.address.toLowerCase().includes(filters.text.toLowerCase()) : true) &&
+            (filters.plan.length ? filters.plan.some(plan => academy.plans.includes(plan)) : true) &&
+            (filters.distance ? academy.distance <= filters.distance : true) &&
+            (filters.activities.length ? filters.activities.some(activity => academy.activities.includes(activity)) : true) &&
+            (filters.amenities.length ? filters.amenities.every(amenity => academy.amenities.includes(amenity)) : true)
         );
     });
 
@@ -41,56 +50,33 @@ const Search = () => {
         <main className={styles.main}>
             <div className={styles.sidebar}>
                 <div className={styles.filters}>
-                    <h2>Search Gyms</h2>
-                    <label>
-                        Search by Title/Location:
-                        <input
-                            type="text"
-                            name="text"
-                            value={filters.text}
-                            onChange={handleFilterChange}
-                        />
-                    </label>
-                    <label>
-                        Gym Tier:
-                        <select name="tier" onChange={handleFilterChange}>
-                            <option value="">All</option>
-                            <option value="1">Tier 1</option>
-                            <option value="2">Tier 2</option>
-                            <option value="3">Tier 3</option>
-                        </select>
-                    </label>
-                    <label>
-                        Distance Radius: {filters.distance} km
-                        <input
-                            type="range"
-                            name="distance"
-                            min="1"
-                            max="15"
-                            value={filters.distance}
-                            onChange={handleFilterChange}
-                        />
-                    </label>
-                    <label>
-                        Fitness Activity:
-                        <select name="activity" onChange={handleFilterChange}>
-                            <option value="">All</option>
-                            <option value="yoga">Yoga</option>
-                            <option value="workout">Workout</option>
-                            <option value="crossfit">Crossfit</option>
-                            <option value="swimming">Swimming</option>
-                        </select>
-                    </label>
+                    <input
+                        type="text"
+                        placeholder="Busque uma academia ou localização"
+                        value={filters.text}
+                        onChange={(e) => handleFilterChange('text', e.target.value)}
+                        className={styles.searchInput}
+                    />
+                    <div className={styles.filterButtonsContainer}>
+                        {['plan', 'distance', 'activities', 'amenities'].map((filterType) => (
+                            <button key={filterType} onClick={() => toggleModal(filterType)} className={styles.filterButton}>
+                                {filterType === 'plan' ? 'Filtre por plano' :
+                                 filterType === 'distance' ? 'Distância' :
+                                 filterType === 'activities' ? 'Modalidades' : 'Comodidades'}
+                            </button>
+                        ))}
+                    </div>
                 </div>
-                <div className={styles.gymsList}>
-                    {filteredGyms.map((gym, index) => (
-                        <div key={index} className={styles.gymCard}>
-                            <img src={gym.image} alt={gym.name} className={styles.gymImage} />
-                            <div className={styles.gymDetails}>
-                                <h3>{gym.name}</h3>
-                                <p>{gym.address}</p>
-                                <p>Distance: {gym.distance} km</p>
-                                <p>Tier: {gym.tier}</p>
+                <div className={styles.academiesList}>
+                    <p className={styles.resultsCount}>Foram encontradas {filteredAcademies.length} academias</p>
+                    {filteredAcademies.map((academy, index) => (
+                        <div key={index} className={styles.academyCard}>
+                            <img src={academy.image} alt={academy.name} className={styles.academyImage} />
+                            <div className={styles.academyDetails}>
+                                <h3>{academy.name}</h3>
+                                <p>{academy.address}</p>
+                                <p className={styles.distance}>{academy.distance} m</p>
+                                <p className={styles.availability}>Disponível a partir do TP 1</p>
                             </div>
                         </div>
                     ))}
@@ -98,11 +84,30 @@ const Search = () => {
             </div>
             <div className={styles.map}>
                 <Map
-                    gyms={filteredGyms}
-                    center={[40.73061, -73.935242]}
+                    academies={filteredAcademies}
+                    center={filteredAcademies.length > 0 ? [filteredAcademies[0].latitude, filteredAcademies[0].longitude] : null}
                     radius={filters.distance}
                 />
             </div>
+            {['plan', 'distance', 'activities', 'amenities'].map((filterType) => (
+                <FilterModal
+                    key={filterType}
+                    isOpen={activeModal === filterType}
+                    onClose={() => toggleModal(filterType)}
+                    title={filterType === 'plan' ? 'Filtre por plano' :
+                           filterType === 'distance' ? 'Distância' :
+                           filterType === 'activities' ? 'Modalidades' : 'Comodidades'}
+                    options={filterType === 'plan' ? ['Básico', 'Intermediário', 'Premium'] :
+                             filterType === 'activities' ? ['Musculação', 'Yoga', 'Pilates', 'Crossfit', 'Natação'] :
+                             filterType === 'amenities' ? ['Estacionamento', 'Chuveiros', 'Armários', 'Lanchonete', 'Wi-Fi'] : []}
+                    selectedOptions={filters[filterType]}
+                    onChange={(value) => handleFilterChange(filterType, value)}
+                    type={filterType === 'distance' ? 'range' : 'checkbox'}
+                    min={filterType === 'distance' ? 1 : undefined}
+                    max={filterType === 'distance' ? 15 : undefined}
+                    value={filterType === 'distance' ? filters.distance : undefined}
+                />
+            ))}
         </main>
     );
 };

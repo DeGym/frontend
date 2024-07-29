@@ -12,10 +12,11 @@
     height: 100vh;
     overflow-y: auto;
     margin-top: 80px;
+    width: 40%;
 }
 
 .map {
-    width: 100%;
+    width: 60%;
     height: 100vh;
     overflow-y: auto;
     margin-top: 80px;
@@ -25,32 +26,44 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    color: var(--color-light)
+    color: var(--color-light);
 }
 
-.filters h2 {
-    margin-bottom: 20px;
-}
-
-.filters label {
-    margin-bottom: 10px;
-}
-
-.filters input[type="text"],
-.filters select,
-.filters input[type="range"] {
+.searchInput {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid var(--color-primary);
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.gymsList {
+.filterButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filterButton {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border: 1px solid var(--color-primary);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resultsCount {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--color-light);
+}
+
+.academiesList {
     margin-top: 20px;
 }
 
-.gymCard {
+.academyCard {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
@@ -60,23 +73,38 @@
     background-color: var(--color-dark);
 }
 
-.gymImage {
+.academyImage {
     width: 80px;
     height: 80px;
     border-radius: 5px;
     margin-right: 10px;
+    object-fit: cover;
 }
 
-.gymDetails h3 {
+.academyDetails {
+    color: var(--color-light);
+}
+
+.academyDetails h3 {
     margin: 0;
 }
 
-.gymDetails p {
+.academyDetails p {
     margin: 5px 0;
+    font-size: 14px;
+}
+
+.distance {
+    color: var(--color-primary);
+}
+
+.availability {
+    font-weight: bold;
+    color: var(--color-accent);
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .main {
         flex-direction: column;
     }
 
@@ -87,14 +115,14 @@
         margin-bottom: 20px;
     }
 
-    .mapContainer {
+    .map {
         width: 100%;
         height: 400px;
     }
 }
 
 @media (max-width: 768px) {
-    .container {
+    .main {
         flex-direction: column;
         padding: 10px;
     }
@@ -106,17 +134,17 @@
         margin-bottom: 20px;
     }
 
-    .mapContainer {
+    .map {
         width: 100%;
         height: 400px;
     }
 
-    .gymCard {
+    .academyCard {
         flex-direction: column;
         align-items: center;
     }
 
-    .gymImage {
+    .academyImage {
         width: 100%;
         height: auto;
         margin-bottom: 10px;
@@ -124,32 +152,30 @@
 }
 
 @media (max-width: 480px) {
-    .container {
+    .main {
         padding: 5px;
     }
 
-    .filters label {
+    .filterButton {
         font-size: 0.9rem;
     }
 
-    .filters input[type="text"],
-    .filters select,
-    .filters input[type="range"] {
+    .searchInput {
         padding: 8px;
         margin-top: 3px;
     }
 
-    .gymCard {
+    .academyCard {
         flex-direction: column;
         align-items: center;
         padding: 5px;
     }
 
-    .gymDetails h3 {
+    .academyDetails h3 {
         font-size: 1rem;
     }
 
-    .gymDetails p {
+    .academyDetails p {
         font-size: 0.875rem;
         margin: 3px 0;
     }

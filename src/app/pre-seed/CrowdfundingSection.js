@@ -6,7 +6,6 @@ import styles from '@/styles/components/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
 import Countdown from '@/components/Countdown';
 
-
 const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [amount, setAmount] = useState('');
     const [youWillReceive, setYouWillReceive] = useState(0);
@@ -93,10 +92,12 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
         ? mockEvents.filter(event => event.address.includes(walletAddress.substring(2, 6)))
         : mockEvents;
 
+    const isPresaleClosed = remainingDGYM === 0 || new Date(crowdfund.endDate) <= new Date();
+
     return (
         <div className={styles.crowdfundingSection}>
-            <h2 className={styles.countdownTitle}>{countdownTitle}</h2>
             <Countdown
+                title={countdownTitle}
                 targetDate={crowdfund.startDate}
                 endDate={crowdfund.endDate}
                 onCountdownEnd={handleCountdownEnd}
@@ -111,7 +112,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     <p><b>{currentBalance}</b></p>
                 </div>
             </div>
-            {remainingDGYM === 0 && (
+            {isPresaleClosed && (
                 <div className={styles.alertBox}>
                     All $DGYM tokens have been sold. Presale is closed.
                 </div>
@@ -177,12 +178,15 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
             <div className={styles.toggleContainer}>
                 <label className={styles.toggleLabel}>
                     <span>Just my events</span>
-                    <input
-                        type="checkbox"
-                        className={styles.toggle}
-                        checked={filterMyEvents}
-                        onChange={() => setFilterMyEvents(!filterMyEvents)}
-                    />
+                    <div className={styles.toggleWrapper}>
+                        <input
+                            type="checkbox"
+                            className={styles.toggle}
+                            checked={filterMyEvents}
+                            onChange={() => setFilterMyEvents(!filterMyEvents)}
+                        />
+                        <span className={styles.slider} />
+                    </div>
                 </label>
             </div>
             <div className={styles.scrollableSection}>

@@ -28,7 +28,7 @@ const TransitionNumber = ({ value }) => {
 };
 
 // Custom Countdown Component
-const Countdown = ({ targetDate, endDate, onCountdownEnd, onStart }) => {
+const Countdown = ({ title, targetDate, endDate, onCountdownEnd, onStart }) => {
     const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining(targetDate));
     const [prevTimeRemaining, setPrevTimeRemaining] = useState({});
 
@@ -72,26 +72,29 @@ const Countdown = ({ targetDate, endDate, onCountdownEnd, onStart }) => {
     };
 
     return (
-        <div className={styles.countdownContainer}>
-            <div className={styles.countdownGrid}>
-                <div className={styles.countdownBox}>
-                    <TransitionNumber value={timeRemaining.days} />
-                    days
-                </div>
-                <div className={styles.countdownBox}>
-                    <TransitionNumber value={timeRemaining.hours} />
-                    hours
-                </div>
-                <div className={styles.countdownBox}>
-                    <TransitionNumber value={timeRemaining.minutes} />
-                    min
-                </div>
-                <div className={styles.countdownBox}>
-                    <TransitionNumber value={timeRemaining.seconds} />
-                    sec
+        <>
+            <h2 className={styles.countdownTitle}>{title}</h2>
+            <div className={styles.countdownContainer}>
+                <div className={styles.countdownGrid}>
+                    <div className={styles.countdownBox}>
+                        <TransitionNumber value={timeRemaining.days} />
+                        days
+                    </div>
+                    <div className={styles.countdownBox}>
+                        <TransitionNumber value={timeRemaining.hours} />
+                        hours
+                    </div>
+                    <div className={styles.countdownBox}>
+                        <TransitionNumber value={timeRemaining.minutes} />
+                        min
+                    </div>
+                    <div className={styles.countdownBox}>
+                        <TransitionNumber value={timeRemaining.seconds} />
+                        sec
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 export default Countdown

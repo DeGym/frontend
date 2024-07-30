@@ -1,18 +1,36 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTelegram, faTwitter, faLinkedin, faReddit, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/components/DAOSection.module.css';
 
 const DAOSection = () => {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (video) {
+            setTimeout(() => {
+                video.play();
+            }, 3000);
+        }
+    }, []);
+
     return (
-        <section className={styles.sectionEleven}>
+        <section className={styles.section}>
+            <video className={styles.backgroundVideo} ref={videoRef} muted loop>
+                <source src="/videos/dao_bg.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <div className={styles.overlay}></div>
             <div className={styles.container}>
-                <div className={`${styles.sectionElevenRow} ${styles.sectionRow}`}>
-                    <div className={`${styles.sectionElevenCol1} ${styles.sectionCol1}`}>
+                <div className={`${styles.sectionRow} ${styles.sectionRow}`}>
+                    <div className={`${styles.sectionCol1} ${styles.sectionCol1}`}>
                         <div className={styles.sectionTitle}>DAO</div>
                     </div>
-                    <div className={`${styles.sectionElevenCol2} ${styles.sectionCol2}`}>
+                    <div className={`${styles.sectionCol2} ${styles.sectionCol2}`}>
                         <div className={styles.textBlockV1}>
                             The DeGym will be controlled by a <span className={styles.color1}>DAO with decentralized governance,</span> which allows all token holders to participate in the future growth,
                         </div>
@@ -22,7 +40,7 @@ const DAOSection = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.sectionElevenJoin}>
+            <div className={styles.sectionJoin}>
                 <div className={styles.joinLine}></div>
                 <div className={styles.container}>
                     <div className={styles.joinLinks}>

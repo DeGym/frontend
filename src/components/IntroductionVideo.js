@@ -18,7 +18,7 @@ const IntroductionVideo = () => {
             <h2>Watch Our <b>Introduction</b> Video</h2>
             <div className={styles.container}>
                 <div className={styles.videoOverlay}></div>
-                <video className={styles.video} controls controlsList="nodownload" src="https://api.renderforest.com/api/v1/projects/86667866/download?key=66861de0e05e4d2f138a2c92ecd44650:f23f59dbbd6306eb882295638df7c34e6dccee06bf48e671627eb992259a13496b15be09dc32f4d7efc62e4948bf8831"></video>
+                <video className={styles.video} controls controlsList="nodownload" src="videos/introduction.mp4"></video>
             </div>
         </section>
     );

@@ -51,7 +51,7 @@ export default function Footer() {
                     </h4>
                 </div>
                 <div className={styles.section}>
-                    <h4 className={styles.title}>Follow Us
+                    <h4 className={styles.title}>
                         <div className={styles.icons}>
                             <a href="https://x.com/degym_network" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faTwitter} size="2x" />
@@ -69,6 +69,13 @@ export default function Footer() {
                                 <FontAwesomeIcon icon={faGithub} size="2x" />
                             </a>
                         </div>
+                    </h4>
+                </div>
+                <div className={styles.section}>
+                    <h4>
+                        <a href="https://degym-network.gitbook.io/docs/gym-dao/terms-and-conditions" target="_blank" rel="noopener noreferrer" className={styles.title}>
+                            Terms & Condition
+                        </a>
                     </h4>
                 </div>
 

@@ -22,7 +22,7 @@ const Map = ({ academies, center, radius }) => {
     const mapCenter = academies.length > 0 ? center : defaultCenter;
 
     return (
-        <MapContainer className={styles.mapContainer} center={mapCenter} zoom={13} scrollWheelZoom={false}>
+        <MapContainer className="w-full h-full" center={mapCenter} zoom={13} scrollWheelZoom={false}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -30,7 +30,7 @@ const Map = ({ academies, center, radius }) => {
             {center && radius && (
                 <Circle
                     center={center}
-                    radius={radius * 1000} // radius in meters
+                    radius={radius * 1000}
                     fillColor="green"
                     color="green"
                     opacity={0.3}

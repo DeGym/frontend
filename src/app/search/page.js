@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import styles from '../../styles/pages/Search.module.css';
 import FilterModal from './FilterModal';
+import MobileFilterModal from './MobileFilterModal';
+import MobileAcademiesModal from './MobileAcademiesModal';
+
 // Import the dynamic map component without SSR
 const Map = dynamic(() => import('./Map'), { ssr: false });
 
@@ -17,6 +19,7 @@ const Search = () => {
         amenities: []
     });
     const [activeModal, setActiveModal] = useState(null);
+    const [mobileModalOpen, setMobileModalOpen] = useState(null);
 
     useEffect(() => {
         fetch('/search_academies.json')
@@ -36,6 +39,10 @@ const Search = () => {
         setActiveModal(activeModal === modalName ? null : modalName);
     };
 
+    const toggleMobileModal = (modalName) => {
+        setMobileModalOpen(mobileModalOpen === modalName ? null : modalName);
+    };
+
     const filteredAcademies = academies.filter(academy => {
         return (
             (filters.text ? academy.name.toLowerCase().includes(filters.text.toLowerCase()) || academy.address.toLowerCase().includes(filters.text.toLowerCase()) : true) &&
@@ -47,19 +54,23 @@ const Search = () => {
     });
 
     return (
-        <main className={styles.main}>
-            <div className={styles.sidebar}>
-                <div className={styles.filters}>
+        <main className="flex flex-col md:flex-row items-start relative min-h-screen">
+            <div className="hidden md:block w-1/3 bg-[var(--color-dark)] border-r border-[var(--color-accent)] h-[calc(100vh-85px)] overflow-y-auto mt-[85px] p-5">
+                <div className="mb-5">
                     <input
                         type="text"
                         placeholder="Busque uma academia ou localização"
                         value={filters.text}
                         onChange={(e) => handleFilterChange('text', e.target.value)}
-                        className={styles.searchInput}
+                        className="w-full p-2 border border-[var(--color-accent)] rounded-md mb-3 bg-[var(--color-dark)] text-[var(--color-light)]"
                     />
-                    <div className={styles.filterButtonsContainer}>
+                    <div className="flex flex-wrap gap-2">
                         {['plan', 'distance', 'activities', 'amenities'].map((filterType) => (
-                            <button key={filterType} onClick={() => toggleModal(filterType)} className={styles.filterButton}>
+                            <button 
+                                key={filterType} 
+                                onClick={() => toggleModal(filterType)} 
+                                className="px-3 py-1 bg-[var(--color-primary)] text-[var(--color-dark)] rounded-md text-sm hover:bg-hoverButton hover:text-[var(--color-light)]"
+                            >
                                 {filterType === 'plan' ? 'Filtre por plano' :
                                  filterType === 'distance' ? 'Distância' :
                                  filterType === 'activities' ? 'Modalidades' : 'Comodidades'}
@@ -67,28 +78,43 @@ const Search = () => {
                         ))}
                     </div>
                 </div>
-                <div className={styles.academiesList}>
-                    <p className={styles.resultsCount}>Foram encontradas {filteredAcademies.length} academias</p>
+                <div>
+                    <p className="font-bold mb-3">Foram encontradas {filteredAcademies.length} academias</p>
                     {filteredAcademies.map((academy, index) => (
-                        <div key={index} className={styles.academyCard}>
-                            <img src={academy.image} alt={academy.name} className={styles.academyImage} />
-                            <div className={styles.academyDetails}>
-                                <h3>{academy.name}</h3>
-                                <p>{academy.address}</p>
-                                <p className={styles.distance}>{academy.distance} m</p>
-                                <p className={styles.availability}>Disponível a partir do TP 1</p>
+                        <div key={index} className="mb-4 p-3 bg-black border border-[var(--color-primary)] rounded-md shadow-sm">
+                            <img src={academy.image} alt={academy.name} className="w-20 h-20 rounded-md object-cover float-left mr-3" />
+                            <div>
+                                <h3 className="font-semibold">{academy.name}</h3>
+                                <p className="text-sm">{academy.address}</p>
+                                <p className="text-sm text-[var(--color-primary)]">{academy.distance} m</p>
+                                <p className="text-sm font-bold text-blue-500">Disponível a partir do TP 1</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-            <div className={styles.map}>
+            <div className="md:hidden fixed top-[111.75px] left-0 right-0 flex justify-between p-3 bg-[var(--color-dark)] bg-opacity-50 z-20 shadow-md">
+                <button onClick={() => toggleMobileModal('filters')} className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-dark)] rounded-md text-sm hover:bg-hoverButton">Filtros</button>
+                <button onClick={() => toggleMobileModal('academies')} className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-dark)] rounded-md text-sm hover:bg-hoverButton">Ver Academias</button>
+            </div>
+            <div className="w-full md:w-2/3 h-[calc(100vh-80px)] md:h-[calc(100vh-85px)] mt-20 md:mt-[85px] z-0">
                 <Map
                     academies={filteredAcademies}
                     center={filteredAcademies.length > 0 ? [filteredAcademies[0].latitude, filteredAcademies[0].longitude] : null}
                     radius={filters.distance}
                 />
             </div>
+            <MobileFilterModal
+                isOpen={mobileModalOpen === 'filters'}
+                onClose={() => setMobileModalOpen(null)}
+                filters={filters}
+                handleFilterChange={handleFilterChange}
+            />
+            <MobileAcademiesModal
+                isOpen={mobileModalOpen === 'academies'}
+                onClose={() => setMobileModalOpen(null)}
+                academies={filteredAcademies}
+            />
             {['plan', 'distance', 'activities', 'amenities'].map((filterType) => (
                 <FilterModal
                     key={filterType}

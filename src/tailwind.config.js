@@ -19,6 +19,7 @@ module.exports = {
         secondary: '#3a8d1d',
         accent: '#1f1f1f',
         neonGreen: '#39FF14',
+        hoverButton: '#2dff7360',
       },
 
     },

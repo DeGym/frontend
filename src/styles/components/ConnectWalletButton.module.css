@@ -112,7 +112,36 @@
     }
 
     .dropdownMenu {
-        right: 50%;
+        right: 30%;
         transform: translateX(50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .icon {
+        padding: 5px;
+    }
+
+    .connectButton {
+        padding: 10px 7.5px;
+        font-size: 12px;
+    }
+
+    .dropdownMenu {
+        right: 95%;
+    }
+
+    .dropdownMenu p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .dropdownMenu {
+        right: 120%;
+    }
+
+    .dropdownMenu p {
+        font-size: 0.7rem;
     }
 }

@@ -7,20 +7,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/components/DAOSection.module.css';
 
 const DAOSection = () => {
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        const video = videoRef.current;
-        if (video) {
-            setTimeout(() => {
-                video.play();
-            }, 3000);
-        }
-    }, []);
-
     return (
         <section className={styles.section}>
-            <video className={styles.backgroundVideo} ref={videoRef} muted loop>
+            <video className={styles.backgroundVideo} autoPlay muted loop>
                 <source src="/videos/dao_bg.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>

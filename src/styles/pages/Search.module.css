@@ -12,11 +12,11 @@
     height: 100vh;
     overflow-y: auto;
     margin-top: 80px;
-    width: 40%;
+    width: 40%; /* Increased from 30% to 40% */
 }
 
 .map {
-    width: 60%;
+    width: 60%; /* Decreased from 70% to 60% */
     height: 100vh;
     overflow-y: auto;
     margin-top: 80px;
@@ -178,5 +178,54 @@
     .academyDetails p {
         font-size: 0.875rem;
         margin: 3px 0;
+    }
+}
+
+.mobileView {
+    display: none;
+}
+
+.mobileTopControls {
+    position: fixed; /* Changed from absolute to fixed */
+    top: 80px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px; /* Added horizontal padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Increased opacity */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.mobileTopControls button {
+    padding: 8px 12px; /* Reduced padding */
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.mobileTopControls button:hover {
+    background-color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+    .desktopView {
+        display: none;
+    }
+
+    .mobileView {
+        display: block;
+    }
+
+    .map {
+        width: 100%;
+        height: calc(100vh - 130px); /* Adjusted to account for nav and top controls */
+        margin-top: 130px; /* Adjusted to prevent overlap with nav and top controls */
     }
 }

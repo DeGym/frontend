@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import styles from '../styles/ParticleNetwork.module.css';
+import styles from '@/styles/components/ParticleNetwork.module.css';
 
 class Particle {
     constructor(ctx, options) {

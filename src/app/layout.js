@@ -1,11 +1,11 @@
-import '../styles/globals.css';
-import Navbar from '../components/NavBar';
-import ParticleNetworkAnimation from '../components/ParticleNetworkAnimation';
-import Footer from '../components/Footer';
+import '@/styles/globals.css';
+import Navbar from '@/components/NavBar';
+import ParticleNetworkAnimation from '@/components/ParticleNetworkAnimation';
+import Footer from '@/components/Footer';
 import Head from 'next/head';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { WalletProvider } from '../utils/WalletContext';
+import { WalletProvider } from '@/utils/WalletContext';
 config.autoAddCss = false; // Tell FontAwesome to skip adding the CSS automatically since it's being imported above
 
 export default function RootLayout({ children }) {

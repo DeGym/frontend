@@ -86,6 +86,7 @@ const Search = () => {
     return (
         <main className="flex flex-col md:flex-row items-start relative min-h-screen">
             <div className="hidden md:block w-1/3 bg-dark border-r border-accent h-[calc(100vh-85px)] overflow-y-auto mt-[85px] p-5">
+                <h1 className="text-center text-6xl py-3">Search Gyms</h1>
                 <div className="mb-5">
                     <input
                         type="text"
@@ -94,6 +95,7 @@ const Search = () => {
                         onChange={(e) => handleFilterChange('text', e.target.value)}
                         className="w-full p-2 border border-accent rounded-md mb-3 bg-dark text-light"
                     />
+                    <h3 className="mb-2">Filters</h3>
                     <div className="flex flex-row flex-wrap gap-0">
                         {['tier', 'activities', 'amenities'].map((filterType) => (
                             <button
@@ -135,8 +137,8 @@ const Search = () => {
                 </div>
             </div>
             <div className="md:hidden fixed top-[111.75px] left-0 right-0 flex justify-between p-3 bg-dark bg-opacity-50 z-20 shadow-md">
-                <button onClick={() => toggleMobileModal('filters')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">Filtros</button>
-                <button onClick={() => toggleMobileModal('gyms')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">Ver Academias</button>
+                <button onClick={() => toggleMobileModal('filters')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">Filters</button>
+                <button onClick={() => toggleMobileModal('gyms')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">View Gyms</button>
             </div>
             <div className="w-full md:w-2/3 h-[calc(100vh-80px)] md:h-[calc(100vh-85px)] mt-20 md:mt-[85px] z-0">
                 <Map

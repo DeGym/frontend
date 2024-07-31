@@ -1,24 +1,25 @@
 .connectButton {
-    padding: 15px 20px;
+    padding: 0px 7.5px;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    height: 100%;
 }
 
 .walletContainer {
     position: relative;
+    height: 56px;
 }
 
 .walletInfo {
     display: flex;
-    align-items: center;
     background-color: var(--color-dark);
+    align-items: center;
     border: 2px solid var(--color-primary);
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     position: relative;
     padding-right: 10px;
     border-radius: 50px;
-    /* Adjust the border radius to make it look good */
 }
 
 .walletInfo:hover {
@@ -96,7 +97,7 @@
     color: var(--color-dark);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 888px) {
     .walletAddress {
         display: none;
     }
@@ -115,6 +116,10 @@
         right: 30%;
         transform: translateX(50%);
     }
+
+    .connectButton {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -123,7 +128,6 @@
     }
 
     .connectButton {
-        padding: 10px 7.5px;
         font-size: 12px;
     }
 

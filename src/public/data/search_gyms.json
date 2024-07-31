@@ -10,7 +10,7 @@
         ],
         "latitude": -23.5335,
         "longitude": -46.6359,
-        "image": "/path/to/image1.jpg"
+        "image": "https://images.totalpass.com/public/120x120/czM6Ly90cC1pbWFnZS1hZG1pbi1wcm9kL2d5bXMvMXpnNXdrOGlobnN2MWJxY2FicjI2eGtnYThqbTRqaGJlOTI0a3Z3aGlpcTU1NHBwaHJ3ZHExeTc2bGox.jpg"
     },
     {
         "name": "Gym Two",
@@ -23,7 +23,7 @@
         ],
         "latitude": -23.4535,
         "longitude": -46.6,
-        "image": "/path/to/image2.jpg"
+        "image": "https://images.totalpass.com/public/120x120/czM6Ly90cC1pbWFnZS1hZG1pbi1wcm9kL2d5bXMvdWZ0eXlsYWlmMGFtamY3dm45Nm9renFzczh2YzNjaGM0MjVlcXJpOGJ6b2JscTZrNXhkNjEycGg1Y2Rm.jpg"
     },
     {
         "name": "Gym Three",
@@ -37,6 +37,6 @@
         ],
         "latitude": -23.5,
         "longitude": -46.7359,
-        "image": "/path/to/image3.jpg"
+        "image": "https://images.totalpass.com/public/120x120/czM6Ly90cC1pbWFnZS1hZG1pbi1wcm9kL2d5bXMvOTdtNHhqczBscTdycHhleWdpenN1bmphaThvNGk2cHBtbThleWZmaHhxbTAzc2l0cWNrcXJjdWRxczFr.jpg"
     }
 ]

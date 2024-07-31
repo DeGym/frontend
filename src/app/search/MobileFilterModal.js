@@ -17,7 +17,7 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end z-50" onClick={onClose}>
-            <div className="bg-dark w-4/5 max-w-md h-full overflow-y-auto flex flex-col" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-accent w-4/5 max-w-md h-full overflow-y-auto flex flex-col" onClick={(e) => e.stopPropagation()}>
                 <div className="flex justify-between items-center p-5 border-b border-accent">
                     <h2 className="text-xl font-semibold">Filters</h2>
                     <button onClick={onClose} className={styles.closeButton}>&times;</button>
@@ -46,9 +46,9 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
                                     {tierOptions.map((option) => (
                                         <button
                                             key={option.value}
-                                            className={`px-3 py-1 rounded-full text-sm ${filters.tier === option.value
-                                                ? 'bg-primary text-dark hover:bg-secondary'
-                                                : 'bg-accent text-light hover:bg-primary hover:text-dark'
+                                            className={`${styles.optionButton} ${filters.tier === option.value
+                                                ? styles.selectedOption
+                                                : styles.unselectedOption
                                                 }`}
                                             onClick={() => handleFilterChange('tier', option.value)}
                                         >
@@ -57,14 +57,14 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
                                     ))}
                                 </div>
                             ) : (
-                                <div className="flex flex-wrap gap-2">
+                                <div className={styles.optionsContainer}>
                                     {(filterType === 'activities' ? ['Weightlifting', 'Yoga', 'Fighting', 'Dances', 'Pilates', 'Cross training', 'Swimming'] :
                                         ['Parking', 'Showers', 'Lockers', 'Snack Bar', 'Wi-Fi']).map((option) => (
                                             <button
                                                 key={option}
-                                                className={`px-3 py-1 rounded-full text-sm ${filters[filterType].includes(option)
-                                                    ? 'bg-primary text-dark hover:bg-secondary'
-                                                    : 'bg-accent text-light hover:bg-primary hover:text-dark'
+                                                className={`${styles.optionButton} ${filters[filterType].includes(option)
+                                                    ? styles.selectedOption
+                                                    : styles.unselectedOption
                                                     }`}
                                                 onClick={() => {
                                                     const newSelection = filters[filterType].includes(option)

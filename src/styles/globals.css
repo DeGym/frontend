@@ -101,6 +101,10 @@ select {
   color: var(--color-light);
 }
 
+input[type="range"] {
+  accent-color: var(--color-primary)
+}
+
 @media (max-width: 1024px) {
   h1 {
     font-size: 6.8rem;

@@ -31,7 +31,7 @@ function VisitorSection() {
                     <div className="space-y-8 text-light">
                         <div className="space-y-4">
                             <h3 className="border-l-4 border-primary-40 pl-4 text-sm font-medium md:text-2xl md:font-bold">
-                                More than 5,000 client companies throughout Brazil
+                                More than 5,000 client companies throughout World
                             </h3>
                             <p className="text-xs md:text-base">
                                 We promote our partner gyms to HR departments and employees in your area, giving your brand more visibility among benefit users.

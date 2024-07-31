@@ -85,24 +85,24 @@ const Search = () => {
 
     return (
         <main className="flex flex-col md:flex-row items-start relative min-h-screen">
-            <div className="hidden md:block w-1/3 bg-[var(--color-dark)] border-r border-[var(--color-accent)] h-[calc(100vh-85px)] overflow-y-auto mt-[85px] p-5">
+            <div className="hidden md:block w-1/3 bg-dark border-r border-accent h-[calc(100vh-85px)] overflow-y-auto mt-[85px] p-5">
                 <div className="mb-5">
                     <input
                         type="text"
                         placeholder="Search for gym or location"
                         value={filters.text}
                         onChange={(e) => handleFilterChange('text', e.target.value)}
-                        className="w-full p-2 border border-[var(--color-accent)] rounded-md mb-3 bg-[var(--color-dark)] text-[var(--color-light)]"
+                        className="w-full p-2 border border-accent rounded-md mb-3 bg-dark text-light"
                     />
-                    <div className="flex flex-row flex-wrap gap-2">
+                    <div className="flex flex-row flex-wrap gap-0">
                         {['tier', 'activities', 'amenities'].map((filterType) => (
                             <button
                                 key={filterType}
                                 onClick={() => toggleModal(filterType)}
-                                className="px-3 py-1 bg-[var(--color-primary)] text-[var(--color-dark)] rounded-md text-sm hover:bg-hoverButton hover:text-[var(--color-light)]"
+                                className="w-1/3 px-3 py-1 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton hover:text-light"
                             >
                                 {filterType === 'tier' ? 'Tier' :
-                                    filterType === 'activities' ? 'Modalidades' : 'Comodidades'}
+                                    filterType === 'activities' ? 'Modalities' : 'Amenities'}
                             </button>
                         ))}
                     </div>
@@ -116,32 +116,32 @@ const Search = () => {
                             onChange={(e) => handleFilterChange('distance', Number(e.target.value))}
                             className="w-full mb-2"
                         />
-                        <span className="block text-white">até {filters.distance} km</span>
+                        <span className="block text-white">up to {filters.distance} km</span>
                     </div>
                 </div>
                 <div>
-                    <p className="font-bold mb-3">Foram encontradas {filteredGyms.length} gyms</p>
+                    <p className="font-bold mb-3">{filteredGyms.length} gyms found</p>
                     {filteredGyms.map((gym, index) => (
-                        <div key={index} className="mb-4 p-3 bg-black border border-[var(--color-primary)] rounded-md shadow-sm">
+                        <div key={index} className="mb-4 p-3 bg-black border border-primary rounded-md shadow-sm">
                             <img src={gym.image} alt={gym.name} className="w-20 h-20 rounded-md object-cover float-left mr-3" />
                             <div>
                                 <h3 className="font-semibold">{gym.name}</h3>
                                 <p className="text-sm">{gym.address}</p>
-                                <p className="text-sm text-[var(--color-primary)]">{gym.distance ? gym.distance.toFixed(2) : 'N/A'} km</p>
-                                <p className="text-sm font-bold text-green-500">Disponível a partir do TP 1</p>
+                                <p className="text-sm text-primary">{gym.distance ? gym.distance.toFixed(2) : 'N/A'} km</p>
+                                <p className="text-sm font-bold text-green-500">Available from DG {gym.tier}</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-            <div className="md:hidden fixed top-[111.75px] left-0 right-0 flex justify-between p-3 bg-[var(--color-dark)] bg-opacity-50 z-20 shadow-md">
-                <button onClick={() => toggleMobileModal('filters')} className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-dark)] rounded-md text-sm hover:bg-hoverButton">Filtros</button>
-                <button onClick={() => toggleMobileModal('gyms')} className="px-4 py-2 bg-[var(--color-primary)] text-[var(--color-dark)] rounded-md text-sm hover:bg-hoverButton">Ver Academias</button>
+            <div className="md:hidden fixed top-[111.75px] left-0 right-0 flex justify-between p-3 bg-dark bg-opacity-50 z-20 shadow-md">
+                <button onClick={() => toggleMobileModal('filters')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">Filtros</button>
+                <button onClick={() => toggleMobileModal('gyms')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">Ver Academias</button>
             </div>
             <div className="w-full md:w-2/3 h-[calc(100vh-80px)] md:h-[calc(100vh-85px)] mt-20 md:mt-[85px] z-0">
                 <Map
                     gyms={filteredGyms}
-                    center={mapCenter || [0, 0]} // Default center if location is not available
+                    center={mapCenter || [0, 0]}
                     radius={filters.distance}
                 />
             </div>
@@ -162,10 +162,10 @@ const Search = () => {
                     isOpen={activeModal === filterType}
                     onClose={() => toggleModal(filterType)}
                     title={filterType === 'tier' ? 'Tier' :
-                        filterType === 'activities' ? 'Modalidades' : 'Comodidades'}
+                        filterType === 'activities' ? 'Modalities' : 'Amenities'}
                     options={filterType === 'tier' ? ['All', 'Basic', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Black', 'Personalized'] :
-                        filterType === 'activities' ? ['Musculação', 'Yoga', 'Pilates', 'Crossfit', 'Natação'] :
-                            filterType === 'amenities' ? ['Estacionamento', 'Chuveiros', 'Armários', 'Lanchonete', 'Wi-Fi'] : []}
+                        filterType === 'activities' ? ['Weightlifting', 'Yoga', 'Fighting', 'Dances', 'Pilates', 'Cross training', 'Swimming'] :
+                            filterType === 'amenities' ? ['Parking', 'Showers', 'Lockers', 'Snack Bar', 'Wi-Fi'] : []}
                     selectedOptions={filters[filterType]}
                     onChange={(value) => handleFilterChange(filterType, value)}
                     type={'checkbox'}

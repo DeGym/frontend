@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import FilterModal from './FilterModal';
 import MobileFilterModal from './MobileFilterModal';
 import MobileGymsModal from './MobileGymsModal';
+import haversineDistance from '@/utils/haversineDistance';
 
 // Import the dynamic map component without SSR
 const Map = dynamic(() => import('./Map'), { ssr: false });
@@ -13,13 +14,16 @@ const Search = () => {
     const [gyms, setGyms] = useState([]);
     const [filters, setFilters] = useState({
         text: '',
-        tier: [],
+        tier: null,
         distance: 5,
         activities: [],
         amenities: []
     });
     const [activeModal, setActiveModal] = useState(null);
     const [mobileModalOpen, setMobileModalOpen] = useState(null);
+    const [userLocation, setUserLocation] = useState(null);
+    const [mapCenter, setMapCenter] = useState(null);
+    const prevUserLocation = useRef(null);
 
     useEffect(() => {
         fetch('data/search_gyms.json')
@@ -29,6 +33,27 @@ const Search = () => {
                 setGyms(data);
             })
             .catch(error => console.error('Error fetching gym data:', error));
+
+        const handlePositionChange = (position) => {
+            const newLocation = [position.coords.latitude, position.coords.longitude];
+            setUserLocation(newLocation);
+
+            if (!prevUserLocation.current || haversineDistance(prevUserLocation.current, newLocation) > 0.1) {
+                setMapCenter(newLocation);
+                prevUserLocation.current = newLocation;
+            }
+        };
+
+        const geolocationWatcher = navigator.geolocation.watchPosition(
+            handlePositionChange,
+            (error) => {
+                console.error('Error getting user location:', error);
+            }
+        );
+
+        return () => {
+            navigator.geolocation.clearWatch(geolocationWatcher);
+        };
     }, []);
 
     const handleFilterChange = (filterName, value) => {
@@ -43,15 +68,20 @@ const Search = () => {
         setMobileModalOpen(mobileModalOpen === modalName ? null : modalName);
     };
 
-    const filteredGyms = gyms.filter(gym => {
-        return (
-            (filters.text ? gym.name.toLowerCase().includes(filters.text.toLowerCase()) || gym.address.toLowerCase().includes(filters.text.toLowerCase()) : true) &&
-            (filters.distance ? gym.distance <= filters.distance : true) &&
-            (filters.activities.length ? filters.activities.some(activity => gym.activities.includes(activity)) : true) &&
-            (filters.amenities.length ? filters.amenities.every(amenity => gym.amenities.includes(amenity)) : true) &&
-            (filters.tier.length ? filters.tier.some(tier => gym.tier <= tier) : true)
-        );
-    });
+    const filteredGyms = gyms
+        .map((gym) => ({
+            ...gym,
+            distance: userLocation ? haversineDistance(userLocation, [gym.latitude, gym.longitude]) : null,
+        }))
+        .filter(gym => {
+            return (
+                (filters.text ? gym.name.toLowerCase().includes(filters.text.toLowerCase()) || gym.address.toLowerCase().includes(filters.text.toLowerCase()) : true) &&
+                (filters.distance ? gym.distance <= filters.distance : true) &&
+                (filters.activities.length ? filters.activities.some(activity => gym.activities.includes(activity)) : true) &&
+                (filters.amenities.length ? filters.amenities.every(amenity => gym.amenities.includes(amenity)) : true) &&
+                (filters.tier === null ? true : gym.tier <= filters.tier)
+            );
+        });
 
     return (
         <main className="flex flex-col md:flex-row items-start relative min-h-screen">
@@ -97,7 +127,7 @@ const Search = () => {
                             <div>
                                 <h3 className="font-semibold">{gym.name}</h3>
                                 <p className="text-sm">{gym.address}</p>
-                                <p className="text-sm text-[var(--color-primary)]">{gym.distance} m</p>
+                                <p className="text-sm text-[var(--color-primary)]">{gym.distance ? gym.distance.toFixed(2) : 'N/A'} km</p>
                                 <p className="text-sm font-bold text-green-500">Disponível a partir do TP 1</p>
                             </div>
                         </div>
@@ -111,7 +141,7 @@ const Search = () => {
             <div className="w-full md:w-2/3 h-[calc(100vh-80px)] md:h-[calc(100vh-85px)] mt-20 md:mt-[85px] z-0">
                 <Map
                     gyms={filteredGyms}
-                    center={filteredGyms.length > 0 ? [filteredGyms[0].latitude, filteredGyms[0].longitude] : null}
+                    center={mapCenter || [0, 0]} // Default center if location is not available
                     radius={filters.distance}
                 />
             </div>
@@ -133,7 +163,7 @@ const Search = () => {
                     onClose={() => toggleModal(filterType)}
                     title={filterType === 'tier' ? 'Tier' :
                         filterType === 'activities' ? 'Modalidades' : 'Comodidades'}
-                    options={filterType === 'tier' ? ['Basic', 'Silver', 'Gold'] :
+                    options={filterType === 'tier' ? ['All', 'Basic', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Black', 'Personalized'] :
                         filterType === 'activities' ? ['Musculação', 'Yoga', 'Pilates', 'Crossfit', 'Natação'] :
                             filterType === 'amenities' ? ['Estacionamento', 'Chuveiros', 'Armários', 'Lanchonete', 'Wi-Fi'] : []}
                     selectedOptions={filters[filterType]}

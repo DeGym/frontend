@@ -4,6 +4,7 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
     if (!isOpen) return null;
 
     const tierOptions = [
+        { label: 'All', value: null },
         { label: 'Basic', value: 1 },
         { label: 'Silver', value: 2 },
         { label: 'Gold', value: 3 },
@@ -32,16 +33,11 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
                                     {tierOptions.map((option) => (
                                         <button
                                             key={option.value}
-                                            className={`px-3 py-1 rounded-full text-sm ${filters.tier.includes(option.value)
+                                            className={`px-3 py-1 rounded-full text-sm ${filters.tier === option.value
                                                 ? 'bg-[var(--color-primary)] text-[var(--color-dark)] hover:bg-[var(--color-secondary)]'
                                                 : 'bg-[var(--color-accent)] text-[var(--color-light)] hover:bg-[var(--color-primary)] hover:text-[var(--color-dark)]'
                                                 }`}
-                                            onClick={() => {
-                                                const newSelection = filters.tier.includes(option.value)
-                                                    ? filters.tier.filter((item) => item !== option.value)
-                                                    : [...filters.tier, option.value];
-                                                handleFilterChange('tier', newSelection);
-                                            }}
+                                            onClick={() => handleFilterChange('tier', option.value)}
                                         >
                                             {option.label}
                                         </button>

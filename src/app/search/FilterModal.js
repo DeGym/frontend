@@ -31,16 +31,11 @@ const FilterModal = ({ isOpen, onClose, title, options, selectedOptions, onChang
                         {filteredOptions.map((option) => (
                             <button
                                 key={option}
-                                className={`${styles.optionButton} ${selectedOptions.includes(option)
+                                className={`${styles.optionButton} ${selectedOptions === option
                                     ? styles.selectedOption
                                     : styles.unselectedOption
                                     }`}
-                                onClick={() => {
-                                    const newSelection = selectedOptions.includes(option)
-                                        ? selectedOptions.filter((item) => item !== option)
-                                        : [...selectedOptions, option];
-                                    onChange(newSelection);
-                                }}
+                                onClick={() => onChange(option)}
                             >
                                 {option}
                             </button>
@@ -48,7 +43,7 @@ const FilterModal = ({ isOpen, onClose, title, options, selectedOptions, onChang
                     </div>
                 </div>
                 <div className={styles.footer}>
-                    <button onClick={() => onChange([])} className={styles.clearButton}>Clear</button>
+                    <button onClick={() => onChange(null)} className={styles.clearButton}>Clear</button>
                     <button onClick={onClose} className={styles.applyButton}>Apply</button>
                 </div>
             </div>

@@ -1,25 +1,35 @@
 "use client";
 
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
+import React, { useEffect, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
 const icon = new L.Icon({
-    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/images/marker-icon.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
+    iconUrl: '/img/marker-gym.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
     popupAnchor: [1, -34],
-    shadowSize: [41, 41]
+    shadowSize: [80, 80]
 });
 
-const defaultCenter = [-23.5505, -46.6333];
+const UpdateMapCenter = ({ center }) => {
+    const map = useMap();
+    const prevCenter = useRef(center);
+
+    useEffect(() => {
+        if (center && (prevCenter.current[0] !== center[0] || prevCenter.current[1] !== center[1])) {
+            map.setView(center, map.getZoom());
+            prevCenter.current = center;
+        }
+    }, [center, map]);
+
+    return null;
+};
 
 const Map = ({ gyms, center, radius }) => {
-    const mapCenter = gyms.length > 0 ? center : defaultCenter;
-
     return (
-        <MapContainer className="w-full h-full" center={mapCenter} zoom={13} scrollWheelZoom={false}>
+        <MapContainer className="w-full h-full" center={center} zoom={13} scrollWheelZoom={false}>
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -45,6 +55,7 @@ const Map = ({ gyms, center, radius }) => {
                     </Popup>
                 </Marker>
             ))}
+            <UpdateMapCenter center={center} />
         </MapContainer>
     );
 };

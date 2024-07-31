@@ -1,45 +1,42 @@
 [
     {
         "name": "Gym One",
-        "address": "123 Main St, New York, NY",
+        "address": "Rua A, São Paulo, SP",
         "description": "A great place to workout",
         "tier": 1,
-        "distance": 3,
         "activities": [
             "yoga",
             "workout"
         ],
-        "latitude": 40.73061,
-        "longitude": -73.935242,
+        "latitude": -23.5335,
+        "longitude": -46.6359,
         "image": "/path/to/image1.jpg"
     },
     {
         "name": "Gym Two",
-        "address": "456 Central Ave, Brooklyn, NY",
+        "address": "Rua B, São Paulo, SP",
         "description": "Crossfit and more",
         "tier": 2,
-        "distance": 8,
         "activities": [
             "crossfit",
             "swimming"
         ],
-        "latitude": 40.73041,
-        "longitude": -73.935212,
+        "latitude": -23.4535,
+        "longitude": -46.6,
         "image": "/path/to/image2.jpg"
     },
     {
         "name": "Gym Three",
-        "address": "789 Broadway, New York, NY",
+        "address": "Rua C, São Paulo, SP",
         "description": "All in one fitness center",
         "tier": 3,
-        "distance": 12,
         "activities": [
             "yoga",
             "swimming",
             "workout"
         ],
-        "latitude": 40.73061,
-        "longitude": -73.935242,
+        "latitude": -23.5,
+        "longitude": -46.7359,
         "image": "/path/to/image3.jpg"
     }
 ]

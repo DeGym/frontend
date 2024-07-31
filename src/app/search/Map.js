@@ -5,13 +5,20 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-le
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-const icon = new L.Icon({
+const gymIcon = new L.Icon({
     iconUrl: '/img/marker-gym.png',
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [1, -34],
     shadowSize: [80, 80]
 });
+const userIcon = new L.Icon({
+    iconUrl: '/img/marker-user.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    shadowSize: [80, 80]
+});
+
 
 const UpdateMapCenter = ({ center }) => {
     const map = useMap();
@@ -31,9 +38,16 @@ const Map = ({ gyms, center, radius }) => {
     return (
         <MapContainer className="w-full h-full" center={center} zoom={13} scrollWheelZoom={false}>
             <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+
             />
+            <Marker
+                key={0}
+                position={center}
+                icon={userIcon}
+            >
+            </Marker>
             {center && radius && (
                 <Circle
                     center={center}
@@ -48,7 +62,7 @@ const Map = ({ gyms, center, radius }) => {
                 <Marker
                     key={index}
                     position={[gym.latitude, gym.longitude]}
-                    icon={icon}
+                    icon={gymIcon}
                 >
                     <Popup>
                         <b>{gym.name}</b><br />{gym.address}

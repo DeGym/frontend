@@ -3,7 +3,7 @@
         "name": "Gym One",
         "address": "123 Main St, New York, NY",
         "description": "A great place to workout",
-        "tier": "1",
+        "tier": 1,
         "distance": 3,
         "activities": [
             "yoga",
@@ -17,7 +17,7 @@
         "name": "Gym Two",
         "address": "456 Central Ave, Brooklyn, NY",
         "description": "Crossfit and more",
-        "tier": "2",
+        "tier": 2,
         "distance": 8,
         "activities": [
             "crossfit",
@@ -31,7 +31,7 @@
         "name": "Gym Three",
         "address": "789 Broadway, New York, NY",
         "description": "All in one fitness center",
-        "tier": "3",
+        "tier": 3,
         "distance": 12,
         "activities": [
             "yoga",

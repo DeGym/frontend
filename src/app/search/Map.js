@@ -3,7 +3,6 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import styles from '../../styles/components/Map.module.css';
 import L from 'leaflet';
 
 const icon = new L.Icon({
@@ -14,12 +13,10 @@ const icon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-// Defina uma posição padrão para o mapa
-const defaultCenter = [-23.5505, -46.6333]; // São Paulo, por exemplo
+const defaultCenter = [-23.5505, -46.6333];
 
-const Map = ({ academies, center, radius }) => {
-    // Use o centro fornecido ou o padrão se não houver academias
-    const mapCenter = academies.length > 0 ? center : defaultCenter;
+const Map = ({ gyms, center, radius }) => {
+    const mapCenter = gyms.length > 0 ? center : defaultCenter;
 
     return (
         <MapContainer className="w-full h-full" center={mapCenter} zoom={13} scrollWheelZoom={false}>
@@ -37,14 +34,14 @@ const Map = ({ academies, center, radius }) => {
                     fillOpacity={0.1}
                 />
             )}
-            {academies.map((academy, index) => (
+            {gyms.map((gym, index) => (
                 <Marker
                     key={index}
-                    position={[academy.latitude, academy.longitude]}
+                    position={[gym.latitude, gym.longitude]}
                     icon={icon}
                 >
                     <Popup>
-                        <b>{academy.name}</b><br />{academy.address}
+                        <b>{gym.name}</b><br />{gym.address}
                     </Popup>
                 </Marker>
             ))}

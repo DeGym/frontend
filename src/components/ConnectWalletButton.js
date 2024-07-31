@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import detectEthereumProvider from '@metamask/detect-provider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/components/ConnectWalletButton.module.css';
-import { WalletContext } from '../utils/WalletContext';
+import styles from '@/styles/components/ConnectWalletButton.module.css';
+import { WalletContext } from '@/utils/WalletContext';
+import shortenWalletAddress from '@/utils/generic'
 
 const ConnectWalletButton = () => {
     const { walletAddress, setWalletAddress } = useContext(WalletContext);
@@ -89,7 +90,7 @@ const ConnectWalletButton = () => {
                         )}
                     </div>
                     <div className={styles.walletAddress}>
-                        {walletAddress.substring(0, 6)}...{walletAddress.substring(walletAddress.length - 4)}
+                        {shortenWalletAddress(walletAddress)}
                     </div>
                     <FontAwesomeIcon icon={faChevronDown} className={styles.chevronIcon} />
                     {isDropdownOpen && (

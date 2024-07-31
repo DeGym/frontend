@@ -21,10 +21,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, #000000 10%, rgba(0, 200, 0, 0.8) 50%, #000000 90%);
-    /* Darker green overlay with more transparency */
+    background: linear-gradient(0deg, var(--color-dark) 10%, rgba(0, 200, 0, 0.8) 50%, var(--color-dark) 90%);
     mix-blend-mode: overlay;
-    /* Blends the overlay with the video */
     z-index: -1;
 }
 
@@ -59,25 +57,15 @@
     max-width: 600px;
 }
 
-.color1 {
-    color: var(--color-primary);
-}
-
-.sectionDesc {
-    font-size: 0.8rem;
-    margin-top: 10px;
-    max-width: 600px;
-}
-
-.sectionJoin {
-    margin-top: 200px;
-    padding-top: 20px;
+.communityLinks {
+    margin-top: 80px;
+    padding-top: 10px;
 }
 
 .joinLine {
     border-top: 1px solid var(--color-primary);
     width: 100%;
-    margin-top: 250px;
+    margin-top: 300px;
 }
 
 .joinLinks {
@@ -101,7 +89,7 @@
 }
 
 .socLink:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 }
 
 .socLinkIcon {

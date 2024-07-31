@@ -1,8 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faTelegram, faTwitter, faLinkedin, faReddit, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTelegram, faTwitter, faLinkedin, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/components/DAOSection.module.css';
+import styles from '@/styles/components/DAOSection.module.css';
 
 const DAOSection = () => {
     return (
@@ -19,15 +19,12 @@ const DAOSection = () => {
                     </div>
                     <div className={`${styles.sectionCol2} ${styles.sectionCol2}`}>
                         <div className={styles.textBlockV1}>
-                            The DeGym will be controlled by a <span className={styles.color1}>DAO with decentralized governance,</span> which allows all token holders to participate in the future growth,
-                        </div>
-                        <div className={styles.sectionDesc}>
-                            and have a word in future decisions regarding Web3 DAO development parameters and treasury management.
+                            The DeGym will be controlled by a <b>DAO with decentralized governance</b>, which allows all token holders to participate in the future growth, and have a word in future decisions regarding Web3 application development parameters and treasury management.
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={styles.sectionJoin}>
+            <div className={styles.communityLinks}>
                 <div className={styles.joinLine}></div>
                 <div className={styles.container}>
                     <div className={styles.joinLinks}>
@@ -73,16 +70,6 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://www.reddit.com/r/dgym/" target="_blank" rel="noopener noreferrer">
-                                    <div className={styles.socLinkIcon}>
-                                        <FontAwesomeIcon icon={faReddit} />
-                                    </div>
-                                    <div className={styles.socLinkText}><span>Reddit</span></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div className={styles.joinItem}>
-                            <div className={styles.socLink}>
                                 <a href="https://discord.gg/4keCvDRNuY" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faDiscord} />
@@ -104,7 +91,7 @@ const DAOSection = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

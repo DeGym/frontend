@@ -62,7 +62,7 @@ const HomePage = () => {
             <h1>DeGym</h1>
             <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
             <div className={styles.joinSection}>
-              <button className="p-4 w-auto"><a href='https://discord.gg/4keCvDRNuY'>Join the Community</a></button>
+              <button className="p-4 w-auto"><a href='https://t.me/degym_dao'>Join the Community</a></button>
             </div>
           </div>
           <div className={styles.heroImage}>

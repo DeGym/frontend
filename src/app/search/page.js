@@ -109,7 +109,7 @@ const Search = () => {
                         ))}
                     </div>
                     <div className="mt-4">
-                        <label className="block text-white mb-2">Distance</label>
+                        <label className="block text-white mb-2">Radius distance up to <b>{filters.distance} km</b></label>
                         <input
                             type="range"
                             min={1}
@@ -118,13 +118,12 @@ const Search = () => {
                             onChange={(e) => handleFilterChange('distance', Number(e.target.value))}
                             className="w-full mb-2"
                         />
-                        <span className="block text-white">up to {filters.distance} km</span>
                     </div>
                 </div>
                 <div>
                     <p className="font-bold mb-3">{filteredGyms.length} gyms found</p>
                     {filteredGyms.map((gym, index) => (
-                        <div key={index} className="mb-4 p-3 bg-black border border-primary rounded-md shadow-sm">
+                        <div key={index} className="mb-4 p-3 bg-accent rounded-md shadow-sm">
                             <img src={gym.image} alt={gym.name} className="w-20 h-20 rounded-md object-cover float-left mr-3" />
                             <div>
                                 <h3 className="font-semibold">{gym.name}</h3>
@@ -136,16 +135,18 @@ const Search = () => {
                     ))}
                 </div>
             </div>
-            <div className="md:hidden fixed top-[111.75px] left-0 right-0 flex justify-between p-3 bg-dark bg-opacity-50 z-20 shadow-md">
-                <button onClick={() => toggleMobileModal('filters')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">Filters</button>
-                <button onClick={() => toggleMobileModal('gyms')} className="px-4 py-2 bg-primary text-dark rounded-md text-sm hover:bg-hoverButton">View Gyms</button>
-            </div>
             <div className="w-full md:w-2/3 h-[calc(100vh-80px)] md:h-[calc(100vh-85px)] mt-20 md:mt-[85px] z-0">
                 <Map
                     gyms={filteredGyms}
                     center={mapCenter || [0, 0]}
                     radius={filters.distance}
                 />
+            </div>
+            <div className="fixed bottom-4 left-4 md:hidden z-20">
+                <button onClick={() => toggleMobileModal('filters')} className="p-4 bg-primary text-dark rounded-full shadow-lg hover:bg-hoverButton">Filters</button>
+            </div>
+            <div className="fixed bottom-4 right-4 md:hidden z-20">
+                <button onClick={() => toggleMobileModal('gyms')} className="p-4 bg-primary text-dark rounded-full shadow-lg hover:bg-hoverButton">View Gyms</button>
             </div>
             <MobileFilterModal
                 isOpen={mobileModalOpen === 'filters'}

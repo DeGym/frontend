@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '@/styles/components/FilterModal.module.css';
 
 const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => {
     if (!isOpen) return null;
@@ -19,9 +20,21 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
             <div className="bg-dark w-4/5 max-w-md h-full overflow-y-auto flex flex-col" onClick={(e) => e.stopPropagation()}>
                 <div className="flex justify-between items-center p-5 border-b border-accent">
                     <h2 className="text-xl font-semibold">Filters</h2>
-                    <button onClick={onClose} className="text-xl text-light hover:text-primary w-8 h-8 flex items-center justify-center">&times;</button>
+                    <button onClick={onClose} className={styles.closeButton}>&times;</button>
                 </div>
                 <div className="flex-grow p-5 overflow-y-auto">
+                    <div className="mt-4">
+                        <label className="block text-white mb-2">Radius distance up to <b>{filters.distance} km</b></label>
+                        <input
+                            type="range"
+                            min={1}
+                            max={15}
+                            value={filters.distance}
+                            onChange={(e) => handleFilterChange('distance', Number(e.target.value))}
+                            className="w-full mb-2"
+                        />
+
+                    </div>
                     {['tier', 'activities', 'amenities'].map((filterType) => (
                         <div key={filterType} className="mb-6">
                             <h3 className="text-lg font-semibold mb-3">
@@ -67,18 +80,7 @@ const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => 
                             )}
                         </div>
                     ))}
-                    <div className="mt-4">
-                        <label className="block text-white mb-2">Distance</label>
-                        <input
-                            type="range"
-                            min={1}
-                            max={15}
-                            value={filters.distance}
-                            onChange={(e) => handleFilterChange('distance', Number(e.target.value))}
-                            className="w-full mb-2"
-                        />
-                        <span className="block text-white">up to {filters.distance} km</span>
-                    </div>
+
                 </div>
                 <div className="p-5 border-t border-accent">
                     <button onClick={onClose} className="w-full py-2 bg-primary text-dark rounded-md hover:bg-hoverButton">Apply Filters</button>

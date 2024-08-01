@@ -1,3 +1,5 @@
+/* CrowdfundingSection.module.css */
+
 .crowdfundingSection {
     padding: 30px;
     margin: 0px 0px;
@@ -66,6 +68,24 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    gap: 10px;
+}
+
+.buttonLink {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: auto;
+    width: auto;
+}
+
+.buttonLink .icon {
+    margin-right: 8px;
 }
 
 .swapButton {
@@ -190,17 +210,19 @@
 }
 
 .eventCard {
-    background-color: var(--color-accent);
+    background-color: var(--color-dark);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 5px;
     text-align: left;
+    width: 100%;
 }
 
 .eventCardBody {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
 }
 
 .eventActions {
@@ -241,27 +263,66 @@
     margin-right: 20px;
 }
 
-@media (max-width: 768px) {
-    .cardData {
-        margin: 0px;
-    }
+.modalButton {
+    padding: 10px 15px;
+    margin: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-accent);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
-    .card {
-        padding: 15px;
-        max-width: 100%;
-    }
+.closeButton {
+    font-size: 1.25rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-light);
+    color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: auto;
+    min-width: 200px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
 
-    .buttonsContainer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .horizontalCards {
-        flex-direction: column;
-    }
-
-    .horizontalCard {
-        margin: 10px 0;
-    }
+.closeButton:hover {
+    background-color: #f8717160;
+    color: #dc2626;
+    border-color: #dc2626;
 }

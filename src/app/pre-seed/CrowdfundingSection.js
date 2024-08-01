@@ -2,11 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
+import Modal from 'react-modal';
 import styles from '@/styles/components/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
 import Countdown from '@/components/Countdown';
 import AmountInput from '@/components/AmountInput';
 import InfoTooltip from '@/components/InfoTooltip';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt, faBalanceScale } from '@fortawesome/free-solid-svg-icons';
 
 const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [youWillReceive, setYouWillReceive] = useState(0);
@@ -17,6 +20,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [countdownTitle, setCountdownTitle] = useState(`${crowdfund.type} starts in:`);
     const [filterMyEvents, setFilterMyEvents] = useState(false);
     const [amount, setAmount] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         if (walletAddress && window.ethereum) {
@@ -160,45 +164,63 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
             </div>
 
             <div className={styles.buttonsContainer}>
-                <button onClick={handleSnapshot} className="p-3">
+                <a href="https://snapshot.org" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
+                    <FontAwesomeIcon icon={faBolt} className={styles.icon} />
                     Snapshot
+                </a>
+                <button onClick={() => setIsModalOpen(true)} className={styles.modalButton}>
+                    Latest Swap Events
                 </button>
-                <button onClick={handleGovernance} className="p-3">
+                <a href="https://degym-network.gitbook.io/docs/gym-dao/governance" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
+                    <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
                     Governance
-                </button>
+                </a>
             </div>
-            <h2 className={styles.sectionTitle}>Latest swap events</h2>
-            <div className={styles.toggleContainer}>
-                <label className={styles.toggleLabel}>
-                    <span>Just my events</span>
-                    <div className={styles.toggleWrapper}>
-                        <input
-                            type="checkbox"
-                            className={styles.toggle}
-                            checked={filterMyEvents}
-                            onChange={() => setFilterMyEvents(!filterMyEvents)}
-                        />
-                        <span className={styles.slider} />
-                    </div>
-                </label>
-            </div>
-            <div className={styles.scrollableSection}>
-                <div className={styles.eventsContainer}>
-                    {filteredEvents.map((event, index) => (
-                        <div key={index} className={styles.eventCard}>
-                            <div className={styles.eventCardBody}>
-                                <div className={styles.eventActions}>
-                                    <a target="_blank" aria-label="Twitter" className={styles.eventLink} href={event.link}>View on Taraxa Explorer</a>
-                                </div>
-                                <div className={styles.eventDetails}>
-                                    <h2 className={styles.eventTitle}>{event.address}</h2>
-                                    <p className={styles.eventAmount}>{event.amount} DGYM</p>
-                                </div>
+
+
+
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={() => setIsModalOpen(false)}
+                className={styles.modal}
+                overlayClassName={styles.overlay}
+            >
+                <div className={styles.modalContent}>
+                    <button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>Close</button>
+                    <h2 className={styles.sectionTitle}>Latest Swap Events</h2>
+                    <div className={styles.toggleContainer}>
+                        <label className={styles.toggleLabel}>
+                            <span>Just my events</span>
+                            <div className={styles.toggleWrapper}>
+                                <input
+                                    type="checkbox"
+                                    className={styles.toggle}
+                                    checked={filterMyEvents}
+                                    onChange={() => setFilterMyEvents(!filterMyEvents)}
+                                />
+                                <span className={styles.slider} />
                             </div>
+                        </label>
+                    </div>
+                    <div className={styles.scrollableSection}>
+                        <div className={styles.eventsContainer}>
+                            {filteredEvents.map((event, index) => (
+                                <div key={index} className={styles.eventCard}>
+                                    <div className={styles.eventCardBody}>
+                                        <div className={styles.eventActions}>
+                                            <a target="_blank" aria-label="Twitter" className={styles.eventLink} href={event.link}>View on Taraxa Explorer</a>
+                                        </div>
+                                        <div className={styles.eventDetails}>
+                                            <h2 className={styles.eventTitle}>{event.address}</h2>
+                                            <p className={styles.eventAmount}>{event.amount} DGYM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
-            </div>
+            </Modal>
         </div>
     );
 };

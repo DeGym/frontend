@@ -91,6 +91,17 @@ button:hover a {
   color: var(--color-light);
 }
 
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button:hover:disabled {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  border: 1px solid black;
+}
+
 input,
 select {
   flex: 1;

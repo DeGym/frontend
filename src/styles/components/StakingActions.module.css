@@ -71,7 +71,6 @@
     margin-bottom: 10px;
 }
 
-.percentageButtons,
 .durationButtons {
     display: flex;
     justify-content: space-between;
@@ -88,11 +87,6 @@
 .percentageButtons button:hover,
 .durationButtons button:hover {
     background-color: var(--color-primary-dark);
-}
-
-.rangeSlider {
-    width: 100%;
-    margin-bottom: 20px;
 }
 
 .actionButton {

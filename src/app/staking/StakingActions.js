@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import styles from '../../styles/components/StakingActions.module.css';
+import styles from '@/styles/components/StakingActions.module.css';
 import InfoTooltip from '@/components/InfoTooltip';
+import AmountInput from '@/components/AmountInput';
 
 const StakingActions = ({
     availableToStakeDGYM,
@@ -11,19 +12,18 @@ const StakingActions = ({
     onClaimUSDT,
     onClaimDGYM,
     isAutoInterest,
-    staking_yield = 0.17, // 17% annual yield
+    staking_yield = 0.17,
     rewards = { DGYM: 0, USDT: 0 }
 }) => {
     const [stakeAmount, setStakeAmount] = useState(0);
     const [unstakeAmount, setUnstakeAmount] = useState('');
-    const [rangeValue, setRangeValue] = useState(0);
     const [duration, setDuration] = useState(1);
     const [isStakeModalOpen, setIsStakeModalOpen] = useState(false);
     const [isUnstakeModalOpen, setIsUnstakeModalOpen] = useState(false);
     const [interestMode, setInterestMode] = useState(isAutoInterest ? 'compound' : 'simple');
 
     const apr = staking_yield;
-    const apy = Math.pow(1 + staking_yield / 365, 365) - 1; // Compounded daily
+    const apy = Math.pow(1 + staking_yield / 365, 365) - 1;
 
     const handleStake = () => {
         if (stakeAmount <= 0 || stakeAmount > availableToStakeDGYM) {
@@ -37,7 +37,6 @@ const StakingActions = ({
         onStake(stakeAmount, duration, interestMode === 'compound');
         setStakeAmount('');
         setDuration(1);
-        setRangeValue(0);
         setIsStakeModalOpen(false);
     };
 
@@ -48,14 +47,7 @@ const StakingActions = ({
         }
         onUnstake(unstakeAmount);
         setUnstakeAmount('');
-        setRangeValue(0);
         setIsUnstakeModalOpen(false);
-    };
-
-    const handleRangeChange = (value, limit) => {
-        setRangeValue(value);
-        setStakeAmount((limit * (value / 100)).toFixed(2));
-        setUnstakeAmount((limit * (value / 100)).toFixed(2));
     };
 
     const calculateUnlockDate = (weeks) => {
@@ -106,30 +98,7 @@ const StakingActions = ({
                         <InfoTooltip text="Enter the amount of DGYM you want to stake." />
                     </h3>
                 </div>
-                <div className={styles.inputGroup}>
-                    <input
-                        type="number"
-                        value={stakeAmount}
-                        min={0}
-                        max={availableToStakeDGYM}
-                        onChange={(e) => setStakeAmount(e.target.value)}
-                        placeholder="Enter amount..."
-                    />
-                </div>
-                <div className={styles.percentageButtons}>
-                    <button onClick={() => handleRangeChange(25, availableToStakeDGYM)}>25%</button>
-                    <button onClick={() => handleRangeChange(50, availableToStakeDGYM)}>50%</button>
-                    <button onClick={() => handleRangeChange(75, availableToStakeDGYM)}>75%</button>
-                    <button onClick={() => handleRangeChange(100, availableToStakeDGYM)}>100%</button>
-                </div>
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={rangeValue}
-                    onChange={(e) => handleRangeChange(e.target.value, availableToStakeDGYM)}
-                    className={styles.rangeSlider}
-                />
+                <AmountInput maxAmount={availableToStakeDGYM} onChange={setStakeAmount} />
                 <div className={styles.durationSection}>
                     <h3>Duration (in weeks)
                         <InfoTooltip text="Enter the duration for which you want to stake your DGYM." />
@@ -188,30 +157,7 @@ const StakingActions = ({
             >
                 <h2>Unstake DGYM</h2>
                 <p>Available DGYM for unstake: <b>{availableToUnstakeDGYM}</b></p>
-                <div className={styles.inputGroup}>
-                    <input
-                        type="number"
-                        value={unstakeAmount}
-                        min={0}
-                        max={availableToUnstakeDGYM}
-                        onChange={(e) => setUnstakeAmount(e.target.value)}
-                        placeholder="Enter amount..."
-                    />
-                </div>
-                <div className={styles.percentageButtons}>
-                    <button onClick={() => handleRangeChange(25, availableToUnstakeDGYM)}>25%</button>
-                    <button onClick={() => handleRangeChange(50, availableToUnstakeDGYM)}>50%</button>
-                    <button onClick={() => handleRangeChange(75, availableToUnstakeDGYM)}>75%</button>
-                    <button onClick={() => handleRangeChange(100, availableToUnstakeDGYM)}>100%</button>
-                </div>
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={rangeValue}
-                    onChange={(e) => handleRangeChange(e.target.value, availableToUnstakeDGYM)}
-                    className={styles.rangeSlider}
-                />
+                <AmountInput maxAmount={availableToUnstakeDGYM} onChange={setUnstakeAmount} />
                 <button className={styles.actionButton} onClick={handleUnstake}>Unstake</button>
                 <button className={styles.modalCloseButton} onClick={() => setIsUnstakeModalOpen(false)}>Close</button>
             </Modal>

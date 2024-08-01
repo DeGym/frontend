@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from '../../styles/pages/Token.module.css';
+import styles from '@/styles/pages/Token.module.css';
 import TokenSection from './TokenSection';
 import FAQ from '@/components/FAQ';
 import DAOSection from '@/components/DAOSection'
@@ -8,7 +8,7 @@ import TokenStats from './stats'
 import TokenDistribution from './distribution'
 import TokenUseCase from './useCase'
 
-const PreSeedPage = () => {
+const TokenPage = () => {
     const faq = [
 
         {
@@ -54,7 +54,7 @@ const PreSeedPage = () => {
                 <section className={styles.hero}>
                     <div className="container mx-auto">
                         <h1>DGYM</h1>
-                        <p className={styles.heroSubtitle}>Buy</p>
+                        <p className={styles.heroSubtitle}>First and foremost a governance token with lots of utility</p>
                     </div>
                 </section>
                 <TokenSection />
@@ -68,4 +68,4 @@ const PreSeedPage = () => {
     );
 };
 
-export default PreSeedPage;
+export default TokenPage;

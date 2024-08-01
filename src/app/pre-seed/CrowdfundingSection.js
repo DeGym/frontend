@@ -5,9 +5,10 @@ import Web3 from 'web3';
 import styles from '@/styles/components/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
 import Countdown from '@/components/Countdown';
+import AmountInput from '@/components/AmountInput';
+import InfoTooltip from '@/components/InfoTooltip';
 
 const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
-    const [amount, setAmount] = useState('');
     const [youWillReceive, setYouWillReceive] = useState(0);
     const [currentBalance, setCurrentBalance] = useState(0);
     const [remainingDGYM, setRemainingDGYM] = useState(crowdfund.totalSupply - crowdfund.sold);
@@ -15,6 +16,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [isCountdownActive, setIsCountdownActive] = useState(true);
     const [countdownTitle, setCountdownTitle] = useState(`${crowdfund.type} starts in:`);
     const [filterMyEvents, setFilterMyEvents] = useState(false);
+    const [amount, setAmount] = useState(0);
 
     useEffect(() => {
         if (walletAddress && window.ethereum) {
@@ -34,8 +36,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
         }
     };
 
-    const handleAmountChange = (event) => {
-        const value = event.target.value;
+    const handleAmountChange = (value) => {
         setAmount(value);
         setYouWillReceive(value * crowdfund.exchangeRate);
     };
@@ -120,19 +121,11 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
             <div className={styles.card}>
                 <div className={styles.cardContent}>
                     <label>
-                        Amount
-                        <input
-                            type="number"
-                            value={amount}
-                            onChange={handleAmountChange}
-                            min={0}
-                            step={0.0001}
-                            className={`${styles.inputAmount} ${isDisabled ? styles.disabled : ''}`}
-                            placeholder="Must be a minimum 1000 TARA"
-                            disabled={isDisabled}
-                        />
+                        Amount <InfoTooltip text="Must be a minimum 1000 TARA" />
                     </label>
+                    <AmountInput maxAmount={currentBalance} onChange={handleAmountChange} isDisabled={isDisabled} />
                     <button onClick={handleSwap} className={styles.swapButton} disabled={isDisabled}>Swap</button>
+
                     <div className={styles.cardData}>
                         {walletAddress ? (
                             <>

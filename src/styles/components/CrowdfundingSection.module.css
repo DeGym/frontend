@@ -75,17 +75,6 @@
     cursor: pointer;
 }
 
-.swapButton:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-}
-
-.swapButton:hover:disabled {
-    background-color: var(--color-primary);
-    color: var(--color-dark);
-    border: 1px solid black;
-}
-
 .p3 {
     padding: 10px;
 }

@@ -8,21 +8,21 @@ const AmountInput = ({ maxAmount, onChange, isDisabled = false }) => {
         const value = e.target.value;
         setAmount(value);
         setRangeValue((value / maxAmount) * 100);
-        onChange(value);
+        onChange(value); // pass value directly
     };
 
     const handleRangeChange = (value) => {
         setRangeValue(value);
         const calculatedAmount = (maxAmount * (value / 100)).toFixed(2);
         setAmount(calculatedAmount);
-        onChange(calculatedAmount);
+        onChange(calculatedAmount); // pass calculated amount directly
     };
 
     const handlePercentageButtonClick = (percentage) => {
         const value = (maxAmount * (percentage / 100)).toFixed(2);
         setAmount(value);
         setRangeValue(percentage);
-        onChange(value);
+        onChange(value); // pass value directly
     };
 
     return (
@@ -39,10 +39,30 @@ const AmountInput = ({ maxAmount, onChange, isDisabled = false }) => {
                 disabled={isDisabled}
             />
             <div className="flex justify-between mb-2 w-full">
-                <button onClick={() => handlePercentageButtonClick(25)} disabled={isDisabled} className="py-1 px-2 rounded">25%</button>
-                <button onClick={() => handlePercentageButtonClick(50)} disabled={isDisabled} className="py-1 px-2 rounded">50%</button>
-                <button onClick={() => handlePercentageButtonClick(75)} disabled={isDisabled} className="py-1 px-2 rounded">75%</button>
-                <button onClick={() => handlePercentageButtonClick(100)} disabled={isDisabled} className="py-1 px-2 rounded">100%</button>
+                <button
+                    onClick={() => handlePercentageButtonClick(25)}
+                    disabled={isDisabled}
+                    className="py-1 px-2 rounded">
+                    25%
+                </button>
+                <button
+                    onClick={() => handlePercentageButtonClick(50)}
+                    disabled={isDisabled}
+                    className="py-1 px-2 rounded">
+                    50%
+                </button>
+                <button
+                    onClick={() => handlePercentageButtonClick(75)}
+                    disabled={isDisabled}
+                    className="py-1 px-2 rounded">
+                    75%
+                </button>
+                <button
+                    onClick={() => handlePercentageButtonClick(100)}
+                    disabled={isDisabled}
+                    className="py-1 px-2 rounded">
+                    100%
+                </button>
             </div>
             <input
                 type="range"

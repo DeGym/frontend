@@ -91,60 +91,62 @@ const StakingActions = ({
                 onClose={() => setIsStakeModalOpen(false)}
                 title="Stake DGYM"
             >
-                <div className="align-middle">
-                    <h3>Available DGYM for stake: <b>{availableToStakeDGYM}</b>
-                        <InfoTooltip text="Enter the amount of DGYM you want to stake." />
-                    </h3>
-                </div>
-                <AmountInput maxAmount={availableToStakeDGYM} onChange={setStakeAmount} />
-                <div className={styles.durationSection}>
-                    <h3>Duration (in weeks)
-                        <InfoTooltip text="Enter the duration for which you want to stake your DGYM." />
-                    </h3>
-                    <div className={styles.inputGroup}>
-                        <input
-                            type="number"
-                            value={duration}
-                            min={1}
-                            onChange={(e) => setDuration(e.target.value)}
-                            placeholder="Enter weeks..."
-                        />
+                <div className="max-w-80">
+                    <div className="align-middle">
+                        <h3>Available DGYM for stake: <b>{availableToStakeDGYM}</b>
+                            <InfoTooltip text="Enter the amount of DGYM you want to stake." />
+                        </h3>
                     </div>
-                    <div className={styles.durationButtons}>
-                        <button onClick={() => setDuration(1)}>1W</button>
-                        <button onClick={() => setDuration(5)}>5W</button>
-                        <button onClick={() => setDuration(10)}>10W</button>
-                        <button onClick={() => setDuration(25)}>25W</button>
-                        <button onClick={() => setDuration(52)}>52W</button>
+                    <AmountInput maxAmount={availableToStakeDGYM} onChange={setStakeAmount} />
+                    <div className={styles.durationSection}>
+                        <h3>Duration (in weeks)
+                            <InfoTooltip text="Enter the duration for which you want to stake your DGYM." />
+                        </h3>
+                        <div className={styles.inputGroup}>
+                            <input
+                                type="number"
+                                value={duration}
+                                min={1}
+                                onChange={(e) => setDuration(e.target.value)}
+                                placeholder="Enter weeks..."
+                            />
+                        </div>
+                        <div className={styles.durationButtons}>
+                            <button onClick={() => setDuration(1)}>1W</button>
+                            <button onClick={() => setDuration(5)}>5W</button>
+                            <button onClick={() => setDuration(10)}>10W</button>
+                            <button onClick={() => setDuration(25)}>25W</button>
+                            <button onClick={() => setDuration(52)}>52W</button>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.interestToggle}>
-                    <h3>Compound Mode</h3>
-                    <div className={styles.interestToggleButtons}>
-                        <button
-                            className={`${styles.toggleButton} ${interestMode === 'simple' ? styles.active : ''}`}
-                            onClick={() => toggleInterestMode('simple')}
-                        >
-                            Manual
-                        </button>
-                        <button
-                            className={`${styles.toggleButton} ${interestMode === 'compound' ? styles.active : ''}`}
-                            onClick={() => toggleInterestMode('compound')}
-                        >
-                            Auto
-                        </button>
+                    <div className={styles.interestToggle}>
+                        <h3>Compound Mode</h3>
+                        <div className={styles.interestToggleButtons}>
+                            <button
+                                className={`${styles.toggleButton} ${interestMode === 'simple' ? styles.active : ''}`}
+                                onClick={() => toggleInterestMode('simple')}
+                            >
+                                Manual
+                            </button>
+                            <button
+                                className={`${styles.toggleButton} ${interestMode === 'compound' ? styles.active : ''}`}
+                                onClick={() => toggleInterestMode('compound')}
+                            >
+                                Auto
+                            </button>
+                        </div>
                     </div>
+                    <div className={styles.lockOverviewCard}>
+                        <h3>LOCK <b>OVERVIEW</b></h3>
+                        <p><b>DGYM TO BE LOCKED:</b> {stakeAmount} DGYM</p>
+                        <p><b>INTEREST RATE:</b> {interestMode === 'compound' ? '17% APY' : '17% APR'}</p>
+                        <p><b>DURATION:</b> {duration * 7} days</p>
+                        <p><b>UNLOCK ON:</b> {calculateUnlockDate(duration)}</p>
+                        <p><b>EXPECTED ROI:</b> {calculateExpectedROI(stakeAmount, duration, interestMode === 'compound')} DGYM</p>
+                    </div>
+                    <button className={styles.actionButton} onClick={handleStake}>Stake</button>
+                    <button className={styles.modalCloseButton} onClick={() => setIsStakeModalOpen(false)}>Close</button>
                 </div>
-                <div className={styles.lockOverviewCard}>
-                    <h3>LOCK <b>OVERVIEW</b></h3>
-                    <p><b>DGYM TO BE LOCKED:</b> {stakeAmount} DGYM</p>
-                    <p><b>INTEREST RATE:</b> {interestMode === 'compound' ? '17% APY' : '17% APR'}</p>
-                    <p><b>DURATION:</b> {duration * 7} days</p>
-                    <p><b>UNLOCK ON:</b> {calculateUnlockDate(duration)}</p>
-                    <p><b>EXPECTED ROI:</b> {calculateExpectedROI(stakeAmount, duration, interestMode === 'compound')} DGYM</p>
-                </div>
-                <button className={styles.actionButton} onClick={handleStake}>Stake</button>
-                <button className={styles.modalCloseButton} onClick={() => setIsStakeModalOpen(false)}>Close</button>
             </BaseModal>
 
             <BaseModal
@@ -152,10 +154,12 @@ const StakingActions = ({
                 onClose={() => setIsUnstakeModalOpen(false)}
                 title="Unstake DGYM"
             >
-                <p>Available DGYM for unstake: <b>{availableToUnstakeDGYM}</b></p>
-                <AmountInput maxAmount={availableToUnstakeDGYM} onChange={setUnstakeAmount} />
-                <button className={styles.actionButton} onClick={handleUnstake}>Unstake</button>
-                <button className={styles.modalCloseButton} onClick={() => setIsUnstakeModalOpen(false)}>Close</button>
+                <div className="max-w-80">
+                    <p>Available DGYM for unstake: <b>{availableToUnstakeDGYM}</b></p>
+                    <AmountInput maxAmount={availableToUnstakeDGYM} onChange={setUnstakeAmount} />
+                    <button className={styles.actionButton} onClick={handleUnstake}>Unstake</button>
+                    <button className={styles.modalCloseButton} onClick={() => setIsUnstakeModalOpen(false)}>Close</button>
+                </div>
             </BaseModal>
 
             <div className={styles.claimSection}>

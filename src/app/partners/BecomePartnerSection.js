@@ -1,5 +1,5 @@
 import React from 'react';
-import StepByStep from '@/components/StepByStep';
+import StepByStep from '@/components/section/StepByStep';
 
 
 function BecomePartnerSection() {

@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import VoucherTable from './VoucherTable';
 import NFTVoucherGenerator from './NFTVoucherGenerator';
-import styles from '../../styles/pages/Voucher.module.css';
-import FAQ from '../../components/FAQ';
+import styles from '@/styles/pages/Voucher.module.css';
+import FAQ from '@/components/section/FAQ';
 import Modality from './Modality';
 import Differentials from './Differentials';
 import BenefitsSection from './BenefitsSection'

@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import styles from '@/styles/pages/Token.module.css';
 import TokenSection from './TokenSection';
-import FAQ from '@/components/FAQ';
-import DAOSection from '@/components/DAOSection'
+import FAQ from '@/components/section/FAQ';
+import DAOSection from '@/components/section/DAOSection'
 import TokenStats from './stats'
 import TokenDistribution from './distribution'
 import TokenUseCase from './useCase'

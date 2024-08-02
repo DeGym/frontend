@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../../styles/pages/Partners.module.css';
+import styles from '@/styles/pages/Partners.module.css';
 import PartnerBenefits from './whySection';
 import BecomePartnerSection from './BecomePartnerSection';
 import VisitorSection from './VisitorSection';
-import FAQ from '../../components/FAQ'
+import FAQ from '@/components/section/FAQ'
 
 const PartnersPage = () => {
     const faqs = [

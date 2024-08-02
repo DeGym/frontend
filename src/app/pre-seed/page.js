@@ -2,31 +2,32 @@
 
 import React, { useContext } from 'react';
 import Head from 'next/head';
-import styles from '../../styles/pages/Token.module.css';
+import styles from '@/styles/pages/Token.module.css';
 import TokenSection from '../token/TokenSection';
-import FAQ from '@/components/FAQ';
-import DAOSection from '@/components/DAOSection';
+import FAQ from '@/components/section/FAQ';
+import DAOSection from '@/components/section/DAOSection';
 import TokenDistribution from '../token/distribution';
 import TokenUseCase from '../token/useCase';
-import Roadmap from '@/components/RoadmapCarousel';
+import Roadmap from '@/components/section/RoadmapCarousel';
 import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
-import StepByStep from '@/components/StepByStep';
+import StepByStep from '@/components/section/StepByStep';
 import CrowdfundingSection from './CrowdfundingSection';
-import { WalletContext } from '../../utils/WalletContext';
+import { WalletContext } from '@/utils/WalletContext';
 import VestingSection from './VestingSection';
 
 const PreSeedPage = () => {
     const { walletAddress } = useContext(WalletContext);
     const crowdfundData = {
         type: "Pre-Seed",
-        startDate: new Date(Date.now() + 10000), // Example future date (10 million milliseconds from now)
+        startDate: new Date('2024-09-01T00:00:00Z'), // September 1, 2024
         exchangeRate: 0.01, // Example exchange rate (1 TARA = 0.01 ETH)
         tvlDiscount: 5, // Example TVL discount percentage
-        endDate: new Date(Date.now() + 20000),
+        endDate: new Date('2024-09-15T00:00:00Z'), // Two weeks from September 1, 2024
         totalSupply: 300_000_000,
         sold: 50_000
     };
+
 
 
     const faqs = [

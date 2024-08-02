@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
-import styles from './styles/StakingActions.module.css';
+import BaseModal from '@/components/BaseModal';
 import InfoTooltip from '@/components/InfoTooltip';
 import AmountInput from '@/components/AmountInput';
+import styles from './styles/StakingActions.module.css';
 
 const StakingActions = ({
     availableToStakeDGYM,
@@ -86,13 +86,11 @@ const StakingActions = ({
                 </div>
             </div>
 
-            <Modal
+            <BaseModal
                 isOpen={isStakeModalOpen}
-                onRequestClose={() => setIsStakeModalOpen(false)}
-                className={styles.modal}
-                overlayClassName={styles.overlay}
+                onClose={() => setIsStakeModalOpen(false)}
+                title="Stake DGYM"
             >
-                <h2>Stake DGYM</h2>
                 <div className="align-middle">
                     <h3>Available DGYM for stake: <b>{availableToStakeDGYM}</b>
                         <InfoTooltip text="Enter the amount of DGYM you want to stake." />
@@ -147,20 +145,18 @@ const StakingActions = ({
                 </div>
                 <button className={styles.actionButton} onClick={handleStake}>Stake</button>
                 <button className={styles.modalCloseButton} onClick={() => setIsStakeModalOpen(false)}>Close</button>
-            </Modal>
+            </BaseModal>
 
-            <Modal
+            <BaseModal
                 isOpen={isUnstakeModalOpen}
-                onRequestClose={() => setIsUnstakeModalOpen(false)}
-                className={styles.modal}
-                overlayClassName={styles.overlay}
+                onClose={() => setIsUnstakeModalOpen(false)}
+                title="Unstake DGYM"
             >
-                <h2>Unstake DGYM</h2>
                 <p>Available DGYM for unstake: <b>{availableToUnstakeDGYM}</b></p>
                 <AmountInput maxAmount={availableToUnstakeDGYM} onChange={setUnstakeAmount} />
                 <button className={styles.actionButton} onClick={handleUnstake}>Unstake</button>
                 <button className={styles.modalCloseButton} onClick={() => setIsUnstakeModalOpen(false)}>Close</button>
-            </Modal>
+            </BaseModal>
 
             <div className={styles.claimSection}>
                 <h2 className={styles.claimTitle}><b>REWARDS</b></h2>

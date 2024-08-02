@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import Modal from 'react-modal';
+import BaseModal from '@/components/BaseModal';
 import styles from './styles/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
 import Countdown from '@/components/Countdown';
@@ -177,17 +177,12 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                 </a>
             </div>
 
-
-
-            <Modal
+            <BaseModal
                 isOpen={isModalOpen}
-                onRequestClose={() => setIsModalOpen(false)}
-                className={styles.modal}
-                overlayClassName={styles.overlay}
+                onClose={() => setIsModalOpen(false)}
+                title="Latest Swap Events"
             >
                 <div className={styles.modalContent}>
-                    <button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>Close</button>
-                    <h2 className={styles.sectionTitle}>Latest Swap Events</h2>
                     <div className={styles.toggleContainer}>
                         <label className={styles.toggleLabel}>
                             <span>Just my events</span>
@@ -220,7 +215,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                         </div>
                     </div>
                 </div>
-            </Modal>
+            </BaseModal>
         </div>
     );
 };

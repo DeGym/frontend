@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/components/NavBar.module.css';
+import styles from '@/styles/components/NavBar.module.css';
 import ConnectWalletButton from './ConnectWalletButton';
 import Image from 'next/image';
 

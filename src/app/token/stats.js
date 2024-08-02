@@ -86,12 +86,12 @@ const TokenStats = () => {
                 <div className="col">
                     <div className="d-grid gap-3 col-8 mx-auto d-md-block text-center">
                         <button className="m-auto w-auto p-2 mx-2">
-                            <a href="/wallet" target="_blank">Wallet Guide</a>
+                            <a href="https://www.taraxa.io/wallet" target="_blank">Wallet Guide</a>
                         </button>
                         <button className="m-auto w-auto p-2 mx-2">
-                            <a href="/dgym_markets" target="_blank">DGYM Markets</a>
+                            <a href="/pre-seed" target="_blank">Buy DGYM</a>
                         </button>
-                    </div>
+                    </div>q
                 </div>
             </div>
         </div>

@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from '../styles/components/Card.module.css';
 
 const Card = ({ title, value }) => {
     return (
-        <div className={styles.card}>
-            <h3>{title}</h3>
-            <p>{value}</p>
+        <div className="bg-accent p-5 rounded-lg shadow-md text-center flex-1 mx-2">
+            <h3 className="text-lg mb-2">{title}</h3>
+            <p className="text-xl font-bold">{value}</p>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import styles from '@/styles/components/StakingActions.module.css';
+import styles from './styles/StakingActions.module.css';
 import InfoTooltip from '@/components/InfoTooltip';
 import AmountInput from '@/components/AmountInput';
 

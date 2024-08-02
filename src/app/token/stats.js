@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faChartLine, faPiggyBank, faCoins, faRecycle, faLock, faBalanceScale } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import styles from '@/styles/components/TokenStats.module.css';
+import styles from './styles/TokenStats.module.css';
 
 const TokenStats = () => {
     const [tokenStats, setTokenStats] = useState({

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import styles from '../../styles/components/NFTVoucherGenerator.module.css';
+import styles from './styles/NFTVoucherGenerator.module.css';
 import calculate_price from '../../utils/pricing'
 import Image from 'next/image';
 

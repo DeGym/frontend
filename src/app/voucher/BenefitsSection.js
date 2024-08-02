@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/components/BenefitsSection.module.css';
+import styles from './styles/BenefitsSection.module.css';
 
 const BenefitsSection = () => {
     const benefits = [

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faCalendarAlt, faLock, faShieldAlt, faWallet, faPiggyBank, faHandHoldingUsd, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import styles from '@/styles/components/VestingSection.module.css';
+import styles from './styles/VestingSection.module.css';
 
 const VestingSection = () => {
     return (

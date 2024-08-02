@@ -8,7 +8,7 @@ import {
     Tooltip,
     Legend
 } from 'chart.js';
-import styles from '../../styles/components/TokenDistribution.module.css';
+import styles from './styles/TokenDistribution.module.css';
 
 // Register necessary Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);

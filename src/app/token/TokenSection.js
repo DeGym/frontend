@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef } from 'react';
-import styles from '../../styles/components/Token.module.css';
+import styles from './styles/Token.module.css';
 
 const TokenSection = () => {
     const counterRef = useRef(null);

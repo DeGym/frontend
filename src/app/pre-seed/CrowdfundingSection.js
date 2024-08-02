@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 import Modal from 'react-modal';
-import styles from '@/styles/components/CrowdfundingSection.module.css';
+import styles from './styles/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
 import Countdown from '@/components/Countdown';
 import AmountInput from '@/components/AmountInput';

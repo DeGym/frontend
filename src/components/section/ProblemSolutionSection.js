@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/components/ProblemSolutionSection.module.css';
+import styles from '@/styles/components/section/ProblemSolutionSection.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { useRef } from 'react';
@@ -94,7 +94,7 @@ const ProblemSolutionSection = () => {
                 const sectionTop = sectionRef.current.offsetTop;
                 const sectionHeight = sectionRef.current.offsetHeight;
                 const scrollPosition = window.scrollY + window.innerHeight;
-                
+
                 if (scrollPosition > sectionTop) {
                     const sectionProgress = Math.min(100, Math.max(0, ((scrollPosition - sectionTop) / sectionHeight) * 100));
                     setProgress(sectionProgress);
@@ -166,9 +166,9 @@ const ProblemSolutionSection = () => {
                                 </div>
                                 <div className={styles.progressTwo}>
                                     <div className={styles.progressTwoLine}>
-                                        <div 
-                                            className={styles.lineInner} 
-                                            style={{ 
+                                        <div
+                                            className={styles.lineInner}
+                                            style={{
                                                 height: `${progress}%`,
                                                 transition: 'height 0.3s ease-out'
                                             }}

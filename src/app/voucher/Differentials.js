@@ -3,7 +3,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faLock, faMapMarkerAlt, faAward, faUserShield, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
-import styles from '../../styles/components/Differentials.module.css';
+import styles from './styles/Differentials.module.css';
 
 const differentials = [
     {

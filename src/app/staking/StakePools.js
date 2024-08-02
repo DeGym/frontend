@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import styles from '../../styles/components/StakePools.module.css';
+import styles from './styles/StakePools.module.css';
 
 const StakePools = ({ pools }) => {
     const [filter, setFilter] = useState('all');

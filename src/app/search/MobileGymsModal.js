@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/components/FilterModal.module.css';
+import styles from './styles/FilterModal.module.css';
 
 const MobileGymsModal = ({ isOpen, onClose, gyms }) => {
     if (!isOpen) return null;

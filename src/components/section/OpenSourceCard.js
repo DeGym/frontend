@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import styles from '../styles/components/OpenSourceCard.module.css';
+import styles from '@/styles/components/section/OpenSourceCard.module.css';
 
 const OpenSourceCard = () => {
     const canvasRef = useRef(null);

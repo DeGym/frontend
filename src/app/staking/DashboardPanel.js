@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/components/DashboardPanel.module.css';
+import styles from './styles/DashboardPanel.module.css';
 import Card from '@/components/Card'
 
 const DashboardPanel = () => {

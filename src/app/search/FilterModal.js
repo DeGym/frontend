@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '@/styles/components/FilterModal.module.css';
+import styles from './styles/FilterModal.module.css';
 
 const FilterModal = ({ isOpen, onClose, title, options, selectedOptions, onChange, type, min, max, value }) => {
     if (!isOpen) return null;

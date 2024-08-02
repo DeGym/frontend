@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/components/MeetTheBrains.module.css';
+import styles from '@/styles/components/section/MeetTheBrains.module.css';
 import { FaLinkedin, FaDiscord, FaGithub, FaTelegram } from 'react-icons/fa';
 
 const members = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/components/QuickLinks.module.css';
+import styles from '@/styles/components/section/QuickLinks.module.css';
 
 const QuickLinks = () => {
     const cards = [

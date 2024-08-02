@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/components/UseCase.module.css';
+import styles from './styles/UseCase.module.css';
 
 const TokenUseCase = () => {
     const useCases = [

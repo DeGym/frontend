@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from '../styles/components/StepByStep.module.css';
+import styles from '@/styles/components/StepByStep.module.css';
 
 const StepByStep = ({ steps, title }) => {
     const isSwiper = steps.length > 3;

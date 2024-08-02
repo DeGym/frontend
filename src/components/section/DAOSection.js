@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTelegram, faTwitter, faLinkedin, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import styles from '@/styles/components/DAOSection.module.css';
+import styles from '@/styles/components/section/DAOSection.module.css';
 
 const DAOSection = () => {
     return (

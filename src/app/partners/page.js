@@ -2,12 +2,41 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/pages/Partners.module.css';
-import PartnerBenefits from './whySection';
 import BecomePartnerSection from './BecomePartnerSection';
 import VisitorSection from './VisitorSection';
 import FAQ from '@/components/section/FAQ'
+import { faUserPlus, faMoneyBillWave, faEye, faHandshake, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import Differentials from '@/components/section/Differentials';
+
 
 const PartnersPage = () => {
+    const differentials = [
+        {
+            title: "New Members",
+            description: "Increase the flow of new members at your facility.",
+            icon: faUserPlus
+        },
+        {
+            title: "Extra Income",
+            description: "You earn a fixed amount from the first visit.",
+            icon: faMoneyBillWave
+        },
+        {
+            title: "More Visibility",
+            description: "Make your business more well-known in the area.",
+            icon: faEye
+        },
+        {
+            title: "No Exclusivity",
+            description: "You can stay with us as long as you want.",
+            icon: faHandshake
+        },
+        {
+            title: "No Extra Cost",
+            description: "You don't pay anything to become a partner.",
+            icon: faTimesCircle
+        }
+    ];
     const faqs = [
         {
             question: "Who are DeGym's partners?",
@@ -54,7 +83,10 @@ const PartnersPage = () => {
                     </div>
                 </section>
 
-                <PartnerBenefits />
+                <Differentials title="Why Partner with Us?" differentials={differentials} />
+                <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
+                    Our partnership offers a <b>fair transfer value</b>, according to the monthly fee of your gym.
+                </h4>
                 <BecomePartnerSection />
                 <VisitorSection />
                 <FAQ faqs={faqs} />

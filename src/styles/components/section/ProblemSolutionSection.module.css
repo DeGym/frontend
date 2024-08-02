@@ -38,8 +38,8 @@
 }
 
 .solutionCard {
-    border: 2px solid #2dff73;
-    background-image: url('../../public/img/s-dots_2.svg');
+    border: 2px solid var(--color-primary);
+    background-image: url('../../../public/img/s-dots_2.svg');
     /* Replace with actual image path */
     background-repeat: no-repeat;
     background-position: top right;
@@ -72,14 +72,14 @@
     font-size: 2rem;
     line-height: 2.5rem;
     margin-top: 8px;
-    color: #fff;
+    color: var(--color-light);
 }
 
 .solutionCardTitle {
     font-weight: 600;
     font-size: 2rem;
     line-height: 2.5rem;
-    color: #2dff73;
+    color: var(--color-primary);
     margin-top: 8px;
 }
 
@@ -96,7 +96,7 @@
     font-weight: 500;
     font-size: .9375rem;
     line-height: 1.375rem;
-    color: #fff;
+    color: var(--color-light);
 }
 
 .problemCardIcon img {
@@ -132,7 +132,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    background-color: #2dff73;
+    background-color: var(--color-primary);
     transition: all .1s ease;
 }
 
@@ -151,8 +151,8 @@
     width: 6px;
     height: 6px;
     transform: rotate(45deg);
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 2px solid var(--color-light);
+    border-bottom: 2px solid var(--color-light);
     animation: mouse-scroll 1s infinite;
 }
 

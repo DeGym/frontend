@@ -5,11 +5,45 @@ import NFTVoucherGenerator from './NFTVoucherGenerator';
 import styles from '@/styles/pages/Voucher.module.css';
 import FAQ from '@/components/section/FAQ';
 import Modality from './Modality';
-import Differentials from './Differentials';
+import Differentials from '@/components/section/Differentials';
 import BenefitsSection from './BenefitsSection'
+import { faDumbbell, faLock, faMapMarkerAlt, faAward, faUserShield, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const VoucherPage = () => {
+    const differentials = [
+        {
+            title: 'Unlimited Gym Access with DeGym NFTs',
+            icon: faDumbbell,
+            description: 'Enjoy unlimited access to a diverse network of gyms with DeGym NFTs.',
+        },
+        {
+            title: 'Enhanced Security with DLT',
+            icon: faUserShield,
+            description: 'Benefit from the enhanced security and transparent transactions provided by distributed ledger technology (DLT).',
+        },
+        {
+            title: 'Flexible Access Anywhere',
+            icon: faMapMarkerAlt,
+            description: 'Work out at multiple locations without the restrictions of traditional gym plans.',
+        },
+        {
+            title: 'Exclusive Rewards',
+            icon: faAward,
+            description: 'Gain access to exclusive rewards and benefits as a DeGym member.',
+        },
+        {
+            title: 'NFT Trade and Transfer',
+            icon: faExchangeAlt,
+            description: 'Easily trade or transfer your DeGym Voucher NFTs, providing you with more control over your fitness investment.',
+        },
+        {
+            title: 'No Commitment',
+            icon: faLock,
+            description: 'No long-term commitment required. Enjoy the flexibility to choose your fitness journey.',
+        },
+    ];
+
     const faqs = [
         {
             question: "What are NFT-based vouchers?",
@@ -69,16 +103,20 @@ const VoucherPage = () => {
 
                 </section>
                 <BenefitsSection />
-                <Differentials />
+                <Differentials title="Why DeGym Voucher?" differentials={differentials} />
+                <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
+                    Unlock <b>Unlimited Gym Access</b> with DeGym NFTs. Buy your Voucher today and start your journey to a fitter, more flexible lifestyle.
+                </h4>
                 <section className={styles.sectionEven}>
-                    <p>DeGym Voucher offers a revolutionary approach to fitness through its integration with DLT, providing seamless and flexible access to a network of gyms. Members benefit from enhanced security, transparent transactions, and the ability to use NFTs for voucher credentials, which ensures easy access, potential rewards, and the ability to trade or transfer vouchers more freely. This model empowers users with more control over their fitness journey and investment, making gym access more adaptable and personalized.</p>
+                    <p>DeGym Voucher offers a revolutionary approach to fitness through its integration with DLT, providing seamless and flexible access to a network of gyms.</p>
+                    <p>Members benefit from enhanced security, transparent transactions, and the ability to use NFTs for voucher credentials, which ensures easy access, potential rewards, and the ability to trade or transfer vouchers more freely.This model empowers users with more control over their fitness journey and investment, making gym access more adaptable and personalized.</p>
                 </section>
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>
                 <Modality />
                 <FAQ faqs={faqs} />
-            </main>
+            </main >
         </>
     );
 };

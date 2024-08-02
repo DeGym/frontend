@@ -16,16 +16,15 @@
     color: var(--color-primary);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+.cardTitle {
+    font-size: 1.2rem;
 }
 
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .differentialItem {
@@ -33,11 +32,11 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    background-color: var(--color-accent);
-    border-radius: 1rem;
     text-align: center;
-    max-width: 300px;
+    min-width: 170px;
+    max-width: 250px;
     min-height: 275px;
+    flex: 1 1 225px;
     margin: auto;
 }
 
@@ -45,7 +44,7 @@
     font-size: 3rem;
     margin-top: 1rem;
     margin-bottom: 0.75rem;
-    color: var(--color-primary);
+    color: var(--color-light);
 }
 
 .textContainer {
@@ -53,6 +52,6 @@
 }
 
 .description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--color-light);
 }

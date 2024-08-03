@@ -54,7 +54,7 @@ const TokenPage = () => {
                 <section className={styles.hero}>
                     <div className="container mx-auto">
                         <h1>DGYM</h1>
-                        <p className={styles.heroSubtitle}>First and foremost a governance token with lots of utility</p>
+                        <p className={styles.heroSubtitle}>First and foremost a <b>governance token</b> with lots of utility</p>
                     </div>
                 </section>
                 <TokenSection />

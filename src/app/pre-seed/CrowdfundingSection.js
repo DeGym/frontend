@@ -24,12 +24,12 @@ const ERC721_ABI = [
     }
 ];
 
-const NFT_CONTRACT_ADDRESS = '0x752A41D144d1c2c814958E4050adda59CB496a4b';
+const ALLIUM_NFT_CONTRACT_ADDRESS = '0x752A41D144d1c2c814958E4050adda59CB496a4b';
 
 const checkNftOwnership = async (address, web3Instance) => {
-    const contract = new web3Instance.eth.Contract(ERC721_ABI, NFT_CONTRACT_ADDRESS);
+    const contract = new web3Instance.eth.Contract(ERC721_ABI, ALLIUM_NFT_CONTRACT_ADDRESS);
     const balance = await contract.methods.balanceOf(address).call();
-    return balance > 1;
+    return balance > 0;
 };
 
 const CrowdfundingSection = ({ crowdfund }) => {

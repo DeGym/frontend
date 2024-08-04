@@ -38,7 +38,7 @@ export const WalletProvider = ({ children }) => {
     }, []);
 
     return (
-        <WalletContext.Provider value={{ walletAddress, setWalletAddress, isCorrectNetwork }}>
+        <WalletContext.Provider value={{ walletAddress, setWalletAddress, isCorrectNetwork, setIsCorrectNetwork }}>
             {children}
         </WalletContext.Provider>
     );

@@ -1,8 +1,13 @@
+/* ConnectWalletButton.module.css */
+
 .connectButton {
     padding: 0px 7.5px;
     font-size: 18px;
     transition: background-color 0.3s ease;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .walletContainer {
@@ -90,11 +95,16 @@
     color: var(--color-light);
     transition: background-color 0.3s ease;
     margin-top: 10px;
+    min-width: 95px;
 }
 
 .disconnectButton:hover {
     background-color: var(--color-primary);
     color: var(--color-dark);
+}
+
+.loadingSpinner {
+    padding: 60px;
 }
 
 @media (max-width: 888px) {
@@ -126,7 +136,6 @@
     .icon {
         padding: 5px;
     }
-
 
     .dropdownMenu {
         right: 95%;

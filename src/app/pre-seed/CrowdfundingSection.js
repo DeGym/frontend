@@ -29,7 +29,7 @@ const NFT_CONTRACT_ADDRESS = '0x752A41D144d1c2c814958E4050adda59CB496a4b';
 const checkNftOwnership = async (address, web3Instance) => {
     const contract = new web3Instance.eth.Contract(ERC721_ABI, NFT_CONTRACT_ADDRESS);
     const balance = await contract.methods.balanceOf(address).call();
-    return balance > 0;
+    return balance > 1;
 };
 
 const CrowdfundingSection = ({ crowdfund }) => {
@@ -44,9 +44,12 @@ const CrowdfundingSection = ({ crowdfund }) => {
     const [amount, setAmount] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isEligible, setIsEligible] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isLoadingWallet, setIsLoadingWallet] = useState(false);
 
     useEffect(() => {
         if (walletAddress && window.ethereum) {
+            setIsLoading(true);
             const web3Instance = new Web3(window.ethereum);
             setWeb3(web3Instance);
             updateBalance(walletAddress, web3Instance);
@@ -55,18 +58,24 @@ const CrowdfundingSection = ({ crowdfund }) => {
     }, [walletAddress]);
 
     const updateBalance = async (address, web3Instance) => {
+        setIsLoadingWallet(true);
         try {
             const balance = await web3Instance.eth.getBalance(address);
             const roundedBalance = parseFloat(web3Instance.utils.fromWei(balance, 'ether')).toFixed(4);
             setCurrentBalance(roundedBalance);
         } catch (error) {
             console.error('Error fetching balance:', error);
+        } finally {
+            setIsLoadingWallet(false);
         }
     };
 
     const checkEligibility = async (address, web3Instance) => {
+        setIsLoadingWallet(true);
         const ownsNft = await checkNftOwnership(address, web3Instance);
         setIsEligible(ownsNft);
+        setIsLoading(false);
+        setIsLoadingWallet(false);
     };
 
     const handleAmountChange = (value) => {
@@ -131,7 +140,6 @@ const CrowdfundingSection = ({ crowdfund }) => {
 
     return (
         <div className={styles.crowdfundingSection}>
-
             <Countdown
                 title={countdownTitle}
                 targetDate={crowdfund.startDate}
@@ -153,117 +161,129 @@ const CrowdfundingSection = ({ crowdfund }) => {
                     All $DGYM tokens have been sold. Presale is closed.
                 </div>
             )}
-            {!walletAddress && (
-                <div className={styles.verificationCard}>
-                    <p>Please connect your wallet to proceed.</p>
+            {isLoading && (
+                <div className={styles.loadingContainer}>
+                    <div className={styles.loadingSpinner}></div>
+                    <p>Loading...</p>
                 </div>
             )}
-            {walletAddress && !isCorrectNetwork && (
-                <div className={styles.verificationCard}>
-                    <p>Please switch to the Taraxa Mainnet to proceed.</p>
-                </div>
-            )}
-            {walletAddress && isCorrectNetwork && !isEligible && (
-                <div className={styles.verificationCard}>
-                    <p className="w-4/5 text-base">Get whitelisted by purchasing our Allium-NFT to participate in the pre-seed.</p>
-                    <button
-                        onClick={() => window.open('https://allium-founders-pass.nfts2.me/', '_blank')}
-                        className="w-2/6 p-2 m-2"
-                    >
-                        Buy Allium-NFT
-                    </button>
-                </div>
-            )}
-            <div className={styles.card}>
-                <div className={styles.cardContent}>
-                    <label>
-                        Amount <InfoTooltip text="Must be a minimum 1000 TARA" />
-                    </label>
-                    <AmountInput maxAmount={currentBalance} onChange={handleAmountChange} isDisabled={isDisabled} />
-                    <button onClick={handleSwap} className={styles.swapButton} disabled={isDisabled}>Swap</button>
+            {!isLoading && (
+                <>
+                    {!walletAddress && (
+                        <div className={styles.verificationCard}>
+                            <p>Please connect your wallet to proceed.</p>
+                        </div>
+                    )}
+                    {walletAddress && !isCorrectNetwork && (
+                        <div className={styles.verificationCard}>
+                            <p>Please switch to the Taraxa Mainnet to proceed.</p>
+                        </div>
+                    )}
+                    {walletAddress && isCorrectNetwork && !isEligible && (
+                        <div className={styles.verificationCard}>
+                            <p className="w-4/5 text-base">Get whitelisted by purchasing our Allium-NFT to participate in the pre-seed.</p>
+                            <button
+                                onClick={() => window.open('https://allium-founders-pass.nfts2.me/', '_blank')}
+                                className="w-2/6 p-2 m-2"
+                            >
+                                Buy Allium-NFT
+                            </button>
+                        </div>
+                    )}
+                    <div className={styles.card}>
+                        <div className={styles.cardContent}>
+                            <label>
+                                Amount <InfoTooltip text="Must be a minimum 1000 TARA" />
+                            </label>
+                            <AmountInput maxAmount={currentBalance} onChange={handleAmountChange} isDisabled={isDisabled || isLoadingWallet} />
+                            <button onClick={handleSwap} className={styles.swapButton} disabled={isDisabled || isLoadingWallet}>
+                                {isLoadingWallet ? 'Loading...' : 'Swap'}
+                            </button>
 
-                    <div className={styles.cardData}>
-                        {walletAddress && (
-                            <>
-                                <div className={styles.row}>
-                                    <b className={styles.key}>Wallet Address:</b>
-                                    <p className={styles.value}>{shortenWalletAddress(walletAddress)}</p>
-                                </div>
-                                <div className={styles.row}>
-                                    <b className={styles.key}>Current Balance:</b>
-                                    <p className={styles.value}>{currentBalance} TARA</p>
-                                </div>
-                                <div className={styles.row}>
-                                    <b className={styles.key}>You will receive:</b>
-                                    <p className={styles.value}>{youWillReceive} DGYM</p>
-                                </div>
-                                <div className={styles.row}>
-                                    <b className={styles.key}>Exchange rate:</b>
-                                    <p className={styles.value}>{crowdfund.exchangeRate} TARA/DGYM</p>
-                                </div>
-                                <div className={styles.row}>
-                                    <b className={styles.key}>TVL discount:</b>
-                                    <p className={styles.value}>{crowdfund.tvlDiscount}%</p>
-                                </div>
-                            </>
-                        )}
-                    </div>
-                </div>
-            </div>
-
-            <div className={styles.buttonsContainer}>
-                <a href="https://snapshot.org" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
-                    <FontAwesomeIcon icon={faBolt} className={styles.icon} />
-                    Snapshot
-                </a>
-                <button onClick={() => setIsModalOpen(true)} className={styles.modalButton}>
-                    Latest Swap Events
-                </button>
-                <a href="https://degym-network.gitbook.io/docs/gym-dao/governance" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
-                    <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
-                    Governance
-                </a>
-            </div>
-
-            <BaseModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                title="Latest Swap Events"
-            >
-                <div className={styles.modalContent}>
-                    <div className={styles.toggleContainer}>
-                        <label className={styles.toggleLabel}>
-                            <span>Just my events</span>
-                            <div className={styles.toggleWrapper}>
-                                <input
-                                    type="checkbox"
-                                    className={styles.toggle}
-                                    checked={filterMyEvents}
-                                    onChange={() => setFilterMyEvents(!filterMyEvents)}
-                                />
-                                <span className={styles.slider} />
+                            <div className={styles.cardData}>
+                                {walletAddress && (
+                                    <>
+                                        <div className={styles.row}>
+                                            <b className={styles.key}>Wallet Address:</b>
+                                            <p className={styles.value}>{shortenWalletAddress(walletAddress)}</p>
+                                        </div>
+                                        <div className={styles.row}>
+                                            <b className={styles.key}>Current Balance:</b>
+                                            <p className={styles.value}>{currentBalance} TARA</p>
+                                        </div>
+                                        <div className={styles.row}>
+                                            <b className={styles.key}>You will receive:</b>
+                                            <p className={styles.value}>{youWillReceive} DGYM</p>
+                                        </div>
+                                        <div className={styles.row}>
+                                            <b className={styles.key}>Exchange rate:</b>
+                                            <p className={styles.value}>{crowdfund.exchangeRate} TARA/DGYM</p>
+                                        </div>
+                                        <div className={styles.row}>
+                                            <b className={styles.key}>TVL discount:</b>
+                                            <p className={styles.value}>{crowdfund.tvlDiscount}%</p>
+                                        </div>
+                                    </>
+                                )}
                             </div>
-                        </label>
-                    </div>
-                    <div className={styles.scrollableSection}>
-                        <div className={styles.eventsContainer}>
-                            {filteredEvents.map((event, index) => (
-                                <div key={index} className={styles.eventCard}>
-                                    <div className={styles.eventCardBody}>
-                                        <div className={styles.eventActions}>
-                                            <a target="_blank" aria-label="Twitter" className={styles.eventLink} href={event.link}>View on Taraxa Explorer</a>
-                                        </div>
-                                        <div className={styles.eventDetails}>
-                                            <h2 className={styles.eventTitle}>{event.address}</h2>
-                                            <p className={styles.eventAmount}>{event.amount} DGYM</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
                         </div>
                     </div>
-                </div>
-            </BaseModal>
+
+                    <div className={styles.buttonsContainer}>
+                        <a href="https://snapshot.org" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
+                            <FontAwesomeIcon icon={faBolt} className={styles.icon} />
+                            Snapshot
+                        </a>
+                        <button onClick={() => setIsModalOpen(true)} className={styles.modalButton}>
+                            Latest Swap Events
+                        </button>
+                        <a href="https://degym-network.gitbook.io/docs/gym-dao/governance" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
+                            <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
+                            Governance
+                        </a>
+                    </div>
+
+                    <BaseModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        title="Latest Swap Events"
+                    >
+                        <div className={styles.modalContent}>
+                            <div className={styles.toggleContainer}>
+                                <label className={styles.toggleLabel}>
+                                    <span>Just my events</span>
+                                    <div className={styles.toggleWrapper}>
+                                        <input
+                                            type="checkbox"
+                                            className={styles.toggle}
+                                            checked={filterMyEvents}
+                                            onChange={() => setFilterMyEvents(!filterMyEvents)}
+                                        />
+                                        <span className={styles.slider} />
+                                    </div>
+                                </label>
+                            </div>
+                            <div className={styles.scrollableSection}>
+                                <div className={styles.eventsContainer}>
+                                    {filteredEvents.map((event, index) => (
+                                        <div key={index} className={styles.eventCard}>
+                                            <div className={styles.eventCardBody}>
+                                                <div className={styles.eventActions}>
+                                                    <a target="_blank" aria-label="Twitter" className={styles.eventLink} href={event.link}>View on Taraxa Explorer</a>
+                                                </div>
+                                                <div className={styles.eventDetails}>
+                                                    <h2 className={styles.eventTitle}>{event.address}</h2>
+                                                    <p className={styles.eventAmount}>{event.amount} DGYM</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </BaseModal>
+                </>
+            )}
         </div>
     );
 };

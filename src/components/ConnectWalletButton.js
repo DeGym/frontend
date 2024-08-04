@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react';
 import detectEthereumProvider from '@metamask/detect-provider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faExclamationTriangle, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from '@/styles/components/ConnectWalletButton.module.css';
 import { WalletContext } from '@/utils/WalletContext';
-import shortenWalletAddress from '@/utils/generic'
+import shortenWalletAddress from '@/utils/generic';
 
 const ConnectWalletButton = () => {
     const { walletAddress, setWalletAddress } = useContext(WalletContext);
     const [error, setError] = useState('');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isCorrectNetwork, setIsCorrectNetwork] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const checkNetwork = async () => {
@@ -41,11 +42,13 @@ const ConnectWalletButton = () => {
     }, [walletAddress]);
 
     const connectWallet = async () => {
+        setIsLoading(true);
         const provider = await detectEthereumProvider();
 
         if (provider) {
             if (provider !== window.ethereum) {
                 setError('Multiple wallets detected. Please ensure MetaMask is the active wallet.');
+                setIsLoading(false);
                 return;
             }
             try {
@@ -71,6 +74,7 @@ const ConnectWalletButton = () => {
         } else {
             setError('Please install MetaMask!');
         }
+        setIsLoading(false);
     };
 
     return (
@@ -107,8 +111,12 @@ const ConnectWalletButton = () => {
                     )}
                 </div>
             ) : (
-                <button onClick={connectWallet} className={styles.connectButton}>
-                    Connect Wallet
+                <button onClick={connectWallet} className={styles.connectButton} disabled={isLoading}>
+                    {isLoading ? (
+                        <FontAwesomeIcon icon={faSpinner} className={styles.loadingSpinner} spin />
+                    ) : (
+                        'Connect Wallet'
+                    )}
                 </button>
             )}
             {error && (

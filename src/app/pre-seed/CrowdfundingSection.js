@@ -165,10 +165,10 @@ const CrowdfundingSection = ({ crowdfund }) => {
             )}
             {walletAddress && isCorrectNetwork && !isEligible && (
                 <div className={styles.verificationCard}>
-                    <p>Get whitelisted by purchasing our Allium-NFT to participate in the presale.</p>
+                    <p className="w-4/5 text-base">Get whitelisted by purchasing our Allium-NFT to participate in the pre-seed.</p>
                     <button
                         onClick={() => window.open('https://allium-founders-pass.nfts2.me/', '_blank')}
-                        className="w-auto p-2"
+                        className="w-2/6 p-2 m-2"
                     >
                         Buy Allium-NFT
                     </button>

@@ -1,8 +1,6 @@
-/* CrowdfundingSection.module.css */
-
 .crowdfundingSection {
-    padding: 30px;
-    margin: 0px 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .card {
@@ -17,11 +15,12 @@
 }
 
 .verificationCard {
-    background-color: rgba(196, 126, 126, 0.6);
+    display: flex;
+    background-color: #f0426560;
     color: var(--color-light);
     border-radius: 8px;
-    padding: 7.5px;
-    border: 1px solid rgba(196, 20, 20, 1);
+    padding: 2.5px;
+    border: 1px solid #f04265;
     text-align: center;
     margin: 10px auto;
 }

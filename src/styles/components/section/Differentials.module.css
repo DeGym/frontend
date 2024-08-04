@@ -35,9 +35,8 @@
     text-align: center;
     min-width: 170px;
     max-width: 250px;
-    min-height: 275px;
+    min-height: 200px;
     flex: 1 1 225px;
-    margin: auto;
 }
 
 .icon {

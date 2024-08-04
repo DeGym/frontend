@@ -91,7 +91,7 @@ const TokenStats = () => {
                         <button className="m-auto w-auto p-2 mx-2">
                             <a href="/pre-seed" target="_blank">Buy DGYM</a>
                         </button>
-                    </div>q
+                    </div>
                 </div>
             </div>
         </div>

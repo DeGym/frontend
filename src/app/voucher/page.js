@@ -13,17 +13,17 @@ import { faDumbbell, faLock, faMapMarkerAlt, faAward, faUserShield, faExchangeAl
 const VoucherPage = () => {
     const differentials = [
         {
-            title: 'Unlimited Gym Access with DeGym NFTs',
+            title: 'Unlimited Access',
             icon: faDumbbell,
             description: 'Enjoy unlimited access to a diverse network of gyms with DeGym NFTs.',
         },
         {
-            title: 'Enhanced Security with DLT',
+            title: 'Enhanced Security',
             icon: faUserShield,
             description: 'Benefit from the enhanced security and transparent transactions provided by distributed ledger technology (DLT).',
         },
         {
-            title: 'Flexible Access Anywhere',
+            title: 'Flexible Access',
             icon: faMapMarkerAlt,
             description: 'Work out at multiple locations without the restrictions of traditional gym plans.',
         },
@@ -33,7 +33,7 @@ const VoucherPage = () => {
             description: 'Gain access to exclusive rewards and benefits as a DeGym member.',
         },
         {
-            title: 'NFT Trade and Transfer',
+            title: 'Trade and Transfer',
             icon: faExchangeAlt,
             description: 'Easily trade or transfer your DeGym Voucher NFTs, providing you with more control over your fitness investment.',
         },

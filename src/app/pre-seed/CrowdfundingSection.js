@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Web3 from 'web3';
+import { WalletContext } from '@/utils/WalletContext';
 import BaseModal from '@/components/BaseModal';
 import styles from './styles/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
@@ -11,7 +12,28 @@ import InfoTooltip from '@/components/InfoTooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faBalanceScale } from '@fortawesome/free-solid-svg-icons';
 
-const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
+const ERC721_ABI = [
+    {
+        "constant": true,
+        "inputs": [{ "name": "owner", "type": "address" }],
+        "name": "balanceOf",
+        "outputs": [{ "name": "balance", "type": "uint256" }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    }
+];
+
+const NFT_CONTRACT_ADDRESS = '0x752A41D144d1c2c814958E4050adda59CB496a4b';
+
+const checkNftOwnership = async (address, web3Instance) => {
+    const contract = new web3Instance.eth.Contract(ERC721_ABI, NFT_CONTRACT_ADDRESS);
+    const balance = await contract.methods.balanceOf(address).call();
+    return balance > 0;
+};
+
+const CrowdfundingSection = ({ crowdfund }) => {
+    const { walletAddress, isCorrectNetwork } = useContext(WalletContext);
     const [youWillReceive, setYouWillReceive] = useState(0);
     const [currentBalance, setCurrentBalance] = useState(0);
     const [remainingDGYM, setRemainingDGYM] = useState(crowdfund.totalSupply - crowdfund.sold);
@@ -21,12 +43,14 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
     const [filterMyEvents, setFilterMyEvents] = useState(false);
     const [amount, setAmount] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isEligible, setIsEligible] = useState(false);
 
     useEffect(() => {
         if (walletAddress && window.ethereum) {
             const web3Instance = new Web3(window.ethereum);
             setWeb3(web3Instance);
             updateBalance(walletAddress, web3Instance);
+            checkEligibility(walletAddress, web3Instance);
         }
     }, [walletAddress]);
 
@@ -40,18 +64,23 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
         }
     };
 
+    const checkEligibility = async (address, web3Instance) => {
+        const ownsNft = await checkNftOwnership(address, web3Instance);
+        setIsEligible(ownsNft);
+    };
+
     const handleAmountChange = (value) => {
         setAmount(value);
         setYouWillReceive(value * crowdfund.exchangeRate);
     };
 
     const handleSwap = () => {
-        if (parseFloat(amount) <= parseFloat(currentBalance)) {
+        if (parseFloat(amount) <= parseFloat(currentBalance) && isEligible && isCorrectNetwork) {
             const tempAmount = amount;
             setAmount(youWillReceive);
             setYouWillReceive(tempAmount);
         } else {
-            alert("The amount submitted must be less than or equal to your current balance.");
+            alert("You must own an Allium-NFT, be on the right network, and the amount submitted must be less than or equal to your current balance.");
         }
     };
 
@@ -68,7 +97,8 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
         setCountdownTitle(`${crowdfund.type} ends in:`);
     };
 
-    const isDisabled = isCountdownActive || !walletAddress;
+    const isPresaleLive = new Date(crowdfund.startDate) <= new Date() && new Date(crowdfund.endDate) > new Date();
+    const isDisabled = !walletAddress || !isCorrectNetwork || !isEligible || !isPresaleLive;
 
     const mockEvents = [
         {
@@ -82,7 +112,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
             link: 'https://mainnet.explorer.taraxa.io/tx/0x02a26fec12c3a341ad891410bb72c8e2b76fa287dd8f78beef3aba5463c72bdb'
         },
         {
-            address: '0xed...38E9',
+            address: '0.ed...38E9',
             amount: 800000.0,
             link: 'https://mainnet.explorer.taraxa.io/tx/0x622bd987c704d2c0cf4f46f0d0cf470b612a70e52df38f4049b1d8527ee0065d'
         },
@@ -101,6 +131,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
 
     return (
         <div className={styles.crowdfundingSection}>
+
             <Countdown
                 title={countdownTitle}
                 targetDate={crowdfund.startDate}
@@ -122,6 +153,27 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     All $DGYM tokens have been sold. Presale is closed.
                 </div>
             )}
+            {!walletAddress && (
+                <div className={styles.verificationCard}>
+                    <p>Please connect your wallet to proceed.</p>
+                </div>
+            )}
+            {walletAddress && !isCorrectNetwork && (
+                <div className={styles.verificationCard}>
+                    <p>Please switch to the Taraxa Mainnet to proceed.</p>
+                </div>
+            )}
+            {walletAddress && isCorrectNetwork && !isEligible && (
+                <div className={styles.verificationCard}>
+                    <p>Get whitelisted by purchasing our Allium-NFT to participate in the presale.</p>
+                    <button
+                        onClick={() => window.open('https://allium-founders-pass.nfts2.me/', '_blank')}
+                        className="w-auto p-2"
+                    >
+                        Buy Allium-NFT
+                    </button>
+                </div>
+            )}
             <div className={styles.card}>
                 <div className={styles.cardContent}>
                     <label>
@@ -131,7 +183,7 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                     <button onClick={handleSwap} className={styles.swapButton} disabled={isDisabled}>Swap</button>
 
                     <div className={styles.cardData}>
-                        {walletAddress ? (
+                        {walletAddress && (
                             <>
                                 <div className={styles.row}>
                                     <b className={styles.key}>Wallet Address:</b>
@@ -141,24 +193,20 @@ const CrowdfundingSection = ({ crowdfund, walletAddress }) => {
                                     <b className={styles.key}>Current Balance:</b>
                                     <p className={styles.value}>{currentBalance} TARA</p>
                                 </div>
+                                <div className={styles.row}>
+                                    <b className={styles.key}>You will receive:</b>
+                                    <p className={styles.value}>{youWillReceive} DGYM</p>
+                                </div>
+                                <div className={styles.row}>
+                                    <b className={styles.key}>Exchange rate:</b>
+                                    <p className={styles.value}>{crowdfund.exchangeRate} TARA/DGYM</p>
+                                </div>
+                                <div className={styles.row}>
+                                    <b className={styles.key}>TVL discount:</b>
+                                    <p className={styles.value}>{crowdfund.tvlDiscount}%</p>
+                                </div>
                             </>
-                        ) : (
-                            <p className={styles.alertBox}>
-                                Please connect your wallet.
-                            </p>
                         )}
-                        <div className={styles.row}>
-                            <b className={styles.key}>You will receive:</b>
-                            <p className={styles.value}>{youWillReceive} DGYM</p>
-                        </div>
-                        <div className={styles.row}>
-                            <b className={styles.key}>Exchange rate:</b>
-                            <p className={styles.value}>{crowdfund.exchangeRate} TARA/DGYM</p>
-                        </div>
-                        <div className={styles.row}>
-                            <b className={styles.key}>TVL discount:</b>
-                            <p className={styles.value}>{crowdfund.tvlDiscount}%</p>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -13,12 +13,12 @@ import Jazzicon, { jsNumberForAddress } from 'react-jazzicon';
 
 const mockTransactions = {
     ERC20: [
-        { id: 1, amount: '1000 DGYM', hash: '0x1a2b3c4d' },
-        { id: 2, amount: '2000 DGYM', hash: '0x5e6f7g8h' },
+        //{ id: 1, amount: '1000 DGYM', hash: '0x1a2b3c4d' },
+        //{ id: 2, amount: '2000 DGYM', hash: '0x5e6f7g8h' },
     ],
     ERC721: [
-        { id: 1, tokenId: '123', hash: '0x9i0j1k2l' },
-        { id: 2, tokenId: '456', hash: '0x3m4n5o6p' },
+        //{ id: 1, tokenId: '123', hash: '0x9i0j1k2l' },
+        //{ id: 2, tokenId: '456', hash: '0x3m4n5o6p' },
     ],
 };
 

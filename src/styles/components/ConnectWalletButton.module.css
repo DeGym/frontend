@@ -196,7 +196,8 @@
 }
 
 .loadingSpinner {
-    margin-left: 5px;
+    padding: 60px;
+    margin-left: 0px;
 }
 
 @media (max-width: 888px) {

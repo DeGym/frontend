@@ -28,8 +28,6 @@ const PreSeedPage = () => {
         sold: 0
     };
 
-
-
     const faqs = [
         {
             question: "What is the pre-seed phase?",

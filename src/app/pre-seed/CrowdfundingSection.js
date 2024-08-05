@@ -29,13 +29,13 @@ const ALLIUM_NFT_CONTRACT_ADDRESS = '0x752A41D144d1c2c814958E4050adda59CB496a4b'
 const checkNftOwnership = async (address, web3Instance) => {
     const contract = new web3Instance.eth.Contract(ERC721_ABI, ALLIUM_NFT_CONTRACT_ADDRESS);
     const balance = await contract.methods.balanceOf(address).call();
-    return balance > 0;
+    return balance > 1;
 };
 
 const CrowdfundingSection = ({ crowdfund }) => {
     const { walletAddress, isCorrectNetwork } = useContext(WalletContext);
     const [youWillReceive, setYouWillReceive] = useState(0);
-    const [currentBalance, setCurrentBalance] = useState(0);
+    const [currentBalance, setCurrentBalance] = useState(null); // Initialize as null
     const [remainingDGYM, setRemainingDGYM] = useState(crowdfund.totalSupply - crowdfund.sold);
     const [web3, setWeb3] = useState(null);
     const [isCountdownActive, setIsCountdownActive] = useState(true);
@@ -46,8 +46,10 @@ const CrowdfundingSection = ({ crowdfund }) => {
     const [isEligible, setIsEligible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isLoadingWallet, setIsLoadingWallet] = useState(false);
+    const [isClient, setIsClient] = useState(false); // Track if client
 
     useEffect(() => {
+        setIsClient(true); // Component has mounted on the client
         if (walletAddress && window.ethereum) {
             setIsLoading(true);
             const web3Instance = new Web3(window.ethereum);
@@ -146,16 +148,7 @@ const CrowdfundingSection = ({ crowdfund }) => {
                 endDate={crowdfund.endDate}
                 onCountdownEnd={handleCountdownEnd}
             />
-            <div className={styles.horizontalCards}>
-                <div className={styles.horizontalCard}>
-                    <h3>Remaining $DGYM</h3>
-                    <p><b>{remainingDGYM}</b></p>
-                </div>
-                <div className={styles.horizontalCard}>
-                    <h3>Your $DGYM Balance</h3>
-                    <p><b>{currentBalance}</b></p>
-                </div>
-            </div>
+
             {isPresaleClosed && (
                 <div className={styles.alertBox}>
                     All $DGYM tokens have been sold. Presale is closed.
@@ -179,6 +172,18 @@ const CrowdfundingSection = ({ crowdfund }) => {
                             <p>Please switch to the Taraxa Mainnet to proceed.</p>
                         </div>
                     )}
+                    {walletAddress && isCorrectNetwork && (
+                        <div className={styles.horizontalCards}>
+                            <div className={styles.horizontalCard}>
+                                <h3>Remaining $DGYM</h3>
+                                <p><b>{remainingDGYM}</b></p>
+                            </div>
+                            <div className={styles.horizontalCard}>
+                                <h3>Your $DGYM Balance</h3>
+                                <p><b>{currentBalance !== null ? currentBalance : 'Loading...'}</b></p>
+                            </div>
+                        </div>
+                    )}
                     {walletAddress && isCorrectNetwork && !isEligible && (
                         <div className={styles.verificationCard}>
                             <p className="w-4/5 text-base">Get whitelisted by purchasing our Allium-NFT to participate in the pre-seed.</p>
@@ -195,7 +200,7 @@ const CrowdfundingSection = ({ crowdfund }) => {
                             <label>
                                 Amount <InfoTooltip text="Must be a minimum 1000 TARA" />
                             </label>
-                            <AmountInput maxAmount={currentBalance} onChange={handleAmountChange} isDisabled={isDisabled || isLoadingWallet} />
+                            <AmountInput maxAmount={currentBalance !== null ? currentBalance : 0} onChange={handleAmountChange} isDisabled={isDisabled || isLoadingWallet} />
                             <button onClick={handleSwap} className={styles.swapButton} disabled={isDisabled || isLoadingWallet}>
                                 {isLoadingWallet ? 'Loading...' : 'Swap'}
                             </button>
@@ -209,7 +214,7 @@ const CrowdfundingSection = ({ crowdfund }) => {
                                         </div>
                                         <div className={styles.row}>
                                             <b className={styles.key}>Current Balance:</b>
-                                            <p className={styles.value}>{currentBalance} TARA</p>
+                                            <p className={styles.value}>{currentBalance !== null ? currentBalance : 'Loading...'} TARA</p>
                                         </div>
                                         <div className={styles.row}>
                                             <b className={styles.key}>You will receive:</b>

@@ -27,7 +27,7 @@ const ConnectWalletButton = () => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [balance, setBalance] = useState(0);
+    const [balance, setBalance] = useState(null); // Initialize with null
     const [activeTokenType, setActiveTokenType] = useState('ERC20');
 
     useEffect(() => {
@@ -148,7 +148,7 @@ const ConnectWalletButton = () => {
                         <div className={styles.modalContent}>
                             <Jazzicon diameter={100} seed={jsNumberForAddress(walletAddress)} />
                             <p className={styles.walletAddressModal}><strong>{shortenWalletAddress(walletAddress)}</strong></p>
-                            <p className={styles.balance}>{balance >= 1000 ? `${(balance / 1000).toFixed(1)}K` : balance} TARA</p>
+                            <p className={styles.balance}>{balance !== null ? (balance >= 1000 ? `${(balance / 1000).toFixed(1)}K` : balance) : 'Loading...'} TARA</p>
                             <div className={styles.modalButtons}>
                                 <button className={styles.modalButton} onClick={handleCopyAddress}>
                                     <FontAwesomeIcon icon={faCopy} /><br />Copy Address
@@ -176,9 +176,9 @@ const ConnectWalletButton = () => {
                                 {mockTransactions[activeTokenType].length > 0 ? (
                                     mockTransactions[activeTokenType].map(tx => (
                                         <div key={tx.id} className={styles.transactionItem}>
-                                            <p>{activeTokenType === 'ERC20' ? tx.amount : tx.tokenId}</p>
+                                            <p>{activeTokenType === 'ERC20' ? tx.amount : `Token ID: ${tx.tokenId}`}</p>
                                             <a href={`https://explorer.taraxa.io/tx/${tx.hash}`} target="_blank" rel="noopener noreferrer">
-                                                <FontAwesomeIcon icon={faExternalLinkAlt} />
+                                                View on Explorer <FontAwesomeIcon icon={faExternalLinkAlt} />
                                             </a>
                                         </div>
                                     ))

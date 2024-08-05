@@ -25,7 +25,7 @@ const PreSeedPage = () => {
         tvlDiscount: 5, // Example TVL discount percentage
         endDate: new Date('2024-09-15T00:00:00Z'), // Two weeks from September 1, 2024
         totalSupply: 300_000_000,
-        sold: 50_000
+        sold: 0
     };
 
 

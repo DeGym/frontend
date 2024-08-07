@@ -10,8 +10,7 @@ export default function Footer() {
             <div className={styles.container}>
                 <div className={styles.section}>
                     <h4 className={styles.title}>Contact Us</h4>
-                    <div className={styles.contactInfo}>info@degym.io</div>
-                    <div className={styles.contactInfo}>+1 (123) 456-7890</div>
+                    <div className={styles.contactInfo}>info@degym.net</div>
                 </div>
                 <div className={styles.section}>
                     <h4 className={styles.title}>Quick Links</h4>
@@ -22,7 +21,7 @@ export default function Footer() {
                         <li><Link href="/voucher" legacyBehavior><a>Voucher</a></Link></li>
                         <li><Link href="/partners" legacyBehavior><a>Partnership</a></Link></li>
                         {/*<li><Link href="/staking" legacyBehavior><a>Stake</a></Link></li> */}
-                        <li><Link href="https://docs.degym.net/docs" legacyBehavior><a>Documentation</a></Link></li>
+                        <li><Link href="https://docs.degym.net" legacyBehavior><a>Documentation</a></Link></li>
                     </ul>
                 </div>
                 <div className={styles.section}>
@@ -79,7 +78,7 @@ export default function Footer() {
                 </div>
                 <div className={styles.section}>
                     <h4>
-                        <a href="https://docs.degym.net/docs/gym-dao/terms-and-conditions" target="_blank" rel="noopener noreferrer" className={styles.title}>
+                        <a href="https://docs.degym.net/degym-dao/terms-and-conditions" target="_blank" rel="noopener noreferrer" className={styles.title}>
                             Terms & Condition
                         </a>
                     </h4>

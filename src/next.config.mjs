@@ -17,6 +17,11 @@ const nextConfig = {
                 destination: 'https://x.com/degym_network',
                 permanent: true,
             },
+            {
+                source: '/github',
+                destination: 'https://github.com/DeGym',
+                permanent: true,
+            },
         ];
     },
 };

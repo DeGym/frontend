@@ -38,7 +38,7 @@ h2 {
 body {
   color: var(--color-light);
   background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
-  font-family: "Inconsolata", "Plus Jakarta Sans", "Roboto", "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif, "Inconsolata", "Plus Jakarta Sans", "Roboto";
 }
 
 p {

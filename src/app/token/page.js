@@ -59,7 +59,7 @@ const TokenPage = () => {
                 </section>
                 <TokenSection />
                 <TokenStats />
-                <TokenDistribution />
+                <TokenAllocation />
                 <TokenUseCase />
                 <DAOSection />
                 <FAQ faqs={faq} />

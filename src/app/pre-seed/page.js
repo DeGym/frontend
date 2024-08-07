@@ -6,7 +6,7 @@ import styles from '@/styles/pages/Token.module.css';
 import TokenSection from '../token/TokenSection';
 import FAQ from '@/components/section/FAQ';
 import DAOSection from '@/components/section/DAOSection';
-import TokenDistribution from '../token/Allocation';
+import TokenAllocation from '../token/Allocation';
 import TokenUseCase from '../token/useCase';
 import Roadmap from '@/components/section/RoadmapCarousel';
 import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
@@ -132,7 +132,7 @@ const PreSeedPage = () => {
                 <VestingSection />
                 <TokenSection />
                 <StepByStep steps={howItWorksPreSeed} title="How to <b>invest</b>?" />
-                <TokenDistribution />
+                <TokenAllocation />
                 <TokenUseCase />
                 <DAOSection />
                 <Roadmap />

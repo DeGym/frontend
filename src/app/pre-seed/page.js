@@ -6,7 +6,7 @@ import styles from '@/styles/pages/Token.module.css';
 import TokenSection from '../token/TokenSection';
 import FAQ from '@/components/section/FAQ';
 import DAOSection from '@/components/section/DAOSection';
-import TokenDistribution from '../token/distribution';
+import TokenDistribution from '../token/Allocation';
 import TokenUseCase from '../token/useCase';
 import Roadmap from '@/components/section/RoadmapCarousel';
 import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
@@ -81,13 +81,6 @@ const PreSeedPage = () => {
             description: 'To be eligible for the pre-seed, purchase our Allium NFT.',
             link: 'https://allium-founders-pass.nfts2.me/',
             linkText: 'Mint Now'
-        },
-        {
-            icon: faFileContract,
-            title: 'Optional KYC',
-            description: 'Fill out the form to participate in the DeGym pre-seed by providing your wallet address and NFT ID.',
-            link: 'https://yk3osli6.forms.app/pre-seed-degym-project',
-            linkText: 'Fill Form'
         },
         {
             icon: faTelegram,

@@ -5,7 +5,7 @@ import TokenSection from './TokenSection';
 import FAQ from '@/components/section/FAQ';
 import DAOSection from '@/components/section/DAOSection'
 import TokenStats from './stats'
-import TokenDistribution from './distribution'
+import TokenAllocation from './Allocation'
 import TokenUseCase from './useCase'
 
 const TokenPage = () => {

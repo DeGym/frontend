@@ -8,25 +8,25 @@ import {
     Tooltip,
     Legend
 } from 'chart.js';
-import styles from './styles/TokenDistribution.module.css';
+import styles from './styles/TokenAllocation.module.css';
 
 // Register necessary Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const TokenDistribution = () => {
+const TokenAllocation = () => {
     const data = {
         labels: [
             'Pre-Seed Sale',
             'Private Sale',
             'Public Sale',
-            'DeGym developers',
-            'Community & Ecosystem',
-            'Incentive Programs',
-            'Initial Team',
+            'Ecosystem Development Fund',
+            'Team Growth Fund',
+            'Community Engagement Fund',
+            'Marketing and Promotion Fund',
         ],
         datasets: [
             {
-                data: [3, 7, 30, 20, 10, 15, 15],
+                data: [3, 7, 30, 20, 15, 12.5, 12.5],
                 backgroundColor: [
                     'rgba(70, 137, 102, 1)',
                     'rgba(145, 196, 108, 1)',
@@ -67,9 +67,9 @@ const TokenDistribution = () => {
     return (
         <section className={styles.section}>
             <div className={styles.container}>
-                <h2 className={styles.title}>Token <b>Distribution</b></h2>
+                <h2 className={styles.title}>Token <b>Allocation</b></h2>
                 <p>
-                    The DGYM token distribution is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem.
+                    The DGYM token allocation is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem.
                     Below is the allocation breakdown:
                 </p>
                 <div className={styles.chartContainer}>
@@ -80,4 +80,4 @@ const TokenDistribution = () => {
     );
 };
 
-export default TokenDistribution;
+export default TokenAllocation;

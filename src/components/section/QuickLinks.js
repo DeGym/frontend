@@ -3,20 +3,20 @@ import styles from '@/styles/components/section/QuickLinks.module.css';
 
 const QuickLinks = () => {
     const cards = [
-        {
+        /*{
             icon: '/img/ql/staking.svg',
             title: 'Staking',
             description: 'Earn rewards and support the health of the DeGym ecosystem.',
             buttonText: 'Get Started',
             href: '/staking',
-        },
-        {
+        },*/
+        /*{
             icon: '/img/ql/bounties.svg',
             title: 'Bounties',
             description: 'Earn rewards while learning about DeGym and expanding its ecosystem.',
             buttonText: 'Get Started',
             href: '/bounties',
-        },
+        },*/
         {
             icon: '/img/ql/node.svg',
             title: 'Register a Gym',
@@ -31,13 +31,14 @@ const QuickLinks = () => {
             buttonText: 'Get Started',
             href: '/voucher',
         },
-        {
+        /*{
             icon: '/img/ql/explorer.svg',
             title: 'DeGym Explorer',
             description: 'Explore gyms and find the best one near you.',
             buttonText: 'Get Started',
             href: '/search',
         },
+        */
     ];
 
 

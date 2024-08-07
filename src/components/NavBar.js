@@ -47,21 +47,25 @@ export default function Navbar() {
 
           <nav className={`${isOpen ? styles.menuOpen : ''} ${styles.menu}`}>
             <ul className={styles.navList}>
+              {/*
               <li className={styles.navItem}>
                 <Link href="/token" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>$DGYM</a>
                 </Link>
               </li>
+              */}
               <li className={styles.navItem}>
                 <Link href="/pre-seed" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Pre-Seed</a>
                 </Link>
               </li>
+              {/*
               <li className={styles.navItem}>
                 <Link href="/search" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Search</a>
                 </Link>
               </li>
+              */}
               <li className={styles.navItem}>
                 <Link href="/voucher" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Voucher</a>
@@ -72,13 +76,15 @@ export default function Navbar() {
                   <a className={styles.link} onClick={closeMenu}>Partner</a>
                 </Link>
               </li>
+              {/* 
               <li className={styles.navItem}>
                 <Link href="/staking" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Stake</a>
                 </Link>
               </li>
+              */}
               <li className={styles.navItem}>
-                <Link href="https://degym-network.gitbook.io/docs" legacyBehavior>
+                <Link href="https://docs.degym.net/" legacyBehavior>
                   <a className={styles.link} onClick={closeMenu}>Docs</a>
                 </Link>
               </li>

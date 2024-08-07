@@ -17,12 +17,12 @@ export default function Footer() {
                     <h4 className={styles.title}>Quick Links</h4>
                     <ul className={styles.links}>
                         <li><Link href="/" legacyBehavior><a>Home</a></Link></li>
-                        <li><Link href="/token" legacyBehavior><a>Token</a></Link></li>
+                        {/*<li><Link href="/token" legacyBehavior><a>Token</a></Link></li>*/}
                         <li><Link href="/pre-seed" legacyBehavior><a>Pre-Seed</a></Link></li>
                         <li><Link href="/voucher" legacyBehavior><a>Voucher</a></Link></li>
                         <li><Link href="/partners" legacyBehavior><a>Partnership</a></Link></li>
-                        <li><Link href="/staking" legacyBehavior><a>Stake</a></Link></li>
-                        <li><Link href="https://degym-network.gitbook.io/docs" legacyBehavior><a>Documentation</a></Link></li>
+                        {/*<li><Link href="/staking" legacyBehavior><a>Stake</a></Link></li> */}
+                        <li><Link href="https://docs.degym.net/docs" legacyBehavior><a>Documentation</a></Link></li>
                     </ul>
                 </div>
                 <div className={styles.section}>
@@ -59,19 +59,19 @@ export default function Footer() {
                 <div className={styles.section}>
                     <h4 className={styles.title}>
                         <div className={styles.icons}>
-                            <a href="https://x.com/degym_network" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="https://x.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faTwitter} size="2x" />
                             </a>
-                            <a href="https://t.me/degym_dao" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="https://telegram.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faTelegram} size="2x" />
                             </a>
-                            <a href="https://medium.com/@0xthiagomartins" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="https://medium.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faMedium} size="2x" />
                             </a>
-                            <a href="https://discord.gg/4keCvDRNuY" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="https://discord.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faDiscord} size="2x" />
                             </a>
-                            <a href="https://github.com/DeGym" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="https://github.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faGithub} size="2x" />
                             </a>
                         </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                 </div>
                 <div className={styles.section}>
                     <h4>
-                        <a href="https://degym-network.gitbook.io/docs/gym-dao/terms-and-conditions" target="_blank" rel="noopener noreferrer" className={styles.title}>
+                        <a href="https://docs.degym.net/docs/gym-dao/terms-and-conditions" target="_blank" rel="noopener noreferrer" className={styles.title}>
                             Terms & Condition
                         </a>
                     </h4>

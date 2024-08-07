@@ -17,6 +17,7 @@ const Roadmap = () => {
                 'Branding and initial marketing',
                 'Online presence',
                 'Smart contract development',
+                'Token creation',
                 'Community outreach',
             ],
         },
@@ -25,7 +26,6 @@ const Roadmap = () => {
             quarter: 'Q4 2024',
             title: 'Community Building',
             items: [
-                'Token creation',
                 'Community engagement',
                 'Public sale',
                 'Gym Provider recruitment',
@@ -37,7 +37,6 @@ const Roadmap = () => {
             quarter: '2025',
             title: 'Future Enhancements',
             items: [
-                'DeFi integration strategies',
                 'Personal Trainer Provider Catalog',
                 'Cross-Chain functionality',
                 'Global compliance adherence',

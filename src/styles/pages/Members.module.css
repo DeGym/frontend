@@ -1,0 +1,28 @@
+.main {
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    background: #00000000;
+    padding: 200px 30px 150px;
+    border-radius: 15px;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-in-out;
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.heroSubtitle {
+    margin: auto;
+    font-size: 2rem;
+    max-width: 1200px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .heroSubtitle {
+        font-size: 1.5rem;
+    }
+
+}

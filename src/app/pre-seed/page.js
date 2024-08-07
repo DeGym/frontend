@@ -97,7 +97,7 @@ const PreSeedPage = () => {
         {
             icon: faCoins,
             title: 'Purchase Tokens',
-            description: 'During the pre-seed period, transact your TARA to the smart contract address (0x...) to purchase DGYM tokens.'
+            description: 'During the pre-seed period, input the amount of TARA you want to swap in order to purchase DGYM tokens.'
         },
         {
             icon: faWallet,

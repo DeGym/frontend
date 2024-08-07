@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faCalendarAlt, faLock, faShieldAlt, faWallet, faPiggyBank, faHandHoldingUsd, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faCalendarAlt, faLock, faShieldAlt, faWallet, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles/VestingSection.module.css';
 
 const VestingSection = () => {
@@ -21,8 +21,8 @@ const VestingSection = () => {
                         Our vesting schedule is designed to incentivize long-term commitment and steady growth.
                     </p>
                     <ul>
-                        <li><FontAwesomeIcon icon={faClock} className={styles.listIcon} /> <b>Total Vesting Period:</b> 2 years</li>
-                        <li><FontAwesomeIcon icon={faCalendarAlt} className={styles.listIcon} /> <b>Cliff Period:</b> 3 months</li>
+                        <li><FontAwesomeIcon icon={faClock} className={styles.listIcon} /> <b>Total Vesting Period:</b> 18 months</li>
+                        <li><FontAwesomeIcon icon={faCalendarAlt} className={styles.listIcon} /> <b>Cliff Period:</b> 2 months</li>
                         <li><FontAwesomeIcon icon={faCalendarAlt} className={styles.listIcon} /> <b>Vesting Frequency:</b> Monthly</li>
                     </ul>
                     <p>

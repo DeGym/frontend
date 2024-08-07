@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { WalletProvider } from '@/utils/WalletContext';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 config.autoAddCss = false; // Tell FontAwesome to skip adding the CSS automatically since it's being imported above
 
@@ -34,6 +36,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </WalletProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

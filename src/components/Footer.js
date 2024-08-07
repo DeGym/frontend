@@ -58,19 +58,19 @@ export default function Footer() {
                 <div className={styles.section}>
                     <h4 className={styles.title}>
                         <div className={styles.icons}>
-                            <a href="https://x.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="/x" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faTwitter} size="2x" />
                             </a>
-                            <a href="https://telegram.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="/telegram" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faTelegram} size="2x" />
                             </a>
-                            <a href="https://medium.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="/medium" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faMedium} size="2x" />
                             </a>
-                            <a href="https://discord.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="/discord" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faDiscord} size="2x" />
                             </a>
-                            <a href="https://github.degym.net/" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+                            <a href="/github" target="_blank" rel="noopener noreferrer" className={styles.icon}>
                                 <FontAwesomeIcon icon={faGithub} size="2x" />
                             </a>
                         </div>

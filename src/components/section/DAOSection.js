@@ -30,7 +30,7 @@ const DAOSection = () => {
                     <div className={styles.joinLinks}>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://github.degym.net/" target="_blank" rel="noopener noreferrer">
+                                <a href="/github" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faGithub} />
                                     </div>
@@ -40,7 +40,7 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://telegram.degym.net/" target="_blank" rel="noopener noreferrer">
+                                <a href="/telegram" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faTelegram} />
                                     </div>
@@ -50,7 +50,7 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://x.degym.net/" target="_blank" rel="noopener noreferrer">
+                                <a href="/x" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faTwitter} />
                                     </div>
@@ -60,7 +60,7 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://linkedin.degym.net/" target="_blank" rel="noopener noreferrer">
+                                <a href="/linkedin" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faLinkedin} />
                                     </div>
@@ -70,7 +70,7 @@ const DAOSection = () => {
                         </div>
                         <div className={styles.joinItem}>
                             <div className={styles.socLink}>
-                                <a href="https://discord.degym.net/" target="_blank" rel="noopener noreferrer">
+                                <a href="/discord" target="_blank" rel="noopener noreferrer">
                                     <div className={styles.socLinkIcon}>
                                         <FontAwesomeIcon icon={faDiscord} />
                                     </div>

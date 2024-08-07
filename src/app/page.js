@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import styles from '@/styles/pages/common.module.css';
 import Roadmap from '@/components/section/RoadmapCarousel';
-import MeetTheBrains from '@/components/section/MeetTheBrains';
 import GlobeSection from '@/components/section/GlobeSection';
 import OpenSourceCard from '@/components/section/OpenSourceCard';
 import MissionVisionCards from '@/components/section/MissionVisionCards'
@@ -84,7 +83,6 @@ const HomePage = () => {
         <DAOSection />
         <QuickLinks />
         <Roadmap />
-        <MeetTheBrains />
         <FAQ faqs={faqs} />
       </main>
     </>

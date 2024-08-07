@@ -11,6 +11,7 @@ export default function Footer() {
                 <div className={styles.section}>
                     <h4 className={styles.title}>Contact Us</h4>
                     <div className={styles.contactInfo}>info@degym.net</div>
+                    <Link href="/members" legacyBehavior><a>Members</a></Link>
                 </div>
                 <div className={styles.section}>
                     <h4 className={styles.title}>Quick Links</h4>

@@ -2,14 +2,14 @@
 
 import React, { useContext } from 'react';
 import Head from 'next/head';
-import styles from '@/styles/pages/Token.module.css';
+import styles from '@/styles/pages/PreSeed.module.css';
 import TokenSection from '../token/TokenSection';
 import FAQ from '@/components/section/FAQ';
 import DAOSection from '@/components/section/DAOSection';
 import TokenAllocation from '../token/Allocation';
 import TokenUseCase from '../token/useCase';
 import Roadmap from '@/components/section/RoadmapCarousel';
-import { faUserCheck, faFileContract, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faUserCheck, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import StepByStep from '@/components/section/StepByStep';
 import CrowdfundingSection from './CrowdfundingSection';
@@ -20,10 +20,10 @@ const PreSeedPage = () => {
     const { walletAddress } = useContext(WalletContext);
     const crowdfundData = {
         type: "Pre-Seed",
-        startDate: new Date('2024-09-01T12:00:00Z'), //new Date(Date.now() + 10000), // September 1, 2024
+        startDate: new Date('2024-09-10T12:00:00Z'), //new Date(Date.now() + 10000), // September 10, 2024
         exchangeRate: 1, // Example exchange rate (1 DGYM = 1 TARA)
         tvlDiscount: 15, // Example TVL discount percentage
-        endDate: new Date('2024-09-15T00:00:00Z'), // Two weeks from September 1, 2024
+        endDate: new Date('2024-10-01T00:00:00Z'), // Two weeks from October 1, 2024
         totalSupply: 30_000_000,
         sold: 0
     };
@@ -110,6 +110,7 @@ const PreSeedPage = () => {
             description: 'Any unsold tokens will be permanently burned, reducing the total supply and benefiting early investors.'
         }
     ];
+
 
     return (
         <>

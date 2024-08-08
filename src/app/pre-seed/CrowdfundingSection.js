@@ -242,7 +242,7 @@ const CrowdfundingSection = ({ crowdfund }) => {
                         <button onClick={() => setIsModalOpen(true)} className={styles.modalButton}>
                             Latest Swap Events
                         </button>
-                        <a href="https://degym-network.gitbook.io/docs/gym-dao/governance" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
+                        <a href="https:docs.degym.net/gym-dao/governance" target="_blank" rel="noopener noreferrer" className={styles.buttonLink}>
                             <FontAwesomeIcon icon={faBalanceScale} className={styles.icon} />
                             Governance
                         </a>

@@ -106,6 +106,7 @@
     font-size: 16px;
     margin: auto;
     width: auto;
+    box-sizing: border-box;
 }
 
 .buttonLink .icon {
@@ -265,4 +266,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .crowdfundingSection {
+        padding: 0px;
+    }
+
+    .buttonLink {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .modalButton {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .horizontalCards {
+        flex-direction: column;
+    }
+
+    .horizontalCard {
+        margin-bottom: 1px;
+    }
 }

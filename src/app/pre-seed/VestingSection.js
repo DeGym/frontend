@@ -2,8 +2,27 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faCalendarAlt, faLock, faShieldAlt, faWallet, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles/VestingSection.module.css';
+import Differentials from '@/components/section/Differentials';
 
 const VestingSection = () => {
+    const benefits = [
+        {
+            title: 'Long-term Commitment',
+            icon: faPiggyBank,
+            description: 'Encourages team members to stay engaged and contribute over the long term.',
+        },
+        {
+            title: 'Investors Confidence',
+            icon: faChartLine,
+            description: 'Demonstrates a commitment to project sustainability, boosting investor confidence.',
+        },
+        {
+            title: 'Reduced Market Volatility',
+            icon: faShieldAlt,
+            description: 'Prevents large token dumps, thereby reducing market volatility.',
+        },
+    ];
+
     return (
         <div className={styles.vestingSection}>
             <h2><b>Vesting</b></h2>
@@ -36,35 +55,17 @@ const VestingSection = () => {
                         <h2>Vesting Wallets</h2>
                     </div>
                     <p>
-                        We utilize secure and transparent vesting wallets to manage the vesting process. Each participant’s tokens are held in a dedicated vesting wallet, which automatically releases the tokens according to the vesting schedule. This ensures transparency and security throughout the vesting period.
+                        We utilize secure and transparent vesting wallets to manage the vesting process.
+                    </p>
+                    <p>
+                        Each participant’s tokens are held in a dedicated vesting wallet, which automatically releases the tokens according to the vesting schedule.
+                    </p>
+                    <p>
+                        This ensures transparency and security throughout the vesting period.
                     </p>
                 </div>
             </div>
-
-            <h2>Benefits</h2>
-            <div className={styles.cardsContainer}>
-                <div className={styles.benefitCard}>
-                    <div className={styles.cardHeader}>
-                        <FontAwesomeIcon icon={faPiggyBank} className={styles.cardIcon} />
-                        <h2>Long-term Commitment</h2></div>
-                    <p>Encourages team members to stay engaged and contribute over the long term.</p>
-                </div>
-                <div className={styles.benefitCard}>
-                    <div className={styles.cardHeader}>
-                        <FontAwesomeIcon icon={faChartLine} className={styles.cardIcon} />
-                        <h2>Investor Confidence</h2>
-                    </div>
-                    <p>Demonstrates a commitment to project sustainability, boosting investor confidence.</p>
-                </div>
-                <div className={styles.benefitCard}>
-                    <div className={styles.cardHeader}>
-                        <FontAwesomeIcon icon={faShieldAlt} className={styles.cardIcon} />
-                        <h2>Reduced Market Volatility</h2>
-                    </div>
-                    <p>Prevents large token dumps, thereby reducing market volatility.</p>
-                </div>
-            </div>
-
+            <Differentials title="Vesting Benefits" differentials={benefits} />
             <h2>How It Works</h2>
             <ol className={styles.howItWorks}>
                 <li><FontAwesomeIcon icon={faPiggyBank} className={styles.listIcon} /> <b>Allocation:</b> Tokens are allocated to team members, advisors, and other stakeholders.</li>

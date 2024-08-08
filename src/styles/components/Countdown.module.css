@@ -30,6 +30,7 @@
 .countdownValue {
     font-family: monospace;
     font-size: 2.5rem;
+    position: absolute;
     animation: flip 1s infinite steps(1);
 }
 
@@ -83,13 +84,12 @@
     justify-content: center;
 }
 
-.countdownValue {
-    font-family: monospace;
-    font-size: 2.5rem;
-    position: absolute;
-}
-
 @media (max-width: 768px) {
+
+    .countdownValue,
+    .countdownTitle {
+        font-size: 2.3rem;
+    }
 
     .countdownGrid {
         gap: 7.5px;

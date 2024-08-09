@@ -12,7 +12,6 @@ import TokenSection from './token/TokenSection'
 import DAOSection from '@/components/section/DAOSection'
 import Image from 'next/image'
 import StepByStep from '@/components/section/StepByStep'
-import QuickLinks from '@/components/section/QuickLinks';
 
 const HomePage = () => {
   const faqs = [
@@ -81,7 +80,6 @@ const HomePage = () => {
         <StepByStep steps={howItWorks} title="How does it <b>works</b>?" />
         <TokenSection />
         <DAOSection />
-        <QuickLinks />
         <Roadmap />
         <FAQ faqs={faqs} />
       </main>

@@ -7,26 +7,22 @@ import FAQ from '@/components/section/FAQ';
 import Modality from './Modality';
 import Differentials from '@/components/section/Differentials';
 import BenefitsSection from './BenefitsSection'
-import { faDumbbell, faLock, faMapMarkerAlt, faAward, faUserShield, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faMapMarkerAlt, faAward, faUserShield, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const VoucherPage = () => {
     const differentials = [
         {
-            title: 'Unlimited Access',
-            icon: faDumbbell,
-            description: 'Enjoy unlimited access to a diverse network of gyms with DeGym NFTs.',
+            title: 'Flexible Access',
+            icon: faMapMarkerAlt,
+            description: 'Work out at multiple locations without the restrictions of traditional gym plans.',
         },
         {
             title: 'Enhanced Security',
             icon: faUserShield,
             description: 'Benefit from the enhanced security and transparent transactions provided by distributed ledger technology (DLT).',
         },
-        {
-            title: 'Flexible Access',
-            icon: faMapMarkerAlt,
-            description: 'Work out at multiple locations without the restrictions of traditional gym plans.',
-        },
+
         {
             title: 'Exclusive Rewards',
             icon: faAward,
@@ -103,7 +99,7 @@ const VoucherPage = () => {
 
                 </section>
                 <BenefitsSection />
-                <Differentials title="Why DeGym Voucher?" differentials={differentials} />
+                <Differentials title="Benefits" differentials={differentials} />
                 <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
                     Unlock <b>Unlimited Gym Access</b> with DeGym NFTs. Buy your Voucher today and start your journey to a fitter, more flexible lifestyle.
                 </h4>

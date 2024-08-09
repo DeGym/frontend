@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '@/styles/pages/Members.module.css';
 import Head from 'next/head';
 import MeetTheBrains from '@/components/section/MeetTheBrains';
+import QuickLinks from '@/components/section/QuickLinks';
 
 const MembersPage = () => {
     return (
@@ -19,6 +20,8 @@ const MembersPage = () => {
                     </div>
                 </section>
                 <MeetTheBrains />
+                <QuickLinks />
+
             </main>
         </>
     );

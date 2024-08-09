@@ -12,9 +12,9 @@ const IntroductionVideo = () => {
                 By leveraging the power of decentralization, DeGym provides users with the freedom to access gyms and fitness centers worldwide, anytime they choose.
             </p>
             <p>
-                Our mission is to make fitness universally accessible, empowering individuals to live healthier, happier lives.
-                Through innovation and community-building, DeGym is redefining the fitness landscape, creating a global network of accessible, high-quality gym facilities.
-                Join us in this movement towards fitness without borders, and unlock the potential of your fitness journey with DeGym.</p>
+                Through innovation and community-building, We are redefining the fitness landscape, creating a global network of accessible, high-quality gym facilities.
+                It drives us to eliminate physical and financial constraints, making health and wellness seamlessly integrated into modern web 3.0 lifestyles.
+            </p>
             <h2>Watch Our <b>Introduction</b> Video</h2>
             <div className={styles.container}>
                 <div className={styles.videoOverlay}></div>

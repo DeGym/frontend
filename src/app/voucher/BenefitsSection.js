@@ -37,7 +37,7 @@ const BenefitsSection = () => {
                     ))}
                 </div>
                 <button className="justify-center flex max-w-80 align-middle m-auto">
-                    <a href="/voucher" target="_self">See plans & pricing</a>
+                    <a href="https://docs.degym.net/dapp/nft-voucher/pricing" target="_self">See pricing</a>
                 </button>
             </div>
         </section>

@@ -1,77 +1,83 @@
+"use client"
+
 import React from 'react';
 import styles from '@/styles/components/section/QuickLinks.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt, faBalanceScale, faDumbbell, faGift, faSearch, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 const QuickLinks = () => {
     const cards = [
-        /*{
-            icon: '/img/ql/staking.svg',
+        {
+            icon: faDumbbell,
             title: 'Staking',
             description: 'Earn rewards and support the health of the DeGym ecosystem.',
-            buttonText: 'Get Started',
             href: '/staking',
-        },*/
-        /*{
-            icon: '/img/ql/bounties.svg',
+        },
+        {
+            icon: faGift,
             title: 'Bounties',
             description: 'Earn rewards while learning about DeGym and expanding its ecosystem.',
-            buttonText: 'Get Started',
             href: '/bounties',
-        },*/
+        },
         {
-            icon: '/img/ql/node.svg',
+            icon: faBalanceScale,
             title: 'Register a Gym',
             description: 'Register your gym and help grow DeGym’s network.',
-            buttonText: 'Get Started',
             href: '/partner',
         },
         {
-            icon: '/img/ql/voucher.svg',
+            icon: faBolt,
             title: 'NFT Voucher',
             description: "Purchase DeGym's voucher and gain access to the DeGym network.",
-            buttonText: 'Get Started',
             href: '/voucher',
         },
-        /*{
-            icon: '/img/ql/explorer.svg',
+        {
+            icon: faSearch,
             title: 'DeGym Explorer',
             description: 'Explore gyms and find the best one near you.',
-            buttonText: 'Get Started',
             href: '/search',
         },
-        */
     ];
 
+    const handleMouseMove = (event) => {
+        const card = event.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, var(--color-accent), var(--color-dark))`;
+    };
+
+    const handleMouseLeave = (event) => {
+        event.currentTarget.style.background = '';
+    };
 
     return (
         <section className={styles.section}>
             <div className={styles.homeContent}>
                 <div className={styles.title}>
                     <div className={styles.titleContainer}>
-                        <h2>Join to DeGym's <b>community</b>!</h2>
+                        <h2>Join DeGym's <b>community</b>!</h2>
                     </div>
                 </div>
                 <div className={styles.cardContainer}>
                     {cards.map((card, index) => (
-                        <div key={index} className={styles.card}>
+                        <a
+                            key={index}
+                            href={card.href}
+                            className={styles.card}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                        >
                             <div className={styles.cardContent}>
                                 <div className={styles.icon}>
-                                    <img src={card.icon} alt={`icon-${index + 1}`} className="img-fluid d-block" />
+                                    <FontAwesomeIcon icon={card.icon} className="img-fluid d-block" size="2x" />
                                 </div>
                                 <h5 className={styles.cardTitle}>{card.title}</h5>
                                 <p className={styles.cardDescription}>{card.description}</p>
                             </div>
-                            <div className={styles.cardActions}>
-                                <button>
-                                    <a
-                                        className="rounded-[42px] inline-flex items-center justify-center py-4 px-8 hover:text-neutral-90 text-base transition bg-primary-40 text-neutral-90 w-full"
-                                        target="_blank"
-                                        href={card.href}
-                                    >
-                                        {card.buttonText}
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
+                            <FontAwesomeIcon icon={faExternalLinkAlt} className={styles.linkIcon} />
+                        </a>
                     ))}
                 </div>
             </div>

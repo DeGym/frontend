@@ -16,13 +16,10 @@ const MissionVisionCards = () => {
                         <b><FontAwesomeIcon icon={faEye} size="1x" /> Vision</b> Statement
                     </h2>
                     <p>
-                        At DeGym, we envision a world where fitness is universally accessible and inclusive, empowering both users and gym owners. Our goal is to create a global community where fitness enthusiasts can access any gym, anytime, anywhere, without traditional barriers.
+                        At DeGym, we envision a world where fitness is universally accessible and inclusive, empowering both users and gym owners. Our goal is to create a global community where fitness enthusiasts can access any fitness center, anytime, anywhere, without traditional barriers.
                     </p>
                     <p>
                         We aim to promote small and independent gyms by providing them with the tools and platform to gain traction and thrive. By leveraging blockchain technology, we ensure a transparent, secure, and flexible check-in system, allowing gym owners to receive payments in their preferred tokenized currencies.
-                    </p>
-                    <p>
-                        This vision drives us to eliminate physical and financial constraints, making health and wellness seamlessly integrated into modern web 3.0 lifestyles.
                     </p>
                 </div>
             </div >
@@ -34,8 +31,6 @@ const MissionVisionCards = () => {
                     </p>
                     <p>
                         We are committed to promoting small gyms, ensuring they have equal opportunities to attract and retain members.
-                    </p>
-                    <p>
                         Additionally, DeGym provides partners and stakers with fair and incentivized economic opportunities, fostering a collaborative community focused on promoting health, well-being, and active lifestyles worldwide.
                     </p>
                 </div>

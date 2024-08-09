@@ -39,6 +39,7 @@
 .card {
     background-color: var(--color-accent);
     border-radius: 8px;
+    border: 1px solid transparent;
     padding: 20px;
     flex: 0 0 30%;
     display: flex;
@@ -47,10 +48,22 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 350px;
+    transition: background 0.3s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: 1px solid var(--color-primary)
 }
 
 .cardContent {
     flex: 1;
+    z-index: 1;
+    position: relative;
 }
 
 .icon img {
@@ -68,13 +81,18 @@
 .cardDescription {
     font-size: 1rem;
     color: var(--color-light);
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
-.cardActions {
-    width: 100%;
+.linkIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: var(--color-light);
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
 }
-
 
 @media (max-width: 768px) {
     .cardContainer {

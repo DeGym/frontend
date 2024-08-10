@@ -3,14 +3,11 @@
     padding: 30px;
     margin: 20px -20px;
     background-image: url('/img/main-grid.svg');
-    /* Add this line */
     background-size: cover;
-    /* Ensure the background image covers the entire area */
     background-position: bottom;
     padding-bottom: 25px;
     border-top: 2px solid var(--color-accent);
     border-bottom: 2px solid var(--color-accent);
-    /* Center the background image */
 }
 
 .swiperWrapper,
@@ -24,9 +21,7 @@
 
 .stepCardWrapper {
     flex: 1;
-    /* Each card wrapper takes up equal space */
     margin: 10px;
-    /* Add some space between cards */
     display: flex;
     flex-direction: column;
 }
@@ -42,7 +37,6 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    /* This ensures the card stretches to fill the wrapper */
 }
 
 .icon {
@@ -89,7 +83,6 @@
     font-size: 1rem;
     line-height: 1.5rem;
     flex-grow: 1;
-    /* Allow the text to grow and take up available space */
 }
 
 .arrow {
@@ -98,11 +91,8 @@
     margin: 0 16px;
     flex: 0 0 auto;
     display: flex;
-    /* Ensure the arrow spans its container */
     align-items: center;
-    /* Center the arrow vertically */
     justify-content: center;
-    /* Center the arrow horizontally */
 }
 
 .arrowDown {

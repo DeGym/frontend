@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import styles from '@/styles/pages/Stake.module.css';
 import DashboardPanel from './DashboardPanel';
 import StakingActions from './StakingActions';
-import StakePools from './StakePools';
+import StakeBonds from './StakeBonds';
 
 
 const StakePage = () => {
@@ -27,7 +27,7 @@ const StakePage = () => {
     };
 
 
-    const stakePools = [
+    const stakeBonds = [
         {
             amountStaked: 100,
             rewards: 10,
@@ -56,7 +56,7 @@ const StakePage = () => {
                 onUnstake={handleUnstake}
                 onClaim={handleClaim}
             />
-            <StakePools pools={stakePools} />
+            <StakeBonds bonds={stakeBonds} />
         </main>
     );
 };

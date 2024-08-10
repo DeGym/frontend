@@ -1,6 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import styles from '@/styles/components/section/FAQ.module.css';
 
 const FAQ = ({ faqs }) => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -10,35 +13,50 @@ const FAQ = ({ faqs }) => {
     };
 
     return (
-        <>
-            <h2 className="text-center text-3xl"><b>Got Questions? We've got Answers</b></h2>
-            <p className="text-center text-xl mb-5">Frequently asked questions</p>
-            <div
-                className="w-full max-w-4xl mx-auto bg-accent rounded-lg p-5 shadow-lg relative"
-                style={{
-                    backgroundImage: 'url(/img/main-grid.svg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-            >
-                {faqs.map((faq, index) => (
-                    <div key={index} className="mb-4">
-                        <button
-                            className="px-2 w-full text-left bg-transparent border-transparent text-light text-lg font-bold py-3 cursor-pointer flex justify-between items-center"
-                            onClick={() => toggleFAQ(index)}
-                        >
-                            {faq.question}
-                            <span className="ml-2">{activeIndex === index ? '-' : '+'}</span>
+        <div className={styles.faqContainer}>
+            <div className={styles.faqContent}>
+                <div className={styles.faqText}>
+                    <h2 className={styles.heading}><b>Got Questions? <br />We've got Answers</b></h2>
+                    <p className={styles.subheading}>Frequently asked questions.</p>
+                    <a
+                        href="/discord"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button className={styles.submitQuestionButton}>
+
+                            Submit a Question <FontAwesomeIcon icon={faArrowRight} />
                         </button>
-                        <div
-                            className={`overflow-hidden transition-max-height duration-300 ease-in-out text-gray-300 text-base pl-3 ${activeIndex === index ? 'max-h-40 py-2' : 'max-h-0'}`}
-                        >
-                            {faq.answer}
+                    </a>
+
+                </div>
+                <div
+                    className={styles.faqList}
+                    style={{
+                        backgroundImage: 'url(/img/main-grid.svg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                >
+                    {faqs.map((faq, index) => (
+                        <div key={index} className={styles.faqItem}>
+                            <button
+                                className={styles.faqQuestion}
+                                onClick={() => toggleFAQ(index)}
+                            >
+                                {faq.question}
+                                <span className={styles.toggleIcon}>{activeIndex === index ? '-' : '+'}</span>
+                            </button>
+                            <div
+                                className={`${styles.faqAnswer} ${activeIndex === index ? styles.activeAnswer : ''}`}
+                            >
+                                {faq.answer}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </>
+        </div>
     );
 };
 

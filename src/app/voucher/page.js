@@ -98,15 +98,11 @@ const VoucherPage = () => {
                     <NFTVoucherGenerator className={styles.nftVoucher} />
 
                 </section>
-                <BenefitsSection />
                 <Differentials title="Benefits" differentials={differentials} />
                 <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
                     Unlock <b>Unlimited Gym Access</b> with DeGym NFTs. Buy your Voucher today and start your journey to a fitter, more flexible lifestyle.
                 </h4>
-                <section className={styles.sectionEven}>
-                    <p>DeGym Voucher offers a revolutionary approach to fitness through its integration with DLT, providing seamless and flexible access to a network of gyms.</p>
-                    <p>Members benefit from enhanced security, transparent transactions, and the ability to use NFTs for voucher credentials, which ensures easy access, potential rewards, and the ability to trade or transfer vouchers more freely.This model empowers users with more control over their fitness journey and investment, making gym access more adaptable and personalized.</p>
-                </section>
+                <BenefitsSection />
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>

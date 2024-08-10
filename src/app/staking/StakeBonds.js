@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import styles from './styles/StakePools.module.css';
+import styles from './styles/StakeBonds.module.css';
 
-const StakePools = ({ pools }) => {
+const StakeBonds = ({ bonds }) => {
     const [filter, setFilter] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleFilterChange = (newFilter) => setFilter(newFilter);
     const handleSearchChange = (e) => setSearchTerm(e.target.value);
 
-    const filteredPools = pools.filter((pool) => {
-        const matchesFilter = filter === 'all' || pool.status === filter;
-        const matchesSearch = pool.amountStaked.toString().includes(searchTerm);
+    const filteredBonds = bonds.filter((bond) => {
+        const matchesFilter = filter === 'all' || bond.status === filter;
+        const matchesSearch = bond.amountStaked.toString().includes(searchTerm);
         return matchesFilter && matchesSearch;
     });
 
@@ -24,7 +24,7 @@ const StakePools = ({ pools }) => {
     };
 
     return (
-        <div className={styles.stakePoolsSection}>
+        <div className={styles.stakeBondsSection}>
             <div className={styles.filterContainer}>
                 <div className={styles.filterButtons}>
                     <button
@@ -50,14 +50,14 @@ const StakePools = ({ pools }) => {
                     <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
                     <input
                         type="text"
-                        placeholder="Search Pools"
+                        placeholder="Search Bonds"
                         value={searchTerm}
                         onChange={handleSearchChange}
                         className={styles.searchInput}
                     />
                 </div>
             </div>
-            <div className={styles.stakePoolsContainer}>
+            <div className={styles.stakeBondsContainer}>
                 <table className={styles.stakeTable}>
                     <thead>
                         <tr>
@@ -70,15 +70,15 @@ const StakePools = ({ pools }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredPools.map((pool, index) => (
+                        {filteredBonds.map((bond, index) => (
                             <tr key={index} className={styles.tableRow}>
-                                <td>{pool.amountStaked} DGYM</td>
-                                <td>{pool.rewards}</td>
-                                <td>{pool.interest}</td>
-                                <td>{new Date(pool.createdDate).toLocaleDateString()}</td>
-                                <td>{new Date(pool.endDate).toLocaleDateString()}</td>
-                                <td className={pool.status === 'live' ? styles.statusLive : styles.statusFinished}>
-                                    {pool.status}
+                                <td>{bond.amountStaked} DGYM</td>
+                                <td>{bond.rewards}</td>
+                                <td>{bond.interest}</td>
+                                <td>{new Date(bond.createdDate).toLocaleDateString()}</td>
+                                <td>{new Date(bond.endDate).toLocaleDateString()}</td>
+                                <td className={bond.status === 'live' ? styles.statusLive : styles.statusFinished}>
+                                    {bond.status}
                                 </td>
                             </tr>
                         ))}
@@ -98,4 +98,4 @@ const StakePools = ({ pools }) => {
     );
 };
 
-export default StakePools;
+export default StakeBonds;

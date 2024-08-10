@@ -9,7 +9,6 @@ const StakingActions = ({
     availableToUnstakeDGYM,
     onStake,
     onUnstake,
-    onClaimUSDT,
     onClaimDGYM,
     isAutoInterest,
     staking_yield = 0.17,
@@ -75,17 +74,21 @@ const StakingActions = ({
         <div className={styles.stakingActions}>
             <div className={styles.cardContainer}>
                 <div className={styles.card}>
-                    <h3>Available DGYM Amount</h3>
+                    <h3>Available to stake</h3>
                     <p className={styles.cardValue}>{availableToStakeDGYM} DGYM</p>
                     <button className={styles.cardButton} onClick={() => setIsStakeModalOpen(true)}>Stake</button>
                 </div>
                 <div className={styles.card}>
-                    <h3>Available DGYM Amount</h3>
+                    <h3>Available to unstake</h3>
                     <p className={styles.cardValue}>{availableToUnstakeDGYM} DGYM</p>
                     <button className={styles.cardButton} onClick={() => setIsUnstakeModalOpen(true)}>Unstake</button>
                 </div>
+                <div className={styles.card}>
+                    <h3>Claimable Rewards</h3>
+                    <p className={styles.cardValue}>{rewards.DGYM} DGYM</p>
+                    <button className={styles.cardButton} onClick={onClaimDGYM}>Claim</button>
+                </div>
             </div>
-
             <BaseModal
                 isOpen={isStakeModalOpen}
                 onClose={() => setIsStakeModalOpen(false)}
@@ -162,21 +165,7 @@ const StakingActions = ({
                 </div>
             </BaseModal>
 
-            <div className={styles.claimSection}>
-                <h2 className={styles.claimTitle}><b>REWARDS</b></h2>
-                <div className={styles.claimContainer}>
-                    <div className={styles.claimColumn}>
-                        <p>USDT</p>
-                        <p className={styles.claimValue}>{rewards.USDT}</p>
-                        <button className={styles.actionButton} onClick={onClaimUSDT}>Claim USDT</button>
-                    </div>
-                    <div className={styles.claimColumn}>
-                        <p>DGYM</p>
-                        <p className={styles.claimValue}>{rewards.DGYM}</p>
-                        <button className={styles.actionButton} onClick={onClaimDGYM}>Claim DGYM</button>
-                    </div>
-                </div>
-            </div>
+
         </div>
     );
 };

@@ -84,8 +84,8 @@ const PreSeedPage = () => {
         },
         {
             icon: faTelegram,
-            title: 'Join Our Telegram Group',
-            description: 'Join our Telegram group to stay updated on the pre-seed and get community support.',
+            title: 'Join Our Telegram',
+            description: 'Join our Telegram group to stay updated on the pre-seed.',
             link: 'https://t.me/degym_dao',
             linkText: 'Join Now'
         },

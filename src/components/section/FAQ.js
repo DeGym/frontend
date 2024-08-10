@@ -11,9 +11,16 @@ const FAQ = ({ faqs }) => {
 
     return (
         <>
-            <h2 className="text-center text-3xl"><b>FAQ</b></h2>
+            <h2 className="text-center text-3xl"><b>Got Questions? We've got Answers</b></h2>
             <p className="text-center text-xl mb-5">Frequently asked questions</p>
-            <div className="w-full max-w-4xl mx-auto bg-accent rounded-lg p-5 shadow-lg">
+            <div
+                className="w-full max-w-4xl mx-auto bg-accent rounded-lg p-5 shadow-lg relative"
+                style={{
+                    backgroundImage: 'url(/img/main-grid.svg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
                 {faqs.map((faq, index) => (
                     <div key={index} className="mb-4">
                         <button

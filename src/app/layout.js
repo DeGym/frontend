@@ -6,7 +6,9 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { WalletProvider } from '@/utils/WalletContext';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { JetBrains_Mono } from "next/font/google";
 
+const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
 config.autoAddCss = false; // Tell FontAwesome to skip adding the CSS automatically since it's being imported above
 
@@ -16,20 +18,12 @@ export const metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-  link: [
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'true' },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
-    },
-  ],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-dark text-light">
+      <body className={`bg-dark text-light ${jetbrains.className}`}>
         <WalletProvider>
           <ParticleNetworkAnimation />
           <Navbar />

@@ -98,11 +98,11 @@ const VoucherPage = () => {
                     <NFTVoucherGenerator className={styles.nftVoucher} />
 
                 </section>
-                <BenefitsSection />
                 <Differentials title="Benefits" differentials={differentials} />
                 <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
                     Unlock <b>Unlimited Gym Access</b> with DeGym NFTs. Buy your Voucher today and start your journey to a fitter, more flexible lifestyle.
                 </h4>
+                <BenefitsSection />
                 <section className={styles.sectionEven}>
                     <VoucherTable />
                 </section>

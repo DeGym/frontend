@@ -13,9 +13,7 @@
 .roadInner {
     text-align: center;
     justify-content: center;
-    text-align: center;
 }
-
 
 .roadText {
     font-weight: 500;
@@ -41,7 +39,7 @@
     margin: auto auto;
     transition: all 0.3s ease;
     border: 1px solid var(--color-primary);
-    background: linear-gradient(0deg, #0A130C6f 0%, #1a5d0d10 50%, #0A130C6f 100%);
+    background: var(--color-dark);
 }
 
 .roadSlide:hover {
@@ -49,18 +47,29 @@
 }
 
 .roadPhaseInner {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
 
 .roadPhase {
     font-weight: 1000;
-    font-size: 20px;
-    color: var(--color-neon-green);
-    -webkit-text-stroke: 1px var(--color-primary);
-    text-align: center;
+    font-size: 1.75rem;
+    color: var(--color-primary);
+}
+
+.roadStatus {
+    font-weight: 1000;
+    font-size: 1rem;
+    color: var(--color-light);
+    align-content: center;
+    border-radius: 40px;
+    border: 1px solid var(--color-primary);
 }
 
 .roadSlideTitleInner {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 12px;
 }
 
@@ -68,17 +77,22 @@
     font-weight: 600;
     font-size: 24px;
     margin-bottom: 5px;
-    text-align: center;
 }
 
 .roadSlideName {
     font-size: 1rem;
-    color: var(--color-neon-green);
-    text-align: center;
+    color: var(--color-ligth);
+}
+
+.roadDivider {
+    border: none;
+    border-top: 1px solid var(--color-light);
+    margin: 10px 0;
 }
 
 .roadSlidePoints {
     margin-top: 20px;
+    margin-left: 15px;
 }
 
 .roadSlidePoint {
@@ -88,12 +102,9 @@
     margin-bottom: 20px;
 }
 
-.roadSlidePointCircle {
-    width: 10px;
-    height: 10px;
-    background-color: var(--color-neonGreen);
-    border-radius: 50%;
-    margin-right: 5%;
+.roadSlidePointIcon {
+    margin-right: 10px;
+    color: var(--color-primary);
 }
 
 @media (max-width: 1000px) {
@@ -105,5 +116,4 @@
         padding: 20px;
         font-size: 1rem;
     }
-
 }

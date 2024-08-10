@@ -70,7 +70,6 @@ const TokenAllocation = () => {
                 <h2 className={styles.title}>Token <b>Allocation</b></h2>
                 <p>
                     The DGYM token allocation is structured to ensure fairness, incentivize early adopters, and support the long-term growth of the DeGym ecosystem.
-                    Below is the allocation breakdown:
                 </p>
                 <div className={styles.chartContainer}>
                     <Pie data={data} options={options} />

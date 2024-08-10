@@ -1,28 +1,29 @@
 .stepByStepContainer {
     text-align: center;
     padding: 30px;
-    background: linear-gradient(0deg, #00000000 10%, var(--color-dark) 35%, #2dff7311 50%, var(--color-dark) 65%, #00000000 90%);
     margin: 20px -20px;
+    background-image: url('/img/main-grid.svg');
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 25px;
+    border-top: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
 }
 
-.swiperWrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 20px;
-    scroll-behavior: smooth;
-    align-items: center;
-}
-
+.swiperWrapper,
 .flexWrapper {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
 }
 
 .stepCardWrapper {
-    flex: 0 0 auto;
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .stepCard {
@@ -32,8 +33,10 @@
     padding: 30px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
 }
 
 .icon {
@@ -52,7 +55,7 @@
 }
 
 .stepInner {
-    display: right;
+    display: flex;
     align-items: center;
     margin: auto;
 }
@@ -79,6 +82,7 @@
 .text {
     font-size: 1rem;
     line-height: 1.5rem;
+    flex-grow: 1;
 }
 
 .arrow {
@@ -86,7 +90,9 @@
     color: var(--color-primary);
     margin: 0 16px;
     flex: 0 0 auto;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrowDown {
@@ -97,11 +103,11 @@
 }
 
 @media (max-width: 768px) {
-    .swiperWrapper {
-        flex-direction: column;
-        align-items: stretch;
+    .stepByStepContainer {
+        background-image: none;
     }
 
+    .swiperWrapper,
     .flexWrapper {
         flex-direction: column;
         align-items: stretch;
@@ -109,7 +115,6 @@
 
     .stepCardWrapper {
         margin-bottom: 16px;
-        margin-right: 0;
         width: 100%;
     }
 

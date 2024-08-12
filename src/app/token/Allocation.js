@@ -74,6 +74,13 @@ const TokenAllocation = () => {
                 <div className={styles.chartContainer}>
                     <Pie data={data} options={options} />
                 </div>
+                <a
+                    href="https://docs.degym.net/degym-dao/dgym-tokenomics/usddgym-tokenomics"
+                    target="_blank" rel="noopener noreferrer">
+                    <button className="w-auto p-2 mt-4">
+                        See details
+                    </button>
+                </a>
             </div>
         </section>
     );

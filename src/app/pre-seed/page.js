@@ -7,7 +7,7 @@ import TokenSection from '../token/TokenSection';
 import FAQ from '@/components/section/FAQ';
 import DAOSection from '@/components/section/DAOSection';
 import TokenAllocation from '../token/Allocation';
-import TokenUseCase from '../token/useCase';
+import TokenUseCase from '../token/Utility';
 import Roadmap from '@/components/section/RoadmapCarousel';
 import { faUserCheck, faCoins, faWallet, faFire, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';

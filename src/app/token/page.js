@@ -4,9 +4,9 @@ import styles from '@/styles/pages/Token.module.css';
 import TokenSection from './TokenSection';
 import FAQ from '@/components/section/FAQ';
 import DAOSection from '@/components/section/DAOSection'
-import TokenStats from './stats'
+import TokenStats from './Stats'
 import TokenAllocation from './Allocation'
-import TokenUseCase from './useCase'
+import TokenUtility from './Utility'
 
 const TokenPage = () => {
     const faq = [
@@ -60,7 +60,7 @@ const TokenPage = () => {
                 <TokenSection />
                 <TokenStats />
                 <TokenAllocation />
-                <TokenUseCase />
+                <TokenUtility />
                 <DAOSection />
                 <FAQ faqs={faq} />
             </main>

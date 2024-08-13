@@ -14,16 +14,29 @@ const DAOSection = () => {
             <div className={styles.overlay}></div>
             <div className={styles.container}>
                 <div className={`${styles.sectionRow} ${styles.sectionRow}`}>
-                    <div className={`${styles.sectionCol1} ${styles.sectionCol1}`}>
+                    <div className={`${styles.sectionCol1}`}>
                         <div className={styles.sectionTitle}>DAO</div>
                     </div>
-                    <div className={`${styles.sectionCol2} ${styles.sectionCol2}`}>
+                    <div className={`${styles.sectionCol2}`}>
                         <div className={styles.textBlockV1}>
                             The DeGym will be controlled by a <b>DAO with decentralized governance</b>, which allows all token holders to participate in the future growth, and have a word in future decisions regarding Web3 application development parameters and treasury management.
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* New animated join section */}
+            <div className={styles.animatedJoinSection}>
+                <div className={styles.scrollContent}>
+                    {[...Array(4)].map((_, i) => (
+                        <div key={i} className={styles.scrollItem}>
+                            <img src="/DeGym_green_white_logo_without_bg.png" alt="DeGym Logo" className={styles.joinLogo} />
+                            <div className={styles.joinText}>JOIN THE COMMUNITY</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
             <div className={styles.communityLinks}>
                 <div className={styles.joinLine}></div>
                 <div className={styles.container}>

@@ -35,14 +35,13 @@
 
 .sectionRow {
     display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
 .sectionCol1,
 .sectionCol2 {
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 .sectionTitle {
@@ -58,14 +57,14 @@
 }
 
 .communityLinks {
-    margin-top: 80px;
+    margin-top: 0px;
     padding-top: 10px;
 }
 
 .joinLine {
     border-top: 1px solid var(--color-primary);
     width: 100%;
-    margin-top: 300px;
+    margin-top: 0px;
 }
 
 .joinLinks {
@@ -105,7 +104,72 @@
     font-weight: 600;
 }
 
-@media (min-width: 768px) {
+.animatedJoinSection {
+    overflow: hidden;
+    width: 100%;
+    margin: 0px 0;
+    margin-top: 80px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--color-light);
+    /* Updated color */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scrollContent {
+    display: flex;
+    width: max-content;
+    animation: scrollLeftInfinite 20s linear infinite;
+}
+
+.scrollItem {
+    display: flex;
+    align-items: center;
+    padding-right: 150px;
+}
+
+.joinLogo {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.joinText {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap
+}
+
+@keyframes scrollLeftInfinite {
+    0% {
+        transform: translateX(120%);
+    }
+
+    100% {
+        transform: translateX(-95%);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .animatedJoinSection {
+        font-size: 2rem;
+    }
+
+    .joinLogo {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .scrollItem {
+        padding-right: 75px;
+        padding-top: 250px;
+    }
+
     .sectionRow {
         flex-direction: row;
         text-align: left;
@@ -120,6 +184,10 @@
     .sectionCol2 {
         flex: 2;
         margin: 0;
+    }
+
+    .textBlockV1 {
+        font-size: 1rem;
     }
 
     .joinLinks {

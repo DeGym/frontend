@@ -7,10 +7,7 @@ import styles from '@/styles/components/section/DAOSection.module.css';
 const DAOSection = () => {
     return (
         <section className={styles.section}>
-            <video className={styles.backgroundVideo} autoPlay muted loop>
-                <source src="/videos/dao_bg.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+            <img src="/img/banner.jpg" alt="DAO Banner" className={styles.backgroundImage} />
             <div className={styles.overlay}></div>
             <div className={styles.container}>
                 <div className={`${styles.sectionRow} ${styles.sectionRow}`}>

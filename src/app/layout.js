@@ -4,7 +4,7 @@ import ParticleNetworkAnimation from '@/components/ParticleNetworkAnimation';
 import Footer from '@/components/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { WalletProvider } from '@/utils/WalletContext';
+import { GlobalProvider } from '@/context/GlobalContext';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { JetBrains_Mono } from "next/font/google";
 
@@ -24,12 +24,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`bg-dark text-light ${jetbrains.className}`}>
-        <WalletProvider>
+        <GlobalProvider>
           <ParticleNetworkAnimation />
           <Navbar />
           {children}
           <Footer />
-        </WalletProvider>
+        </GlobalProvider>
         <SpeedInsights />
       </body>
     </html>

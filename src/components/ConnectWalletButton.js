@@ -1,105 +1,36 @@
 "use client"
 
-import React, { useState, useEffect, useContext } from 'react';
-import Web3 from 'web3';
-import detectEthereumProvider from '@metamask/detect-provider';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faExclamationTriangle, faSpinner, faCopy, faSignOutAlt, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from '@/styles/components/ConnectWalletButton.module.css';
-import { WalletContext } from '@/utils/WalletContext';
 import shortenWalletAddress from '@/utils/generic';
 import BaseModal from '@/components/BaseModal';
 import Jazzicon, { jsNumberForAddress } from 'react-jazzicon';
+import { useGlobalState } from '@/context/GlobalContext';
 
 const mockTransactions = {
     ERC20: [
-        //{ id: 1, amount: '1000 DGYM', hash: '0x1a2b3c4d' },
-        //{ id: 2, amount: '2000 DGYM', hash: '0x5e6f7g8h' },
+        { id: 1, amount: 1000, hash: '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef' },
     ],
     ERC721: [
-        //{ id: 1, tokenId: '123', hash: '0x9i0j1k2l' },
-        //{ id: 2, tokenId: '456', hash: '0x3m4n5o6p' },
+        { id: 1, tokenId: 1, hash: '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef' },
     ],
 };
 
 const ConnectWalletButton = () => {
-    const { walletAddress, setWalletAddress, isCorrectNetwork, setIsCorrectNetwork } = useContext(WalletContext);
+    const { web3, account, isCorrectNetwork, balance } = useGlobalState();
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [balance, setBalance] = useState(null); // Initialize with null
     const [activeTokenType, setActiveTokenType] = useState('ERC20');
-
-    useEffect(() => {
-        const checkNetwork = async () => {
-            const provider = await detectEthereumProvider();
-            if (provider) {
-                const chainId = await provider.request({ method: 'eth_chainId' });
-                setIsCorrectNetwork(chainId === '0x349'); // Taraxa chainId
-            }
-        };
-
-        if (walletAddress) {
-            checkNetwork();
-        }
-
-        const handleChainChanged = (chainId) => {
-            setIsCorrectNetwork(chainId === '0x349');
-        };
-
-        if (window.ethereum) {
-            window.ethereum.on('chainChanged', handleChainChanged);
-        }
-
-        return () => {
-            if (window.ethereum) {
-                window.ethereum.removeListener('chainChanged', handleChainChanged);
-            }
-        };
-    }, [walletAddress, setIsCorrectNetwork]);
-
-    useEffect(() => {
-        if (walletAddress && window.ethereum) {
-            const web3Instance = new Web3(window.ethereum);
-            web3Instance.eth.getBalance(walletAddress)
-                .then(balance => {
-                    setBalance(parseFloat(web3Instance.utils.fromWei(balance, 'ether')).toFixed(4));
-                })
-                .catch(error => {
-                    console.error('Error fetching balance:', error);
-                    setError('Failed to fetch balance. Please try again.');
-                });
-        }
-    }, [walletAddress]);
 
     const connectWallet = async () => {
         setIsLoading(true);
-        const provider = await detectEthereumProvider();
-
-        if (provider) {
-            if (provider !== window.ethereum) {
-                setError('Multiple wallets detected. Please ensure MetaMask is the active wallet.');
-                setIsLoading(false);
-                return;
-            }
+        if (window.ethereum) {
             try {
-                await provider.request({ method: 'eth_requestAccounts' });
-                await provider.request({
-                    method: 'wallet_addEthereumChain',
-                    params: [{
-                        chainId: '0x349', // Hexadecimal equivalent of 841
-                        rpcUrls: ['https://rpc.mainnet.taraxa.io'],
-                        chainName: 'Taraxa Mainnet',
-                    }]
-                });
-                const accounts = await provider.request({ method: 'eth_accounts' });
-                if (accounts.length > 0) {
-                    setWalletAddress(accounts[0]);
-                    setError('');
-                    setIsCorrectNetwork(true);
-                } else {
-                    setError('No accounts found. Please try again.');
-                }
+                await window.ethereum.request({ method: 'eth_requestAccounts' });
+                setError('');
             } catch (error) {
                 setError('Failed to connect wallet. Please try again.');
                 console.error('User denied account access or error occurred:', error);
@@ -111,11 +42,11 @@ const ConnectWalletButton = () => {
     };
 
     const handleCopyAddress = () => {
-        navigator.clipboard.writeText(walletAddress);
+        navigator.clipboard.writeText(account);
     };
 
     const handleDisconnect = () => {
-        setWalletAddress(null);
+        setAccount(null);
         setIsModalOpen(false);
     };
 
@@ -125,7 +56,7 @@ const ConnectWalletButton = () => {
 
     return (
         <div className={styles.walletContainer}>
-            {walletAddress ? (
+            {account ? (
                 <>
                     <div
                         className={`${styles.walletInfo} ${!isCorrectNetwork ? styles.incorrectNetwork : ''}`}
@@ -139,15 +70,15 @@ const ConnectWalletButton = () => {
                             )}
                         </div>
                         <div className={styles.walletAddress}>
-                            {shortenWalletAddress(walletAddress)}
+                            {shortenWalletAddress(account)}
                         </div>
                         <FontAwesomeIcon icon={faChevronDown} className={styles.chevronIcon} />
                     </div>
 
                     <BaseModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Wallet Details">
                         <div className={styles.modalContent}>
-                            <Jazzicon diameter={100} seed={jsNumberForAddress(walletAddress)} />
-                            <p className={styles.walletAddressModal}><strong>{shortenWalletAddress(walletAddress)}</strong></p>
+                            <Jazzicon diameter={100} seed={jsNumberForAddress(account)} />
+                            <p className={styles.walletAddressModal}><strong>{shortenWalletAddress(account)}</strong></p>
                             <p className={styles.balance}>{balance !== null ? (balance >= 1000 ? `${(balance / 1000).toFixed(1)}K` : balance) : 'Loading...'} TARA</p>
                             <div className={styles.modalButtons}>
                                 <button className={styles.modalButton} onClick={handleCopyAddress}>
@@ -186,7 +117,7 @@ const ConnectWalletButton = () => {
                                     <p className={styles.noTransactions}>No transactions available</p>
                                 )}
                             </div>
-                            <a className={styles.explorerButton} href={`https://explorer.taraxa.io/address/${walletAddress}`} target="_blank" rel="noopener noreferrer">
+                            <a className={styles.explorerButton} href={`https://explorer.taraxa.io/address/${account}`} target="_blank" rel="noopener noreferrer">
                                 View more on explorer <FontAwesomeIcon icon={faExternalLinkAlt} />
                             </a>
                         </div>

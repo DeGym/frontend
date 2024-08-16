@@ -1,8 +1,23 @@
 import React from 'react';
-import styles from '@/styles/components/section/MeetTheBrains.module.css';
 import { FaLinkedin, FaDiscord, FaGithub, FaTelegram } from 'react-icons/fa';
+import styles from '@/styles/components/members/MembersList.module.css';
 
-const members = [
+interface SocialLinks {
+    linkedin?: string;
+    discord?: string;
+    github?: string;
+    telegram?: string;
+}
+
+interface TeamMember {
+    name: string;
+    role: string;
+    image: string;
+    description: string;
+    social: SocialLinks;
+}
+
+const list: TeamMember[] = [
     {
         name: 'Thiago Martins',
         role: 'Lead Developer',
@@ -77,12 +92,12 @@ const members = [
     }
 ];
 
-const MeetTheBrains = () => {
+const MembersList: React.FC = () => {
     return (
         <section className={styles.container}>
             <h2 className={styles.title}>Meet the <b>Brains</b> behind DeGym</h2>
             <div className={styles.members}>
-                {members.map((member, index) => (
+                {list.map((member, index) => (
                     <div key={index} className={styles.member}>
                         <img src={member.image} alt={member.name} className={styles.memberImage} />
                         <div className={styles.memberName}>{member.name}</div>
@@ -117,4 +132,4 @@ const MeetTheBrains = () => {
     );
 };
 
-export default MeetTheBrains;
+export default MembersList;

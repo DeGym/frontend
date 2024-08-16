@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-function VisitorSection() {
+const VisitorSection: React.FC = () => {
     return (
         <section className="px-8 py-10 lg:flex lg:pb-8 lg:pt-11">
             <div className="container mx-auto flex flex-col space-y-5 xl:px-24 2xl:px-56">
@@ -61,6 +61,6 @@ function VisitorSection() {
             </div>
         </section>
     );
-}
+};
 
 export default VisitorSection;

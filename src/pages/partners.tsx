@@ -2,14 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/pages/Partners.module.css';
-import BecomePartnerSection from './BecomePartnerSection';
-import VisitorSection from './VisitorSection';
-import FAQ from '@/components/section/FAQ'
-import { faUserPlus, faMoneyBillWave, faEye, faHandshake, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import BecomePartnerSection from '@/components/partners/BecomePartnerSection';
+import VisitorSection from '@/components/partners/VisitorSection';
+import FAQ from '@/components/section/FAQ';
 import Differentials from '@/components/section/Differentials';
+import { faUserPlus, faMoneyBillWave, faEye, faHandshake, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-
-const PartnersPage = () => {
+const PartnersPage: React.FC = () => {
     const differentials = [
         {
             title: "New Members",
@@ -37,6 +36,7 @@ const PartnersPage = () => {
             icon: faTimesCircle
         }
     ];
+
     const faqs = [
         {
             question: "Who are DeGym's partners?",

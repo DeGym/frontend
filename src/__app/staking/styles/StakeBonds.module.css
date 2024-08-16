@@ -1,0 +1,169 @@
+.stakeBondsSection {
+    margin-top: 20px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.filterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filterButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.filterButton {
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-primary);
+    color: var(--color-light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filterButton.active {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.searchIcon {
+    color: var(--color-dark);
+    margin-right: 5px;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-dark);
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.stakeBondsContainer {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.stakeTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.stakeTable th,
+.stakeTable td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.stakeTable th {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    font-weight: bold;
+}
+
+.stakeTable td {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+
+.tableRow:nth-child(even) td {
+    background-color: var(--color-accent);
+}
+
+.tableRow:nth-child(odd) td {
+    background-color: var(--color-dark);
+}
+
+.tableRow:hover td {
+    background-color: #2dff7310;
+}
+
+.tableFooter td {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-top: 1px solid var(--color-primary);
+}
+
+.toTopButton {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 150px;
+}
+
+
+.statusLive {
+    color: var(--color-success);
+}
+
+.statusFinished {
+    color: var(--color-danger);
+}
+
+@media (max-width: 1024px) {
+
+    .stakeTable th,
+    .stakeTable td {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .filterContainer {
+        flex-direction: column;
+    }
+
+    .filterButtons {
+        margin-bottom: 10px;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .stakeTable th,
+    .stakeTable td {
+        padding: 8px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .stakeTable th,
+    .stakeTable td {
+        font-size: 0.6rem;
+    }
+}

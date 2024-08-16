@@ -1,0 +1,294 @@
+.crowdfundingSection {
+    padding: 30px;
+    margin: 0px 0px;
+}
+
+.card {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.verificationCard {
+    background-color: rgba(196, 126, 126, 0.6);
+    color: var(--color-light);
+    border-radius: 8px;
+    padding: 7.5px;
+    border: 1px solid rgba(196, 20, 20, 1);
+    text-align: center;
+    margin: 10px auto;
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-light);
+    margin: 20px 0;
+}
+
+.loadingSpinner {
+    border: 4px solid var(--color-primary);
+    border-top: 4px solid var(--color-light);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardData {
+    margin: 10px 0px;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    color: white;
+}
+
+.cardData .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.key {
+    padding: 5px;
+    margin: 2px;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.value {
+    padding: 2.5px 7.5px 15px;
+    text-align: right;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.buttonLink {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: auto;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.buttonLink .icon {
+    margin-right: 8px;
+}
+
+.swapButton {
+    margin: 15px 0px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.alertBox {
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #2dff7301;
+    color: yellow;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.horizontalCards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.horizontalCard {
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    padding: 10px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.horizontalCard h3 {
+    font-size: 1rem;
+}
+
+.horizontalCard p {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 5px;
+}
+
+.scrollableSection {
+    margin-top: 30px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggleLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggleWrapper {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle:checked {
+    background-color: #4CAF50;
+}
+
+.toggle:checked {
+    transform: translateX(26px);
+}
+
+.eventsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.eventCard {
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+.eventCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.eventActions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eventLink {
+    font-size: 0.75rem;
+    padding: 0px;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+.eventLink:hover {
+    text-decoration: underline;
+}
+
+.eventDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.eventTitle {
+    font-size: 1rem;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.eventAmount {
+    font-size: 1.2rem;
+    text-align: right;
+    padding: 0px;
+    margin-right: 20px;
+}
+
+.modalButton {
+    padding: 10px 15px;
+    margin: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .crowdfundingSection {
+        padding: 0px;
+    }
+
+    .buttonLink {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .modalButton {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .horizontalCards {
+        flex-direction: column;
+    }
+
+    .horizontalCard {
+        margin-bottom: 1px;
+    }
+}

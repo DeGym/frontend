@@ -1,8 +1,7 @@
 import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { SubmitHandler } from 'react-hook-form';
 import Card from '@/components/ui/Card';
 import Form from '@/components/ui/Form';
-import LoadingOverlay from '@/components/ui/LoadingOverlay';
 import { useTokenContract } from '@/hooks/useTokenContract';
 import { useWeb3 } from '@/hooks/useWeb3';
 import { useToast } from '@/context/ToastContext';
@@ -67,7 +66,6 @@ const TokenSwap: React.FC = () => {
                 onSubmit={onSubmit}
                 submitText="Swap"
             />
-            <LoadingOverlay />
         </Card>
     );
 };

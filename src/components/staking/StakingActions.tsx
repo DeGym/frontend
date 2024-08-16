@@ -1,22 +1,19 @@
 import React from 'react';
 import StakingActionCard from './StakingActionCard';
+import { useStakingContract } from '@/hooks/useStakingContract';
 import styles from '@/styles/components/staking/StakingActions.module.css';
 
 interface StakingActionsProps {
     availableToStakeDGYM: number;
     availableToUnstakeDGYM: number;
-    onStake: (amount: number) => void;
-    onUnstake: (amount: number) => void;
-    onClaim: () => void;
 }
 
 const StakingActions: React.FC<StakingActionsProps> = ({
     availableToStakeDGYM,
     availableToUnstakeDGYM,
-    onStake,
-    onUnstake,
-    onClaim,
 }) => {
+    const { stake, unstake, claim } = useStakingContract();
+
     return (
         <div className={styles.stakingActionsContainer}>
             <StakingActionCard
@@ -24,21 +21,21 @@ const StakingActions: React.FC<StakingActionsProps> = ({
                 description="Stake your DGYM tokens to participate in the staking program and earn rewards."
                 actionLabel="Stake"
                 maxAmount={availableToStakeDGYM}
-                onAction={onStake}
+                onAction={async (amount) => await stake(amount.toString())}
             />
             <StakingActionCard
                 title="Unstake DGYM"
                 description="Unstake your DGYM tokens to withdraw them from the staking program."
                 actionLabel="Unstake"
                 maxAmount={availableToUnstakeDGYM}
-                onAction={onUnstake}
+                onAction={async (amount) => await unstake(amount.toString())}
             />
             <StakingActionCard
                 title="Claim Rewards"
                 description="Claim your earned rewards from the staking program."
                 actionLabel="Claim"
                 maxAmount={0}
-                onAction={onClaim}
+                onAction={async () => await claim()}
             />
         </div>
     );

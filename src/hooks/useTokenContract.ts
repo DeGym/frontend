@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useWeb3 } from './useWeb3';
-import { useToast } from '@/context/ToastContext';
 import tokenABI from '@/contracts/TokenABI.json';
 
 const TOKEN_ADDRESS = '0x...'; // Replace with your token's address
 
 export const useTokenContract = () => {
     const { contractService } = useWeb3();
-    const { showToast } = useToast();
     const [balance, setBalance] = useState<string | null>(null);
 
     useEffect(() => {
@@ -24,7 +22,6 @@ export const useTokenContract = () => {
                 return balance;
             } catch (error) {
                 console.error('Error fetching balance:', error);
-                showToast('Failed to fetch balance', 'error');
                 throw error;
             }
         }
@@ -33,12 +30,9 @@ export const useTokenContract = () => {
     const transfer = async (to: string, amount: string, from: string) => {
         if (contractService) {
             try {
-                const result = await contractService.sendTransaction('Token', 'transfer', from, to, amount);
-                showToast('Transfer successful', 'success');
-                return result;
+                return await contractService.sendTransaction('Token', 'transfer', from, to, amount);
             } catch (error) {
                 console.error('Error transferring tokens:', error);
-                showToast('Failed to transfer tokens', 'error');
                 throw error;
             }
         }

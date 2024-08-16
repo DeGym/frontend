@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import Web3 from 'web3';
 import { AbiItem } from 'web3-utils';
 import { Contract } from 'web3-eth-contract';
+import { ErrorProvider } from './ErrorContext';
 
 // Define the shape of our global state
 interface GlobalState {
@@ -64,9 +65,11 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     }, []);
 
     return (
-        <GlobalContext.Provider value={state}>
-            {children}
-        </GlobalContext.Provider>
+        <ErrorProvider>
+            <GlobalContext.Provider value={state}>
+                {children}
+            </GlobalContext.Provider>
+        </ErrorProvider>
     );
 };
 

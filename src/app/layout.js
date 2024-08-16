@@ -1,12 +1,13 @@
 import '@/styles/globals.css';
-import Navbar from '@/components/NavBar';
-import ParticleNetworkAnimation from '@/components/ParticleNetworkAnimation';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/layout/NavBar';
+import ParticleNetworkAnimation from '@/components/common/ParticleNetworkAnimation';
+import Footer from '@/components/layout/Footer';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { GlobalProvider } from '@/context/GlobalContext';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { JetBrains_Mono } from "next/font/google";
+import ErrorBoundary from '@/components/common/ErrorBoundary';
 
 const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`bg-dark text-light ${jetbrains.className}`}>
         <GlobalProvider>
-          <ParticleNetworkAnimation />
-          <Navbar />
-          {children}
-          <Footer />
+          <ErrorBoundary>
+            <ParticleNetworkAnimation />
+            <Navbar />
+            {children}
+            <Footer />
+          </ErrorBoundary>
         </GlobalProvider>
         <SpeedInsights />
       </body>

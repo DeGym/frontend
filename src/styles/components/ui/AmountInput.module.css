@@ -1,0 +1,21 @@
+.amountInputWrapper {
+    position: relative;
+}
+
+.maxButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.maxButton:hover {
+    opacity: 0.8;
+}

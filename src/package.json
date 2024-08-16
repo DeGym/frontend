@@ -31,6 +31,7 @@
     "react-dom": "^18",
     "react-globe": "^2.0.1",
     "react-globe.gl": "^2.27.2",
+    "react-hook-form": "^7.52.2",
     "react-icons": "^5.2.1",
     "react-jazzicon": "^1.0.4",
     "react-leaflet": "^4.2.1",

@@ -1,0 +1,44 @@
+.walletInfo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.walletInfo:hover {
+    opacity: 0.9;
+}
+
+.incorrectNetwork {
+    border-color: var(--color-error);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+.iconIncorrectNetwork {
+    color: var(--color-error);
+}
+
+.walletIcon {
+    width: 100%;
+    height: 100%;
+}
+
+.warningIcon {
+    width: 100%;
+    height: 100%;
+    color: var(--color-error);
+}
+
+.walletAddress {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.chevronIcon {
+    font-size: 0.75rem;
+}

@@ -6,18 +6,18 @@ import Button from '@/components/ui/Button';
 import styles from '@/styles/components/TokenBalance.module.css';
 
 const TokenBalance: React.FC = () => {
-    const { account } = useWeb3();
+    const { user } = useWeb3();
     const { balance, getBalance } = useTokenContract();
 
     useEffect(() => {
-        if (account) {
-            getBalance(account);
+        if (user.address) {
+            getBalance(user.address);
         }
-    }, [account, getBalance]);
+    }, [user.address, getBalance]);
 
     const handleRefresh = () => {
-        if (account) {
-            getBalance(account);
+        if (user.address) {
+            getBalance(user.address);
         }
     };
 

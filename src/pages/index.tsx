@@ -2,16 +2,17 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/pages/Home.module.css';
-import Roadmap from '@/components/section/RoadmapCarousel';
-import GlobeSection from '@/components/section/GlobeSection';
-import OpenSourceCard from '@/components/section/OpenSourceCard';
-import MissionVisionCards from '@/components/section/MissionVisionCards';
-import ProblemSolutionSection from '@/components/section/ProblemSolutionSection';
-import IntroductionVideo from '@/components/section/IntroductionVideo';
-import FAQ from '@/components/section/FAQ';
-import TokenSection from '@/components/token/TokenSection';
-import DAOSection from '@/components/section/DAOSection';
-import StepByStep from '@/components/section/StepByStep';
+import Roadmap from '@/components/common/RoadmapCarousel';
+import GlobeSection from '@/components/common/GlobeSection';
+import OpenSourceCard from '@/components/common/OpenSourceCard';
+import MissionVisionCards from '@/components/common/MissionVisionCards';
+import ProblemSolutionSection from '@/components/common/ProblemSolutionSection';
+import IntroductionVideo from '@/components/common/IntroductionVideo';
+import FAQ from '@/components/common/FAQ';
+import TokenSection from '@/components/token/Representation';
+import DAOSection from '@/components/common/DAOSection';
+import StepByStep from '@/components/common/StepByStep';
+import Link from 'next/link';
 
 const HomePage: React.FC = () => {
     const faqs = [
@@ -54,7 +55,7 @@ const HomePage: React.FC = () => {
             <Head>
                 <title>DeGym</title>
                 <meta name="description" content="DeGym - Decentralized Gym Membership and Rewards" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="./favicon.ico" />
             </Head>
 
             <main className={styles.main}>
@@ -63,7 +64,9 @@ const HomePage: React.FC = () => {
                         <h1>DeGym</h1>
                         <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
                         <div className={styles.joinSection}>
-                            <button className="p-4 w-auto"><a href='/telegram'>Join the Community</a></button>
+                            <Link href="/telegram" className="w-auto">
+                                <button className="p-4">Join the Community</button>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.heroImage}>
@@ -76,15 +79,15 @@ const HomePage: React.FC = () => {
                     </div>
                 </section>
 
+                {/* <GlobeSection /> */}
                 <IntroductionVideo />
                 <ProblemSolutionSection />
                 <MissionVisionCards />
+                <OpenSourceCard />
                 <TokenSection />
                 <StepByStep steps={howItWorks} title="How It Works" />
                 <DAOSection />
-                <GlobeSection />
                 <Roadmap />
-                <OpenSourceCard />
                 <FAQ faqs={faqs} />
             </main>
         </>

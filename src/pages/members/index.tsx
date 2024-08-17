@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import MembersList from '@/components/members/Members';
+import MembersList from '@/pages/members/Members';
 import styles from '@/styles/pages/Members.module.css';
-import QuickLinks from '@/components/section/QuickLinks';
+import QuickLinks from '@/components/common/QuickLinks';
 
 const Members: React.FC = () => {
     return (

@@ -1,0 +1,146 @@
+.faqContainer {
+    padding: 20px;
+}
+
+.faqContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faqText {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.heading {
+    font-size: 1.875rem;
+    /* 3xl */
+    text-align: center;
+}
+
+.subheading {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 0px;
+    padding: 0px 0px;
+}
+
+.faqList {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--color-accent);
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    padding: 1.25rem;
+    /* p-5 */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* shadow-lg */
+    position: relative;
+    margin: 0 auto;
+}
+
+.faqItem {
+    margin-bottom: 1rem;
+    /* mb-4 */
+}
+
+.faqQuestion {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--color-light);
+    font-size: 1.125rem;
+    /* lg */
+    font-weight: bold;
+    padding: 0.75rem;
+    /* py-3 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggleIcon {
+    margin-left: 0.5rem;
+    /* ml-2 */
+}
+
+.faqAnswer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    color: #d1d5db;
+    /* text-gray-300 */
+    font-size: 1rem;
+    /* base */
+    padding-left: 0.75rem;
+    /* pl-3 */
+}
+
+.activeAnswer {
+    max-height: 10rem;
+    /* max-h-40 */
+    padding-top: 0.5rem;
+    /* py-2 */
+}
+
+.submitQuestionLink {
+    display: inline-block;
+    margin: 15px auto;
+}
+
+.submitQuestionButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    width: auto;
+}
+
+.buttonContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttonIcon {
+    flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+
+    .subheading,
+    .heading {
+        text-align: left;
+    }
+
+    .submitQuestionLink {
+        margin-left: 0;
+    }
+
+    .faqContent {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .faqText {
+        max-width: 50%;
+        margin: auto;
+        margin-left: 10%;
+    }
+
+    .faqList {
+        max-width: 50%;
+        margin: auto;
+        margin-right: 10%;
+    }
+}

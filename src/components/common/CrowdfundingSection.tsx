@@ -122,7 +122,7 @@ const CrowdfundingSection: React.FC<CrowdfundingSectionProps> = ({ crowdfund }) 
                 setIsLoading(false);
             }
         } else {
-            showToast("You must own an Allium-NFT, be on the right network, and the amount submitted must be less than or equal to your current balance.", 'warning');
+            showToast("You must own an Allium-NFT, be on the right network, and the amount submitted must be less than or equal to your current balance.", 'error');
         }
     };
 

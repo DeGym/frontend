@@ -1,81 +1,93 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faSignOutAlt, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import Modal from '@/components/ui/Modal';
-import Button from '@/components/ui/Button';
-import { useWeb3 } from '@/hooks/useWeb3';
-import { useWalletConnection } from '@/hooks/useWalletConnection';
-import shortenWalletAddress from '@/utils/generic';
+import { faCopy, faSignOutAlt, faExternalLinkAlt, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import BaseModal from '@/components/common/BaseModal';
 import Jazzicon, { jsNumberForAddress } from 'react-jazzicon';
-import TransactionList from './TransactionList';
 import styles from '@/styles/components/wallet/WalletModal.module.css';
+import { useToast } from '@/context/ToastContext';
+import Switch from '@/components/ui/Switch';
+import TransactionHistory from '@/components/TransactionHistory';
 
 interface WalletModalProps {
     isOpen: boolean;
     onClose: () => void;
+    address: string | null;
+    balance: string | null;
+    onDisconnect: () => void;
 }
 
-const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose }) => {
-    const { account } = useWeb3();
-    const { disconnectWallet } = useWalletConnection();
+const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, address, balance, onDisconnect }) => {
     const [activeTokenType, setActiveTokenType] = useState<'ERC20' | 'ERC721'>('ERC20');
+    const { showToast } = useToast();
+    const [copied, setCopied] = useState(false);
 
     const handleCopyAddress = () => {
-        if (account) {
-            navigator.clipboard.writeText(account);
+        if (address) {
+            navigator.clipboard.writeText(address);
+            setCopied(true);
+            showToast('Address copied to clipboard', 'success');
+            setTimeout(() => setCopied(false), 3000);
         }
     };
 
-    const handleDisconnect = () => {
-        disconnectWallet();
-        onClose();
+    const handleTokenTypeChange = () => {
+        setActiveTokenType(prev => prev === 'ERC20' ? 'ERC721' : 'ERC20');
     };
 
-    if (!account) return null;
+    const formatAmount = (amount: number) => {
+        return Number(amount.toFixed(4)).toString();
+    };
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Wallet Details">
-            <div className={styles.walletInfo}>
-                <Jazzicon diameter={100} seed={jsNumberForAddress(account)} />
-                <p className={styles.address}><strong>{shortenWalletAddress(account)}</strong></p>
-                <div className={styles.actions}>
-                    <Button variant="outline" size="small" onClick={handleCopyAddress}>
-                        <FontAwesomeIcon icon={faCopy} /> Copy Address
-                    </Button>
-                    <Button variant="outline" size="small" onClick={handleDisconnect}>
-                        <FontAwesomeIcon icon={faSignOutAlt} /> Disconnect
-                    </Button>
+        <BaseModal isOpen={isOpen} onClose={onClose} title="Wallet Details">
+            <div className={styles.modalContent}>
+                <div className={styles.walletInfo}>
+                    {address && (
+                        <>
+                            <div className={styles.jazzIconContainer}>
+                                <Jazzicon diameter={80} seed={jsNumberForAddress(address)} />
+                            </div>
+                            <div className={styles.addressBalanceContainer}>
+                                <p className={styles.walletAddress}>{`${address.slice(0, 6)}...${address.slice(-4)}`}</p>
+                                <p className={styles.balance}>{balance ? `${formatAmount(parseFloat(balance))} TARA` : '0 TARA'}</p>
+                            </div>
+                        </>
+                    )}
                 </div>
-            </div>
-            <div className={styles.transactions}>
-                <h3 className={styles.transactionsTitle}>Transactions</h3>
-                <div className={styles.tokenTypeSwitch}>
-                    <Button
-                        variant={activeTokenType === 'ERC20' ? 'primary' : 'outline'}
-                        size="small"
-                        onClick={() => setActiveTokenType('ERC20')}
-                    >
-                        $DGYM
-                    </Button>
-                    <Button
-                        variant={activeTokenType === 'ERC721' ? 'primary' : 'outline'}
-                        size="small"
-                        onClick={() => setActiveTokenType('ERC721')}
-                    >
-                        Voucher
-                    </Button>
+                <div className={styles.modalButtons}>
+                    <button className={styles.modalButton} onClick={handleCopyAddress}>
+                        <FontAwesomeIcon icon={copied ? faCheckCircle : faCopy} className={styles.buttonIcon} />
+                        <span>{copied ? 'Copied' : 'Copy Address'}</span>
+                    </button>
+                    <button className={styles.modalButton} onClick={onDisconnect}>
+                        <FontAwesomeIcon icon={faSignOutAlt} className={styles.buttonIcon} />
+                        <span>Disconnect</span>
+                    </button>
                 </div>
-                <TransactionList tokenType={activeTokenType} />
+                <div className={styles.transactionsSection}>
+                    <h3 className={styles.transactionsLabel}>Transactions</h3>
+                    <div className={styles.switchButtonContainer}>
+                        <Switch
+                            leftLabel="$DGYM"
+                            rightLabel="Voucher"
+                            isChecked={activeTokenType === 'ERC721'}
+                            onChange={handleTokenTypeChange}
+                        />
+                    </div>
+                    <div className={styles.transactionsList}>
+                        <TransactionHistory activeTokenType={activeTokenType} />
+                    </div>
+                </div>
+                {address && (
+                    <div className={styles.explorerButtonContainer}>
+                        <a className={styles.explorerButton} href={`https://explorer.taraxa.io/address/${address}`} target="_blank" rel="noopener noreferrer">
+                            View full history on explorer
+                        </a>
+                        <FontAwesomeIcon icon={faExternalLinkAlt} className={styles.explorerIcon} />
+                    </div>
+                )}
             </div>
-            <a
-                className={styles.explorerLink}
-                href={`https://explorer.taraxa.io/address/${account}`}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                View more on explorer <FontAwesomeIcon icon={faExternalLinkAlt} />
-            </a>
-        </Modal>
+        </BaseModal>
     );
 };
 

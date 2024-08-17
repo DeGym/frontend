@@ -2,42 +2,170 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.address {
-    margin: 1rem 0;
-    font-size: 1.125rem;
+.jazzIconContainer {
+    margin-bottom: 10px;
 }
 
-.actions {
+.addressBalanceContainer {
+    text-align: center;
+}
+
+.walletAddress {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.balance {
+    font-size: 1rem;
+    color: var(--color-primary);
+}
+
+.modalButtons {
     display: flex;
-    gap: 0.5rem;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.transactions {
-    margin-bottom: 1.5rem;
+.modalButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.transactionsTitle {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
+.modalButton:hover {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border: none;
+    /* Explicitly remove border on hover */
 }
 
-.tokenTypeSwitch {
+.buttonIcon {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.modalButton:active .buttonIcon {
+    transform: scale(1.2);
+}
+
+.modalButton svg {
+    margin-right: 8px;
+}
+
+.transactionsSection {
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.transactionsLabel {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.switchButtonContainer {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin: 20px 0;
+}
+
+.transactionsList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.transactionItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-dark);
+}
+
+.transactionItem:last-child {
+    border-bottom: none;
 }
 
 .explorerLink {
-    display: block;
-    text-align: center;
     color: var(--color-primary);
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .explorerLink:hover {
     text-decoration: underline;
+}
+
+.noTransactions {
+    text-align: center;
+    color: #888;
+}
+
+.explorerButtonContainer {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.explorerButton {
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    padding-right: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+.explorerButton:hover {
+    color: var(--color-neon-green);
+    background-color: transparent;
+    border: none;
+}
+
+.explorerIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.explorerButton:hover+.explorerIcon {
+    color: var(--color-neon-green);
+}
+
+.walletInfo {
+    padding: 20px;
+}
+
+.disconnectButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.disconnectButton:hover {
+    background-color: #d32f2f;
 }

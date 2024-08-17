@@ -3,17 +3,20 @@ import type { AppProps } from 'next/app';
 import { ToastProvider } from '@/context/ToastContext';
 import { AppProvider } from '@/context/AppContext';
 import Layout from '@/components/layout/Layout';
+import { WalletProvider } from '@/context/WalletContext';
 import '@/styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <AppProvider>
-            <ToastProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </ToastProvider>
-        </AppProvider>
+        <ToastProvider>
+            <WalletProvider>
+                <AppProvider>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </AppProvider>
+            </WalletProvider>
+        </ToastProvider>
     );
 }
 

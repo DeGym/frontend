@@ -1,21 +1,45 @@
-.amountInputWrapper {
-    position: relative;
+.amountInputContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.amountInput {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-light);
+}
+
+.amountInput:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.amountInput:disabled {
+    background-color: var(--color-background-disabled);
+    cursor: not-allowed;
 }
 
 .maxButton {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
     background-color: var(--color-primary);
-    color: white;
-    padding: 2px 8px;
+    color: var(--color-light);
+    border: none;
     border-radius: 4px;
-    font-size: 0.75rem;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: background-color 0.3s ease;
 }
 
 .maxButton:hover {
-    opacity: 0.8;
+    background-color: var(--color-primary-dark);
+}
+
+.maxButton:disabled {
+    background-color: var(--color-background-disabled);
+    cursor: not-allowed;
 }

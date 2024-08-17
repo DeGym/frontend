@@ -26,7 +26,7 @@ export const useCrowdfundingContract = () => {
 
     const contribute = async (amount: string) => {
         if (!contract || !account) {
-            showToast('Please connect your wallet', 'warning');
+            showToast('Please connect your wallet', 'error');
             return;
         }
 

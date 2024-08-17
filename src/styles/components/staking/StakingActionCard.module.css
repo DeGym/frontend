@@ -3,6 +3,7 @@
     border-radius: 0.5rem;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
 .stakingActionTitle {
@@ -17,14 +18,19 @@
 }
 
 .stakingActionAmount {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-end;
+    margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-    .stakingActionAmount {
-        flex-direction: column;
-        align-items: stretch;
-    }
+.stakingActionBtn {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stakingActionBtn:hover {
+    background-color: var(--color-primary-dark);
 }

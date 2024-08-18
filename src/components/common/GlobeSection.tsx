@@ -48,16 +48,6 @@ const GlobeSection: React.FC = () => {
             .then(data => setHexPolygonsData(data as HexPolygonData));
     }, []);
 
-    const handleGlobeReady = () => {
-        if (globeEl.current) {
-            const controls = globeEl.current.controls();
-            if (controls) {
-                controls.autoRotate = true;
-                controls.autoRotateSpeed = 0.9;
-            }
-        }
-    };
-
     return (
         <div className={styles.sectionWrapper}>
             <div className={styles.contentWrapper}>
@@ -90,7 +80,6 @@ const GlobeSection: React.FC = () => {
                     bumpImageUrl='//unpkg.com/three-globe/example/img/earth-topology.png'
                     showAtmosphere={true}
                     atmosphereColor='#2dff73'
-                    onGlobeReady={handleGlobeReady}
                 />
             </div>
         </div>

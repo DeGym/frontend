@@ -26,20 +26,31 @@ const DashboardPanel: React.FC = () => {
 
     return (
         <div className={styles.dashboardPanel}>
-            <h2 className={styles.heroSubtitle}>Staking Dashboard</h2>
+            <h1 className="text-center mt-24">Staking</h1>
+            <h2 className={styles.heroSubtitle}>Enjoy the benefits of a secure investment and be part of the innovative future of fitness. <b>Maximize your earnings</b> by staking DGYM tokens. </h2>
             <div className={styles.cardsContainer}>
                 {publicMetrics.map((metric, index) => (
-                    <Card key={index} title={metric.title} value={metric.value} />
+                    <Card
+                        key={index}
+                        title={metric.title}
+                        value={`${metric.value}${metric.unit ? ` ${metric.unit}` : ''}`}
+                    />
                 ))}
             </div>
+            <hr />
             <div className={styles.privateSection}>
                 <h3>Your Staking Overview</h3>
                 <div className={styles.privateCardsContainer}>
                     {privateMetrics.map((metric, index) => (
-                        <Card key={index} title={metric.title} value={metric.value} />
+                        <Card
+                            key={index}
+                            title={metric.title}
+                            value={`${metric.value}${metric.unit ? ` ${metric.unit}` : ''}`}
+                        />
                     ))}
                 </div>
             </div>
+            <hr />
         </div>
     );
 };

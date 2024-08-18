@@ -53,18 +53,14 @@ const StakePage: React.FC = () => {
     return (
         <main className={styles.main}>
             <DashboardPanel />
-            <div className={styles.stakingActionsSection}>
-                <StakingActions
-                    availableToStakeDGYM={availableToStakeDGYM}
-                    availableToUnstakeDGYM={availableToUnstakeDGYM}
-                    onStake={handleStake}
-                    onUnstake={handleUnstake}
-                    onClaim={handleClaim}
-                />
-            </div>
-            <div className={styles.stakeBondsSection}>
-                <StakeBonds bonds={stakeBonds} />
-            </div>
+            <StakingActions
+                availableToStakeDGYM={availableToStakeDGYM}
+                availableToUnstakeDGYM={availableToUnstakeDGYM}
+                onStake={handleStake}
+                onUnstake={handleUnstake}
+                onClaim={handleClaim}
+            />
+            <StakeBonds bonds={stakeBonds} />
         </main>
     );
 };

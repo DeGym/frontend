@@ -1,0 +1,227 @@
+.header {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    min-width: 120px;
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+.logo:hover {
+    color: var(--color-primary);
+}
+
+.logo h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+
+.desktopNav {
+    display: none;
+}
+
+.walletButton {
+    display: none;
+}
+
+.menuIcon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-light);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.menuIconSvg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.mobileMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark);
+    z-index: 20;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenuOpen {
+    display: block;
+    transform: translateY(0);
+}
+
+.mobileMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.closeMenuButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-light);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.mobileLogo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-light);
+    width: 40%;
+    min-width: 120px;
+}
+
+.mobileLogo:hover {
+    color: var(--color-primary);
+}
+
+.mobileLogo h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    white-space: nowrap;
+}
+
+.navigation {
+    padding: 2rem;
+}
+
+.navList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navItem {
+    margin: 1rem 0;
+}
+
+.link {
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.link:hover {
+    color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    .logo h2 {
+        font-size: 1.5rem;
+    }
+
+    .walletButton {
+        width: auto;
+        padding-right: 0;
+    }
+
+    .menuIcon {
+        display: none;
+    }
+
+    .desktopNav {
+        display: block;
+    }
+
+    .mobileMenu {
+        display: none !important;
+    }
+
+    .navigation {
+        padding: 0;
+    }
+
+    .navList {
+        display: flex;
+    }
+
+    .navItem {
+        margin: 0 0.5rem;
+    }
+
+    .link {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        justify-content: space-between;
+    }
+
+    .logo h2 {
+        font-size: 2rem;
+    }
+
+    .navItem {
+        margin: 0 1rem;
+    }
+
+    .link {
+        font-size: 1.1rem;
+    }
+}
+
+.mobileWalletButton {
+    margin-top: 1rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+    .walletButton {
+        display: block;
+    }
+
+    .mobileWalletButton {
+        display: none;
+    }
+}

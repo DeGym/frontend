@@ -1,0 +1,53 @@
+.gymList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gymCard {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.gymCard:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gymImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gymInfo {
+    padding: 15px;
+}
+
+.gymName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.gymAddress {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.gymRating {
+    display: flex;
+    align-items: center;
+}
+
+.starIcon {
+    color: #ffc107;
+    margin-right: 5px;
+}
+
+.ratingValue {
+    font-weight: bold;
+}

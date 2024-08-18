@@ -1,0 +1,50 @@
+.heroSubtitle {
+    margin: auto;
+    font-size: 2rem;
+    max-width: 900px;
+    text-align: center;
+}
+
+.dashboardPanel {
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.cardsContainer>div {
+    flex: 1 1 200px;
+    max-width: 350px;
+    margin: 0px auto;
+}
+
+.privateSection {
+    margin: 20px auto;
+}
+
+.privateSection h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.privateCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.privateCardsContainer>div {
+    flex: 1 1 350px;
+    max-width: 350px;
+}
+
+/* Add media queries as in the original file */

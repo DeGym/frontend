@@ -1,0 +1,56 @@
+.stakingActionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stakingOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.stakingOption {
+    display: flex;
+    align-items: center;
+}
+
+.stakingOption label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stakingOption input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.durationSelector {
+    margin-bottom: 1rem;
+}
+
+.durationSelector label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.durationSelector input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+}
+
+.claimDescription {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .stakingActionsContainer {
+        padding: 0 1rem;
+    }
+}

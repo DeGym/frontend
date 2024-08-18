@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +14,19 @@
   --swiper-navigation-color: #2dff73;
 }
 
+/* Apply JetBrains Mono to all text */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--color-light);
+  background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
+}
+
+/* Add or update this rule to set a default size for FontAwesome SVG icons */
+svg[role="img"].svg-inline--fa {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
 
 .swiper-pagination-bullet {
   background: #2dff73 !important;
@@ -33,12 +48,6 @@ h2 {
   padding: 5px;
   margin: 20px auto;
   font-size: 2.45rem;
-}
-
-body {
-  color: var(--color-light);
-  background: linear-gradient(to bottom, transparent, var(--color-dark)) var(--color-dark);
-  font-family: "Open Sans", sans-serif, "Inconsolata", "Plus Jakarta Sans", "Roboto";
 }
 
 p {
@@ -111,10 +120,7 @@ select {
   background-color: var(--color-dark);
   color: var(--color-light);
   accent-color: var(--color-primary);
-  font-family: monospace;
 }
-
-
 
 input:disabled {
   opacity: 0.4;
@@ -158,5 +164,123 @@ input:disabled {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Add these utility classes for the Switch component */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-light {
+  color: var(--color-light);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+/* Toast styles */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  max-width: 500px;
+  /* Increased from 350px to 500px */
+  width: 90%;
+  /* Added to make it responsive */
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast-icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  flex-grow: 1;
+  margin-right: 12px;
+  word-break: break-word;
+  /* Added to handle long messages */
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-close:hover {
+  opacity: 1;
+}
+
+.toast-success {
+  border-color: var(--color-primary);
+}
+
+.toast-error {
+  border-color: #ff4d4d;
+}
+
+.toast-warning {
+  border-color: #ffd700;
+}
+
+.toast-info {
+  border-color: #3498db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .toast-container {
+    left: 20px;
+    right: 20px;
+  }
+
+  .toast {
+    width: calc(100% - 40px);
+    /* Full width minus left and right padding */
   }
 }

@@ -9,6 +9,7 @@ import StakeBonds from '@/components/staking/StakeBonds';
 const StakePage: React.FC = () => {
     const [availableToStakeDGYM, setAvailableToStakeDGYM] = useState(1000);
     const [availableToUnstakeDGYM, setAvailableToUnstakeDGYM] = useState(42);
+    const [isAutoInterest, setIsAutoInterest] = useState(false);
 
     const handleStake = (amount: number, duration: number, isCompound: boolean) => {
         console.log(`Staking ${amount} DGYM for ${duration} days with ${isCompound ? 'compound' : 'simple'} interest`);
@@ -58,7 +59,8 @@ const StakePage: React.FC = () => {
                 availableToUnstakeDGYM={availableToUnstakeDGYM}
                 onStake={handleStake}
                 onUnstake={handleUnstake}
-                onClaim={handleClaim}
+                onClaimDGYM={handleClaim}
+                isAutoInterest={isAutoInterest}
             />
             <StakeBonds bonds={stakeBonds} />
         </main>

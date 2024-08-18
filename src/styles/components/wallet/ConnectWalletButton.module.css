@@ -4,51 +4,68 @@
     justify-content: center;
     background-color: var(--color-primary);
     color: var(--color-dark);
-    border: none;
     border-radius: 20px;
-    padding: 8px 16px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
     max-width: 150px;
+    padding: 2px 2px;
 }
 
-.connectButton:hover {
-    background-color: var(--color-neon-green);
-    color: var(--color-dark);
+.walletIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-dark);
+    border-radius: 20px;
+    padding: 8px 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 
 .walletIcon {
-    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.switchIcon {
+    color: #ff4d4d;
+    width: 24px;
+    height: 24px;
     font-size: 1rem;
 }
 
 .buttonText {
+    padding: 8px 8px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {
     .connectButton {
-        padding: 6px 12px;
         font-size: 0.8rem;
         max-width: 120px;
     }
 
-    .walletIcon {
+    .walletIcon,
+    .switchIcon {
         font-size: 0.9rem;
     }
 }
 
 .incorrectNetwork {
     background-color: #ff4d4d;
-    color: var(--color-light);
 }
 
 .incorrectNetwork:hover {
     background-color: #ff6666;
+}
+
+.incorrectNetwork:hover .switchIcon {
+    color: #ff6666;
 }
 
 .switchNetworkButton {
@@ -70,8 +87,4 @@
 .switchNetworkButton:hover {
     background-color: var(--color-primary);
     color: var(--color-dark);
-}
-
-.switchIcon {
-    margin-right: 8px;
 }

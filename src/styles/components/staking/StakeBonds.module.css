@@ -6,13 +6,6 @@
     padding: 0 20px;
 }
 
-.sectionTitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
 .filterContainer {
     display: flex;
     align-items: center;
@@ -23,28 +16,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     flex-wrap: wrap;
-}
-
-.searchContainer {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-light);
-    padding: 5px 10px;
-    border-radius: 4px;
-    flex-grow: 1;
-    max-width: 300px;
-}
-
-.searchIcon {
-    color: var(--color-dark);
-    margin-right: 5px;
-}
-
-.searchInput {
-    border: none;
-    background: transparent;
-    color: var(--color-dark);
-    width: 100%;
 }
 
 .filterButtons {
@@ -67,64 +38,132 @@
     color: var(--color-dark);
 }
 
-.bondsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+.searchContainer {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    max-width: 500px;
 }
 
-.bondCard {
-    background-color: var(--color-background-light);
+.searchIcon {
+    color: var(--color-dark);
+    margin-right: 5px;
+}
+
+.searchInput {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-dark);
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.stakeBondsContainer {
+    width: 100%;
     border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.bondTitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+.stakeTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.bondInfo p {
-    margin-bottom: 0.25rem;
+.stakeTable th,
+.stakeTable td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
 }
 
-.live {
+.stakeTable th {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    font-weight: bold;
+}
+
+.stakeTable td {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+
+.tableRow:nth-child(even) td {
+    background-color: var(--color-accent);
+}
+
+.tableRow:nth-child(odd) td {
+    background-color: var(--color-dark);
+}
+
+.tableRow:hover td {
+    background-color: #2dff7310;
+}
+
+.tableFooter td {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border-top: 1px solid var(--color-primary);
+}
+
+.toTopButton {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 150px;
+}
+
+
+.statusLive {
     color: var(--color-success);
 }
 
-.finished {
-    color: var(--color-warning);
+.statusFinished {
+    color: var(--color-danger);
 }
 
-.claimButton {
-    background-color: var(--color-primary);
-    color: var(--color-light);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
+@media (max-width: 1024px) {
 
-.claimButton:hover {
-    background-color: var(--color-primary-dark);
+    .stakeTable th,
+    .stakeTable td {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 768px) {
     .filterContainer {
         flex-direction: column;
-        align-items: stretch;
-    }
-
-    .searchContainer {
-        max-width: 100%;
-        margin-bottom: 10px;
     }
 
     .filterButtons {
-        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .stakeTable th,
+    .stakeTable td {
+        padding: 8px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .stakeTable th,
+    .stakeTable td {
+        font-size: 0.6rem;
     }
 }

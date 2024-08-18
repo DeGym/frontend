@@ -14,27 +14,11 @@ const gymIcon = new L.Icon({
     shadowSize: [80, 80]
 });
 
-interface Gym {
-    id: string;
-    name: string;
-    address: string;
-    rating: number;
-    lat: number;
-    lng: number;
-}
-
-interface MapProps {
-    gyms: Gym[];
-    selectedGym: Gym | null;
-    searchRadius: number;
-    userLocation: [number, number] | null;
-}
-
-const Map: React.FC<MapProps> = ({ gyms, selectedGym, searchRadius, userLocation }) => {
+const Map = ({ gyms, selectedGym, searchRadius, userLocation }) => {
     const center = selectedGym ? [selectedGym.lat, selectedGym.lng] : userLocation || [40.7128, -74.0060];
 
     const mapOptions = {
-        center: center as [number, number],
+        center: center,
         zoom: 13,
     };
 

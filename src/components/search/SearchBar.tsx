@@ -4,10 +4,11 @@ import styles from '@/styles/components/search/SearchBar.module.css';
 
 interface SearchBarProps {
     onSearch: (query: string) => void;
+    initialQuery: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-    const [query, setQuery] = useState('');
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch, initialQuery }) => {
+    const [query, setQuery] = useState(initialQuery);
 
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

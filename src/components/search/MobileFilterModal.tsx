@@ -66,11 +66,13 @@ const MobileFilterModal: React.FC<MobileFilterModalProps> = ({
                                     {tierOptions.map((option) => (
                                         <button
                                             key={option.value}
-                                            className={`${styles.optionButton} ${filters.tier === option.value
-                                                ? styles.selectedOption
-                                                : styles.unselectedOption
+                                            className={`${styles.optionButton} ${filterType === 'tier'
+                                                ? filters.tier === option.value
+                                                : (filters[filterType as keyof Omit<Filters, 'tier'>] as string[]).includes(option.label)
+                                                    ? styles.selectedOption
+                                                    : styles.unselectedOption
                                                 }`}
-                                            onClick={() => handleFilterChange('tier', option.value)}
+                                            onClick={() => handleFilterChange(filterType, option.label)}
                                         >
                                             {option.label}
                                         </button>
@@ -82,14 +84,14 @@ const MobileFilterModal: React.FC<MobileFilterModalProps> = ({
                                         ['Parking', 'Showers', 'Lockers', 'Snack Bar', 'Wi-Fi']).map((option) => (
                                             <button
                                                 key={option}
-                                                className={`${styles.optionButton} ${filters[filterType as keyof Filters].includes(option)
+                                                className={`${styles.optionButton} ${(filters[filterType as keyof Filters] as string[]).includes(option)
                                                     ? styles.selectedOption
                                                     : styles.unselectedOption
                                                     }`}
                                                 onClick={() => {
-                                                    const newSelection = filters[filterType as keyof Filters].includes(option)
-                                                        ? filters[filterType as keyof Filters].filter((item) => item !== option)
-                                                        : [...filters[filterType as keyof Filters], option];
+                                                    const newSelection = (filters[filterType as keyof Filters] as string[]).includes(option)
+                                                        ? (filters[filterType as keyof Filters] as string[]).filter((item) => item !== option)
+                                                        : [...(filters[filterType as keyof Filters] as string[]), option];
                                                     handleFilterChange(filterType, newSelection);
                                                 }}
                                             >

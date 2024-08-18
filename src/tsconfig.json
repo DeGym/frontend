@@ -39,7 +39,10 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "hooks/useERC721.js",
+    "hooks/useERC20.js",
+    "components/search/Map.js"
   ],
   "exclude": [
     "node_modules"

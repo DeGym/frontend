@@ -2,7 +2,7 @@ import { useWallet } from '@/context/WalletContext';
 import ERC721ABI from '@/contracts/ERC721ABI.json';
 
 // Placeholder function for fetching NFT transactions
-const fetchNFTTransactionsFromAPI = async (address: string, contractAddress: string, limit: number): Promise<any[]> => {
+const fetchNFTTransactionsFromAPI = async (address, contractAddress, limit) => {
     // Simulating API call delay
     await new Promise(resolve => setTimeout(resolve, 500));
 
@@ -22,13 +22,13 @@ const fetchNFTTransactionsFromAPI = async (address: string, contractAddress: str
     ];
 };
 
-export const useERC721 = (contractAddress: string) => {
+export const useERC721 = (contractAddress) => {
     const { web3, account } = useWallet();
 
-    const checkOwnership = async (address: string): Promise<boolean> => {
+    const checkOwnership = async (address) => {
         if (!web3) return false;
         try {
-            const contract = new web3.eth.Contract(ERC721ABI as any, contractAddress);
+            const contract = new web3.eth.Contract(ERC721ABI, contractAddress);
             const balance = await contract.methods.balanceOf(address).call();
             return parseInt(balance) > 0;
         } catch (error) {
@@ -37,7 +37,7 @@ export const useERC721 = (contractAddress: string) => {
         }
     };
 
-    const getTransactionHistory = async (address: string = account, limit: number = 10): Promise<any[]> => {
+    const getTransactionHistory = async (address = account, limit = 10) => {
         if (!web3 || !address) return [];
         try {
             const transactions = await fetchNFTTransactionsFromAPI(address, contractAddress, limit);

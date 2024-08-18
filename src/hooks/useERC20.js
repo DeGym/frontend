@@ -1,13 +1,13 @@
 import { useWallet } from '@/context/WalletContext';
 import ERC20ABI from '@/contracts/ERC20ABI.json';
 
-export const useERC20 = (contractAddress: string) => {
+export const useERC20 = (contractAddress) => {
     const { web3, account } = useWallet();
 
-    const getBalance = async (address?: string): Promise<string> => {
+    const getBalance = async (address) => {
         if (!web3 || !address) return '0';
         try {
-            const contract = new web3.eth.Contract(ERC20ABI as any, contractAddress);
+            const contract = new web3.eth.Contract(ERC20ABI, contractAddress);
             const balance = await contract.methods.balanceOf(address).call();
             return web3.utils.fromWei(balance, 'ether');
         } catch (error) {
@@ -16,10 +16,10 @@ export const useERC20 = (contractAddress: string) => {
         }
     };
 
-    const transfer = async (to: string, amount: string): Promise<boolean> => {
+    const transfer = async (to, amount) => {
         if (!web3 || !account) return false;
         try {
-            const contract = new web3.eth.Contract(ERC20ABI as any, contractAddress);
+            const contract = new web3.eth.Contract(ERC20ABI, contractAddress);
             const weiAmount = web3.utils.toWei(amount, 'ether');
             await contract.methods.transfer(to, weiAmount).send({ from: account });
             return true;
@@ -29,17 +29,19 @@ export const useERC20 = (contractAddress: string) => {
         }
     };
 
-    const getTransactionHistory = async (address: string) => {
+    const getTransactionHistory = async (address) => {
         if (!web3 || !address) return [];
         try {
-            const contract = new web3.eth.Contract(ERC20ABI as any, contractAddress);
+            const contract = new web3.eth.Contract(ERC20ABI, contractAddress);
             const transferEvents = await contract.getPastEvents('Transfer', {
-                filter: { $or: [{ from: address }, { to: address }] },
+                filter: {
+                    $or: [{ from: address }, { to: address }]
+                },
                 fromBlock: 0,
                 toBlock: 'latest'
             });
 
-            return transferEvents.map((event: any) => ({
+            return transferEvents.map((event) => ({
                 transactionHash: event.transactionHash,
                 from: event.returnValues.from,
                 to: event.returnValues.to,

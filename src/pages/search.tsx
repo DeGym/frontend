@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import SearchBar from './SearchBar';
-import GymList from './GymList';
-import FilterModal from './FilterModal';
-import MobileFilterModal from './MobileFilterModal';
+import SearchBar from '@/components/search/SearchBar';
+import GymList from '@/components/search/GymList';
+import FilterModal from '@/components/search/FilterModal';
+import MobileFilterModal from '@/components/search/MobileFilterModal';
 import styles from '@/styles/pages/Search.module.css';
 
 // Import the dynamic map component without SSR
-const Map = dynamic(() => import('./Map'), { ssr: false });
+const Map = dynamic(() => import('@/components/search/Map'), { ssr: false });
 
 interface Gym {
     id: string;

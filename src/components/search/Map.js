@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import styles from '@/styles/components/search/Map.module.css';
 
 const gymIcon = new L.Icon({
     iconUrl: '/img/marker-gym.png',
@@ -13,56 +12,64 @@ const gymIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [80, 80]
 });
+const userIcon = new L.Icon({
+    iconUrl: '/img/marker-user.png',
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    shadowSize: [80, 80]
+});
 
-const Map = ({ gyms, selectedGym, searchRadius, userLocation }) => {
-    const center = selectedGym ? [selectedGym.lat, selectedGym.lng] : userLocation || [40.7128, -74.0060];
 
-    const mapOptions = {
-        center: center,
-        zoom: 13,
-    };
+const UpdateMapCenter = ({ center }) => {
+    const map = useMap();
+    const prevCenter = useRef(center);
 
+    useEffect(() => {
+        if (center && (prevCenter.current[0] !== center[0] || prevCenter.current[1] !== center[1])) {
+            map.setView(center, map.getZoom());
+            prevCenter.current = center;
+        }
+    }, [center, map]);
+
+    return null;
+};
+
+const Map = ({ gyms, center, radius }) => {
     return (
-        <MapContainer
-            {...mapOptions}
-            style={{ height: '100%', width: '100%' }}
-            className={styles.map}
-        >
+        <MapContainer className="w-full h-full" center={center} zoom={13} scrollWheelZoom={false}>
             <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+
             />
-            {userLocation && (
-                <>
-                    <Marker position={userLocation}>
-                        <Popup>You are here</Popup>
-                    </Marker>
-                    <Circle
-                        center={userLocation}
-                        pathOptions={{
-                            fillColor: 'blue',
-                            fillOpacity: 0.1,
-                            color: 'blue',
-                            radius: searchRadius * 1000 // Convert km to meters
-                        }}
-                    />
-                </>
+            <Marker
+                key={0}
+                position={center}
+                icon={userIcon}
+            >
+            </Marker>
+            {center && radius && (
+                <Circle
+                    center={center}
+                    radius={radius * 1000}
+                    fillColor="green"
+                    color="green"
+                    opacity={0.3}
+                    fillOpacity={0.1}
+                />
             )}
-            {gyms.map((gym) => (
+            {gyms.map((gym, index) => (
                 <Marker
-                    key={gym.id}
-                    position={[gym.lat, gym.lng]}
+                    key={index}
+                    position={[gym.latitude, gym.longitude]}
                     icon={gymIcon}
                 >
                     <Popup>
-                        <div>
-                            <h3>{gym.name}</h3>
-                            <p>{gym.address}</p>
-                            <p>Rating: {gym.rating}/5</p>
-                        </div>
+                        <b>{gym.name}</b><br />{gym.address}
                     </Popup>
                 </Marker>
             ))}
+            <UpdateMapCenter center={center} />
         </MapContainer>
     );
 };

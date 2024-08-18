@@ -1,26 +1,7 @@
 import React from 'react';
 import styles from '@/styles/components/search/MobileFilterModal.module.css';
 
-interface Filters {
-    distance: number;
-    tier: number | null;
-    activities: string[];
-    amenities: string[];
-}
-
-interface MobileFilterModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-    filters: Filters;
-    handleFilterChange: (filterName: string, value: any) => void;
-}
-
-const MobileFilterModal: React.FC<MobileFilterModalProps> = ({
-    isOpen,
-    onClose,
-    filters,
-    handleFilterChange
-}) => {
+const MobileFilterModal = ({ isOpen, onClose, filters, handleFilterChange }) => {
     if (!isOpen) return null;
 
     const tierOptions = [
@@ -35,44 +16,41 @@ const MobileFilterModal: React.FC<MobileFilterModalProps> = ({
     ];
 
     return (
-        <div className={styles.modalOverlay} onClick={onClose}>
-            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-                <div className={styles.modalHeader}>
-                    <h2>Filters</h2>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end z-50" onClick={onClose}>
+            <div className="bg-accent w-4/5 max-w-md h-full overflow-y-auto flex flex-col" onClick={(e) => e.stopPropagation()}>
+                <div className="flex justify-between items-center p-5 border-b border-accent">
+                    <h2 className="text-xl font-semibold">Filters</h2>
                     <button onClick={onClose} className={styles.closeButton}>&times;</button>
                 </div>
-                <div className={styles.modalBody}>
-                    <div className={styles.filterSection}>
-                        <label className={styles.filterLabel}>
-                            Radius distance up to <b>{filters.distance} km</b>
-                        </label>
+                <div className="flex-grow p-5 overflow-y-auto">
+                    <div className="mt-4">
+                        <label className="block text-white mb-2">Radius distance up to <b>{filters.distance} km</b></label>
                         <input
                             type="range"
                             min={1}
                             max={15}
                             value={filters.distance}
                             onChange={(e) => handleFilterChange('distance', Number(e.target.value))}
-                            className={styles.rangeInput}
+                            className="w-full mb-2"
                         />
+
                     </div>
                     {['tier', 'activities', 'amenities'].map((filterType) => (
-                        <div key={filterType} className={styles.filterSection}>
-                            <h3 className={styles.filterTitle}>
+                        <div key={filterType} className="mb-6">
+                            <h3 className="text-lg font-semibold mb-3">
                                 {filterType === 'tier' ? 'Tier' :
                                     filterType === 'activities' ? 'Modalities' : 'Amenities'}
                             </h3>
                             {filterType === 'tier' ? (
-                                <div className={styles.optionsContainer}>
+                                <div className="flex flex-wrap gap-2">
                                     {tierOptions.map((option) => (
                                         <button
                                             key={option.value}
-                                            className={`${styles.optionButton} ${filterType === 'tier'
-                                                ? filters.tier === option.value
-                                                : (filters[filterType as keyof Omit<Filters, 'tier'>] as string[]).includes(option.label)
-                                                    ? styles.selectedOption
-                                                    : styles.unselectedOption
+                                            className={`${styles.optionButton} ${filters.tier === option.value
+                                                ? styles.selectedOption
+                                                : styles.unselectedOption
                                                 }`}
-                                            onClick={() => handleFilterChange(filterType, option.label)}
+                                            onClick={() => handleFilterChange('tier', option.value)}
                                         >
                                             {option.label}
                                         </button>
@@ -84,14 +62,14 @@ const MobileFilterModal: React.FC<MobileFilterModalProps> = ({
                                         ['Parking', 'Showers', 'Lockers', 'Snack Bar', 'Wi-Fi']).map((option) => (
                                             <button
                                                 key={option}
-                                                className={`${styles.optionButton} ${(filters[filterType as keyof Filters] as string[]).includes(option)
+                                                className={`${styles.optionButton} ${filters[filterType].includes(option)
                                                     ? styles.selectedOption
                                                     : styles.unselectedOption
                                                     }`}
                                                 onClick={() => {
-                                                    const newSelection = (filters[filterType as keyof Filters] as string[]).includes(option)
-                                                        ? (filters[filterType as keyof Filters] as string[]).filter((item) => item !== option)
-                                                        : [...(filters[filterType as keyof Filters] as string[]), option];
+                                                    const newSelection = filters[filterType].includes(option)
+                                                        ? filters[filterType].filter((item) => item !== option)
+                                                        : [...filters[filterType], option];
                                                     handleFilterChange(filterType, newSelection);
                                                 }}
                                             >
@@ -102,9 +80,10 @@ const MobileFilterModal: React.FC<MobileFilterModalProps> = ({
                             )}
                         </div>
                     ))}
+
                 </div>
-                <div className={styles.modalFooter}>
-                    <button onClick={onClose} className={styles.applyButton}>Apply Filters</button>
+                <div className="p-5 border-t border-accent">
+                    <button onClick={onClose} className="w-full py-2 bg-primary text-dark rounded-md hover:bg-hoverButton">Apply Filters</button>
                 </div>
             </div>
         </div>

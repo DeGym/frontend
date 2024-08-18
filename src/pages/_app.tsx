@@ -6,7 +6,7 @@ import Layout from '@/components/layout/Layout';
 import { WalletProvider } from '@/context/WalletContext';
 import '@/styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function DeGymApp({ Component, pageProps }: AppProps) {
     return (
         <ToastProvider>
             <WalletProvider>
@@ -20,4 +20,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default MyApp;
+export default DeGymApp;

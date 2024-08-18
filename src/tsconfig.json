@@ -42,7 +42,11 @@
     "**/*.tsx",
     "hooks/useERC721.js",
     "hooks/useERC20.js",
-    "components/search/Map.js"
+    "components/search/Map.js",
+    "components/search/MobileGymsModal.js",
+    "components/search/MobileFilterModal.js",
+    "components/search/FilterModal.js",
+    "pages/search.js"
   ],
   "exclude": [
     "node_modules"

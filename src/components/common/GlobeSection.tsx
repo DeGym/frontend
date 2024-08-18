@@ -70,10 +70,6 @@ const GlobeSection: React.FC = () => {
                     hexPolygonMargin={0.5}
                     hexPolygonUseDots={true}
                     hexPolygonColor={() => `#494949`}
-                    hexPolygonLabel={({ properties: d }: HexPolygonFeature) => `
-                        <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-                        Population: <i>${d.POP_EST}</i>
-                    `}
                     width={400}
                     height={400}
                     backgroundColor="#00000000"

@@ -6,7 +6,7 @@ import Jazzicon, { jsNumberForAddress } from 'react-jazzicon';
 import styles from '@/styles/components/wallet/WalletModal.module.css';
 import { useToast } from '@/context/ToastContext';
 import Switch from '@/components/ui/Switch';
-import TransactionHistory from '@/components/TransactionHistory';
+import TransactionHistory from '@/components/wallet/TransactionHistory';
 
 interface WalletModalProps {
     isOpen: boolean;

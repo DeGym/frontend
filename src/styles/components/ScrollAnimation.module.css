@@ -1,0 +1,10 @@
+.scrollAnimation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scrollAnimation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

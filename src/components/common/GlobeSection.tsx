@@ -48,16 +48,6 @@ const GlobeSection: React.FC = () => {
             .then(data => setHexPolygonsData(data as HexPolygonData));
     }, []);
 
-    const handleGlobeReady = () => {
-        if (globeEl.current) {
-            const controls = globeEl.current.controls();
-            if (controls) {
-                controls.autoRotate = true;
-                controls.autoRotateSpeed = 0.9;
-            }
-        }
-    };
-
     return (
         <div className={styles.sectionWrapper}>
             <div className={styles.contentWrapper}>
@@ -80,17 +70,12 @@ const GlobeSection: React.FC = () => {
                     hexPolygonMargin={0.5}
                     hexPolygonUseDots={true}
                     hexPolygonColor={() => `#494949`}
-                    hexPolygonLabel={({ properties: d }: HexPolygonFeature) => `
-                        <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-                        Population: <i>${d.POP_EST}</i>
-                    `}
                     width={400}
                     height={400}
                     backgroundColor="#00000000"
                     bumpImageUrl='//unpkg.com/three-globe/example/img/earth-topology.png'
                     showAtmosphere={true}
                     atmosphereColor='#2dff73'
-                    onGlobeReady={handleGlobeReady}
                 />
             </div>
         </div>

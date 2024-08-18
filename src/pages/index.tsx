@@ -13,6 +13,7 @@ import TokenSection from '@/components/token/Representation';
 import DAOSection from '@/components/common/DAOSection';
 import StepByStep from '@/components/common/StepByStep';
 import Link from 'next/link';
+import ScrollAnimation from '@/components/common/ScrollAnimation';
 
 const HomePage: React.FC = () => {
     const faqs = [
@@ -59,36 +60,65 @@ const HomePage: React.FC = () => {
             </Head>
 
             <main className={styles.main}>
-                <section className={styles.hero}>
-                    <div className={styles.heroInner}>
-                        <h1>DeGym</h1>
-                        <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
-                        <div className={styles.joinSection}>
-                            <Link href="/telegram" className="w-auto">
-                                <button className="p-4">Join the Community</button>
-                            </Link>
+                <ScrollAnimation>
+                    <section className={styles.hero}>
+                        <div className={styles.heroInner}>
+                            <h1>DeGym</h1>
+                            <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+                            <div className={styles.joinSection}>
+                                <Link href="/telegram" className="w-auto">
+                                    <button className="p-4">Join the Community</button>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.heroImage}>
-                        <Image
-                            src="/hero.png"
-                            alt="Description of the image"
-                            fill
-                            style={{ objectFit: 'cover' }}
-                        />
-                    </div>
-                </section>
+                        <div className={styles.heroImage}>
+                            <Image
+                                src="/hero.png"
+                                alt="Description of the image"
+                                fill
+                                style={{ objectFit: 'cover' }}
+                            />
+                        </div>
+                    </section>
+                </ScrollAnimation>
+                <ScrollAnimation>
+                    <GlobeSection />
+                </ScrollAnimation>
+                <ScrollAnimation>
+                    <IntroductionVideo />
+                </ScrollAnimation>
 
-                {/* <GlobeSection /> */}
-                <IntroductionVideo />
-                <ProblemSolutionSection />
-                <MissionVisionCards />
-                <OpenSourceCard />
-                <TokenSection />
-                <StepByStep steps={howItWorks} title="How It Works" />
-                <DAOSection />
-                <Roadmap />
-                <FAQ faqs={faqs} />
+                <ScrollAnimation>
+                    <ProblemSolutionSection />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <MissionVisionCards />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <OpenSourceCard />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <TokenSection />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <StepByStep steps={howItWorks} title="How It Works" />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <DAOSection />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <Roadmap />
+                </ScrollAnimation>
+
+                <ScrollAnimation>
+                    <FAQ faqs={faqs} />
+                </ScrollAnimation>
             </main>
         </>
     );

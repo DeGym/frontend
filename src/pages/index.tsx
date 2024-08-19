@@ -14,6 +14,7 @@ import DAOSection from '@/components/common/DAOSection';
 import StepByStep from '@/components/common/StepByStep';
 import Link from 'next/link';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
+import PartnersCarousel from '@/components/partners/PartnersCarousel';
 
 const HomePage: React.FC = () => {
     const faqs = [
@@ -80,6 +81,9 @@ const HomePage: React.FC = () => {
                             />
                         </div>
                     </section>
+                </ScrollAnimation>
+                <ScrollAnimation>
+                    <PartnersCarousel />
                 </ScrollAnimation>
                 <ScrollAnimation>
                     <GlobeSection />

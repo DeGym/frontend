@@ -3,6 +3,7 @@ import Head from 'next/head';
 import MembersList from '@/pages/members/Members';
 import styles from '@/styles/pages/Members.module.css';
 import QuickLinks from '@/components/common/QuickLinks';
+import PartnersCarousel from '@/components/partners/PartnersCarousel';
 
 const Members: React.FC = () => {
     return (
@@ -20,6 +21,7 @@ const Members: React.FC = () => {
                     </div>
                 </section>
                 <MembersList />
+                <PartnersCarousel />
                 <QuickLinks />
 
             </main>

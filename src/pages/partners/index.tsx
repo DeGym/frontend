@@ -6,6 +6,7 @@ import BecomePartnerSection from '@/pages/partners/BecomePartnerSection';
 import VisitorSection from '@/pages/partners/VisitorSection';
 import FAQ from '@/components/common/FAQ';
 import Differentials from '@/components/common/Differentials';
+import PartnersCarousel from '@/components/partners/PartnersCarousel'; // Add this import
 import { faUserPlus, faMoneyBillWave, faEye, faHandshake, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const PartnersPage: React.FC = () => {
@@ -88,6 +89,7 @@ const PartnersPage: React.FC = () => {
                     Our partnership offers a <b>fair transfer value</b>, according to the monthly fee of your gym.
                 </h4>
                 <BecomePartnerSection />
+                <PartnersCarousel />
                 <VisitorSection />
                 <FAQ faqs={faqs} />
             </main>

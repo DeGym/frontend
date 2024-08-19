@@ -9,8 +9,25 @@
     height: 100%;
     max-width: 500px;
     margin: auto;
-    transition: background 0.5s ease;
+    transition: background 0.5s ease, transform 0.3s ease-in-out;
+}
 
+.floatingAnimation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .tier1 {
@@ -152,4 +169,9 @@
     color: var(--color-primary);
     padding: 15px;
     margin-top: 2.5px;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--color-secondary);
 }

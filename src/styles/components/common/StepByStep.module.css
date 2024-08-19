@@ -1,128 +1,180 @@
-.stepByStepContainer {
+.stepByStepSection {
+    padding: 2rem 0;
     text-align: center;
-    padding: 30px;
-    margin: 20px -20px;
-    background-image: url('/img/main-grid.svg');
-    background-size: cover;
-    background-position: bottom;
-    padding-bottom: 25px;
-    border-top: 2px solid var(--color-accent);
-    border-bottom: 2px solid var(--color-accent);
 }
 
-.swiperWrapper,
-.flexWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 100%;
-}
-
-.stepCardWrapper {
-    flex: 1;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.stepCard {
-    background-color: var(--color-accent);
+.sectionTitle {
+    font-size: 2.5rem;
     color: var(--color-light);
-    border-radius: 8px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
+    margin-bottom: 2rem;
 }
 
-.icon {
-    margin: 0 auto;
-}
-
-.icon img {
-    margin: auto;
-}
-
-.step {
+.carousel {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    perspective: 1000px;
+    height: 400px;
+    position: relative;
 }
 
-.stepInner {
+.carouselContainer {
+    width: 1000px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+@keyframes neonBorder {
+    0% {
+        box-shadow: 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary);
+    }
+
+    50% {
+        box-shadow: 0 0 10px var(--color-primary), 0 0 10px var(--color-primary), 0 0 10px var(--color-primary), 0 0 10px var(--color-primary);
+    }
+
+    100% {
+        box-shadow: 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary);
+    }
+}
+
+.carouselSlide {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s, box-shadow 0.5s;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.stepNumber {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    margin: auto;
-}
-
-.stepNum {
-    font-size: 2rem;
+    justify-content: center;
     font-weight: bold;
-    color: var(--color-primary);
-    margin-right: 10px;
+    font-size: 1rem;
 }
 
-.stepText {
-    font-size: 1rem;
-    font-weight: normal;
+.iconContainer {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.icon {
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+.iconImage {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.iconFA {
+    font-size: 3rem;
+}
+
+.carouselSlide.active {
+    left: 50%;
+    transform: translateX(-50%) translateZ(200px);
+    opacity: 1;
+    z-index: 2;
+    cursor: default;
+}
+
+.carouselSlide.neonBorder {
+    animation: neonBorder 1.5s infinite;
+}
+
+.carouselSlide.prev {
+    left: 15%;
+    transform: translateX(-50%) translateZ(100px) rotateY(15deg);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.carouselSlide.next {
+    right: 15%;
+    transform: translateX(50%) translateZ(100px) rotateY(-15deg);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.carouselSlide.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateZ(-100px);
+}
+
+.carouselSlide:not(.active):hover {
+    opacity: 0.9;
+    transform: translateX(-50%) translateZ(150px) scale(1.05);
+}
+
+.carouselSlide.prev:hover {
+    transform: translateX(-50%) translateZ(150px) rotateY(5deg) scale(1.05);
+}
+
+.carouselSlide.next:hover {
+    transform: translateX(50%) translateZ(150px) rotateY(-5deg) scale(1.05);
 }
 
 .stepTitle {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 10px;
-    color: var(--color-primary);
+    color: var(--color-light);
 }
 
-.text {
+.stepDescription {
     font-size: 1rem;
-    line-height: 1.5rem;
-    flex-grow: 1;
+    color: var(--color-light);
 }
 
-.arrow {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin: 0 16px;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+@media (max-width: 1024px) {
+    .carouselContainer {
+        width: 800px;
+    }
 
-.arrowDown {
-    display: none;
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin: 16px 0;
+    .carouselSlide {
+        width: 250px;
+    }
+
+    .carouselSlide.prev {
+        left: 20%;
+    }
+
+    .carouselSlide.next {
+        right: 20%;
+    }
 }
 
 @media (max-width: 768px) {
-    .stepByStepContainer {
-        background-image: none;
+    .carouselContainer {
+        width: 300px;
     }
 
-    .swiperWrapper,
-    .flexWrapper {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .stepCardWrapper {
-        margin-bottom: 16px;
-        width: 100%;
-    }
-
-    .arrow {
+    .carouselSlide.prev,
+    .carouselSlide.next {
         display: none;
-    }
-
-    .arrowDown {
-        display: block;
     }
 }

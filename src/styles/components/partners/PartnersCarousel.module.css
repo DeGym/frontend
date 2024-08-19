@@ -1,0 +1,98 @@
+.partnersSection {
+    background: linear-gradient(to top,
+            transparent 0%,
+            var(--color-dark) 50%,
+            transparent 100%);
+    padding: 2rem 0;
+    margin-left: -20px;
+    margin-right: -20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.neonBorderTop,
+.neonBorderBottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary),
+        0 0 20px var(--color-primary),
+        0 0 30px var(--color-primary),
+        0 0 40px var(--color-primary);
+    animation: neonPulse 1.5s infinite alternate;
+}
+
+.neonBorderTop {
+    top: 0;
+}
+
+.neonBorderBottom {
+    bottom: 0;
+}
+
+@keyframes neonPulse {
+    from {
+        opacity: 0.5;
+        box-shadow: 0 0 5px var(--color-primary),
+            0 0 10px var(--color-primary),
+            0 0 15px var(--color-primary),
+            0 0 20px var(--color-primary);
+    }
+
+    to {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--color-primary),
+            0 0 20px var(--color-primary),
+            0 0 30px var(--color-primary),
+            0 0 40px var(--color-primary);
+    }
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-light);
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.carouselContainer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.1s linear;
+}
+
+.partnerItem {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.partnerLink {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.partnerLink:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .partnerItem {
+        flex: 0 0 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partnerItem {
+        flex: 0 0 100px;
+    }
+}

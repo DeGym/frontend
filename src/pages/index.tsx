@@ -87,35 +87,27 @@ const HomePage: React.FC = () => {
                 <ScrollAnimation>
                     <IntroductionVideo />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <ProblemSolutionSection />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <MissionVisionCards />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <OpenSourceCard />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <TokenSection />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <StepByStep steps={howItWorks} title="How It Works" />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <DAOSection />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <Roadmap />
                 </ScrollAnimation>
-
                 <ScrollAnimation>
                     <FAQ faqs={faqs} />
                 </ScrollAnimation>

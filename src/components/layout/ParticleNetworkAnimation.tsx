@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/components/layout/ParticleNetworkAnimation.module.css';
 
 interface ParticleOptions {
@@ -53,6 +53,7 @@ class Particle {
 
 const ParticleNetworkAnimation: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [particleCount, setParticleCount] = useState(0);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -61,20 +62,34 @@ const ParticleNetworkAnimation: React.FC = () => {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const updateCanvasSize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-        const particleCount = 100;
+            // Adjust particle count based on screen width
+            const baseCount = 20; // Minimum number of particles
+            const widthFactor = Math.floor(window.innerWidth / 300); // Increase by 1 for every 300px of width
+            const newParticleCount = baseCount + widthFactor * 20; // Increase by 20 for each width factor
+            setParticleCount(newParticleCount);
+        };
+
+        updateCanvasSize();
+
         const particles: Particle[] = [];
         const maxDistance = 200;
 
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle(ctx, {
-                radius: Math.random() * 2 + 1,
-                color: 'rgba(45, 255, 115, 0.5)',
-                velocity: 0.3
-            }));
-        }
+        const initParticles = () => {
+            particles.length = 0; // Clear existing particles
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle(ctx, {
+                    radius: Math.random() * 2 + 1,
+                    color: 'rgba(45, 255, 115, 0.5)',
+                    velocity: 0.3
+                }));
+            }
+        };
+
+        initParticles();
 
         function animate() {
             requestAnimationFrame(animate);
@@ -103,11 +118,10 @@ const ParticleNetworkAnimation: React.FC = () => {
         }
 
         animate();
+
         const handleResize = () => {
-            if (canvas) {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
+            updateCanvasSize();
+            initParticles();
         };
 
         window.addEventListener('resize', handleResize);
@@ -115,7 +129,7 @@ const ParticleNetworkAnimation: React.FC = () => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [particleCount]);
 
     return <canvas ref={canvasRef} className={styles.particleCanvas} />;
 };

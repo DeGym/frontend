@@ -1,128 +1,270 @@
-.stepByStepContainer {
+.stepByStepSection {
+    padding: 2rem 0;
     text-align: center;
-    padding: 30px;
-    margin: 20px -20px;
-    background-image: url('/img/main-grid.svg');
-    background-size: cover;
-    background-position: bottom;
-    padding-bottom: 25px;
-    border-top: 2px solid var(--color-accent);
-    border-bottom: 2px solid var(--color-accent);
 }
 
-.swiperWrapper,
-.flexWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 100%;
-}
-
-.stepCardWrapper {
-    flex: 1;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.stepCard {
-    background-color: var(--color-accent);
+.sectionTitle {
+    font-size: 2.5rem;
     color: var(--color-light);
-    border-radius: 8px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
+    margin-bottom: 2rem;
 }
 
-.icon {
-    margin: 0 auto;
-}
-
-.icon img {
-    margin: auto;
-}
-
-.step {
+.carousel {
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 1000px;
+    height: 400px;
+    position: relative;
+}
+
+.carouselContainer {
+    width: 1000px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease;
+    /* Changed from 0.3s to 0.2s */
+    will-change: transform;
+}
+
+@keyframes neonBorder {
+    0% {
+        box-shadow: 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary);
+    }
+
+    50% {
+        box-shadow: 0 0 10px var(--color-primary), 0 0 10px var(--color-primary), 0 0 10px var(--color-primary), 0 0 10px var(--color-primary);
+    }
+
+    100% {
+        box-shadow: 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary), 0 0 5px var(--color-primary);
+    }
+}
+
+.carouselSlide {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: all 0.5s, box-shadow 0.5s;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+.stepNumber {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.topContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50%;
+    width: 100%;
+}
+
+.iconContainer {
     margin-bottom: 10px;
 }
 
-.stepInner {
-    display: flex;
-    align-items: center;
-    margin: auto;
-}
-
-.stepNum {
-    font-size: 2rem;
-    font-weight: bold;
+.icon {
+    font-size: 3rem;
     color: var(--color-primary);
-    margin-right: 10px;
 }
 
-.stepText {
-    font-size: 1rem;
-    font-weight: normal;
+.iconImage {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.iconFA {
+    font-size: 3rem;
 }
 
 .stepTitle {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 10px;
-    color: var(--color-primary);
+    color: var(--color-light);
 }
 
-.text {
+.stepDescription {
     font-size: 1rem;
-    line-height: 1.5rem;
-    flex-grow: 1;
+    color: var(--color-light);
+    margin-top: auto;
 }
 
-.arrow {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin: 0 16px;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.carouselSlide.active {
+    left: 50%;
+    transform: translateX(-50%) translateZ(200px);
+    opacity: 1;
+    z-index: 2;
+    cursor: default;
 }
 
-.arrowDown {
-    display: none;
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin: 16px 0;
+.carouselSlide.neonBorder {
+    animation: neonBorder 1.5s infinite;
+}
+
+.carouselSlide.prev {
+    left: 15%;
+    transform: translateX(-50%) translateZ(100px) rotateY(15deg);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.carouselSlide.next {
+    right: 15%;
+    transform: translateX(50%) translateZ(100px) rotateY(-15deg);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.carouselSlide.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateZ(-100px);
+}
+
+.carouselSlide:not(.active):hover {
+    opacity: 0.9;
+    transform: translateX(-50%) translateZ(150px) scale(1.05);
+}
+
+.carouselSlide.prev:hover {
+    transform: translateX(-50%) translateZ(150px) rotateY(5deg) scale(1.05);
+}
+
+.carouselSlide.next:hover {
+    transform: translateX(50%) translateZ(150px) rotateY(-5deg) scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .carouselContainer {
+        width: 800px;
+    }
+
+    .carouselSlide {
+        width: 250px;
+    }
+
+    .carouselSlide.prev {
+        left: 20%;
+    }
+
+    .carouselSlide.next {
+        right: 20%;
+    }
 }
 
 @media (max-width: 768px) {
-    .stepByStepContainer {
-        background-image: none;
+    .carousel {
+        height: auto;
+        overflow: hidden;
     }
 
-    .swiperWrapper,
-    .flexWrapper {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .stepCardWrapper {
-        margin-bottom: 16px;
+    .carouselContainer {
         width: 100%;
+        height: auto;
+        overflow: visible;
     }
 
-    .arrow {
+    .carouselSlide {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .carouselSlide.active {
+        position: relative;
+        transform: translateX(-50%);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .carouselSlide.prev {
+        transform: translateX(-100%);
+    }
+
+    .carouselSlide.next {
+        transform: translateX(100%);
+    }
+
+    .carouselSlide.hidden {
         display: none;
     }
 
-    .arrowDown {
-        display: block;
+    .carouselSlide.active,
+    .carouselSlide.prev {
+        animation: none;
+    }
+
+    .mobileIndicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .indicatorDot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .indicatorDot.active {
+        background-color: var(--color-primary);
+    }
+}
+
+/* Add this new animation for mobile slide transition */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }

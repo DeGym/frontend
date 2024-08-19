@@ -33,7 +33,7 @@ const NFTVoucherGenerator: React.FC<NFTVoucherGeneratorProps> = ({ className }) 
         return styles[`tier${index + 1}`];
     };
     return (
-        <div className={customMode ? styles.container : `${styles.container} ${getGradientClass(tier)}`} >
+        <div className={`${styles.container} ${styles.floatingAnimation} ${customMode ? '' : getGradientClass(tier)}`} >
             <div className="flex items-center justify-center">
                 <Image
                     src="/DeGym_green_logo_without_bg.png"

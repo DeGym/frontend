@@ -23,7 +23,9 @@
     height: 300px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 0.2s ease;
+    /* Changed from 0.3s to 0.2s */
+    will-change: transform;
 }
 
 @keyframes neonBorder {
@@ -51,7 +53,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     transition: all 0.5s, box-shadow 0.5s;
     backface-visibility: hidden;
@@ -60,8 +62,8 @@
 
 .stepNumber {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     width: 30px;
     height: 30px;
     background-color: var(--color-primary);
@@ -74,9 +76,17 @@
     font-size: 1rem;
 }
 
+.topContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50%;
+    width: 100%;
+}
+
 .iconContainer {
-    position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .icon {
@@ -92,6 +102,18 @@
 
 .iconFA {
     font-size: 3rem;
+}
+
+.stepTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--color-light);
+}
+
+.stepDescription {
+    font-size: 1rem;
+    color: var(--color-light);
+    margin-top: auto;
 }
 
 .carouselSlide.active {
@@ -139,17 +161,6 @@
     transform: translateX(50%) translateZ(150px) rotateY(-5deg) scale(1.05);
 }
 
-.stepTitle {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--color-light);
-}
-
-.stepDescription {
-    font-size: 1rem;
-    color: var(--color-light);
-}
-
 @media (max-width: 1024px) {
     .carouselContainer {
         width: 800px;
@@ -169,12 +180,91 @@
 }
 
 @media (max-width: 768px) {
-    .carouselContainer {
-        width: 300px;
+    .carousel {
+        height: auto;
+        overflow: hidden;
     }
 
-    .carouselSlide.prev,
+    .carouselContainer {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .carouselSlide {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .carouselSlide.active {
+        position: relative;
+        transform: translateX(-50%);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .carouselSlide.prev {
+        transform: translateX(-100%);
+    }
+
     .carouselSlide.next {
+        transform: translateX(100%);
+    }
+
+    .carouselSlide.hidden {
         display: none;
+    }
+
+    .carouselSlide.active,
+    .carouselSlide.prev {
+        animation: none;
+    }
+
+    .mobileIndicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .indicatorDot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .indicatorDot.active {
+        background-color: var(--color-primary);
+    }
+}
+
+/* Add this new animation for mobile slide transition */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }

@@ -97,8 +97,8 @@
 }
 
 .metalToken {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
     box-shadow:
@@ -111,6 +111,20 @@
     position: relative;
     overflow: hidden;
     animation: float 6s ease-in-out infinite, glowPulse 3s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+    .metalToken {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .metalToken {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .metalToken::before {
@@ -143,6 +157,20 @@
     object-fit: contain;
     filter: brightness(1.5) contrast(1.2) saturate(1.5) drop-shadow(0 0 3px rgba(45, 255, 115, 0.5));
     mix-blend-mode: lighten;
+}
+
+@media (max-width: 768px) {
+    .tokenLogo {
+        width: 70% !important;
+        height: 70% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tokenLogo {
+        width: 65% !important;
+        height: 65% !important;
+    }
 }
 
 @keyframes glowPulse {

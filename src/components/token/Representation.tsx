@@ -41,6 +41,7 @@ const TokenSection: React.FC = () => {
                             width={200}
                             height={200}
                             className={styles.tokenLogo}
+                            sizes="(max-width: 768px) 150px, (max-width: 1200px) 200px, 250px"
                         />
                     </div>
                 </div>
@@ -57,6 +58,7 @@ const TokenSection: React.FC = () => {
                             width={150}
                             height={150}
                             className={styles.tokenLogo}
+                            sizes="(max-width: 768px) 150px, (max-width: 1200px) 200px, 250px"
                         />
                     </div>
                 </div>

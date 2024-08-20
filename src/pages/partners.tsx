@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/pages/Partners.module.css';
-import BecomePartnerSection from '@/pages/partners/BecomePartnerSection';
-import VisitorSection from '@/pages/partners/VisitorSection';
+import BecomePartnerSection from '@/components/partners/BecomePartnerSection';
+import VisitorSection from '@/components/partners/VisitorSection';
 import FAQ from '@/components/common/FAQ';
 import Differentials from '@/components/common/Differentials';
 import PartnersCarousel from '@/components/partners/PartnersCarousel'; // Add this import

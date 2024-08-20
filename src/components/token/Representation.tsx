@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import styles from '@/styles/components/token/Representation.module.css';
 
 const TokenSection: React.FC = () => {
@@ -33,7 +34,16 @@ const TokenSection: React.FC = () => {
             <div className={styles.col1}>
                 <div className={styles.sectionTitle}>Token</div>
                 <div className={styles.sectionCoin}>
-                    <img src="/img/token/logo_token.png" alt="Token image" className={`${styles.coinImage} ${styles.shader}`} />
+                    <div className={styles.metalToken}>
+                        <Image
+                            src="/DeGym_green_white_logo_without_bg.png"
+                            alt="DeGym Token"
+                            width={200}
+                            height={200}
+                            className={styles.tokenLogo}
+                            sizes="(max-width: 768px) 150px, (max-width: 1200px) 200px, 250px"
+                        />
+                    </div>
                 </div>
             </div>
             <div className={styles.col2}>
@@ -41,7 +51,16 @@ const TokenSection: React.FC = () => {
                     A deflationary utility token ($DGYM) that participates in <span className={styles.textPrimary}>building a democratic DAO infrastructure</span>
                 </div>
                 <div className={styles.sectionCoinMobile}>
-                    <img src="/img/token/logo_token.png" alt="Token image" className={`${styles.coinImageMd} ${styles.shader}`} />
+                    <div className={styles.metalToken}>
+                        <Image
+                            src="/DeGym_green_white_logo_without_bg.png"
+                            alt="DeGym Token"
+                            width={150}
+                            height={150}
+                            className={styles.tokenLogo}
+                            sizes="(max-width: 768px) 150px, (max-width: 1200px) 200px, 250px"
+                        />
+                    </div>
                 </div>
                 <div className={styles.tokenSupply}>
                     <div className={styles.sectionTitleWhite}>Max supply</div>

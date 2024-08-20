@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import MembersList from '@/pages/members/Members';
+import MembersList from '@/components/members/Members';
 import styles from '@/styles/pages/Members.module.css';
 import QuickLinks from '@/components/common/QuickLinks';
 import PartnersCarousel from '@/components/partners/PartnersCarousel';

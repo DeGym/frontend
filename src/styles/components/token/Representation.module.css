@@ -96,20 +96,119 @@
     z-index: 1;
 }
 
-.coinImage {
-    max-width: 300px;
-    height: auto;
-    margin: 25px auto;
+.metalToken {
+    width: 250px;
+    height: 250px;
+    margin: 40px auto;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 0 15px #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite, glowPulse 3s ease-in-out infinite alternate;
 }
 
-.coinImageMd {
-    max-width: 200px;
-    height: auto;
-    margin: 35px auto;
+@media (max-width: 768px) {
+    .metalToken {
+        width: 200px;
+        height: 200px;
+    }
 }
 
-.shader {
-    filter: drop-shadow(0 0 10px var(--color-primary));
+@media (max-width: 480px) {
+    .metalToken {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.metalToken::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            transparent 80%);
+    transform: rotate(-45deg);
+    animation: shine 4s ease-in-out infinite;
+}
+
+.metalToken::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tokenLogo {
+    width: 75% !important;
+    height: 75% !important;
+    object-fit: contain;
+    filter: brightness(1.5) contrast(1.2) saturate(1.5) drop-shadow(0 0 3px rgba(45, 255, 115, 0.5));
+    mix-blend-mode: lighten;
+}
+
+@media (max-width: 768px) {
+
+    .tokenLogo {
+        width: 70% !important;
+        height: 70% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tokenLogo {
+        width: 65% !important;
+        height: 65% !important;
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px rgba(45, 255, 115, 0.3)) drop-shadow(0 0 12.5px rgba(45, 255, 115, 0.2)) drop-shadow(0 0 15px rgba(45, 255, 115, 0.1));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgba(45, 255, 115, 0.5)) drop-shadow(0 0 23px rgba(45, 255, 115, 0.3)) drop-shadow(0 0 30px rgba(45, 255, 115, 0.2));
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes shine {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .tokenSupply {

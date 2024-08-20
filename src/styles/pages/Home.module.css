@@ -22,6 +22,7 @@
     align-items: center;
     justify-content: center;
     margin: 60px auto;
+    margin-bottom: 0px;
     text-align: center;
     max-width: 1200px;
 }

@@ -2,11 +2,14 @@ import React, { useState, useRef, TouchEvent, MouseEvent } from 'react';
 import styles from '@/styles/components/common/StepByStep.module.css';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 interface Step {
     title: string;
     description: string;
     icon: IconDefinition | string;
+    link?: string;
+    linkText?: string;
 }
 
 interface StepByStepProps {
@@ -54,8 +57,7 @@ const StepByStep: React.FC<StepByStepProps> = ({ steps, title }) => {
         setIsDragging(false);
         if (startX.current !== null && currentX.current !== null) {
             const diff = startX.current - currentX.current;
-            // Reduce the minimum swipe distance from 50 to 20 pixels
-            if (Math.abs(diff) > 20) { // Changed from 50 to 20
+            if (Math.abs(diff) > 20) {
                 if (diff > 0 && currentStep < steps.length - 1) {
                     goToStep(currentStep + 1);
                 } else if (diff < 0 && currentStep > 0) {
@@ -72,10 +74,9 @@ const StepByStep: React.FC<StepByStepProps> = ({ steps, title }) => {
 
     const renderIcon = (icon: IconDefinition | string) => {
         if (typeof icon === 'string') {
-            return <img src={icon} alt="Step icon" className={styles.iconImage} />;
-        } else {
-            return <FontAwesomeIcon icon={icon} className={styles.iconFA} />;
+            return <img src={icon} alt="Step icon" className={styles.stepIcon} />;
         }
+        return <FontAwesomeIcon icon={icon} className={styles.stepIcon} />;
     };
 
     const getSlideClass = (index: number) => {
@@ -116,6 +117,21 @@ const StepByStep: React.FC<StepByStepProps> = ({ steps, title }) => {
                                 <h3 className={styles.stepTitle}>{step.title}</h3>
                             </div>
                             <p className={styles.stepDescription}>{step.description}</p>
+                            {step.link && step.linkText && (
+                                <Link
+                                    href={step.link}
+                                    className={`${styles.stepLink} ${index !== currentStep ? styles.disabled : ''}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => {
+                                        if (index !== currentStep) {
+                                            e.preventDefault();
+                                        }
+                                    }}
+                                >
+                                    {step.linkText}
+                                </Link>
+                            )}
                         </div>
                     ))}
                 </div>

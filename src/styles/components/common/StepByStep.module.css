@@ -20,7 +20,7 @@
 
 .carouselContainer {
     width: 1000px;
-    height: 300px;
+    height: 325px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.2s ease;
@@ -91,7 +91,7 @@
 
 .icon {
     font-size: 3rem;
-    color: var(--color-primary);
+    color: var(--color-light);
 }
 
 .iconImage {
@@ -107,13 +107,35 @@
 .stepTitle {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: var(--color-light);
+    color: var(--color-primary);
 }
 
 .stepDescription {
     font-size: 1rem;
     color: var(--color-light);
     margin-top: auto;
+}
+
+.stepLink {
+    display: inline-block;
+    margin-top: 0rem;
+    padding: 0.25rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.stepLink:hover:not(.disabled) {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+}
+
+.stepLink.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .carouselSlide.active {

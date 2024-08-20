@@ -65,7 +65,7 @@ const HomePage: React.FC = () => {
                     <section className={styles.hero}>
                         <div className={styles.heroInner}>
                             <h1>DeGym</h1>
-                            <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access, Enhanced Rewards, and Secure Workouts</p>
+                            <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access and Enhanced Rewards</p>
                             <div className={styles.joinSection}>
                                 <Link href="/telegram" className="w-auto">
                                     <button className="p-4">Join the Community</button>
@@ -83,10 +83,10 @@ const HomePage: React.FC = () => {
                     </section>
                 </ScrollAnimation>
                 <ScrollAnimation>
-                    <PartnersCarousel />
+                    <GlobeSection />
                 </ScrollAnimation>
                 <ScrollAnimation>
-                    <GlobeSection />
+                    <PartnersCarousel />
                 </ScrollAnimation>
                 <ScrollAnimation>
                     <IntroductionVideo />

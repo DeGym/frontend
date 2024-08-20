@@ -46,7 +46,8 @@
     "components/search/MobileGymsModal.js",
     "components/search/MobileFilterModal.js",
     "components/search/FilterModal.js",
-    "pages/search.js"
+    "pages/search.js",
+    "components/common/GlobeSection.tsx"
   ],
   "exclude": [
     "node_modules"

@@ -19,6 +19,7 @@
     "@metamask/detect-provider": "^2.0.0",
     "@mui/material": "^5.16.4",
     "@react-google-maps/api": "^2.19.3",
+    "@types/three": "^0.167.1",
     "@vercel/speed-insights": "^1.0.12",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
@@ -42,6 +43,7 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.4",
+    "three": "^0.167.1",
     "web3": "^4.11.1"
   },
   "devDependencies": {

@@ -11,7 +11,7 @@ interface Partner {
 
 const partnersList: Partner[] = [
     { name: 'Taraxa', logo: '/img/partners/taraxa.png', link: 'https://taraxa.io' },
-    { name: 'Taraxa Catalyst', logo: '/img/partners/taraxa-catalyst.png', link: 'https://x.com/taraxacatalyst' },
+    { name: 'Taraxa Catalyst', logo: '/img/partners/taraxa-catalyst.png', link: 'https://taraxacatalyst.com' },
     { name: 'Yield Reviews', logo: '/img/partners/yield-reviews.png', link: 'https://yield.reviews' },
     { name: 'One Bot', logo: '/img/partners/onebot.png', link: 'https://t.me/taraxaOneBot' },
     { name: 'Tokeniza', logo: '/img/partners/tokeniza.png', link: 'https://tokeniza.com.br' },

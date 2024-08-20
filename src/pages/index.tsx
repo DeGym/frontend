@@ -85,9 +85,7 @@ const HomePage: React.FC = () => {
                 <ScrollAnimation>
                     <GlobeSection />
                 </ScrollAnimation>
-                <ScrollAnimation>
-                    <PartnersCarousel />
-                </ScrollAnimation>
+                <PartnersCarousel />
                 <ScrollAnimation>
                     <IntroductionVideo />
                 </ScrollAnimation>

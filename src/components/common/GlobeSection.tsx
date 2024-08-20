@@ -96,6 +96,7 @@ const GlobeSection: React.FC = () => {
                     atmosphereColor='#2dff73'
                     atmosphereAltitude={0.15}
                 />
+                <div className={styles.globeOverlay}>|</div>
             </div>
             <div className={styles.contentWrapper}>
                 <div className={styles.content}>

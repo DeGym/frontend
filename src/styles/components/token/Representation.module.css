@@ -99,6 +99,7 @@
 .metalToken {
     width: 250px;
     height: 250px;
+    margin: 40px auto;
     border-radius: 50%;
     background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
     box-shadow:
@@ -160,6 +161,7 @@
 }
 
 @media (max-width: 768px) {
+
     .tokenLogo {
         width: 70% !important;
         height: 70% !important;

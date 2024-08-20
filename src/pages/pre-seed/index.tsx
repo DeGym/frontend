@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from '@/styles/pages/PreSeed.module.css';
-import TokenStats from '@/components/token/Stats';
 import FAQ from '@/components/common/FAQ';
 import DAOSection from '@/components/common/DAOSection';
 import TokenAllocation from '@/components/token/Allocation';
@@ -129,7 +128,6 @@ const PreSeedPage: React.FC = () => {
                     crowdfund={crowdfundData}
                 />
                 <VestingSection />
-                <TokenStats />
                 <StepByStep steps={howItWorksPreSeed} title="How to <b>invest</b>?" />
                 <TokenAllocation />
                 <TokenUseCase />

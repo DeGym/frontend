@@ -3,6 +3,19 @@
     text-align: center;
 }
 
+.backgroundContainer {
+    background-image: url('/img/main-grid.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    border-top: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 3rem;
+
+}
+
+
 .sectionTitle {
     font-size: 2.5rem;
     color: var(--color-light);
@@ -288,5 +301,13 @@
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .backgroundContainer {
+        background-image: none;
+        border: none;
+        padding: 0;
     }
 }

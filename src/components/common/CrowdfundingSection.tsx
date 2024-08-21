@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import BaseModal from '@/components/common/BaseModal';
 import styles from '@/styles/components/common/CrowdfundingSection.module.css';
 import shortenWalletAddress from '@/utils/generic';
-import Countdown from '@/components/Countdown';
+import Countdown from '@/components/ui/Countdown';
 import AmountInput from '@/components/ui/AmountInput';
 import InfoTooltip from '@/components/ui/InfoTooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

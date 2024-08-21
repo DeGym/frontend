@@ -88,62 +88,64 @@ const StepByStep: React.FC<StepByStepProps> = ({ steps, title }) => {
 
     return (
         <section className={styles.stepByStepSection}>
-            <h2
-                className={styles.sectionTitle}
-                dangerouslySetInnerHTML={{ __html: title }}
-            />
-            <div
-                className={styles.carousel}
-                onTouchStart={handleDragStart}
-                onTouchMove={handleDragMove}
-                onTouchEnd={handleDragEnd}
-                onMouseDown={handleDragStart}
-                onMouseMove={handleDragMove}
-                onMouseUp={handleDragEnd}
-                onMouseLeave={handleDragEnd}
-            >
-                <div className={styles.carouselContainer} ref={carouselRef}>
-                    {steps.map((step, index) => (
+            <div className={styles.backgroundContainer}>
+                <h2
+                    className={styles.sectionTitle}
+                    dangerouslySetInnerHTML={{ __html: title }}
+                />
+                <div
+                    className={styles.carousel}
+                    onTouchStart={handleDragStart}
+                    onTouchMove={handleDragMove}
+                    onTouchEnd={handleDragEnd}
+                    onMouseDown={handleDragStart}
+                    onMouseMove={handleDragMove}
+                    onMouseUp={handleDragEnd}
+                    onMouseLeave={handleDragEnd}
+                >
+                    <div className={styles.carouselContainer} ref={carouselRef}>
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className={`${styles.carouselSlide} ${getSlideClass(index)}`}
+                                onClick={() => goToStep(index)}
+                            >
+                                <div className={styles.stepNumber}>{index + 1}</div>
+                                <div className={styles.topContent}>
+                                    <div className={styles.iconContainer}>
+                                        <div className={styles.icon}>{renderIcon(step.icon)}</div>
+                                    </div>
+                                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                                </div>
+                                <p className={styles.stepDescription}>{step.description}</p>
+                                {step.link && step.linkText && (
+                                    <Link
+                                        href={step.link}
+                                        className={`${styles.stepLink} ${index !== currentStep ? styles.disabled : ''}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => {
+                                            if (index !== currentStep) {
+                                                e.preventDefault();
+                                            }
+                                        }}
+                                    >
+                                        {step.linkText}
+                                    </Link>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className={styles.mobileIndicator}>
+                    {steps.map((_, index) => (
                         <div
                             key={index}
-                            className={`${styles.carouselSlide} ${getSlideClass(index)}`}
+                            className={`${styles.indicatorDot} ${index === currentStep ? styles.active : ''}`}
                             onClick={() => goToStep(index)}
-                        >
-                            <div className={styles.stepNumber}>{index + 1}</div>
-                            <div className={styles.topContent}>
-                                <div className={styles.iconContainer}>
-                                    <div className={styles.icon}>{renderIcon(step.icon)}</div>
-                                </div>
-                                <h3 className={styles.stepTitle}>{step.title}</h3>
-                            </div>
-                            <p className={styles.stepDescription}>{step.description}</p>
-                            {step.link && step.linkText && (
-                                <Link
-                                    href={step.link}
-                                    className={`${styles.stepLink} ${index !== currentStep ? styles.disabled : ''}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={(e) => {
-                                        if (index !== currentStep) {
-                                            e.preventDefault();
-                                        }
-                                    }}
-                                >
-                                    {step.linkText}
-                                </Link>
-                            )}
-                        </div>
+                        />
                     ))}
                 </div>
-            </div>
-            <div className={styles.mobileIndicator}>
-                {steps.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`${styles.indicatorDot} ${index === currentStep ? styles.active : ''}`}
-                        onClick={() => goToStep(index)}
-                    />
-                ))}
             </div>
         </section>
     );

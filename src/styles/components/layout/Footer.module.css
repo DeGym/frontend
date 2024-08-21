@@ -1,66 +1,105 @@
 .footer {
     background-color: var(--color-dark);
     color: var(--color-light);
-    padding: 20px;
+    padding: 2rem 1rem;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 .section {
-    margin-bottom: 20px;
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1.5rem;
 }
 
 .title {
     color: var(--color-primary);
     font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.contactInfo,
-.donationInfo {
-    color: var(--color-light);
-    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .links {
     list-style: none;
     padding: 0;
+    columns: 2;
 }
 
 .links li {
     margin-bottom: 0.5rem;
 }
 
-.links a {
+.links a,
+.donationLink a,
+.termsLink,
+.disclaimerLink {
     color: var(--color-light);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.links a:hover {
+.links a:hover,
+.donationLink a:hover,
+.termsLink:hover,
+.disclaimerLink:hover {
     color: var(--color-primary);
+}
+
+.donationLink {
+    margin-bottom: 1rem;
+}
+
+.donationLink p {
+    margin-bottom: 0.5rem;
+}
+
+.donationWalletAddress {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    word-break: break-all;
+}
+
+.donationWalletAddress a {
+    font-size: 0.8rem;
+}
+
+.bottomContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .icons {
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
     justify-content: center;
 }
 
 .icon {
     color: var(--color-light);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.5rem;
 }
 
 .icon:hover {
     color: var(--color-neon-green);
+    transform: scale(1.1);
 }
 
 .taraxaLink {
@@ -70,48 +109,59 @@
 .taraxaLogo {
     max-width: 100px;
     display: inline;
-    margin-left: 2px;
-    margin-top: -3px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
 }
 
-.donationAddress,
-.walletInfo {
-    margin-top: 0.5rem;
-}
-
-.donationLink {
-    color: var(--color-light);
-    text-decoration: none;
-    margin-top: 0.5rem;
-}
-
-.donationLink a {
-    font-size: 12px;
-    display: block;
-    margin-top: 0.25rem;
-    color: var(--color-light);
-}
-
-.donationWalletAddress a {
-    font-size: 9.5px;
-}
-
-.donationLink a:hover {
-    color: var(--color-primary);
+.legalLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .footerBottom {
     margin-top: 2rem;
     color: var(--color-secondary);
     text-align: center;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
+
+    .mainContent,
+    .bottomContent {
+        flex-direction: column;
     }
 
     .section {
-        margin-bottom: 0px;
+        width: 100%;
+    }
+
+    .links {
+        columns: 1;
+    }
+
+    .icons {
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 2rem;
+    }
+
+    .icon {
+        font-size: 1.75rem;
+    }
+
+    .termsLink,
+    .disclaimerLink {
+        display: block;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .legalLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
     }
 }

@@ -22,6 +22,16 @@ const nextConfig = {
                 destination: 'https://github.com/DeGym',
                 permanent: true,
             },
+            {
+                source: '/blog',
+                destination: 'https://taraxacatalyst.com/',
+                permanent: true,
+            },
+            {
+                source: '/disclaimer',
+                destination: 'https://docs.degym.net/dao/disclaimer',
+                permanent: true,
+            },
         ];
     },
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '@/styles/components/common/Countdown.module.css';
+import styles from '@/styles/components/ui/Countdown.module.css';
 
 interface CountdownProps {
     title: string;
@@ -9,11 +9,27 @@ interface CountdownProps {
 }
 
 const TransitionNumber: React.FC<{ value: number }> = ({ value }) => {
+    const [displayValue, setDisplayValue] = useState(value);
+    const [animationClass, setAnimationClass] = useState('');
+
+    useEffect(() => {
+        if (displayValue !== value) {
+            setAnimationClass(styles['slide-out-down']);
+            setTimeout(() => {
+                setDisplayValue(value);
+                setAnimationClass(styles['slide-in-up']);
+            }, 500);
+        }
+    }, [value, displayValue]);
+
     return (
-        <span className={styles.transitionNumber}>
-            {value < 10 ? `0${value}` : value}
-        </span>
+        <div className={styles.countdownValueWrapper}>
+            <span className={`${styles.countdownValue} ${animationClass}`}>
+                {displayValue.toString().padStart(2, '0')}
+            </span>
+        </div>
     );
+
 };
 
 const Countdown: React.FC<CountdownProps> = ({ title, targetDate, endDate, onCountdownEnd }) => {

@@ -28,7 +28,7 @@ const DAOSection: React.FC = () => {
                 <div className={styles.socLinkIcon}>
                     <FontAwesomeIcon icon={icon} />
                 </div>
-                <div className={styles.socLinkText}><span>{text}</span></div>
+                <div className={styles.socLinkText}>{text}</div>
             </Link>
         </div>
     );

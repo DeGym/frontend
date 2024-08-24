@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useEffect, useState, useRef, useMemo } from 'react';
-import styles from '@/styles/components/section/ProblemSolutionSection.module.css';
+import { useInView } from 'react-intersection-observer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import styles from '@/styles/components/section/ProblemSolutionSection.module.css';
 import 'swiper/swiper-bundle.css';
 
 interface ProblemSolution {
@@ -21,6 +22,12 @@ interface ProblemSolution {
 }
 
 const ProblemSolutionSection: React.FC = () => {
+    const [progress, setProgress] = useState<number>(0);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
+    const sectionRef = useRef<HTMLElement>(null);
+    const [maxCardHeight, setMaxCardHeight] = useState<number>(0);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
     const problemSolutions: ProblemSolution[] = useMemo(() => [
         {
             problem: {
@@ -87,12 +94,7 @@ const ProblemSolutionSection: React.FC = () => {
                 background: 'img/s-dots_2.svg'
             }
         },
-        // ... other problem-solution pairs
     ], []);
-
-    const [progress, setProgress] = useState<number>(0);
-    const [isMobile, setIsMobile] = useState<boolean>(false);
-    const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -119,75 +121,112 @@ const ProblemSolutionSection: React.FC = () => {
         };
     }, []);
 
-    const renderProblemSolutionCard = (item: ProblemSolution, index: number) => (
-        <div className={styles.solutionsRow} key={index}>
-            <div className={styles.cardContainer}>
-                <div className={`${styles.problemCard} ${styles.card}`}>
-                    <div className={styles.problemCardMdtop}>
-                        <div className={styles.problemCardIcon}>
-                            <img src={item.problem.icon} alt="icon" className="img-fluid d-block" />
-                        </div>
-                        <h3 className={styles.problemCardTitle}>{item.problem.title}</h3>
-                    </div>
-                    <p className={styles.problemCardText}>{item.problem.description}</p>
+    useEffect(() => {
+        if (isMobile) {
+            const heights = cardRefs.current.map(ref => ref?.offsetHeight || 0);
+            const maxHeight = Math.max(...heights);
+            setMaxCardHeight(maxHeight);
+        }
+    }, [isMobile]);
+
+    const ProblemCard: React.FC<{ problem: ProblemSolution['problem']; index: number }> = ({ problem, index }) => (
+        <div
+            className={`${styles.problemCard} ${styles.card}`}
+            ref={(el: HTMLDivElement | null) => {
+                if (el) {
+                    cardRefs.current[index * 2] = el;
+                }
+            }}
+            style={isMobile ? { minHeight: `${maxCardHeight}px` } : {}}
+        >
+            <div className={styles.problemCardMdtop}>
+                <div className={styles.problemCardIcon}>
+                    <img src={problem.icon} alt="icon" className="img-fluid d-block" />
                 </div>
-                <div className={styles.progressTwo}>
-                    <div className={styles.progressTwoLine}>
-                        <div
-                            className={styles.lineInner}
-                            style={{
-                                height: `${progress}%`,
-                                transition: 'height 0.3s ease-out'
-                            }}
-                        ></div>
-                    </div>
+                <h3 className={styles.problemCardTitle}>{problem.title}</h3>
+            </div>
+            <p className={styles.problemCardText}>{problem.description}</p>
+        </div>
+    );
+
+    const SolutionCard: React.FC<{ solution: ProblemSolution['solution']; index: number }> = ({ solution, index }) => (
+        <div
+            className={`${styles.solutionCard} ${styles.card}`}
+            style={{
+                backgroundImage: `url(${solution.background})`,
+                ...(isMobile ? { minHeight: `${maxCardHeight}px` } : {})
+            }}
+            ref={(el: HTMLDivElement | null) => {
+                if (el) {
+                    cardRefs.current[index * 2 + 1] = el;
+                }
+            }}
+        >
+            <div className={styles.solutionCardMdtop}>
+                <div className={styles.solutionCardIcon}>
+                    <img src={solution.icon} alt="icon" className="img-fluid d-block" />
                 </div>
-                <div className={`${styles.solutionCard} ${styles.card}`} style={{ backgroundImage: `url(${item.solution.background})` }}>
-                    <div className={styles.solutionCardMdtop}>
-                        <div className={styles.solutionCardIcon}>
-                            <img src={item.solution.icon} alt="icon" className="img-fluid d-block" />
-                        </div>
-                        <h3 className={styles.solutionCardTitle}>{item.solution.title}</h3>
-                    </div>
-                    <p className={styles.solutionCardText}>{item.solution.description}</p>
-                </div>
+                <h3 className={styles.solutionCardTitle}>{solution.title}</h3>
+            </div>
+            <p className={styles.solutionCardText}>{solution.description}</p>
+        </div>
+    );
+
+    const ProgressLine: React.FC = () => (
+        <div className={styles.progressTwo}>
+            <div className={styles.progressTwoLine}>
+                <div
+                    className={styles.lineInner}
+                    style={{
+                        height: `${progress}%`,
+                        transition: 'height 0.3s ease-out'
+                    }}
+                />
             </div>
         </div>
     );
 
-    const renderMobileSwiper = () => (
+    const ProblemSolutionCard: React.FC<{ item: ProblemSolution; index: number }> = ({ item, index }) => {
+        const [ref, inView] = useInView({
+            triggerOnce: true,
+            threshold: 0.1,
+        });
+
+        return (
+            <div className={styles.solutionsRow} key={index} ref={ref}>
+                <div className={`${styles.cardContainer} ${inView ? styles.inView : ''}`}>
+                    <div className={styles.slideInLeft}>
+                        <ProblemCard problem={item.problem} index={index} />
+                    </div>
+                    <ProgressLine />
+                    <div className={styles.slideInRight}>
+                        <SolutionCard solution={item.solution} index={index} />
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    const MobileSwiper: React.FC = () => (
         <Swiper
             modules={[Navigation, Pagination, Scrollbar]}
             slidesPerView={1}
             pagination={{ clickable: true }}
             navigation
-            className={styles.swiperContainer}
+            className={`${styles.swiperContainer} ${styles.equalHeightSlides}`}
+            onSwiper={(swiper) => {
+                setTimeout(() => swiper.update(), 100); // Update swiper after content is rendered
+            }}
         >
             {problemSolutions.map((item, index) => (
                 <SwiperSlide key={index} className={styles.swiperSlide}>
-                    <div className={`${styles.problemCard} ${styles.card}`}>
-                        <div className={styles.problemCardMdtop}>
-                            <div className={styles.problemCardIcon}>
-                                <img src={item.problem.icon} alt="icon" className="img-fluid d-block" />
-                            </div>
-                            <h3 className={styles.problemCardTitle}>{item.problem.title}</h3>
-                        </div>
-                        <p className={styles.problemCardText}>{item.problem.description}</p>
-                    </div>
+                    <ProblemCard problem={item.problem} index={index} />
                     <div className={styles.progressTwoMobile}>
                         {[...Array(3)].map((_, i) => (
                             <span key={i} className={styles.sliderArrow}><span className={styles.downArrow}></span></span>
                         ))}
                     </div>
-                    <div className={`${styles.solutionCard} ${styles.card}`} style={{ backgroundImage: `url(${item.solution.background})` }}>
-                        <div className={styles.solutionCardMdtop}>
-                            <div className={styles.solutionCardIcon}>
-                                <img src={item.solution.icon} alt="icon" className="img-fluid d-block" />
-                            </div>
-                            <h3 className={styles.solutionCardTitle}>{item.solution.title}</h3>
-                        </div>
-                        <p className={styles.solutionCardText}>{item.solution.description}</p>
-                    </div>
+                    <SolutionCard solution={item.solution} index={index} />
                 </SwiperSlide>
             ))}
         </Swiper>
@@ -197,7 +236,9 @@ const ProblemSolutionSection: React.FC = () => {
         <section className={styles.section} ref={sectionRef}>
             <h2 className="text-center">Problems & <b>Solutions</b></h2>
             <div className={styles.solutionsWrap}>
-                {isMobile ? renderMobileSwiper() : problemSolutions.map(renderProblemSolutionCard)}
+                {isMobile ? <MobileSwiper /> : problemSolutions.map((item, index) => (
+                    <ProblemSolutionCard key={index} item={item} index={index} />
+                ))}
             </div>
         </section>
     );

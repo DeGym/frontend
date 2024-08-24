@@ -13,22 +13,39 @@
 .solutionsRow {
     margin: 0px auto 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .cardContainer {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
+    margin: auto 12.5px;
     gap: 75px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.cardContainer.inView {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slideInLeft,
+.slideInRight {
+    width: calc(50%);
+    display: flex;
 }
 
 .card {
     border-radius: 10px;
     padding: 20px;
-    width: 50%;
-    min-height: 335px;
-    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     text-align: left;
     background-color: #030203;
 }
@@ -40,26 +57,42 @@
 .solutionCard {
     border: 2px solid var(--color-primary);
     background-image: url('../../../public/img/s-dots_2.svg');
-    /* Replace with actual image path */
     background-repeat: no-repeat;
     background-position: top right;
+    position: relative;
+    overflow: hidden;
+    animation: neonPulse 1.5s infinite alternate;
 }
 
-.problemCardMdtop {
-    margin-bottom: 16px;
+
+@keyframes neonPulse {
+    from {
+        opacity: 1;
+        box-shadow:
+            inset 0 0 5px var(--color-primary),
+            inset 0 0 7.5px var(--color-primary),
+            inset 0 0 10px var(--color-primary),
+            0 0 4px var(--color-primary),
+            0 0 4px var(--color-primary);
+    }
+
+    to {
+        opacity: 1;
+        box-shadow:
+            inset 0 0 10px var(--color-primary),
+            inset 0 0 15px var(--color-primary),
+            inset 0 0 20px var(--color-primary),
+            0 0 8px var(--color-primary),
+            0 0 8px var(--color-primary);
+    }
 }
 
+.problemCardMdtop,
 .solutionCardMdtop {
     margin-bottom: 16px;
 }
 
-.problemCardIcon {
-    margin-bottom: 32px;
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
+.problemCardIcon,
 .solutionCardIcon {
     margin-bottom: 32px;
     position: relative;
@@ -67,61 +100,62 @@
     height: 80px;
 }
 
-.problemCardTitle {
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin-top: 8px;
-    color: var(--color-light);
-}
-
+.problemCardTitle,
 .solutionCardTitle {
     font-weight: 600;
     font-size: 2rem;
     line-height: 2.5rem;
-    color: var(--color-primary);
     margin-top: 8px;
+    min-height: 5rem;
 }
 
-.problemCardText {
-    margin-top: 16px;
-    font-weight: 500;
-    font-size: .9375rem;
-    line-height: 1.375rem;
-    color: #868686;
+.problemCardTitle {
+    color: var(--color-light);
 }
 
+.solutionCardTitle {
+    color: var(--color-primary);
+}
+
+.problemCardText,
 .solutionCardText {
     margin-top: 16px;
     font-weight: 500;
     font-size: .9375rem;
     line-height: 1.375rem;
+    flex-grow: 1;
+}
+
+.problemCardText {
+    color: #868686;
+}
+
+.solutionCardText {
     color: var(--color-light);
 }
 
-.problemCardIcon img {
-    width: 100%;
-}
-
+.problemCardIcon img,
 .solutionCardIcon img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .progressTwo {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    top: 0;
-    height: 100%;
+    position: relative;
+    width: 2px;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 12px;
 }
 
 .progressTwoLine {
-    position: relative;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 2px;
     background-color: #444;
     overflow: hidden;
@@ -169,35 +203,127 @@
     .solutionsRow {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 50px;
     }
 
     .cardContainer {
         flex-direction: column;
+        gap: 20px;
+    }
+
+    .slideInLeft,
+    .slideInRight {
+        width: 100%;
     }
 
     .card {
         width: 100%;
-        padding: 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .problemCardMdtop,
+    .solutionCardMdtop,
+    .problemCardIcon,
+    .solutionCardIcon,
+    .problemCardTitle,
+    .solutionCardTitle {
+        flex-shrink: 0;
+    }
+
+    .problemCardText,
+    .solutionCardText {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
     }
 
     .problemCardTitle,
     .solutionCardTitle {
         font-size: 1.5rem;
+        min-height: auto;
     }
 
     .problemCardText,
     .solutionCardText {
         font-size: .875rem;
     }
+
+    .progressTwo {
+        display: none;
+    }
+
+    .solutionCard::before,
+    .solutionCard::after {
+        animation: electricNeonPulse 1.5s infinite alternate;
+    }
 }
 
-.swiper-container {
+.swiperContainer {
     width: 100%;
+    height: auto;
 }
 
-.swiper-slide {
+.swiperSlide {
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+.slideInLeft {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.slideInRight {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.inView .slideInLeft,
+.inView .slideInRight {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.equalHeightSlides {
+    display: flex;
+    flex-direction: column;
+}
+
+.equalHeightSlides .swiper-slide {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.equalHeightSlides .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.equalHeightSlides .problemCardMdtop,
+.equalHeightSlides .solutionCardMdtop {
+    flex-grow: 0;
+}
+
+.equalHeightSlides .problemCardText,
+.equalHeightSlides .solutionCardText {
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .equalHeightSlides .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .equalHeightSlides .card {
+        flex: 1;
+    }
 }

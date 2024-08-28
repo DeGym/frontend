@@ -1,5 +1,6 @@
 .section {
-    padding: 4rem 0;
+    padding: 0;
+    padding-bottom: 2rem;
     color: var(--color-light);
     position: relative;
     overflow: hidden;

@@ -1,56 +1,138 @@
 .section {
-    padding: 2rem 1rem;
+    padding: 4rem 0;
     color: var(--color-light);
+    position: relative;
+    overflow: hidden;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.blurBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.5) 20%,
+            rgba(0, 0, 0, 0.8) 50%,
+            rgba(0, 0, 0, 0.5) 80%,
+            rgba(0, 0, 0, 0.1) 100%);
+    z-index: 0;
+}
+
+.blurBackground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px);
+    mask-image: linear-gradient(to bottom,
+            transparent 0%,
+            black 20%,
+            black 80%,
+            transparent 100%);
 }
 
 .container {
     max-width: 1280px;
     margin: auto;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .title {
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: var(--color-primary);
 }
 
 .cardTitle {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
+    margin-top: 1rem;
+    color: var(--color-light);
 }
 
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .differentialItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
-    min-width: 170px;
-    max-width: 250px;
-    min-height: 200px;
-    flex: 1 1 225px;
+    min-width: 150px;
+    max-width: 300px;
+    min-height: 300px;
+    flex: 1 1 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+
+.iconWrapper {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(var(--color-primary-rgb), 0.2);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.differentialItem:hover .iconWrapper {
+    transform: scale(1.1);
+    background-color: rgba(var(--color-primary-rgb), 0.3);
 }
 
 .icon {
     font-size: 3rem;
-    margin-top: 1rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-light);
+    color: var(--color-primary);
+    animation: pulse 2s infinite;
 }
 
 .textContainer {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
 }
 
 .description {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-light);
+    line-height: 1.6;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .flexContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }

@@ -90,7 +90,6 @@ const StepByStep: React.FC<StepByStepProps> = ({ steps, title }) => {
         <section className={styles.stepByStepSection}>
             <div className={styles.backgroundContainer}>
                 <h2
-                    className={styles.sectionTitle}
                     dangerouslySetInnerHTML={{ __html: title }}
                 />
                 <div

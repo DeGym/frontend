@@ -6,6 +6,14 @@
     gap: 20px;
     width: 100%;
     margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.cardsContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card {
@@ -19,12 +27,102 @@
     padding: 20px;
     margin: 20px auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 .content {
     width: 100%;
 }
 
+.content h2 {
+    text-align: center;
+    margin: auto;
+}
+
+.content svg {
+    display: inline;
+    width: 100%;
+    height: auto;
+}
+
+
+
+.digitalTransition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible .digitalTransition {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visionCard .digitalTransition {
+    transition-delay: 0.2s;
+}
+
+.missionCard .digitalTransition {
+    transition-delay: 0.4s;
+}
+
+@keyframes glitchEffect {
+    0% {
+        clip-path: inset(50% 0 50% 0);
+    }
+
+    5% {
+        clip-path: inset(20% 0 80% 0);
+    }
+
+    10% {
+        clip-path: inset(80% 0 20% 0);
+    }
+
+    15% {
+        clip-path: inset(40% 0 60% 0);
+    }
+
+    20% {
+        clip-path: inset(60% 0 40% 0);
+    }
+
+    25% {
+        clip-path: inset(0% 0 100% 0);
+    }
+
+    30% {
+        clip-path: inset(100% 0 0% 0);
+    }
+
+    35% {
+        clip-path: inset(30% 0 70% 0);
+    }
+
+    40% {
+        clip-path: inset(70% 0 30% 0);
+    }
+
+    45% {
+        clip-path: inset(10% 0 90% 0);
+    }
+
+    50% {
+        clip-path: inset(90% 0 10% 0);
+    }
+
+    55% {
+        clip-path: inset(0% 0 0% 0);
+    }
+
+    100% {
+        clip-path: inset(0% 0 0% 0);
+    }
+}
+
+.visible .digitalTransition {
+    animation: glitchEffect 1s linear;
+}
 
 @media (max-width: 768px) {
     .cardsContainer {
@@ -35,5 +133,4 @@
         width: 100%;
         align-items: center;
     }
-
 }

@@ -4,12 +4,12 @@
     justify-content: space-between;
     width: 100%;
     max-width: 1024px;
-    margin: 20px auto;
+    margin: 0px auto;
     overflow: hidden;
     border-radius: 10px;
     background: var(--color-accent);
     color: var(--color-light);
-    padding: 20px;
+    padding: 10px 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -37,6 +37,10 @@
     padding-left: 20px;
 }
 
+.content h2 {
+    text-align: center;
+    margin: auto;
+}
 
 
 @media (max-width: 768px) {

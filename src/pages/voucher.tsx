@@ -8,6 +8,7 @@ import Modality from '@/components/voucher/Modality';
 import Differentials from '@/components/common/Differentials';
 import BenefitsSection from '@/components/voucher/BenefitsSection';
 import { faLock, faMapMarkerAlt, faAward, faUserShield, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import HeroWrapper from '@/components/common/HeroWrapper';
 
 
 const differentials = [
@@ -87,18 +88,20 @@ const VoucherPage: React.FC = () => {
                 <meta name="description" content="Explore the unique benefits of the DGYM Token and how it powers the DeGym ecosystem." />
             </Head>
             <main className={styles.main}>
-                <section className={styles.heroSection}>
-                    <div className={styles.hero}>
-                        <div className="container mx-auto">
-                            <h1>Voucher</h1>
-                            <p className={styles.heroSubtitle}>
-                                Say goodbye to restrictive gym plans and hello to freedom with DeGym.
-                                As a DeGym User, you can purchase an <b>NFT that grants you access</b> to a diverse network of gyms.
-                            </p>
+                <HeroWrapper>
+                    <section className={styles.heroSection}>
+                        <div className={styles.hero}>
+                            <div className="container mx-auto">
+                                <h1>Voucher</h1>
+                                <p className={styles.heroSubtitle}>
+                                    Say goodbye to restrictive gym plans and hello to freedom with DeGym.
+                                    As a DeGym User, you can purchase an <b>NFT that grants you access</b> to a diverse network of gyms.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <NFTVoucherGenerator className={styles.nftVoucher} />
-                </section>
+                        <NFTVoucherGenerator className={styles.nftVoucher} />
+                    </section>
+                </HeroWrapper>
                 <Differentials title="Benefits" differentials={differentials} />
                 <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
                     Unlock <b>Unlimited Gym Access</b> with DeGym NFTs. Buy your Voucher today and start your journey to a fitter, more flexible lifestyle.

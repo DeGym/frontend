@@ -12,6 +12,7 @@ import StepByStep from '@/components/common/StepByStep';
 import CrowdfundingSection from '@/components/common/CrowdfundingSection';
 import VestingSection from './VestingSection';
 import Link from 'next/link';
+import HeroWrapper from '@/components/common/HeroWrapper';
 
 const PreSeedPage: React.FC = () => {
     const crowdfundData = {
@@ -113,17 +114,18 @@ const PreSeedPage: React.FC = () => {
                 <meta name="description" content="Learn more about the DGYM Token, its utility, and how it powers the DeGym ecosystem." />
             </Head>
             <main className={styles.main}>
-                <section className={styles.hero}>
-                    <div className="container mx-auto">
-                        <h1>Invest In DeGym</h1>
-                        <p className={styles.heroSubtitle}>Pre-Seed Opportunity: <br /><b>Invest in Our Future, Share Our Success</b></p>
-                        <Link href="https://allium-founders-pass.nfts2.me/" className="p-4 w-auto my-5">
-                            <button className="m-auto w-auto p-3">Get whitelisted</button>
-                        </Link>
-                        <p className="max-w-3xl m-auto text-2xl">The DeGym project is embarking on a phased approach to raise funds and distribute tokens, ensuring <b>fair market valuation</b> and rewarding early investors.</p>
-                    </div>
-                </section>
-
+                <HeroWrapper>
+                    <section className={styles.hero}>
+                        <div className="container mx-auto">
+                            <h1>Invest In DeGym</h1>
+                            <p className={styles.heroSubtitle}>Pre-Seed Opportunity: <br /><b>Invest in Our Future, Share Our Success</b></p>
+                            <Link href="https://allium-founders-pass.nfts2.me/" className="p-4 w-auto my-5">
+                                <button className="m-auto w-auto p-3">Get whitelisted</button>
+                            </Link>
+                            <p className="max-w-3xl m-auto text-2xl">The DeGym project is embarking on a phased approach to raise funds and distribute tokens, ensuring <b>fair market valuation</b> and rewarding early investors.</p>
+                        </div>
+                    </section>
+                </HeroWrapper>
                 <CrowdfundingSection
                     crowdfund={crowdfundData}
                 />

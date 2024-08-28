@@ -94,7 +94,7 @@
 .icon {
     color: var(--color-light);
     transition: color 0.3s ease, transform 0.3s ease;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .icon:hover {

@@ -34,7 +34,7 @@ const PartnersPage: React.FC = () => {
         },
         {
             title: "No Extra Cost",
-            description: "You don't pay anything to become a partner.",
+            description: "You don't pay anything to become a partner and we are feeless!",
             icon: faTimesCircle
         }
     ];

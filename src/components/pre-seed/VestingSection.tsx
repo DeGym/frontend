@@ -64,7 +64,7 @@ const VestingSection: React.FC = () => {
                         </p>
                     </div>
                 </div>
-                <Differentials title="Vesting Benefits" differentials={benefits} />
+                <Differentials title="Benefits" differentials={benefits} />
                 <h2>How It Works</h2>
                 <ol className={styles.howItWorks}>
                     <li><FontAwesomeIcon icon={faPiggyBank} className={styles.listIcon} /> <b>Allocation:</b> Tokens are allocated to team members, advisors, and other stakeholders.</li>

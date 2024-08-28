@@ -1,5 +1,6 @@
 .section {
-    padding: 4rem 0;
+    padding: 0;
+    padding-bottom: 2rem;
     color: var(--color-light);
     position: relative;
     overflow: hidden;
@@ -46,7 +47,6 @@
 }
 
 .title {
-    margin-bottom: 3rem;
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--color-primary);
@@ -54,7 +54,6 @@
 
 .cardTitle {
     font-size: 1.35rem;
-    margin-top: 1rem;
     color: var(--color-light);
 }
 
@@ -90,7 +89,6 @@
     justify-content: center;
     background-color: rgba(var(--color-primary-rgb), 0.2);
     border-radius: 50%;
-    margin-bottom: 1.5rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 

@@ -10,7 +10,7 @@ import { faUserCheck, faCoins, faWallet, faFire, faClock } from '@fortawesome/fr
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import StepByStep from '@/components/common/StepByStep';
 import CrowdfundingSection from '@/components/common/CrowdfundingSection';
-import VestingSection from './VestingSection';
+import VestingSection from '../components/pre-seed/VestingSection';
 import Link from 'next/link';
 import HeroWrapper from '@/components/common/HeroWrapper';
 

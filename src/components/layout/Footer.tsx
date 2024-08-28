@@ -56,19 +56,19 @@ const Footer: React.FC = () => {
                     <div className={styles.section}>
                         <div className={styles.icons}>
                             <Link href="/x" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-                                <FontAwesomeIcon icon={faTwitter} size="2x" />
+                                <FontAwesomeIcon icon={faTwitter} size="1x" />
                             </Link>
                             <Link href="/telegram" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-                                <FontAwesomeIcon icon={faTelegram} size="2x" />
+                                <FontAwesomeIcon icon={faTelegram} size="1x" />
                             </Link>
                             <Link href="/medium" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-                                <FontAwesomeIcon icon={faMedium} size="2x" />
+                                <FontAwesomeIcon icon={faMedium} size="1x" />
                             </Link>
                             <Link href="/discord" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-                                <FontAwesomeIcon icon={faDiscord} size="2x" />
+                                <FontAwesomeIcon icon={faDiscord} size="1x" />
                             </Link>
                             <Link href="/github" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-                                <FontAwesomeIcon icon={faGithub} size="2x" />
+                                <FontAwesomeIcon icon={faGithub} size="1x" />
                             </Link>
                         </div>
                     </div>

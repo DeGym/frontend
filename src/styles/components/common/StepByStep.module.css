@@ -1,6 +1,9 @@
 .stepByStepSection {
-    padding: 2rem 0;
+    padding: 0rem 0;
     text-align: center;
+    margin-left: -20px;
+    margin-right: -20px;
+    background-color: #000c;
 }
 
 .backgroundContainer {
@@ -9,17 +12,10 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    border-top: 2px solid var(--color-accent);
-    border-bottom: 2px solid var(--color-accent);
+    border-top: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
     padding-bottom: 3rem;
 
-}
-
-
-.sectionTitle {
-    font-size: 2.5rem;
-    color: var(--color-light);
-    margin-bottom: 2rem;
 }
 
 .carousel {

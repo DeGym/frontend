@@ -32,7 +32,7 @@
 }
 
 .content {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     border: 1px solid var(--color-primary);
     border-radius: 10px;
     padding: 2rem;

@@ -92,7 +92,7 @@ const PartnersPage: React.FC = () => {
                     </section>
                 </HeroWrapper>
 
-                <Differentials title="Why Partner with Us?" differentials={differentials} />
+                <Differentials title="Advantages" differentials={differentials} />
                 <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">
                     Our partnership offers a <b>fair transfer value</b>, according to the monthly fee of your gym.
                 </h4>

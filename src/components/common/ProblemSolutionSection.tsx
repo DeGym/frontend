@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
@@ -27,6 +27,7 @@ const ProblemSolutionSection: React.FC = () => {
     const sectionRef = useRef<HTMLElement>(null);
     const [maxCardHeight, setMaxCardHeight] = useState<number>(0);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const [blurIntensity, setBlurIntensity] = useState<number>(0);
 
     const problemSolutions: ProblemSolution[] = useMemo(() => [
         {
@@ -95,6 +96,21 @@ const ProblemSolutionSection: React.FC = () => {
             }
         },
     ], []);
+
+    const handleScroll = useCallback(() => {
+        if (sectionRef.current) {
+            const { offsetTop, offsetHeight } = sectionRef.current;
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            const sectionCenter = offsetTop + offsetHeight / 2;
+            const maxDistance = offsetHeight / 2;
+            const distance = Math.abs(scrollPosition - sectionCenter);
+            const blurValue = Math.max(0, 20 * (1 - distance / maxDistance));
+            setBlurIntensity(blurValue);
+
+            // Apply the blur directly to the blurBackground element
+            sectionRef.current.style.setProperty('--blur-value', `${blurValue}px`);
+        }
+    }, []);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -233,14 +249,17 @@ const ProblemSolutionSection: React.FC = () => {
     );
 
     return (
-        <section className={styles.section} ref={sectionRef}>
-            <h2 className="text-center">Problems & <b>Solutions</b></h2>
-            <div className={styles.solutionsWrap}>
-                {isMobile ? <MobileSwiper /> : problemSolutions.map((item, index) => (
-                    <ProblemSolutionCard key={index} item={item} index={index} />
-                ))}
-            </div>
-        </section>
+        <div className={styles.sectionWrapper}>
+            <div className={styles.blurBackground} ref={sectionRef as React.RefObject<HTMLDivElement>}></div>
+            <section className={styles.section}>
+                <h2 className="text-center">Problems & <b>Solutions</b></h2>
+                <div className={styles.solutionsWrap}>
+                    {isMobile ? <MobileSwiper /> : problemSolutions.map((item, index) => (
+                        <ProblemSolutionCard key={index} item={item} index={index} />
+                    ))}
+                </div>
+            </section>
+        </div>
     );
 };
 

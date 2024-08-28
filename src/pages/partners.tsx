@@ -8,6 +8,7 @@ import FAQ from '@/components/common/FAQ';
 import Differentials from '@/components/common/Differentials';
 import PartnersCarousel from '@/components/partners/PartnersCarousel'; // Add this import
 import { faUserPlus, faMoneyBillWave, faEye, faHandshake, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import HeroWrapper from '@/components/common/HeroWrapper';
 
 const PartnersPage: React.FC = () => {
     const differentials = [
@@ -68,21 +69,23 @@ const PartnersPage: React.FC = () => {
                 <meta name="description" content="Learn more about the Partners, its utility, and how it powers the DeGym ecosystem." />
             </Head>
             <main className={styles.main}>
-                <section className={styles.hero}>
-                    <div className={styles.heroImage}>
-                        <Image
-                            src="/img/partners_hero_img.jpg"
-                            alt="People exercising in a gym"
-                            width={400}
-                            height={400}
-                            layout="responsive"
-                        />
-                    </div>
-                    <div className={styles.heroText}>
-                        <h1>Become a Partner</h1>
-                        <p className={styles.heroSubtitle}>Join the DeGym network and grow your business.</p>
-                    </div>
-                </section>
+                <HeroWrapper>
+                    <section className={styles.hero}>
+                        <div className={styles.heroImage}>
+                            <Image
+                                src="/img/partners_hero_img.jpg"
+                                alt="People exercising in a gym"
+                                width={400}
+                                height={400}
+                                layout="responsive"
+                            />
+                        </div>
+                        <div className={styles.heroText}>
+                            <h1>Become a Partner</h1>
+                            <p className={styles.heroSubtitle}>Join the DeGym network and grow your business.</p>
+                        </div>
+                    </section>
+                </HeroWrapper>
 
                 <Differentials title="Why Partner with Us?" differentials={differentials} />
                 <h4 className="mx-10 mt-8 text-center text-sm font-semibold text-light md:mx-0 md:mb-10 md:text-sm lg:text-lg">

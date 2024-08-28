@@ -15,6 +15,7 @@ import StepByStep from '@/components/common/StepByStep';
 import Link from 'next/link';
 import ScrollAnimation from '@/components/common/ScrollAnimation';
 import PartnersCarousel from '@/components/partners/PartnersCarousel';
+import HeroWrapper from '@/components/common/HeroWrapper';
 
 const HomePage: React.FC = () => {
     const faqs = [
@@ -62,25 +63,27 @@ const HomePage: React.FC = () => {
 
             <main className={styles.main}>
                 <ScrollAnimation>
-                    <section className={styles.hero}>
-                        <div className={styles.heroInner}>
-                            <h1>DeGym</h1>
-                            <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access and Enhanced Rewards</p>
-                            <div className={styles.joinSection}>
-                                <Link href="/telegram" className="w-auto">
-                                    <button className="p-4">Join the Community</button>
-                                </Link>
+                    <HeroWrapper>
+                        <section className={styles.hero}>
+                            <div className={styles.heroInner}>
+                                <h1>DeGym</h1>
+                                <p className={styles.heroSubtitle}>The first <b>Decentralized Gym Network</b> revolutionizing fitness industry with distributed ledger technology. Seamless Access and Enhanced Rewards</p>
+                                <div className={styles.joinSection}>
+                                    <Link href="/telegram" className="w-auto">
+                                        <button className="p-4">Join the Community</button>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.heroImage}>
-                            <Image
-                                src="/hero.png"
-                                alt="Description of the image"
-                                fill
-                                style={{ objectFit: 'cover' }}
-                            />
-                        </div>
-                    </section>
+                            <div className={styles.heroImage}>
+                                <Image
+                                    src="/hero.png"
+                                    alt="Description of the image"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
+                            </div>
+                        </section>
+                    </HeroWrapper>
                 </ScrollAnimation>
                 <ScrollAnimation>
                     <GlobeSection />

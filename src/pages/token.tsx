@@ -6,6 +6,8 @@ import DAOSection from '@/components/common/DAOSection';
 import TokenStats from '@/components/token/Stats';
 import TokenAllocation from '@/components/token/Allocation';
 import TokenUtility from '@/components/token/Utility';
+import HeroWrapper from '@/components/common/HeroWrapper';
+import Representation from '@/components/token/Representation';
 
 const TokenPage: React.FC = () => {
     const faq = [
@@ -50,12 +52,15 @@ const TokenPage: React.FC = () => {
                 <meta name="description" content="Learn more about the DGYM Token, its utility, and how it powers the DeGym ecosystem." />
             </Head>
             <main className={styles.main}>
-                <section className={styles.hero}>
-                    <div className="container mx-auto">
-                        <h1>DGYM</h1>
-                        <p className={styles.heroSubtitle}>First and foremost a <b>governance token</b> with lots of utility</p>
-                    </div>
-                </section>
+                <HeroWrapper>
+                    <section className={styles.hero}>
+                        <div className="container mx-auto">
+                            <h1>DGYM</h1>
+                            <p className={styles.heroSubtitle}>First and foremost a <b>governance token</b> with lots of utility</p>
+                        </div>
+                    </section>
+                </HeroWrapper>
+                <Representation />
                 <TokenStats />
                 <TokenAllocation />
                 <TokenUtility />

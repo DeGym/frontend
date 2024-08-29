@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
 import { useInView } from 'react-intersection-observer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
-import styles from '@/styles/components/section/ProblemSolutionSection.module.css';
+import styles from '@/styles/components/home/ProblemSolutionSection.module.css';
 import 'swiper/swiper-bundle.css';
 
 interface ProblemSolution {

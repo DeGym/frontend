@@ -292,3 +292,29 @@
         margin-bottom: 1px;
     }
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.buttonContainer a {
+    width: 100%;
+}
+
+.walletButton {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.bridgeButton {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+}
+
+.walletButton:hover,
+.bridgeButton:hover {
+    opacity: 0.9;
+}

@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState, useRef } from 'react';
-import styles from '@/styles/components/section/GlobeSection.module.css';
+import styles from '@/styles/components/home/GlobeSection.module.css';
 
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 

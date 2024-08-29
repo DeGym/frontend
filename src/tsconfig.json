@@ -47,7 +47,7 @@
     "components/search/MobileFilterModal.js",
     "components/search/FilterModal.js",
     "pages/search.js",
-    "components/common/GlobeSection.tsx"
+    "components/home/GlobeSection.tsx"
   ],
   "exclude": [
     "node_modules"

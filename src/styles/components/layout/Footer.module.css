@@ -1,10 +1,12 @@
 .footer {
-    background-color: var(--color-dark);
+    background-image: linear-gradient(to bottom, transparent 0%, var(--color-dark) 50%);
+    padding-top: 30rem;
+    margin-top: -30rem;
     color: var(--color-light);
-    padding: 2rem 1rem;
 }
 
 .container {
+    padding: 4rem 1rem 0rem;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -121,7 +123,6 @@
 }
 
 .footerBottom {
-    margin-top: 2rem;
     color: var(--color-secondary);
     text-align: center;
     font-size: 0.9rem;

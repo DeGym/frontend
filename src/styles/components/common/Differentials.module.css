@@ -53,8 +53,10 @@
 }
 
 .cardTitle {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     color: var(--color-light);
+    margin: 1rem 0;
+    transition: all 0.3s ease;
 }
 
 .flexContainer {
@@ -68,39 +70,143 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: center;
     min-width: 150px;
     max-width: 300px;
     min-height: 300px;
     flex: 1 1 200px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-accent);
     border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     backdrop-filter: blur(5px);
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.differentialItem::before,
+.differentialItem::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 2px solid var(--color-primary);
+    border-radius: 17px;
+    /* Slightly larger than the card's border-radius */
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 
-.iconWrapper {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(var(--color-primary-rgb), 0.2);
-    border-radius: 50%;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+.differentialItem:hover::before {
+    animation: neonBorder 1.5s ease-in-out infinite alternate;
+}
+
+.differentialItem:hover::after {
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonBorder {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes neonGlow {
+    0% {
+        opacity: 0.3;
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 0.7;
+        filter: blur(12px);
+    }
 }
 
 .differentialItem:hover .iconWrapper {
-    transform: scale(1.1);
-    background-color: rgba(var(--color-primary-rgb), 0.3);
+    box-shadow: 0 0 15px var(--color-primary);
+}
+
+.differentialItem:hover .icon {
+    animation: iconPulse 1s infinite alternate;
+}
+
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.differentialItem:hover .cardTitle {
+    color: var(--color-primary);
+    text-shadow: 0 0 5px var(--color-primary);
+}
+
+.differentialItem:hover .description {
+    color: #ffffff;
+}
+
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.differentialItem:hover .iconWrapper::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    animation: rotateElectric 2s linear infinite;
+}
+
+@keyframes rotateElectric {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--color-primary);
-    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.differentialItem:hover .icon {
+    animation: iconShake 0.5s ease infinite;
+}
+
+@keyframes iconShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px) rotate(-3deg);
+    }
+
+    75% {
+        transform: translateX(2px) rotate(3deg);
+    }
 }
 
 .textContainer {
@@ -108,23 +214,14 @@
 }
 
 .description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--color-light);
     line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.differentialItem:hover .description {
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {

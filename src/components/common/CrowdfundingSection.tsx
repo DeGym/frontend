@@ -221,6 +221,10 @@ const CrowdfundingSection: React.FC<CrowdfundingSectionProps> = ({ crowdfund }) 
                         )}
                         <div className={styles.card}>
                             <div className={styles.cardContent}>
+                                <div className={styles.buttonContainer}>
+                                    <a href="https://taraxa.io/wallet" target="_blank" rel="noopener noreferrer"><button>Wallet</button></a>
+                                    <a href="https://bridge.taraxa.io" target="_blank" rel="noopener noreferrer"><button>Bridge</button></a>
+                                </div>
                                 <label>
                                     Amount <InfoTooltip text="Must be a minimum 1000 TARA" />
                                 </label>

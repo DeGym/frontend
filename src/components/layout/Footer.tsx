@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                                     taraxa:0xE6339c6f56d44719b6ae1264ea9B4f5eD1710bbE
                                 </Link>
                             </div>
-                            <Link href="https://community.taraxa.io/staking/0x431ED26993CF4157BeA589da3B1d15fc137F2919" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://community.taraxa.io/staking/0x6e2D79c801b5E07aCB74a74e0cc253D0BC56BB4b" target="_blank" rel="noopener noreferrer">
                                 Delegate TARA to our validator node
                             </Link>
                         </div>

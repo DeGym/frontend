@@ -42,14 +42,6 @@ const differentials = [
 
 const faqs = [
     {
-        question: "What are NFT-based vouchers?",
-        answer: "NFT-based vouchers are unique digital assets that grant access to gym facilities and services within the DeGym ecosystem."
-    },
-    {
-        question: "How do I purchase an NFT-based voucher?",
-        answer: "You can purchase NFT-based vouchers on our website by connecting your wallet and selecting the desired voucher."
-    },
-    {
         question: "What are NFT-based Vouchers?",
         answer: "NFT-based Vouchers are unique digital assets that represent a membership or a specific service within the DeGym platform. They are secured on the blockchain and can be traded or redeemed."
     },
@@ -60,10 +52,6 @@ const faqs = [
     {
         question: "How can I purchase an NFT-based Voucher?",
         answer: "You can purchase NFT-based Vouchers directly from our website. Simply choose the voucher you want, connect your wallet, and complete the transaction."
-    },
-    {
-        question: "What benefits do NFT-based Vouchers offer?",
-        answer: "NFT-based Vouchers provide exclusive access to gym services, special discounts, and the ability to trade or sell the vouchers on secondary markets."
     },
     {
         question: "How do I redeem my NFT-based Voucher?",
